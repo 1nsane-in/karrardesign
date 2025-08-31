@@ -2,13 +2,6 @@ import { useRef } from "react";
 import styles from "../../styles/hero.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-// Animated word for the header
-const word = "with framer-motion";
-const letterOffsets = Array.from(
-  { length: word.length },
-  () => Math.floor(Math.random() * -75) - 25
-);
-
 const Hero = () => {
   const container = useRef(null);
 

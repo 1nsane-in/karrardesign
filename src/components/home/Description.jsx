@@ -1,20 +1,71 @@
+import styles from "../../styles/description.module.scss";
+import { DesignSVG } from "../../assets/svg.jsx";
 const Description = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen mt-32">
       <span>Turnkey</span>
-      <h1 className="uppercase">High-End</h1>
-      <h1 className="uppercase">Interiors &</h1>
-      <h1 className="uppercase">Exteriors</h1>
-      <h1 className="uppercase">Design</h1>
+      <h1 className="uppercase text-[100px] leading-[90px] mt-5">High-End</h1>
+      <h1 className="uppercase text-[100px] leading-[90px]">Interiors &</h1>
+      <h1 className="uppercase text-[100px] leading-[90px]">Exteriors</h1>
+      <div className="w-[400px] -mt-10">
+        <DesignSVG />
+      </div>
       <p className="max-w-[360px] text-center">
         Æbele Interiors offers a full range of bespoke interior design services
         — from initial concept and aesthetic counselling to coordination,
         execution and magazine-worthy finishing touches.
       </p>
-      <div className="flex gap-6">
-        <span>STUDIO</span>
-        <span>ABELE</span>
-        <span>Work</span>
+      <div className={styles["button-wrapper"]}>
+        <button className={styles.button}>
+          <span className={styles["span-mother"]}>
+            <span>S</span>
+            <span>T</span>
+            <span>U</span>
+            <span>D</span>
+            <span>I</span>
+            <span>O</span>
+          </span>
+          <span className={styles["span-mother2"]}>
+            <span>S</span>
+            <span>T</span>
+            <span>U</span>
+            <span>D</span>
+            <span>I</span>
+            <span>O</span>
+          </span>
+        </button>
+        <button className={styles.button}>
+          <span className={styles["span-mother"]}>
+            <span>K</span>
+            <span>A</span>
+            <span>R</span>
+            <span>R</span>
+            <span>A</span>
+            <span>R</span>
+          </span>
+          <span className={styles["span-mother2"]}>
+            <span>K</span>
+            <span>A</span>
+            <span>R</span>
+            <span>R</span>
+            <span>A</span>
+            <span>R</span>
+          </span>
+        </button>
+        <button className={styles.button}>
+          <span className={styles["span-mother"]}>
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>K</span>
+          </span>
+          <span className={styles["span-mother2"]}>
+            <span>W</span>
+            <span>O</span>
+            <span>R</span>
+            <span>K</span>
+          </span>
+        </button>
       </div>
     </div>
   );
