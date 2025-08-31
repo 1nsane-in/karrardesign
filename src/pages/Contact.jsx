@@ -38,23 +38,25 @@ const Contact = () => {
           <p className="text-gray-600">Spain</p>
         </div>
       </div>
-      <div className="flex gap-4 max-w-5xl mx-auto text-sm mt-10">
+      <div className="flex gap-[65px] max-w-5xl mx-auto text-sm mt-10">
         <div>
           <h1 className=" font-bold uppercase text-xs">General</h1>
-          <p className="max-w-[150px] mt-4 leading-[16px] text-gray-600">
+          <p className="max-w-[180px] mt-4 leading-[16px] text-gray-600">
             info@aebeleinteriors.com
           </p>
           <p className="text-gray-600">+32 3 257 33 57</p>
         </div>
         <div>
           <h1 className=" font-bold uppercase text-xs">Careers</h1>
-          <p className="max-w-[150px] mt-4 leading-[16px] text-gray-600">
+          <p className="max-w-[180px] mt-4 leading-[16px] text-gray-600">
             careers@aebeleinteriors.com
           </p>
           <p className="text-gray-600">+32 3 257 33 57</p>
         </div>
       </div>
-      <Footer />
+      <div className="mt-20">
+        <Footer />
+      </div>
     </>
   );
 };

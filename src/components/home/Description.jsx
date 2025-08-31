@@ -1,5 +1,6 @@
 import styles from "../../styles/description.module.scss";
 import { DesignSVG } from "../../assets/svg.jsx";
+import { Link } from "react-router";
 const Description = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen mt-32">
@@ -16,56 +17,62 @@ const Description = () => {
         execution and magazine-worthy finishing touches.
       </p>
       <div className={styles["button-wrapper"]}>
-        <button className={styles.button}>
-          <span className={styles["span-mother"]}>
-            <span>S</span>
-            <span>T</span>
-            <span>U</span>
-            <span>D</span>
-            <span>I</span>
-            <span>O</span>
-          </span>
-          <span className={styles["span-mother2"]}>
-            <span>S</span>
-            <span>T</span>
-            <span>U</span>
-            <span>D</span>
-            <span>I</span>
-            <span>O</span>
-          </span>
-        </button>
-        <button className={styles.button}>
-          <span className={styles["span-mother"]}>
-            <span>K</span>
-            <span>A</span>
-            <span>R</span>
-            <span>R</span>
-            <span>A</span>
-            <span>R</span>
-          </span>
-          <span className={styles["span-mother2"]}>
-            <span>K</span>
-            <span>A</span>
-            <span>R</span>
-            <span>R</span>
-            <span>A</span>
-            <span>R</span>
-          </span>
-        </button>
-        <button className={styles.button}>
-          <span className={styles["span-mother"]}>
-            <span>W</span>
-            <span>O</span>
-            <span>R</span>
-            <span>K</span>
-          </span>
-          <span className={styles["span-mother2"]}>
-            <span>W</span>
-            <span>O</span>
-            <span>R</span>
-            <span>K</span>
-          </span>
-        </button>
+        <Link to={"/studio"}>
+          <button className={styles.button}>
+            <span className={styles["span-mother"]}>
+              <span>S</span>
+              <span>T</span>
+              <span>U</span>
+              <span>D</span>
+              <span>I</span>
+              <span>O</span>
+            </span>
+            <span className={styles["span-mother2"]}>
+              <span>S</span>
+              <span>T</span>
+              <span>U</span>
+              <span>D</span>
+              <span>I</span>
+              <span>O</span>
+            </span>
+          </button>
+        </Link>
+        <Link to={"/karrar"}>
+          <button className={styles.button}>
+            <span className={styles["span-mother"]}>
+              <span>K</span>
+              <span>A</span>
+              <span>R</span>
+              <span>R</span>
+              <span>A</span>
+              <span>R</span>
+            </span>
+            <span className={styles["span-mother2"]}>
+              <span>K</span>
+              <span>A</span>
+              <span>R</span>
+              <span>R</span>
+              <span>A</span>
+              <span>R</span>
+            </span>
+          </button>
+        </Link>
+        <Link to={"/work"}>
+          <button className={styles.button}>
+            <span className={styles["span-mother"]}>
+              <span>W</span>
+              <span>O</span>
+              <span>R</span>
+              <span>K</span>
+            </span>
+            <span className={styles["span-mother2"]}>
+              <span>W</span>
+              <span>O</span>
+              <span>R</span>
+              <span>K</span>
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );
