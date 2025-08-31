@@ -18,5 +18,15 @@ html,
   --color-secondary: #f9f5ef;
 }
 
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 
