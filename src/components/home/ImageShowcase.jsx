@@ -5,7 +5,7 @@ const ImageShowcase = () => {
     "https://aebeleinteriors.com/wp-content/uploads/2020/08/old-town-boutique-hotel-020.jpg";
 
   return (
-    <div className="max-w-5xl mx-auto relative pb-[400px] mt-[200px]">
+    <div className="max-w-5xl mx-auto relative pb-[100px] mt-[200px]">
       <img src={Img1} alt="Showcase" className="w-[80%] h-auto" />
       <img
         src={Img2}

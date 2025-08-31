@@ -1,4 +1,5 @@
 import Description from "../components/home/Description";
+import GetInTouch from "../components/home/GetInTouch";
 import Hero from "../components/home/Hero";
 import ImageShowcase from "../components/home/ImageShowcase";
 import TopHeader from "../components/home/TopHeader";
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Description />
       <ImageShowcase />
+      <GetInTouch />
     </div>
   );
 };
