@@ -1,5 +1,6 @@
 import Description from "../components/home/Description";
 import Hero from "../components/home/Hero";
+import ImageShowcase from "../components/home/ImageShowcase";
 import TopHeader from "../components/home/TopHeader";
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <TopHeader />
       <Hero />
       <Description />
+      <ImageShowcase />
     </div>
   );
 };
