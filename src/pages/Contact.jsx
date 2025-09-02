@@ -1,9 +1,13 @@
 import { ConnectSVG } from "../assets/svg.jsx";
 import Footer from "../components/common/Footer.jsx";
+import { useRevealer } from "../hooks/useRevealer.js";
 
 const Contact = () => {
+  useRevealer();
+
   return (
     <>
+      <div className="revealer"></div>
       <div className="max-w-5xl mx-auto mt-44">
         <p className="text-xs uppercase">Contact</p>
         <div className="mt-10 uppercase">

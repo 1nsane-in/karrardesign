@@ -15,7 +15,7 @@ const Navigation = () => {
 
   return (
     <div className="fixed z-50 top-10 right-16 w-[80px]">
-      <ul className="text-xs font-bold flex flex-col gap-1">
+      <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1">
         {navItems.map((item) => (
           <Link to={item.path} key={item.name}>
             <li

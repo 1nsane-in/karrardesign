@@ -28,5 +28,14 @@ html {
   scrollbar-width: none;
 }
 
-
-
+.revealer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: center top;
+  background-color: var(--color-primary);
+  pointer-events: none;
+  z-index: 100;
+}
