@@ -35,7 +35,7 @@ html {
   width: 100vw;
   height: 100vh;
   transform-origin: center top;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
   pointer-events: none;
   z-index: 100;
 }

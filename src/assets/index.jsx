@@ -1,3 +1,3 @@
-import KarrarLogo from "./karrar-logo.png";
+import KarrarLogo from "./images/karrar-logo.png";
 
 export { KarrarLogo };

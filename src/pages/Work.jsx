@@ -2,12 +2,11 @@ import { ConnectSVG, ProjectSVG } from "../assets/svg";
 import Footer from "../components/common/Footer";
 import { useRevealer } from "../hooks/useRevealer";
 const Work = () => {
-  useRevealer();
+  useRevealer(0.4);
 
   return (
     <div>
-      <div className="revealer"></div>
-
+      <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
       <div className=" flex flex-col items-center justify-center pt-[180px]">
         <p className="text-xs uppercase">WORK</p>
         <h1 className="text-[110px] leading-[100px] uppercase mt-10">

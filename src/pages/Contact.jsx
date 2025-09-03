@@ -3,11 +3,11 @@ import Footer from "../components/common/Footer.jsx";
 import { useRevealer } from "../hooks/useRevealer.js";
 
 const Contact = () => {
-  useRevealer();
+  useRevealer(0.4);
 
   return (
     <>
-      <div className="revealer"></div>
+      <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
       <div className="max-w-5xl mx-auto mt-44">
         <p className="text-xs uppercase">Contact</p>
         <div className="mt-10 uppercase">
