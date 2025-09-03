@@ -7,6 +7,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Tan Pearl";
+  src: url("./fonts/tan-pearl.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body,
 html,
 :root {
@@ -14,8 +21,11 @@ html,
 }
 
 @theme {
-  --color-primary: #c19a5b;
-  --color-secondary: #f9f5ef;
+  /* --color-primary: #c19a5b; */
+  --color-primary: #ffb400;
+  --color-secondary: #fff;
+
+  --font-tan-pearl: "Tan Pearl", sans-serif;
 }
 
 /* Hide scrollbar */

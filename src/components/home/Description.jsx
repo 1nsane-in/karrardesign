@@ -5,9 +5,15 @@ const Description = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen mt-32">
       <span>Turnkey</span>
-      <h1 className="uppercase text-[100px] leading-[90px] mt-5">High-End</h1>
-      <h1 className="uppercase text-[100px] leading-[90px]">Interiors &</h1>
-      <h1 className="uppercase text-[100px] leading-[90px]">Exteriors</h1>
+      <h1 className="uppercase text-[100px] leading-[110px] mt-5 font-tan-pearl">
+        High-End
+      </h1>
+      <h1 className="uppercase text-[100px] leading-[110px] font-tan-pearl">
+        Interiors &
+      </h1>
+      <h1 className="uppercase text-[100px] leading-[110px] font-tan-pearl">
+        Exteriors
+      </h1>
       <div className="w-[400px] -mt-10">
         <DesignSVG />
       </div>

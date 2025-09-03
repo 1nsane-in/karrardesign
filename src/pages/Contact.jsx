@@ -11,8 +11,12 @@ const Contact = () => {
       <div className="max-w-5xl mx-auto mt-44">
         <p className="text-xs uppercase">Contact</p>
         <div className="mt-10 uppercase">
-          <h1 className="text-[110px] leading-[100px]">Let's work</h1>
-          <h1 className="text-[110px] leading-[100px] ml-[200px]">Together</h1>
+          <h1 className="text-[110px] leading-[120px] font-tan-pearl">
+            Let's work
+          </h1>
+          <h1 className="text-[110px] leading-[120px] ml-[200px] font-tan-pearl">
+            Together
+          </h1>
           <div className="w-md -mt-10 ml-[400px]">
             <ConnectSVG />
           </div>

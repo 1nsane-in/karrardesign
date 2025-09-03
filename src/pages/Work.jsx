@@ -9,11 +9,15 @@ const Work = () => {
       <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
       <div className=" flex flex-col items-center justify-center pt-[180px]">
         <p className="text-xs uppercase">WORK</p>
-        <h1 className="text-[110px] leading-[100px] uppercase mt-10">
+        <h1 className="text-[110px] leading-[120px] uppercase mt-10 font-tan-pearl">
           Bespoke
         </h1>
-        <h1 className="text-[110px] leading-[100px] uppercase">turnkey</h1>
-        <h1 className="text-[110px] leading-[100px] uppercase">Design</h1>
+        <h1 className="text-[110px] leading-[120px] uppercase font-tan-pearl">
+          turnkey
+        </h1>
+        <h1 className="text-[110px] leading-[120px] uppercase font-tan-pearl">
+          Design
+        </h1>
         <div className="-mt-6">
           <ProjectSVG />
         </div>
@@ -71,7 +75,7 @@ const Work = () => {
       {/* Next Page  - STUDIO */}
       <div className="pt-40 pb-10 flex flex-col items-center justify-center">
         <p className="text-xs">WORK WITH US</p>
-        <h1 className="text-[110px] leading-[100px]">CONTACT</h1>
+        <h1 className="text-[110px] leading-[150px] font-tan-pearl">CONTACT</h1>
         <div className="w-sm -mt-12">
           <ConnectSVG />
         </div>

@@ -22,7 +22,9 @@ const Home = () => {
         {/* Next Page  - STUDIO */}
         <div className="pt-40 pb-10 flex flex-col items-center justify-center">
           <p className="text-xs">WHAT WE DO</p>
-          <h1 className="text-[110px] leading-[100px]">STUDIO</h1>
+          <h1 className="text-[110px] leading-[150px] font-tan-pearl">
+            STUDIO
+          </h1>
           <div className="w-sm -mt-12">
             <AtelierSVG />
           </div>
