@@ -47,5 +47,5 @@ html {
   transform-origin: center top;
   background-color: var(--color-primary) !important;
   pointer-events: none;
-  z-index: 100;
+  z-index: 99999;
 }

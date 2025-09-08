@@ -5,19 +5,24 @@ import gsap from "gsap";
 gsap.registerPlugin(CustomEase);
 CustomEase.create("hop", "0.9,0,0.1,1");
 
-export function useRevealer(delay = 1) {
+export function useRevealer({ delay = 1, onStart, onComplete } = {}) {
   useGSAP(() => {
-    gsap.to(".revealer", {
+    const el = document.querySelector(".revealer");
+    if (!el) return;
+
+    gsap.to(el, {
       scaleY: 0,
       duration: 1.05,
-      delay: delay,
+      delay,
       ease: "hop",
       onStart: () => {
-        document.querySelector(".revealer").style.willChange = "transform";
+        el.style.willChange = "transform";
+        onStart?.();
       },
       onComplete: () => {
-        document.querySelector(".revealer").style.willChange = "auto";
+        el.style.willChange = "auto";
+        onComplete?.();
       },
     });
-  }, [delay]);
+  }, [delay, onStart, onComplete]);
 }

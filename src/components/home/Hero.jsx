@@ -36,7 +36,7 @@ const Hero = () => {
   ];
   return (
     <div ref={container} className={styles.container}>
-      <div className="z-40 w-3/4 mx-auto">
+      <div className="z-40 w-3/4 mx-auto -mt-10 lg:mt-0">
         <svg
           viewBox="0 0 1257 305"
           fill="none"
@@ -65,7 +65,7 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className={styles.images}>
+      <div className={`${styles.images}`}>
         {images.map(({ src, y }, i) => (
           <motion.div
             style={{ y }}

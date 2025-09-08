@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { AtelierSVG } from "../assets/svg";
 import Footer from "../components/common/Footer";
 import Description from "../components/home/Description";
@@ -9,6 +10,7 @@ import { useRevealer } from "../hooks/useRevealer";
 
 const Home = () => {
   useRevealer();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -22,10 +24,13 @@ const Home = () => {
         {/* Next Page  - STUDIO */}
         <div className="pt-40 pb-10 flex flex-col items-center justify-center">
           <p className="text-xs">WHAT WE DO</p>
-          <h1 className="text-[110px] leading-[150px] font-tan-pearl">
+          <h1
+            onClick={() => navigate("/studio")}
+            className="lg:text-[110px] text-4xl mt-4 lg:leading-[120px] font-tan-pearl"
+          >
             STUDIO
           </h1>
-          <div className="w-sm -mt-12">
+          <div className="lg:w-md w-40 lg:-mt-10 lg:ml-[400px] -mt-5">
             <AtelierSVG />
           </div>
         </div>

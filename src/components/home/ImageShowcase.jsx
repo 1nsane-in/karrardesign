@@ -6,11 +6,15 @@ const ImageShowcase = () => {
 
   return (
     <div className="max-w-5xl mx-auto relative pb-[100px] mt-[200px]">
-      <img src={Img1} alt="Showcase" className="w-[80%] h-auto" />
+      <img
+        src={Img1}
+        alt="Showcase"
+        className="w-[80%] lg:h-auto h-[450px] object-cover"
+      />
       <img
         src={Img2}
         alt="Showcase"
-        className="w-[35%] h-auto absolute -mt-[200px] right-0"
+        className="w-[35%] lg:h-auto h-[200px]  absolute -mt-[200px] right-0"
       />
     </div>
   );

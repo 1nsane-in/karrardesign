@@ -374,8 +374,6 @@ export const ConnectSVG = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 358 150"
-    width={358}
-    height={150}
     preserveAspectRatio="xMidYMid meet"
     style={{
       width: "100%",

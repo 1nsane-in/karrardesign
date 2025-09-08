@@ -55,7 +55,7 @@ const Navigation = () => {
         onAnimationEnd={onOverlayAnimationEnd}
       />
 
-      <div className="fixed z-50 top-10 right-16 w-[80px]">
+      <div className="fixed z-50 top-10 right-16 w-[80px] hidden lg:block">
         <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1">
           {navItems.map((item) => (
             <Link

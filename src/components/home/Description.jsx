@@ -1,20 +1,51 @@
 import styles from "../../styles/description.module.scss";
 import { DesignSVG } from "../../assets/svg.jsx";
 import { Link } from "react-router";
+import { motion } from "framer-motion";
+
+const headingVariants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Description = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen mt-32">
+    <div
+      style={{ perspective: 800 }}
+      className="flex flex-col items-center justify-center lg:h-screen lg:mt-32"
+    >
       <span>Turnkey</span>
-      <h1 className="uppercase text-[100px] leading-[110px] mt-5 font-tan-pearl">
+      <motion.h1
+        className="uppercase mt-5 lg:text-[110px] text-2xl lg:leading-[120px]  font-tan-pearl"
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+      >
         High-End
-      </h1>
-      <h1 className="uppercase text-[100px] leading-[110px] font-tan-pearl">
+      </motion.h1>
+      <motion.h1
+        className="uppercase lg:text-[110px] text-2xl lg:leading-[120px]  font-tan-pearl"
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
         Interiors &
-      </h1>
-      <h1 className="uppercase text-[100px] leading-[110px] font-tan-pearl">
+      </motion.h1>
+      <motion.h1
+        className="uppercase lg:text-[110px] text-2xl lg:leading-[120px]  font-tan-pearl"
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+      >
         Exteriors
-      </h1>
-      <div className="w-[400px] -mt-10">
+      </motion.h1>
+      <div className="lg:w-md w-40 lg:-mt-10 lg:ml-[400px] -mt-5">
         <DesignSVG />
       </div>
       <p className="max-w-[360px] text-center">
@@ -23,7 +54,7 @@ const Description = () => {
         execution and magazine-worthy finishing touches.
       </p>
       <div className={styles["button-wrapper"]}>
-        <Link to={"/studio"}>
+        <Link to={"/studio"} className="text-primary">
           <button className={styles.button}>
             <span className={styles["span-mother"]}>
               <span>S</span>
@@ -43,7 +74,7 @@ const Description = () => {
             </span>
           </button>
         </Link>
-        <Link to={"/karrar"}>
+        <Link to={"/karrar"} className="text-primary">
           <button className={styles.button}>
             <span className={styles["span-mother"]}>
               <span>K</span>
@@ -63,7 +94,7 @@ const Description = () => {
             </span>
           </button>
         </Link>
-        <Link to={"/work"}>
+        <Link to={"/work"} className="text-primary">
           <button className={styles.button}>
             <span className={styles["span-mother"]}>
               <span>W</span>

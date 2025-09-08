@@ -1,7 +1,34 @@
+$breakpoints: (
+  "xs": 0,
+  // extra small (mobile first)
+  "sm": 576px,
+  // small devices
+  "md": 768px,
+  // tablets
+  "lg": 992px,
+  // desktops
+  "xl": 1200px,
+  // large desktops
+  "xxl": 1400px // extra large,,,,,
+);
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No breakpoint found for #{$breakpoint}.";
+  }
+}
+
 .button-wrapper {
   margin-top: 50px;
   display: flex;
   gap: 10px;
+  @include respond(xs) {
+    margin-top: 20px;
+  }
   button {
     cursor: pointer;
     height: 42.66px;
