@@ -1,10 +1,9 @@
 const TopHeader = () => {
   return (
     <div className="max-w-5xl mx-auto flex flex-col items-center text-primary leading-5 uppercase text-[16px] pt-10 text-center mt-40 lg:mt-0">
-      <p>Worldwide Turnkey Interior Projects</p>
+      <p>Awarded Best High-End Interior Fit-Out Business 2024</p> <br />
       <p>
-        Æbele Interiors Is A Premium Re-seller Of Eric Kuster Metropolitan
-        Luxury
+        MEA Excellence Award for MEP Services 2024, UAE Business Awards 2025
       </p>
     </div>
   );

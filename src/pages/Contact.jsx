@@ -77,22 +77,30 @@ const Contact = () => {
         className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0"
       >
         <div>
-          <h1 className=" font-semibold uppercase text-xs">Antwerp</h1>
-          <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
-            Mechelsesteenweg 30-32 2018 Antwerp
-          </p>
-          <p className="text-gray-600">Belgium</p>
-        </div>
-        <div>
           <h1 className=" font-bold uppercase text-xs">Dubai</h1>
-          <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
-            Old Town Island, <br /> Souk Al Bahar Burj Khalifa Blvd – District –
-            Dubai,
-          </p>
-          <p className="text-gray-600">United Arab Emirates</p>
+          <div>
+            <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
+              Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh
+              Zayed Road <br />
+              PO Box: 31303, Dubai, UAE
+            </p>
+          </div>
+          <div className="mt-3">
+            <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
+              Building B2, 11-17th St, <br /> Umm Ramool, Dubai, UAE
+            </p>
+          </div>
         </div>
         <div>
-          <h1 className=" font-bold uppercase text-xs">Palma</h1>
+          <h1 className=" font-semibold uppercase text-xs">Canada</h1>
+          <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
+            Karrar Design - Projects Inc. 3695 Kaneff Cresent Suite 1712,
+            Mississauga. LSA 4B, Ontario, Canada
+          </p>
+        </div>
+
+        <div>
+          <h1 className=" font-bold uppercase text-xs">India</h1>
           <p className="max-w-[180px] mt-4 leading-[20px] text-gray-600">
             Calle Bonaire 13 <br /> 07012 Palma de Mallorca
           </p>
@@ -109,19 +117,25 @@ const Contact = () => {
       >
         <div>
           <h1 className=" font-bold uppercase text-xs">General</h1>
-          <p className="max-w-[180px] mt-4 leading-[16px] text-gray-600">
-            info@aebeleinteriors.com
+          <p className="max-w-[280px] mt-4 leading-[16px] text-gray-600">
+            info@karrardesign-projects.com
           </p>
-          <p className="text-gray-600">+32 3 257 33 57</p>
+          <p className="text-gray-600">+971-50-459-1031</p>
         </div>
-        <div>
+        {/* <div>
           <h1 className=" font-bold uppercase text-xs">Careers</h1>
           <p className="max-w-[180px] mt-4 leading-[16px] text-gray-600">
             careers@aebeleinteriors.com
           </p>
           <p className="text-gray-600">+32 3 257 33 57</p>
-        </div>
+        </div> */}
       </motion.div>
+
+      <div className="max-w-5xl lg:mx-auto lg:mt-44 mt-32">
+        {/* Mail Component */}
+        <h1>Mail Component</h1>
+      </div>
+
       <motion.div
         variants={headingVariants}
         initial="hidden"

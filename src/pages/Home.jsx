@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <>
       <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
-      <div className="bg-secondary min-h-screen ">
+      <div className="bg-secondary min-h-screen  relative">
         <TopHeader />
         <Hero />
         <Description />
