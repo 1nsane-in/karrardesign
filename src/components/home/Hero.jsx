@@ -2,6 +2,7 @@ import { useRef } from "react";
 import styles from "../../styles/hero.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HeroBG } from "../../assets";
+import { TextLoop } from "../ui/text-loop";
 
 const Hero = () => {
   // const container = useRef(null);
@@ -66,7 +67,7 @@ const Hero = () => {
             From luxury fit-outs to complete project management, we design,
             build, and deliver spaces that inspire and endure.
           </motion.p>
-          <motion.p
+          {/* <motion.p
             key="hero-line-2"
             className="text-center text-xl max-w-2xl text-shadow-lg"
             initial={{ opacity: 0, y: 30 }}
@@ -77,7 +78,19 @@ const Hero = () => {
             Awarded Best High-End Interior Fit-Out Business 2024, <br /> MEA
             Excellence Award for MEP Services 2024, <br /> UAE Business Awards
             2025
-          </motion.p>
+          </motion.p> */}
+          {/* <TextLoop>
+            {[
+              "How can I assist you today?",
+              "Generate a logo",
+              "Create a component",
+              "Draw a diagram",
+            ].map((text) => (
+              <span key={text} className="block text-left">
+                {text}
+              </span>
+            ))}
+          </TextLoop> */}
         </div>
       </div>
       {/* <div ref={container} className={styles.container}>

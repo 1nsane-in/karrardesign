@@ -12,6 +12,8 @@ const Navigation = () => {
   const [nextPath, setNextPath] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
+  const isHomePage = pathname === "/";
+
   // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -90,14 +92,18 @@ const Navigation = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
           >
-            <div className="flex items-center uppercase text-sm justify-center  gap-30 h-full  text-white font-roboto ">
+            <div
+              className={`flex items-center uppercase text-sm justify-center  gap-30 h-full  font-roboto ${isHomePage ? "text-white" : "text-black"}`}
+            >
               <div className="text-shadow-lg">Studio</div>
               <div className="text-shadow-lg">Services</div>
               <div className=" flex flex-col items-center ">
                 <h1 className="font-cinzel text-3xl leading-[30px]">
                   Karrar Design
                 </h1>
-                <p className="text-[16px] font-medium tracking-widest">Projects</p>
+                <p className="text-[16px] font-medium tracking-widest">
+                  Projects
+                </p>
               </div>
               <div className="text-shadow-lg">About</div>
               <div className="text-shadow-md">Contact</div>

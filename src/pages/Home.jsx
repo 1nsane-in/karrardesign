@@ -7,6 +7,8 @@ import Hero from "../components/home/Hero";
 import ImageShowcase from "../components/home/ImageShowcase";
 import TopHeader from "../components/home/TopHeader";
 import { useRevealer } from "../hooks/useRevealer";
+import Testimonial from "../components/home/Testimonial";
+import Example from "../components/ui/image-gallery";
 
 const Home = () => {
   useRevealer();
@@ -19,10 +21,10 @@ const Home = () => {
         <TopHeader />
         <Hero />
         <Description />
-        <ImageShowcase />
-        <GetInTouch />
-        {/* Next Page  - STUDIO */}
-        <div className="pt-40 pb-10 flex flex-col items-center justify-center">
+        {/* <ImageShowcase /> */}
+        <Example />
+        <Testimonial />
+        {/* <div className="pt-40 pb-10 flex flex-col items-center justify-center">
           <p className="text-xs">WHAT WE DO</p>
           <h1
             onClick={() => navigate("/studio")}
@@ -33,8 +35,9 @@ const Home = () => {
           <div className="lg:w-md w-40 lg:-mt-10 lg:ml-[400px] -mt-5">
             <AtelierSVG />
           </div>
-        </div>
-        <Footer />
+        </div> */}
+        <GetInTouch />
+        {/* <Footer /> */}
       </div>
     </>
   );
