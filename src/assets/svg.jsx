@@ -1392,3 +1392,295 @@ export const ProjectSVG = (props) => (
     </g>
   </svg>
 );
+
+export const KarrarLogoSVG1 = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    zoomAndPan="magnify"
+    viewBox="0 0 375 374.999991"
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
+    <defs>
+      <clipPath id="ffc2aa3aa9">
+        <path
+          d="M 52.515625 52.394531 L 93.050781 52.394531 L 93.050781 322.605469 L 52.515625 322.605469 Z M 52.515625 52.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="d93621592d">
+        <path
+          d="M 0.515625 0.394531 L 41.050781 0.394531 L 41.050781 270.605469 L 0.515625 270.605469 Z M 0.515625 0.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="5e9faea2bb">
+        <rect x={0} width={42} y={0} height={271} />
+      </clipPath>
+      <clipPath id="e952a8a6e3">
+        <path
+          d="M 52.511719 282.078125 L 322.476562 282.078125 L 322.476562 322.609375 L 52.511719 322.609375 Z M 52.511719 282.078125 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="c170149948">
+        <path
+          d="M 0.511719 0.078125 L 270.476562 0.078125 L 270.476562 40.609375 L 0.511719 40.609375 Z M 0.511719 0.078125 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="02d81909a5">
+        <rect x={0} width={271} y={0} height={41} />
+      </clipPath>
+      <clipPath id="c619e522a4">
+        <path
+          d="M 281.949219 52.394531 L 322.484375 52.394531 L 322.484375 322.605469 L 281.949219 322.605469 Z M 281.949219 52.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="531a7480f1">
+        <path
+          d="M 0.949219 0.394531 L 41.484375 0.394531 L 41.484375 270.605469 L 0.949219 270.605469 Z M 0.949219 0.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="550c39005d">
+        <rect x={0} width={42} y={0} height={271} />
+      </clipPath>
+      <clipPath id="29c87be50f">
+        <path
+          d="M 154.054688 52.394531 L 322.472656 52.394531 L 322.472656 92.929688 L 154.054688 92.929688 Z M 154.054688 52.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="6f96e54a09">
+        <path
+          d="M 0.0546875 0.394531 L 168.472656 0.394531 L 168.472656 40.929688 L 0.0546875 40.929688 Z M 0.0546875 0.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="b2f5ae1454">
+        <rect x={0} width={169} y={0} height={41} />
+      </clipPath>
+    </defs>
+    <rect
+      x={-37.5}
+      width={450}
+      fill="#ffffff"
+      y={-37.499999}
+      height={449.999989}
+      fillOpacity={1}
+    />
+    <rect
+      x={-37.5}
+      width={450}
+      fill="#ffffff"
+      y={-37.499999}
+      height={449.999989}
+      fillOpacity={1}
+    />
+    <g clipPath="url(#ffc2aa3aa9)">
+      <g transform="matrix(1, 0, 0, 1, 52, 52)">
+        <g clipPath="url(#5e9faea2bb)">
+          <g clipPath="url(#d93621592d)">
+            <path
+              fill="#ffb400"
+              d="M 0.515625 0.394531 L 41.050781 0.394531 L 41.050781 270.671875 L 0.515625 270.671875 Z M 0.515625 0.394531 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#e952a8a6e3)">
+      <g transform="matrix(1, 0, 0, 1, 52, 282)">
+        <g clipPath="url(#02d81909a5)">
+          <g clipPath="url(#c170149948)">
+            <path
+              fill="#ffb400"
+              d="M 270.476562 0.078125 L 270.476562 40.609375 L 0.515625 40.609375 L 0.515625 0.078125 Z M 270.476562 0.078125 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#c619e522a4)">
+      <g transform="matrix(1, 0, 0, 1, 281, 52)">
+        <g clipPath="url(#550c39005d)">
+          <g clipPath="url(#531a7480f1)">
+            <path
+              fill="#ffb400"
+              d="M 0.949219 0.394531 L 41.484375 0.394531 L 41.484375 270.671875 L 0.949219 270.671875 Z M 0.949219 0.394531 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#29c87be50f)">
+      <g transform="matrix(1, 0, 0, 1, 154, 52)">
+        <g clipPath="url(#b2f5ae1454)">
+          <g clipPath="url(#6f96e54a09)">
+            <path
+              fill="#ffb400"
+              d="M 168.472656 0.394531 L 168.472656 40.929688 L 0.00390625 40.929688 L 0.00390625 0.394531 Z M 168.472656 0.394531 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
+export const KarrarLogoSVG2 = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    zoomAndPan="magnify"
+    viewBox="0 0 375 374.999991"
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
+    <defs>
+      <clipPath id="0df7b72e9c">
+        <path
+          d="M 52.515625 52.394531 L 101.507812 52.394531 L 101.507812 322.605469 L 52.515625 322.605469 Z M 52.515625 52.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="4dc7d7f340">
+        <path
+          d="M 0.515625 0.394531 L 49.507812 0.394531 L 49.507812 270.605469 L 0.515625 270.605469 Z M 0.515625 0.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="99393916ec">
+        <rect x={0} width={50} y={0} height={271} />
+      </clipPath>
+      <clipPath id="cbbb61b2a1">
+        <path
+          d="M 52.515625 273.984375 L 322.480469 273.984375 L 322.480469 322.605469 L 52.515625 322.605469 Z M 52.515625 273.984375 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="fc2ad1e7c1">
+        <path
+          d="M 0.515625 0.984375 L 270.480469 0.984375 L 270.480469 49.605469 L 0.515625 49.605469 Z M 0.515625 0.984375 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="8e0948a9ea">
+        <rect x={0} width={271} y={0} height={50} />
+      </clipPath>
+      <clipPath id="428479deb5">
+        <path
+          d="M 273.859375 52.394531 L 322.484375 52.394531 L 322.484375 322.605469 L 273.859375 322.605469 Z M 273.859375 52.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="70ae2b936f">
+        <path
+          d="M 0.859375 0.394531 L 49.484375 0.394531 L 49.484375 270.605469 L 0.859375 270.605469 Z M 0.859375 0.394531 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="64c22a9d14">
+        <rect x={0} width={50} y={0} height={271} />
+      </clipPath>
+      <clipPath id="ac4df5b73d">
+        <path
+          d="M 154.058594 52.390625 L 322.476562 52.390625 L 322.476562 101.011719 L 154.058594 101.011719 Z M 154.058594 52.390625 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="852862a683">
+        <path
+          d="M 0.0585938 0.390625 L 168.476562 0.390625 L 168.476562 49.011719 L 0.0585938 49.011719 Z M 0.0585938 0.390625 "
+          clipRule="nonzero"
+        />
+      </clipPath>
+      <clipPath id="f5f1dfa7fd">
+        <rect x={0} width={169} y={0} height={50} />
+      </clipPath>
+    </defs>
+    <rect
+      x={-37.5}
+      width={450}
+      fill="#ffffff"
+      y={-37.499999}
+      height={449.999989}
+      fillOpacity={1}
+    />
+    <rect
+      x={-37.5}
+      width={450}
+      fill="#ffffff"
+      y={-37.499999}
+      height={449.999989}
+      fillOpacity={1}
+    />
+    <g clipPath="url(#0df7b72e9c)">
+      <g transform="matrix(1, 0, 0, 1, 52, 52)">
+        <g clipPath="url(#99393916ec)">
+          <g clipPath="url(#4dc7d7f340)">
+            <path
+              fill="#ffb400"
+              d="M 0.515625 0.394531 L 49.507812 0.394531 L 49.507812 270.605469 L 0.515625 270.605469 Z M 0.515625 0.394531 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#cbbb61b2a1)">
+      <g transform="matrix(1, 0, 0, 1, 52, 273)">
+        <g clipPath="url(#8e0948a9ea)">
+          <g clipPath="url(#fc2ad1e7c1)">
+            <path
+              fill="#ffb400"
+              d="M 270.480469 0.984375 L 270.480469 49.605469 L 0.589844 49.605469 L 0.589844 0.984375 Z M 270.480469 0.984375 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#428479deb5)">
+      <g transform="matrix(1, 0, 0, 1, 273, 52)">
+        <g clipPath="url(#64c22a9d14)">
+          <g clipPath="url(#70ae2b936f)">
+            <path
+              fill="#ffb400"
+              d="M 0.859375 0.394531 L 49.484375 0.394531 L 49.484375 270.664062 L 0.859375 270.664062 Z M 0.859375 0.394531 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g clipPath="url(#ac4df5b73d)">
+      <g transform="matrix(1, 0, 0, 1, 154, 52)">
+        <g clipPath="url(#f5f1dfa7fd)">
+          <g clipPath="url(#852862a683)">
+            <path
+              fill="#ffb400"
+              d="M 168.476562 0.390625 L 168.476562 49.011719 L 0.0078125 49.011719 L 0.0078125 0.390625 Z M 168.476562 0.390625 "
+              fillOpacity={1}
+              fillRule="nonzero"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+);

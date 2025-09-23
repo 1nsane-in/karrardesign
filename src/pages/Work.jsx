@@ -1,12 +1,13 @@
+import { Link } from "react-router";
 import { ConnectSVG, ProjectSVG } from "../assets/svg";
 import Footer from "../components/common/Footer";
 import { useRevealer } from "../hooks/useRevealer";
 const Work = () => {
-  useRevealer(0.4);
+  // useRevealer(0.4);
 
   return (
     <div>
-      <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
+      {/* <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div> */}
       <div className=" flex flex-col items-center justify-center pt-[180px]">
         <p className="text-xs uppercase">WORK</p>
         <h1 className="text-[110px] leading-[120px] uppercase mt-10 font-tan-pearl">
@@ -73,14 +74,17 @@ const Work = () => {
         />
       </div>
       {/* Next Page  - STUDIO */}
-      <div className="pt-40 pb-10 flex flex-col items-center justify-center">
+      <Link
+        to="/contact"
+        className="pt-40 pb-10 flex flex-col items-center justify-center"
+      >
         <p className="text-xs">WORK WITH US</p>
         <h1 className="text-[110px] leading-[150px] font-tan-pearl">CONTACT</h1>
         <div className="w-sm -mt-12">
           <ConnectSVG />
         </div>
-      </div>
-      <Footer />
+      </Link>
+      {/* <Footer /> */}
     </div>
   );
 };

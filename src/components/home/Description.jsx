@@ -11,13 +11,15 @@ const headingVariants = {
 const Description = () => {
   return (
     <div className=" relative">
+      {/* <div className="absolute -top-[100px] left-0 w-full h-[30%] bg-gradient-to-b from-[#645b52]/70 to-transparent"></div> */}
+
       <div
         style={{ perspective: 800 }}
         className="grid grid-cols-5 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh]"
       >
         <div className="col-span-3 lg:col-span-3 flex flex-col justify-end px-5 lg:px-0">
           <motion.h1
-            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl"
+            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -27,7 +29,7 @@ const Description = () => {
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[70px] -mb-3  font-tan-pearl"
+            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[70px] -mb-3  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -37,7 +39,7 @@ const Description = () => {
             Fit-Outs &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px]  font-tan-pearl"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px]  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -47,7 +49,7 @@ const Description = () => {
             Project
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -71,7 +73,7 @@ const Description = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-20">
         <div className={`${styles["button-wrapper"]} font-roboto font-light`}>
           <Link to={"/studio"} className="text-primary">
             <button className={styles.button}>

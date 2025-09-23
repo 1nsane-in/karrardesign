@@ -34,7 +34,7 @@ function App() {
             }
           />
           <Route
-            path="/work"
+            path="/services"
             element={
               <PageWrapper>
                 <Work />

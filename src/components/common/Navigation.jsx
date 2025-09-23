@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router";
-import { ArrowSVG } from "../../assets/svg";
+import { ArrowSVG, KarrarLogoSVG1, KarrarLogoSVG2 } from "../../assets/svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import TransitionOverlay from "./TransitionOverlay";
@@ -54,7 +54,7 @@ const Navigation = () => {
     { name: "HOME", path: "/" },
     { name: "STUDIO", path: "/studio" },
     { name: "KARRAR", path: "/karrar" },
-    { name: "WORK", path: "/work" },
+    { name: "SERVICES", path: "/services" },
     { name: "CONTACT", path: "/contact" },
   ];
 
@@ -75,7 +75,7 @@ const Navigation = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="size-[60px] fixed top-6 left-[10%] -translate-x-1/2 z-50"
           >
-            <img src={KarrarLogo} alt="Karrar Logo" />
+            <KarrarLogoSVG2 />
           </motion.div>
         )}
       </AnimatePresence>
@@ -90,17 +90,17 @@ const Navigation = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
           >
-            <div className="flex items-center uppercase text-sm justify-center gap-30 h-full  text-white font-roboto ">
-              <div>Studio</div>
-              <div>Services</div>
+            <div className="flex items-center uppercase text-sm justify-center  gap-30 h-full  text-white font-roboto ">
+              <div className="text-shadow-lg">Studio</div>
+              <div className="text-shadow-lg">Services</div>
               <div className=" flex flex-col items-center ">
                 <h1 className="font-cinzel text-3xl leading-[30px]">
                   Karrar Design
                 </h1>
-                <p className="text-sm  tracking-widest">Projects</p>
+                <p className="text-[16px] font-medium tracking-widest">Projects</p>
               </div>
-              <div>About</div>
-              <div>Contact</div>
+              <div className="text-shadow-lg">About</div>
+              <div className="text-shadow-md">Contact</div>
             </div>
           </motion.div>
         )}
@@ -114,7 +114,7 @@ const Navigation = () => {
             transition={{ duration: 0.6, ease: "easeInOut" }}
             className="fixed z-50 bottom-10 right-16 w-[80px] hidden lg:block"
           >
-            <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1">
+            <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1 text-zinc-700/70">
               {navItems.map((item) => (
                 <Link
                   to={item.path}

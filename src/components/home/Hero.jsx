@@ -38,12 +38,47 @@ const Hero = () => {
   return (
     <>
       <div className=" h-screen  w-full absolute top-0">
-        {/* <div className="absolute top-0 left-0 w-full h-[35%] bg-gradient-to-b from-black/70 to-transparent"></div> */}
+        <div className="absolute top-0 left-0 w-[45%] h-full bg-gradient-to-r from-black/50 to-transparent"></div>
         <img
           src={HeroBG}
           alt=""
           className="w-full h-full object-cover object-center"
         />
+        <div className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
+          {/* <p className="text-center text-md max-w-2xl">
+            Awarded Best High-End Interior Fit-Out Business 2024, <br /> MEA
+            Excellence Award for MEP Services 2024, <br /> UAE Business Awards
+            2025
+          </p> */}
+          <h1 className="text-[70px] font-cinzel leading-[75px] text-center mt-3">
+            Where Vision Meets Perfection
+          </h1>
+        </div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
+          <motion.p
+            key="hero-line-1"
+            className="text-center text-xl max-w-2xl text-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            From luxury fit-outs to complete project management, we design,
+            build, and deliver spaces that inspire and endure.
+          </motion.p>
+          <motion.p
+            key="hero-line-2"
+            className="text-center text-xl max-w-2xl text-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
+          >
+            Awarded Best High-End Interior Fit-Out Business 2024, <br /> MEA
+            Excellence Award for MEP Services 2024, <br /> UAE Business Awards
+            2025
+          </motion.p>
+        </div>
       </div>
       {/* <div ref={container} className={styles.container}>
         <div className="z-40 w-3/4 mx-auto -mt-10 lg:mt-0">
