@@ -1,22 +1,32 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import { ArrowSVG } from "../../assets/svg";
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import TransitionOverlay from "./TransitionOverlay";
-import { useEffect } from "react";
+import { KarrarLogo } from "../../assets";
 
 const Navigation = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [showOverlay, setShowOverlay] = useState(false);
   const [nextPath, setNextPath] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Prevent body scroll when overlay active
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // threshold
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent body scroll during overlay
   useEffect(() => {
     if (showOverlay) {
-      document.body.style.overflow = "hidden"; // Disable scroll during transition
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Restore scroll
+      document.body.style.overflow = "";
     }
     return () => {
       document.body.style.overflow = "";
@@ -26,7 +36,6 @@ const Navigation = () => {
   const handleNavigation = (path) => (e) => {
     e.preventDefault();
     if (path === pathname) return;
-
     setNextPath(path);
     setShowOverlay(true);
   };
@@ -40,6 +49,7 @@ const Navigation = () => {
       }, 1);
     }
   };
+
   const navItems = [
     { name: "HOME", path: "/" },
     { name: "STUDIO", path: "/studio" },
@@ -55,47 +65,94 @@ const Navigation = () => {
         onAnimationEnd={onOverlayAnimationEnd}
       />
 
-      <div className="fixed z-50 top-10 right-16 w-[80px] hidden lg:block">
-        <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1">
-          {navItems.map((item) => (
-            <Link
-              to={item.path}
-              key={item.name}
-              onClick={handleNavigation(item.path)}
-            >
-              <li
-                className={`flex items-center ${
-                  pathname === item.path ? "text-primary" : ""
-                }`}
-              >
-                <>
-                  {pathname === item.path && (
-                    <motion.span
-                      initial={{ x: -10, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -10, opacity: 0 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      }}
-                    >
-                      <ArrowSVG className="w-3 h-3 mr-1 mt-[2px]" />
-                    </motion.span>
-                  )}
-                  <motion.span
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+      <AnimatePresence>
+        {scrolled && (
+          <motion.div
+            key="logo"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="size-[60px] fixed top-6 left-[10%] -translate-x-1/2 z-50"
+          >
+            <img src={KarrarLogo} alt="Karrar Logo" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* AnimatePresence handles smooth in/out */}
+      <AnimatePresence>
+        {!scrolled && (
+          <motion.div
+            key="topNav"
+            initial={{ y: -80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -80, opacity: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
+          >
+            <div className="flex items-center uppercase text-sm justify-center gap-30 h-full  text-white font-roboto ">
+              <div>Studio</div>
+              <div>Services</div>
+              <div className=" flex flex-col items-center ">
+                <h1 className="font-cinzel text-3xl leading-[30px]">
+                  Karrar Design
+                </h1>
+                <p className="text-sm  tracking-widest">Projects</p>
+              </div>
+              <div>About</div>
+              <div>Contact</div>
+            </div>
+          </motion.div>
+        )}
+
+        {scrolled && (
+          <motion.div
+            key="cornerNav"
+            initial={{ opacity: 0, scale: 0.8, x: 100, y: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, x: 100, y: 50 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="fixed z-50 bottom-10 right-16 w-[80px] hidden lg:block"
+          >
+            <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1">
+              {navItems.map((item) => (
+                <Link
+                  to={item.path}
+                  key={item.name}
+                  onClick={handleNavigation(item.path)}
+                >
+                  <li
+                    className={`flex items-center ${
+                      pathname === item.path ? "text-primary" : ""
+                    }`}
                   >
-                    {item.name}
-                  </motion.span>
-                </>
-              </li>
-            </Link>
-          ))}
-        </ul>
-      </div>
+                    {pathname === item.path && (
+                      <motion.span
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
+                      >
+                        <ArrowSVG className="w-3 h-3 mr-1 mt-[2px]" />
+                      </motion.span>
+                    )}
+                    <motion.span
+                      initial={{ opacity: 0, y: 5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                      {item.name}
+                    </motion.span>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

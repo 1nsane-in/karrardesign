@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styles from "../../styles/hero.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { HeroBG } from "../../assets";
 
 const Hero = () => {
   // const container = useRef(null);
@@ -36,10 +37,10 @@ const Hero = () => {
   // ];
   return (
     <>
-      <div className=" h-screen bg-red-500 w-full absolute top-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black/60"></div>
+      <div className=" h-screen  w-full absolute top-0">
+        {/* <div className="absolute top-0 left-0 w-full h-[35%] bg-gradient-to-b from-black/70 to-transparent"></div> */}
         <img
-          src="https://d33om22pidobo4.cloudfront.net/pages/blocks/images/photo1677063003-1jpeg-b0711d7e-1439-41f3-a6da-2b8d7c264289.jpeg?f=webp"
+          src={HeroBG}
           alt=""
           className="w-full h-full object-cover object-center"
         />

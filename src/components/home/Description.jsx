@@ -13,11 +13,11 @@ const Description = () => {
     <div className=" relative">
       <div
         style={{ perspective: 800 }}
-        className="grid grid-cols-5 container mx-auto  lg:h-[500px] lg:mt-[100vh]"
+        className="grid grid-cols-5 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh]"
       >
         <div className="col-span-3 lg:col-span-3 flex flex-col justify-end px-5 lg:px-0">
           <motion.h1
-            className="uppercase mt-5 lg:text-[80px] text-2xl lg:leading-[90px]  font-tan-pearl"
+            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -27,7 +27,7 @@ const Description = () => {
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase mt-5 lg:text-[80px] text-2xl lg:leading-[90px] -mb-3  font-tan-pearl"
+            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[70px] -mb-3  font-tan-pearl"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -37,7 +37,7 @@ const Description = () => {
             Fit-Outs &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[80px] text-2xl lg:leading-[150px]  font-tan-pearl"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px]  font-tan-pearl"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -47,7 +47,7 @@ const Description = () => {
             Project
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[80px] text-2xl lg:leading-[60px]  font-tan-pearl"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -58,10 +58,10 @@ const Description = () => {
           </motion.h1>
         </div>
         <div className="col-span-2 lg:col-span-2 flex flex-col justify-end items-end text-center lg:text-left px-5 lg:px-0 lg:pt-0 pt-10">
-          <div className="lg:w-md w-40 mb-4 ">
+          <div className="lg:w-xs w-40 mb-4 ">
             <DesignSVG />
           </div>
-          <p className=" text-right text-xl">
+          <p className=" text-right text-lg font-cinzel">
             Karrar Design Projects L.L.C. offers premium interior fit-out and
             project management services across UAE, Canada, and India. With 20+
             years of expertise, we deliver luxury villas, hotels, restaurants,
@@ -72,7 +72,7 @@ const Description = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <div className={styles["button-wrapper"]}>
+        <div className={`${styles["button-wrapper"]} font-roboto font-light`}>
           <Link to={"/studio"} className="text-primary">
             <button className={styles.button}>
               <span className={styles["span-mother"]}>
