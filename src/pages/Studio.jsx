@@ -1,4 +1,7 @@
+import { Link } from "react-router";
+import { ConnectSVG, ProjectSVG } from "../assets/svg";
 import { useRevealer } from "../hooks/useRevealer";
+import { GALLERY_IMAGES } from "../assets/gallery";
 
 const Studio = () => {
   // useRevealer(0.4);
@@ -7,84 +10,49 @@ const Studio = () => {
     <div>
       {/* <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div> */}
       <div className=" flex flex-col items-center justify-center pt-[180px]">
-        <p className="text-xs uppercase">WORK</p>
+        <p className="text-xs uppercase">STUDIO</p>
         <h1 className="text-[110px] leading-[120px] uppercase mt-10 font-tan-pearl">
-          Bespoke
+          Where
         </h1>
         <h1 className="text-[110px] leading-[120px] uppercase font-tan-pearl">
-          turnkey
+          Vision Become
         </h1>
+        <h1 className="text-[110px] leading-[120px] uppercase font-tan-pearl"></h1>
         <h1 className="text-[110px] leading-[120px] uppercase font-tan-pearl">
-          Design
+          Reality
         </h1>
         <div className="-mt-6">
           <ProjectSVG />
         </div>
-      </div>
-      <div className="max-w-5xl mx-auto mt-10">
-        <div className="overflow-hidden w-[60%] mx-auto">
-          <img
-            src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-            alt=""
-            className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-          />
+        <div className="container max-w-5xl mx-auto px-4 py-16 space-y-4">
+          <ImageGrid />
+          <ImageGrid folder={"dubai-mall"} />
+          <ImageGrid folder={"hafiz-mustafa"} />
         </div>
       </div>
-      <div className="overflow-hidden w-[50%] mt-52">
-        <img
-          src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-          alt=""
-          className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-        />
-      </div>
-      <div className="max-w-5xl mx-auto mt-44 flex justify-start">
-        <div className="overflow-hidden w-[70%] h-auto">
-          <img
-            src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-            alt=""
-            className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-          />
-        </div>
-      </div>
-      <div className="max-w-6xl mx-auto mt-44 flex justify-end">
-        <div className="overflow-hidden w-[60%] h-auto">
-          <img
-            src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-            alt=""
-            className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-          />
-        </div>
-      </div>
-      <div className="max-w-5xl mx-auto mt-52">
-        <div className="overflow-hidden w-[60%] aspect-video mx-auto">
-          <img
-            src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-            alt=""
-            className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-          />
-        </div>
-      </div>
-      <div className="overflow-hidden w-[50%] mt-52">
-        <img
-          src="https://aebeleinteriors.com/wp-content/uploads/2024/10/finca-01.2.jpg"
-          alt=""
-          className="w-full h-auto cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
-        />
-      </div>
-      {/* Next Page  - STUDIO */}
-      <Link
-        to="/contact"
-        className="pt-40 pb-10 flex flex-col items-center justify-center"
-      >
-        <p className="text-xs">WORK WITH US</p>
-        <h1 className="text-[110px] leading-[150px] font-tan-pearl">CONTACT</h1>
-        <div className="w-sm -mt-12">
-          <ConnectSVG />
-        </div>
-      </Link>
-      {/* <Footer /> */}
     </div>
   );
 };
 
 export default Studio;
+
+export function ImageGrid({ folder = "al-mandalo" }) {
+  const images = GALLERY_IMAGES[folder];
+
+  return (
+    <div className="grid grid-cols-3 gap-4">
+      {images.map(({ main, fallback }, index) => (
+        <img
+          key={index}
+          src={main}
+          alt={`${folder} image ${index + 1}`}
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = fallback;
+          }}
+        />
+      ))}
+    </div>
+  );
+}
