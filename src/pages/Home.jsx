@@ -6,17 +6,13 @@ import GetInTouch from "../components/home/GetInTouch";
 import Hero from "../components/home/Hero";
 import ImageShowcase from "../components/home/ImageShowcase";
 import TopHeader from "../components/home/TopHeader";
-import { useRevealer } from "../hooks/useRevealer";
 import Testimonial from "../components/home/Testimonial";
 import Example from "../components/ui/image-gallery";
+import Services from "../components/home/Services";
 
 const Home = () => {
-  useRevealer();
-  const navigate = useNavigate();
-
   return (
     <>
-      <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
       <div className="bg-secondary min-h-screen  relative">
         <TopHeader />
         <Hero />
@@ -24,6 +20,9 @@ const Home = () => {
         {/* <ImageShowcase /> */}
         <Example />
         <Testimonial />
+        <div className="App">
+          <Services />
+        </div>
         {/* <div className="pt-40 pb-10 flex flex-col items-center justify-center">
           <p className="text-xs">WHAT WE DO</p>
           <h1

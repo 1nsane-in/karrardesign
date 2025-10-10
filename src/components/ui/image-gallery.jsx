@@ -7,13 +7,13 @@ export default function Example() {
             Where Vision Becomes Reality
           </h1>
           <p className="text-md text-zinc-600 mt-2 font-cinzel">
-            Every project tells a story of precision, creativity, and
-            unmatched craftsmanship.
+            Every project tells a story of precision, creativity, and unmatched
+            craftsmanship.
           </p>
         </div>
 
         {/* Галерея снизу */}
-        <div className="flex items-center gap-2 h-[400px] w-full max-w-5xl mt-10 px-4">
+        <div className="flex items-center gap-2 h-[400px] w-full container 2xl:px-30 mt-10 px-4">
           {[
             "https://images.unsplash.com/photo-1719368472026-dc26f70a9b76?q=80&h=800&w=800&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1649265825072-f7dd6942baed?q=80&h=800&w=800&auto=format&fit=crop",

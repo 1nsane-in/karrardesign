@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { ConnectSVG, ProjectSVG } from "../assets/svg";
-import { useRevealer } from "../hooks/useRevealer";
 import { GALLERY_IMAGES } from "../assets/gallery";
 
 const Studio = () => {
@@ -8,7 +7,6 @@ const Studio = () => {
 
   return (
     <div>
-      {/* <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div> */}
       <div className=" flex flex-col items-center justify-center pt-[180px]">
         <p className="text-xs uppercase">STUDIO</p>
         <h1 className="text-[110px] leading-[120px] uppercase mt-10 font-tan-pearl">

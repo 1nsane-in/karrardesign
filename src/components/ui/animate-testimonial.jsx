@@ -36,7 +36,7 @@ export const AnimatedTestimonials = ({
   return (
     <div
       className={cn(
-        "max-w-sm md:max-w-7xl mx-auto px-4 md:px-8 py-20 mt-20",
+        "max-w-sm md:max-w-7xl 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20 mt-20",
         className
       )}
     >

@@ -42,14 +42,15 @@ html {
   scrollbar-width: none;
 }
 
-.revealer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
+.container-services {
+  width: 500vw; /* Adjusted for 5 panels */
   height: 100vh;
-  transform-origin: center top;
-  background-color: var(--color-primary) !important;
-  pointer-events: none;
-  z-index: 99999;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.sticky {
+  position: sticky;
+  transform: translate3d(0, 0, 0);
 }

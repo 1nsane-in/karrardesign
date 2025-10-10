@@ -8,8 +8,6 @@ import { KarrarLogo } from "../../assets";
 const Navigation = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [nextPath, setNextPath] = useState(null);
   const [scrolled, setScrolled] = useState(false);
 
   const isHomePage = pathname === "/";
@@ -25,31 +23,15 @@ const Navigation = () => {
 
   // Prevent body scroll during overlay
   useEffect(() => {
-    if (showOverlay) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [showOverlay]);
+  }, []);
 
   const handleNavigation = (path) => (e) => {
     e.preventDefault();
-    if (path === pathname) return;
-    setNextPath(path);
-    setShowOverlay(true);
-  };
-
-  const onOverlayAnimationEnd = () => {
-    if (nextPath) {
-      navigate(nextPath);
-      setTimeout(() => {
-        setShowOverlay(false);
-        setNextPath(null);
-      }, 1);
-    }
+    navigate(path);
   };
 
   const navItems = [
@@ -62,11 +44,6 @@ const Navigation = () => {
 
   return (
     <>
-      <TransitionOverlay
-        show={showOverlay}
-        onAnimationEnd={onOverlayAnimationEnd}
-      />
-
       <AnimatePresence>
         {scrolled && (
           <motion.div
