@@ -8,6 +8,7 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -54,6 +55,14 @@ function App() {
             element={
               <PageWrapper>
                 <Karrar />
+              </PageWrapper>
+            }
+          />
+          <Route
+            path="/studio/:projectId"
+            element={
+              <PageWrapper>
+                <ProjectDetail />
               </PageWrapper>
             }
           />
