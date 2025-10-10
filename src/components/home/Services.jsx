@@ -55,7 +55,7 @@ const Services = () => {
     <>
       <div
         ref={headerRef}
-        className="mt-40 sticky top-0 flex items-center justify-center flex-col z-50 transition-transform origin-center py-4"
+        className="mt-40 sticky top-0 flex items-center justify-center flex-col  transition-transform origin-center py-4"
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[70px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
           Services
@@ -63,32 +63,52 @@ const Services = () => {
       </div>
       <div className="App" ref={component}>
         <div ref={slider} className="container-services">
-          <div className="w-screen  flex h-screen items-center justify-center flex-col relative">
-            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
+          <div className="panel flex items-center justify-center flex-col relative w">
+            {/* <div className="absolute top-[35%] left-[60%] -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="h-[300px] w-[450px] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/1.jpg"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="absolute top-[60%] left-[40%] -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="h-[300px] w-[450px] relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
+                <img
+                  src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/10.jpg"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div> */}
+            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700  mb-4 sm:mb-6 px-6 sm:px-0">
               Interior Fit-Out Works, <br />
               Project Management
             </h1>
           </div>
-          <div className="w-screen  flex h-screen items-center justify-center flex-col relative">
-            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
+          <div className="panel flex items-center justify-center flex-col">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
               Construction Management, <br />
               Design Management
             </h1>
           </div>
-          <div className="w-screen  flex h-screen items-center justify-center flex-col relative">
-            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
+          <div className="panel flex items-center justify-center flex-col">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
               Tender Management, <br />
               Client Representation
             </h1>
           </div>
-          <div className="w-screen  flex h-screen items-center justify-center flex-col relative">
-            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
+          <div className="panel flex items-center justify-center flex-col">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl text-center lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
               Consultancy Services, <br />
               Value Engineering & Cost Analysis
             </h1>
           </div>
-          <div className="w-screen  flex h-screen items-center justify-center flex-col relative">
-            <h1 className="text-2xl absolute z-20 sm:text-3xl md:text-4xl lg:text-[50px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
+          <div className="panel flex items-center justify-center flex-col">
+            <h1 className="text-2xl sm:text-3xl text-center md:text-4xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
               Procurement, <br />
               Claims Management & Troubleshooting
             </h1>

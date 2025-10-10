@@ -47,10 +47,18 @@ html {
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden;
+  position: relative; /* Added */
 }
 
 .sticky {
   position: sticky;
   transform: translate3d(0, 0, 0);
+}
+
+.panel {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden; /* Added */
 }
