@@ -8,6 +8,7 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
