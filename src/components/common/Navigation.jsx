@@ -93,20 +93,20 @@ const Navigation = () => {
             className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
           >
             <div
-              className={`flex items-center uppercase text-sm justify-center  gap-30 h-full  font-roboto ${isHomePage ? "text-white" : "text-black"}`}
+              className={`flex items-center uppercase text-sm justify-center gap-30 h-full font-roboto ${isHomePage ? "text-zinc-800" : "text-black"}`}
             >
-              <div className="text-shadow-lg">Studio</div>
-              <div className="text-shadow-lg">Services</div>
-              <div className=" flex flex-col items-center ">
-                <h1 className="font-cinzel text-3xl leading-[30px]">
+              <div className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">Studio</div>
+              <div className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">Services</div>
+              <div className="flex flex-col items-center">
+                <h1 className="font-tan-pearl text-3xl leading-[30px] text-zinc-800">
                   Karrar Design
                 </h1>
-                <p className="text-[16px] font-medium tracking-widest">
-                  Projects
+                <p className="text-[14px] font-light tracking-[0.2em] text-zinc-600">
+                  Luxury Interiors
                 </p>
               </div>
-              <div className="text-shadow-lg">About</div>
-              <div className="text-shadow-md">Contact</div>
+              <div className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">About</div>
+              <div className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">Contact</div>
             </div>
           </motion.div>
         )}
@@ -128,9 +128,8 @@ const Navigation = () => {
                   onClick={handleNavigation(item.path)}
                 >
                   <li
-                    className={`flex items-center ${
-                      pathname === item.path ? "text-primary" : ""
-                    }`}
+                    className={`flex items-center ${pathname === item.path ? "text-primary" : ""
+                      }`}
                   >
                     {pathname === item.path && (
                       <motion.span

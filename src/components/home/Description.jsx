@@ -15,7 +15,7 @@ const Description = () => {
 
       <div
         style={{ perspective: 800 }}
-        className="grid grid-cols-5 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh]"
+        className="grid grid-cols-5 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-20"
       >
         <div className="col-span-3 lg:col-span-3 flex flex-col justify-end px-5 lg:px-0">
           <motion.h1

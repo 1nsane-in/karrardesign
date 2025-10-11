@@ -1,141 +1,211 @@
-import { useRef } from "react";
-import styles from "../../styles/hero.module.scss";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { HeroBG } from "../../assets";
-import { TextLoop } from "../ui/text-loop";
+import { KarrarLogo } from "../../assets";
 
 const Hero = () => {
-  // const container = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const containerRef = useRef(null);
 
-  // // Framer Motion scroll progress for parallax effect
-  // const { scrollYProgress } = useScroll({
-  //   target: container,
-  //   offset: ["start end", "end start"],
-  // });
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
 
-  // // Parallax motion values for images and heading
-  // const md = useTransform(scrollYProgress, [0, 1], [0, -250]);
-  // const lg = useTransform(scrollYProgress, [0, 1], [0, -400]);
-  // const xl = useTransform(scrollYProgress, [0, 1], [0, -450]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.8], [0.1, 0.9]);
 
-  // const images = [
-  //   {
-  //     src: "https://aebeleinteriors.com/wp-content/uploads/2020/09/aebele-hero-2-800x1158.webp",
-  //     y: 0,
-  //   },
-  //   {
-  //     src: "https://aebeleinteriors.com/wp-content/uploads/2020/09/aebele-hero-1-800x1146.webp",
-  //     y: lg,
-  //   },
-  //   {
-  //     src: "https://aebeleinteriors.com/wp-content/uploads/2020/09/aebele-hero-2-800x1158.webp",
-  //     y: md,
-  //   },
-  //   {
-  //     src: "https://aebeleinteriors.com/wp-content/uploads/2020/09/aebele-hero-2-800x1158.webp",
-  //     y: xl,
-  //   },
-  // ];
+  const experiences = [
+    {
+      number: "01",
+      category: "Design Excellence",
+      title: "Crafting Spaces That Define Luxury",
+      description: "Where every detail speaks of sophistication"
+    },
+    {
+      number: "02",
+      category: "Award Recognition",
+      title: "Best Interior Fit-Out Business 2024",
+      description: "Excellence recognized across the industry"
+    },
+    {
+      number: "03",
+      category: "Complete Solutions",
+      title: "From Vision to Masterpiece",
+      description: "End-to-end luxury interior solutions"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % experiences.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 100,
+        y: (e.clientY / window.innerHeight) * 100
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
-    <>
-      <div className=" h-screen  w-full absolute top-0">
-        <div className="absolute top-0 left-0 w-[45%] h-full bg-gradient-to-r from-black/50 to-transparent"></div>
-        <img
-          src={HeroBG}
-          alt=""
-          className="w-full h-full object-cover object-center"
+    <section ref={containerRef} className="relative h-screen overflow-hidden bg-white">
+      {/* Dynamic Background with Mouse Parallax */}
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          scale: imageScale,
+          y: imageY
+        }}
+      >
+        <motion.div
+          className="w-full h-full"
+          animate={{
+            backgroundPosition: `${mousePosition.x}% ${mousePosition.y}%`
+          }}
+          transition={{ type: "spring", stiffness: 50, damping: 30 }}
+          style={{
+            backgroundImage: `url(${HeroBG})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            filter: 'brightness(1.1) ',
+            opacity: 1
+          }}
         />
-        <div className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
-          {/* <p className="text-center text-md max-w-2xl">
-            Awarded Best High-End Interior Fit-Out Business 2024, <br /> MEA
-            Excellence Award for MEP Services 2024, <br /> UAE Business Awards
-            2025
-          </p> */}
-          <h1 className="text-[70px] font-cinzel leading-[75px] text-center mt-3">
-            Where Vision Meets Perfection
-          </h1>
-        </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
-          <motion.p
-            key="hero-line-1"
-            className="text-center text-xl max-w-2xl text-shadow-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            From luxury fit-outs to complete project management, we design,
-            build, and deliver spaces that inspire and endure.
-          </motion.p>
-          {/* <motion.p
-            key="hero-line-2"
-            className="text-center text-xl max-w-2xl text-shadow-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.8, ease: "easeInOut", delay: 0.2 }}
-          >
-            Awarded Best High-End Interior Fit-Out Business 2024, <br /> MEA
-            Excellence Award for MEP Services 2024, <br /> UAE Business Awards
-            2025
-          </motion.p> */}
-          {/* <TextLoop>
-            {[
-              "How can I assist you today?",
-              "Generate a logo",
-              "Create a component",
-              "Draw a diagram",
-            ].map((text) => (
-              <span key={text} className="block text-left">
-                {text}
-              </span>
-            ))}
-          </TextLoop> */}
-        </div>
-      </div>
-      {/* <div ref={container} className={styles.container}>
-        <div className="z-40 w-3/4 mx-auto -mt-10 lg:mt-0">
-          <svg
-            viewBox="0 0 1257 305"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M356.295 221.343C337.978 291.057 319.226 300.207 262.969 301.514H234.186C215.434 301.514 207.584 295.85 207.584 277.114V150.321H241.164C271.255 150.321 287.391 164.264 293.932 195.2H296.113V105.879H293.932C287.391 134.2 273.871 146.836 241.164 146.836H207.584V3.48572H267.766C316.609 3.48572 332.745 23.5286 341.467 70.5857H343.648V0H126.033V2.17857L136.064 3.92143C152.199 6.97144 159.177 12.6357 159.177 23.0929C159.177 29.1929 156.124 38.7786 149.583 52.2857L48.8433 258.379C36.1964 284.086 23.9856 298.029 4.36101 301.95L0 302.821V305H78.9343V302.821L70.6484 301.95C54.0765 300.207 45.7906 293.671 45.7906 282.343C45.7906 276.243 47.9711 268.836 52.3321 260.121L81.1148 200.864H177.057V277.55C177.057 292.8 165.718 300.207 151.327 301.95L143.477 302.821V305H352.806L358.475 221.343H356.295ZM177.057 4.35714V197.379H82.8592L177.057 4.35714Z"
-              fill="#ffb400"
-            ></path>
-            <path
-              d="M505.322 142.043C542.391 135.507 572.482 111.107 572.482 71.4571C572.482 47.9286 563.323 30.0643 544.571 17.8643C525.819 6.1 503.141 0 476.103 0H367.078V2.17857L375.364 3.05001C389.319 4.79287 400.658 13.0714 400.658 27.45V277.55C400.658 291.929 389.319 300.207 375.364 301.95L367.078 302.821V305H488.75C545.443 305 587.309 274.064 587.309 222.214C587.309 171.671 547.188 145.529 505.322 142.043ZM473.923 3.48572C517.969 3.48572 540.21 26.5786 540.21 73.2C540.21 118.95 517.533 140.736 478.72 140.736H431.185V3.48572H473.923ZM457.351 301.514C438.598 301.514 431.185 296.286 431.185 277.55V144.221H474.795C524.074 144.221 552.857 169.493 552.857 223.957C552.857 279.729 531.924 301.514 487.006 301.514H457.351Z"
-              fill="#ffb400"
-            ></path>
-            <path
-              d="M811.036 221.343C792.719 291.057 773.967 300.207 717.71 301.514H685.002C666.25 301.514 658.4 295.85 658.4 277.114V150.321H695.905C725.996 150.321 742.132 164.264 748.673 195.2H750.854V105.879H748.673C742.132 134.2 728.612 146.836 695.905 146.836H658.4V3.48572H722.507C771.35 3.48572 787.486 23.5286 796.208 70.5857H798.389V0H594.293V2.17857L602.579 3.05001C619.587 4.79287 627.873 13.0714 627.873 27.45V277.55C627.873 291.929 619.587 300.207 602.579 301.95L594.293 302.821V305H807.547L813.216 221.343H811.036Z"
-              fill="#ffb400"
-            ></path>
-            <path
-              d="M821.935 302.821V305H1027.34L1033.88 215.243H1031.7C1018.18 277.114 997.683 301.514 936.193 301.514H912.644C893.891 301.514 886.042 295.85 886.042 277.114V27.45C886.042 11.7643 896.944 4.79287 911.335 3.05001L919.185 2.17857V0H821.935V2.17857L830.221 3.05001C847.229 4.79287 855.514 13.0714 855.514 27.45V277.55C855.514 291.929 847.229 300.207 830.221 301.95L821.935 302.821Z"
-              fill="#ffb400"
-            ></path>
-            <path
-              d="M1254.82 221.343C1236.5 291.057 1217.75 300.207 1161.49 301.514H1128.79C1110.03 301.514 1102.18 295.85 1102.18 277.114V150.321H1139.69C1169.78 150.321 1185.92 164.264 1192.46 195.2H1194.64V105.879H1192.46C1185.92 134.2 1172.4 146.836 1139.69 146.836H1102.18V3.48572H1166.29C1215.13 3.48572 1231.27 23.5286 1239.99 70.5857H1242.17V0H1038.08V2.17857L1046.36 3.05001C1063.37 4.79287 1071.66 13.0714 1071.66 27.45V277.55C1071.66 291.929 1063.37 300.207 1046.36 301.95L1038.08 302.821V305H1251.33L1257 221.343H1254.82Z"
-              fill="#ffb400"
-            ></path>
-          </svg>
-        </div>
 
-        <div className={`${styles.images}`}>
-          {images.map(({ src, y }, i) => (
-            <motion.div
-              style={{ y }}
-              key={`i_${i}`}
-              className={styles.imageContainer}
-            >
-              <img src={src} alt="image" className={styles.img} />
-            </motion.div>
-          ))}
+        {/* Light Luxury Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-zinc-50/5 to-amber-50/5" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-100/8 via-white/3 to-white/10" />
+
+        {/* Dynamic Light Overlay */}
+        <motion.div
+          className="absolute inset-0"
+          style={{ opacity: overlayOpacity }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent" />
+        </motion.div>
+      </motion.div>
+
+      {/* Luxury Noise Texture */}
+      <div
+        className="absolute inset-0 pointer-events-none z-10 opacity-[0.02]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          mixBlendMode: 'multiply'
+        }}
+      />
+
+      {/* Geometric Elements */}
+      <div className="absolute top-1/4 right-1/4 w-px h-32 bg-gradient-to-b from-transparent via-zinc-400/40 to-transparent transform rotate-45 hidden lg:block" />
+      <div className="absolute bottom-1/3 left-1/5 w-px h-24 bg-gradient-to-t from-transparent via-[#ffb400]/50 to-transparent transform -rotate-12 hidden lg:block" />
+
+      {/* Main Content */}
+      <motion.div
+        style={{ y: textY }}
+        className="relative z-20 h-full flex items-center"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex justify-center items-center">
+            {/* Centered Dynamic Content */}
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="space-y-8 max-w-2xl"
+              >
+                {/* Experience Counter */}
+                <div className="flex items-center justify-center gap-8 mb-12">
+                  {experiences.map((_, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className={`w-2 h-2 rounded-full transition-all duration-500 ${index === currentIndex ? 'bg-[#ffb400] scale-125' : 'bg-zinc-300'
+                        }`} />
+                      {index < experiences.length - 1 && (
+                        <div className="w-8 h-px bg-zinc-200" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Dynamic Content */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -30 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="space-y-6"
+                  >
+                    <div className="text-center">
+                      <div className="text-sm uppercase tracking-wider text-[#ffb400] mb-1">
+                        {experiences[currentIndex].category}
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-tan-pearl text-zinc-800 leading-tight">
+                        {experiences[currentIndex].title}
+                      </h2>
+                    </div>
+
+                    <p className="text-lg text-zinc-600 font-light leading-relaxed max-w-md mx-auto text-center">
+                      {experiences[currentIndex].description}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Elegant CTA */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1.2 }}
+                  className="pt-8 flex justify-center"
+                >
+                  <div className="group cursor-pointer inline-flex items-center gap-4">
+                    <span className="text-sm uppercase tracking-wider text-zinc-500 group-hover:text-[#ffb400] transition-colors duration-300">
+                      Explore Our Work
+                    </span>
+                    <div className="w-12 h-px bg-zinc-300 group-hover:bg-[#ffb400] transition-colors duration-300" />
+                    <div className="w-2 h-2 border border-zinc-300 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </div>
-      </div> */}
-    </>
+      </motion.div>
+
+      {/* Bottom Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+      >
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-px h-8 bg-zinc-300"></div>
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-1 h-1 bg-[#ffb400] rounded-full"
+            />
+          </div>
+          <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 rotate-90 origin-center">
+            Scroll
+          </span>
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
