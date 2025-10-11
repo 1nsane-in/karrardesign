@@ -16,8 +16,8 @@ export default function Example() {
         <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
           {[
             "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/3.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/hafiz-mustafa/7.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
             "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
             "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
           ].map((src, idx) => (
