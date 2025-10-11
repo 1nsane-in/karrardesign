@@ -18,14 +18,26 @@ const headingVariants = {
 const Contact = () => {
   return (
     <>
+      {/* Noise Grain Overlay */}
+      <div
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          mixBlendMode: "multiply",
+        }}
+      ></div>
+
       <div
         style={{ perspective: 800 }}
         className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0"
       >
+        {/* Page Identifier - Centered Above Main Content */}
         <motion.div
           initial="hidden"
-          animate="visible"
-          className="flex items-center justify-center md:justify-start gap-1 sm:gap-2 mb-1"
+          animate={"visible"}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+          className="flex items-center justify-center gap-1 sm:gap-2 mb-8 sm:mb-12 lg:mb-16"
         >
           <img
             src={KarrarLogo}
@@ -34,7 +46,9 @@ const Contact = () => {
           />
           <p className="text-xs uppercase text-zinc-600">Contact</p>
         </motion.div>
-        <div className="lg:mt-10 mt-4 uppercase text-center md:text-left flex flex-col items-center md:items-start justify-center w-fit mx-auto">
+
+        {/* Main Heading Unit - Centered */}
+        <div className="uppercase text-left flex flex-col items-start justify-center w-fit mx-auto">
           <motion.h1
             initial="hidden"
             animate="visible"

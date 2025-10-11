@@ -4,37 +4,10 @@ import { motion } from "framer-motion";
 import { KarrarLogo } from "../assets";
 import { Link } from "react-router";
 import { ConnectSVG, ProjectSVG } from "../assets/svg";
-import { useEffect } from "react";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0 },
-};
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const projectVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
 };
 
 const projects = [
@@ -162,16 +135,25 @@ const projects = [
 
 const Studio = () => {
   return (
-    <div>
+    <>
+      {/* Noise Grain Overlay */}
+      <div
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          mixBlendMode: "multiply",
+        }}
+      ></div>
+
       {/* Hero Section */}
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-[200px] sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
+        className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
       >
         <motion.div
           variants={headingVariants}
           initial="hidden"
-          animate="visible"
+          animate={"visible"}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
           className="flex items-center justify-center gap-2 sm:gap-3 mb-2"
@@ -188,7 +170,7 @@ const Studio = () => {
           <motion.h1
             variants={headingVariants}
             initial="hidden"
-            animate="visible"
+            animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
@@ -201,7 +183,7 @@ const Studio = () => {
         <motion.div
           variants={headingVariants}
           initial="hidden"
-          animate="visible"
+          animate={"visible"}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="mt-2 sm:mt-4 lg:mt-6"
@@ -217,7 +199,7 @@ const Studio = () => {
         <motion.div
           variants={headingVariants}
           initial="hidden"
-          animate="visible"
+          animate={"visible"}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           className="flex justify-center -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8"
@@ -230,64 +212,55 @@ const Studio = () => {
 
       {/* List of Projects Section */}
       <section className="projects-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1400px] mx-auto"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+          {/* Project Items */}
           {projects.map((project, index) => (
-            <motion.div
+            <Link
               key={index}
-              variants={projectVariants}
-              className="project-item"
+              to={`/studio/${project.slug}`}
+              className="project-item flex flex-col items-center p-2 sm:p-4 lg:p-6 no-underline"
             >
-              <Link
-                to={`/studio/${project.slug}`}
-                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 no-underline"
-              >
-                <div className="relative w-full aspect-[4/3] group cursor-pointer overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Hover Curtain Overlay */}
-                  <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
-                    <div className="text-center transform -translate-y-4 sm:-translate-y-6 lg:-translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1200 delay-300 ease-out">
-                      <span className="text-sm sm:text-base lg:text-lg xl:text-xl text-zinc-800 tracking-wide font-medium">
-                        VIEW PROJECT
-                      </span>
-                    </div>
+              <div className="relative w-full aspect-[4/3] group cursor-pointer overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                {/* Hover Curtain Overlay */}
+                <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
+                  <div className="text-center transform -translate-y-4 sm:-translate-y-6 lg:-translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1200 delay-300 ease-out">
+                    <span className="text-sm sm:text-base lg:text-lg xl:text-xl text-zinc-800 tracking-wide font-medium">
+                      VIEW PROJECT
+                    </span>
                   </div>
                 </div>
-                <div className="mt-2 sm:mt-3 w-full flex justify-between items-end">
-                  <div className="flex flex-col gap-0 text-left">
-                    <div className="flex items-center gap-2 mb-1">
-                      <img
-                        src={KarrarLogo}
-                        alt="Karrar Logo"
-                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
-                      />
-                      <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
-                        {project.title}
-                      </span>
-                    </div>
-                    <span className="block text-xs sm:text-sm text-zinc-600">
-                      {project.location}
+              </div>
+              <div className="mt-2 sm:mt-3 w-full flex justify-between items-end">
+                <div className="flex flex-col gap-0 text-left">
+                  <div className="flex items-center gap-2 mb-1">
+                    <img
+                      src={KarrarLogo}
+                      alt="Karrar Logo"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
+                    />
+                    <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
+                      {project.title}
                     </span>
                   </div>
-                  <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                    <span className="font-bold">{project.category}</span>
-                    <span className="text-xs sm:text-sm font-normal text-zinc-600">
-                      {project.service}
-                    </span>
+                  <span className="block text-xs sm:text-sm text-zinc-600">
+                    {project.location}
                   </span>
                 </div>
-              </Link>
-            </motion.div>
+                <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
+                  <span className="font-bold">{project.category}</span>
+                  <span className="text-xs sm:text-sm font-normal text-zinc-600">
+                    {project.service}
+                  </span>
+                </span>
+              </div>
+            </Link>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       {/* Project Philosophy Section */}
@@ -358,7 +331,7 @@ const Studio = () => {
       <motion.div
         variants={headingVariants}
         initial="hidden"
-        animate="visible"
+        animate={"visible"}
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
       >
@@ -371,29 +344,8 @@ const Studio = () => {
           </div>
         </Link>
       </motion.div>
-    </div>
+    </>
   );
 };
 
 export default Studio;
-
-export function ImageGrid({ folder = "al-mandalo" }) {
-  const images = GALLERY_IMAGES[folder];
-
-  return (
-    <div className="grid grid-cols-3 gap-4">
-      {images.map(({ main, fallback }, index) => (
-        <img
-          key={index}
-          src={main}
-          alt={`${folder} image ${index + 1}`}
-          style={{ width: "100%", height: "auto", objectFit: "cover" }}
-          onError={(e) => {
-            e.currentTarget.onerror = null;
-            e.currentTarget.src = fallback;
-          }}
-        />
-      ))}
-    </div>
-  );
-}

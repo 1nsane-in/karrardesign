@@ -73,7 +73,7 @@ const Navigation = () => {
             className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
           >
             <div
-              className={`flex items-center uppercase text-sm justify-center  gap-30 h-full  font-roboto ${isHomePage ? "text-white" : "text-black"}`}
+              className={`flex items-center uppercase text-sm justify-center gap-30 h-full font-roboto ${isHomePage ? "text-zinc-800" : "text-black"}`}
             >
               <Link to="/studio" className="text-shadow-lg hidden lg:block">
                 Studio
@@ -134,9 +134,8 @@ const Navigation = () => {
                   onClick={handleNavigation(item.path)}
                 >
                   <li
-                    className={`flex items-center ${
-                      pathname === item.path ? "text-primary" : ""
-                    }`}
+                    className={`flex items-center ${pathname === item.path ? "text-primary" : ""
+                      }`}
                   >
                     {pathname === item.path && (
                       <motion.span
