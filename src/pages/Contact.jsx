@@ -29,7 +29,7 @@ const Contact = () => {
 
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0"
+        className="max-w-6xl mx-auto mt-40 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0"
       >
         {/* Page Identifier - Centered Above Main Content */}
         <motion.div
@@ -103,18 +103,18 @@ const Contact = () => {
             className="pointer-events-none select-none absolute right-2 sm:right-8 bottom-2 sm:bottom-6 w-16 sm:w-24 md:w-32 opacity-10"
           />
         </div>
-        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-0 flex-col lg:flex-row px-4 lg:px-0 relative justify-center">
+        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           <div>
             <h1 className=" font-bold uppercase text-sm">Dubai</h1>
             <div>
-              <p className="max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
                 Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh
                 Zayed Road <br />
                 PO Box: 31303, Dubai, UAE
               </p>
             </div>
             <div className="mt-8">
-              <p className="max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
                 Karrar Design - Projects LLC, Dubai Commercity Building B2,
                 11-17th St, <br /> Umm Ramool, Dubai, UAE
               </p>
@@ -122,7 +122,7 @@ const Contact = () => {
           </div>
           <div>
             <h1 className=" font-semibold uppercase text-sm">Canada</h1>
-            <p className="max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
               Karrar Design - Projects Inc. 3695 Kaneff Cresent Suite 1712,
               Mississauga. LSA 4B, Ontario, Canada
             </p>
@@ -130,7 +130,7 @@ const Contact = () => {
 
           <div>
             <h1 className=" font-bold uppercase text-sm">India</h1>
-            <p className="max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
               Karrar Design - Projects Inc.
             </p>
             <p className="text-zinc-600">
@@ -156,7 +156,6 @@ const Contact = () => {
                 +971-50-459-1031
               </a>
             </p>
-            {/* <p className="text-gray-600 mt-1">+971-04-313-2064</p> */}
             <p className="text-zinc-600 mt-1">
               <a
                 href="tel:+971508600624"
@@ -173,7 +172,7 @@ const Contact = () => {
                 +1-647-949-4284
               </a>
             </p>
-            <p className="text-zinc-600 mt-1">
+            <p className="text-zinc-600 mt-1 mb-10">
               <a
                 href="tel:+916366443351"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
