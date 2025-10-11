@@ -134,8 +134,9 @@ const Navigation = () => {
                   onClick={handleNavigation(item.path)}
                 >
                   <li
-                    className={`flex items-center ${pathname === item.path ? "text-primary" : ""
-                      }`}
+                    className={`flex items-center ${
+                      pathname === item.path ? "text-primary" : ""
+                    }`}
                   >
                     {pathname === item.path && (
                       <motion.span

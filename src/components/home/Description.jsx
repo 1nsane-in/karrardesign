@@ -11,11 +11,9 @@ const headingVariants = {
 const Description = () => {
   return (
     <div className=" relative">
-      {/* <div className="absolute -top-[100px] left-0 w-full h-[30%] bg-gradient-to-b from-[#645b52]/70 to-transparent"></div> */}
-
       <div
         style={{ perspective: 800 }}
-        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh] pt-[100vh] lg:pt-0"
+        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto  2xl:px-30 lg:h-[500px]  lg:pt-0"
       >
         <div className="col-span-3 lg:col-span-3 flex flex-col lg:justify-end justify-center items-center lg:items-start px-5 lg:px-0 ">
           <motion.h1

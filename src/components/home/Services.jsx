@@ -173,7 +173,7 @@ const Services = () => {
                 {/* Services Carousel */}
                 <div className="relative">
                     {/* Carousel Container */}
-                    <div className="overflow-hidden rounded-xl">
+                    <div className="overflow-hidden rounded-xl pb-10">
                         <motion.div
                             key={currentSlide}
                             initial={{ opacity: 0, x: 100 }}
@@ -192,8 +192,8 @@ const Services = () => {
                                     className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-200 hover:border-[#ffb400]/30"
                                 >
                                     {/* Service Icon & Number */}
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className="text-3xl">{service.icon}</div>
+                                    <div className="flex items-center justify-end mb-4">
+                                        {/* <div className="text-3xl">{service.icon}</div> */}
                                         <span className="text-2xl font-tan-pearl text-[#ffb400]/30 group-hover:text-[#ffb400] transition-colors">
                                             {service.number}
                                         </span>
