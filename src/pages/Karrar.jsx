@@ -33,60 +33,92 @@ const Karrar = () => {
 
   return (
     <>
+      {/* Noise Grain Overlay */}
+      <div
+        className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-20"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          mixBlendMode: 'multiply'
+        }}
+      ></div>
+
       <div className="revealer fixed top-0 left-0 w-full h-full bg-primary origin-top z-50"></div>
 
       {/* Hero Section */}
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
+        className="max-w-7xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-8"
       >
-        <motion.div
-          variants={headingVariants}
-          initial="hidden"
-          animate={isRevealed ? "visible" : "hidden"}
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
-          className="flex items-center justify-center gap-2 sm:gap-3 mb-2"
-        >
-          <img src={KarrarLogo} alt="Karrar Logo" className="w-3 h-3 sm:w-4 sm:h-4 opacity-60" />
-          <p className="text-xs uppercase text-zinc-600">About Us</p>
-        </motion.div>
-
-        <div className="mt-4 sm:mt-6 lg:mt-10">
-          <motion.h1
+        {/* Header */}
+        <div className="text-center mb-12 lg:mb-20">
+          <motion.div
             variants={headingVariants}
             initial="hidden"
             animate={isRevealed ? "visible" : "hidden"}
             viewport={{ once: true, amount: 0.8 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+            className="flex items-center justify-center gap-2 sm:gap-3 mb-2"
           >
-            Crafting Luxury, <br />
-            Delivering Excellence
-          </motion.h1>
+            <img src={KarrarLogo} alt="Karrar Logo" className="w-3 h-3 sm:w-4 sm:h-4 opacity-60" />
+            <p className="text-xs uppercase text-zinc-600">About Us</p>
+          </motion.div>
+
+          <div className="mt-4 sm:mt-6 lg:mt-10">
+            <motion.h1
+              variants={headingVariants}
+              initial="hidden"
+              animate={isRevealed ? "visible" : "hidden"}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+            >
+              Crafting Luxury, <br />
+              Delivering Excellence
+            </motion.h1>
+          </div>
         </div>
 
-        {/* Company Description */}
-        <motion.div
-          variants={headingVariants}
-          initial="hidden"
-          animate={isRevealed ? "visible" : "hidden"}
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          className="mt-12 sm:mt-16 lg:mt-20"
-        >
-          <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700 mb-4 sm:mb-6">
+        {/* Split Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center mt-16 sm:mt-20 lg:mt-24">
+          {/* Hero Image */}
+          <motion.div
+            variants={headingVariants}
+            initial="hidden"
+            animate={isRevealed ? "visible" : "hidden"}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            className="relative lg:col-span-2"
+          >
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                alt="Luxury Interior Design by Karrar"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div>
+          </motion.div>
+
+          {/* Company Description */}
+          <motion.div
+            variants={headingVariants}
+            initial="hidden"
+            animate={isRevealed ? "visible" : "hidden"}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            className="lg:col-span-3 text-center lg:text-left"
+          >
+            <p className="text-base sm:text-lg leading-relaxed text-zinc-700 mb-6">
               Karrar Design Projects is a premier interior design and project management firm with operations across the <strong className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">UAE, India, and Canada</strong>. With over two decades of experience, we specialize in luxury interiors, high-end fit-out works, and comprehensive project management solutions.
             </p>
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700 mb-4 sm:mb-6">
+            <p className="text-base sm:text-lg leading-relaxed text-zinc-700 mb-6">
               Our philosophy is simple yet profound: every project must embody <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">timeless elegance, uncompromising quality, and seamless execution</strong>. From iconic hospitality destinations to private luxury residences, we deliver environments that not only inspire but also elevate the lifestyle of our clients.
             </p>
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700">
+            <p className="text-base sm:text-lg leading-relaxed text-zinc-700">
               We operate as an <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">extension of our clients&apos; vision</strong>, orchestrating every detail with precision, managing cost and time efficiently, and ensuring that every space tells its own story of sophistication.
             </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Our Philosophy Section */}
@@ -102,7 +134,7 @@ const Karrar = () => {
             <img src={KarrarLogo} alt="Karrar Logo" className="w-3 h-3 sm:w-4 sm:h-4 opacity-60" />
             <p className="text-xs uppercase text-zinc-600">Our Foundation</p>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-zinc-700 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-zinc-700 mb-8 sm:mb-10 lg:mb-12">
             Core Values
           </h2>
         </motion.div>
@@ -120,7 +152,7 @@ const Karrar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center p-4 sm:p-6"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=80&h=80&fit=crop&crop=center"
                 alt="Timeless Elegance"
@@ -138,7 +170,7 @@ const Karrar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center p-6"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-6 rounded-full overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=80&h=80&fit=crop&crop=center"
                 alt="Uncompromising Quality"
@@ -156,7 +188,7 @@ const Karrar = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center p-6"
           >
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full overflow-hidden">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-6 rounded-full overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=80&h=80&fit=crop&crop=center"
                 alt="Seamless Execution"
@@ -184,7 +216,7 @@ const Karrar = () => {
             <img src={KarrarLogo} alt="Karrar Logo" className="w-3 h-3 sm:w-4 sm:h-4 opacity-60" />
             <p className="text-xs uppercase text-zinc-600">Honors of Distinction</p>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
             Awards & Recognitions
           </h2>
         </motion.div>
@@ -195,7 +227,7 @@ const Karrar = () => {
           animate={isRevealed ? "visible" : "hidden"}
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
-          className="text-base sm:text-lg text-zinc-700 mb-8 sm:mb-12 max-w-3xl mx-auto"
+          className="text-base sm:text-lg text-zinc-700 mb-6 sm:mb-8 lg:mb-10 max-w-3xl mx-auto"
         >
           Our commitment to excellence has been recognized by industry leaders with prestigious awards, reinforcing our reputation for design innovation and flawless project delivery:
         </motion.p>
@@ -206,7 +238,7 @@ const Karrar = () => {
           animate={isRevealed ? "visible" : "hidden"}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ delay: 1.2 }}
-          className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mt-12 sm:mt-16"
+          className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 mt-6 sm:mt-8"
         >
           <motion.div
             variants={fadeInVariants}
@@ -266,7 +298,7 @@ const Karrar = () => {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
         >
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
             Our Legacy & Commitment
           </h2>
         </motion.div>
