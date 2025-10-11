@@ -12,7 +12,6 @@ export default function Example() {
           </p>
         </div>
 
-        {/* Галерея снизу */}
         <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
           {[
             "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
