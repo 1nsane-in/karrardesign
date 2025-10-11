@@ -10,6 +10,32 @@ const headingVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const projectVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const projects = [
   {
     image:
@@ -139,7 +165,7 @@ const Studio = () => {
       {/* Hero Section */}
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
+        className="max-w-6xl mx-auto mt-[200px] sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
       >
         <motion.div
           variants={headingVariants}
@@ -203,55 +229,64 @@ const Studio = () => {
 
       {/* List of Projects Section */}
       <section className="projects-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1400px] mx-auto">
-          {/* Project Items */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1400px] mx-auto"
+        >
           {projects.map((project, index) => (
-            <Link
+            <motion.div
               key={index}
-              to={`/studio/${project.slug}`}
-              className="project-item flex flex-col items-center p-2 sm:p-4 lg:p-6 no-underline"
+              variants={projectVariants}
+              className="project-item"
             >
-              <div className="relative w-full aspect-[4/3] group cursor-pointer overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                {/* Hover Curtain Overlay */}
-                <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
-                  <div className="text-center transform -translate-y-4 sm:-translate-y-6 lg:-translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1200 delay-300 ease-out">
-                    <span className="text-sm sm:text-base lg:text-lg xl:text-xl text-zinc-800 tracking-wide font-medium">
-                      VIEW PROJECT
-                    </span>
+              <Link
+                to={`/studio/${project.slug}`}
+                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 no-underline"
+              >
+                <div className="relative w-full aspect-[4/3] group cursor-pointer overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Hover Curtain Overlay */}
+                  <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
+                    <div className="text-center transform -translate-y-4 sm:-translate-y-6 lg:-translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1200 delay-300 ease-out">
+                      <span className="text-sm sm:text-base lg:text-lg xl:text-xl text-zinc-800 tracking-wide font-medium">
+                        VIEW PROJECT
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="mt-2 sm:mt-3 w-full flex justify-between items-end">
-                <div className="flex flex-col gap-0 text-left">
-                  <div className="flex items-center gap-2 mb-1">
-                    <img
-                      src={KarrarLogo}
-                      alt="Karrar Logo"
-                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
-                    />
-                    <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
-                      {project.title}
+                <div className="mt-2 sm:mt-3 w-full flex justify-between items-end">
+                  <div className="flex flex-col gap-0 text-left">
+                    <div className="flex items-center gap-2 mb-1">
+                      <img
+                        src={KarrarLogo}
+                        alt="Karrar Logo"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
+                      />
+                      <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
+                        {project.title}
+                      </span>
+                    </div>
+                    <span className="block text-xs sm:text-sm text-zinc-600">
+                      {project.location}
                     </span>
                   </div>
-                  <span className="block text-xs sm:text-sm text-zinc-600">
-                    {project.location}
+                  <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
+                    <span className="font-bold">{project.category}</span>
+                    <span className="text-xs sm:text-sm font-normal text-zinc-600">
+                      {project.service}
+                    </span>
                   </span>
                 </div>
-                <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                  <span className="font-bold">{project.category}</span>
-                  <span className="text-xs sm:text-sm font-normal text-zinc-600">
-                    {project.service}
-                  </span>
-                </span>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Project Philosophy Section */}

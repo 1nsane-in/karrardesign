@@ -55,7 +55,7 @@ const Services = () => {
     <>
       <div
         ref={headerRef}
-        className="mt-40 sticky top-0 flex items-center justify-center flex-col  transition-transform origin-center py-4"
+        className="lg:mt-40 mt-[400px] sticky top-0 flex items-center justify-center flex-col  transition-transform origin-center py-4"
       >
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[70px] text-center leading-tight sm:leading-tight md:leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0">
           Services

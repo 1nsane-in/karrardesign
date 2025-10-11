@@ -12,15 +12,15 @@ const Hero = () => {
           alt=""
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
-          <h1 className="text-[70px] font-cinzel leading-[75px] text-center mt-3">
+        <div className="absolute lg:top-[53%] top-[43%] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:max-w-3xl w-full text-white px-5 flex-col flex items-center justify-center">
+          <h1 className="lg:text-[70px] font-cinzel lg:leading-[75px] text-center mt-3 text-4xl ">
             Where Vision Meets Perfection
           </h1>
         </div>
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex items-center justify-center">
+        <div className="absolute lg:bottom-10 bottom-20 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-5 flex-col flex w-full items-center justify-center">
           <motion.p
             key="hero-line-1"
-            className="text-center text-xl max-w-2xl text-shadow-lg"
+            className="text-center lg:text-xl lg:max-w-2xl text-shadow-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}

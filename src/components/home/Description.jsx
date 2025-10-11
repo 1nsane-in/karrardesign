@@ -15,11 +15,11 @@ const Description = () => {
 
       <div
         style={{ perspective: 800 }}
-        className="grid grid-cols-5 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh]"
+        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto  2xl:px-30 lg:h-[500px] lg:mt-[100vh] pt-[100vh] lg:pt-0"
       >
-        <div className="col-span-3 lg:col-span-3 flex flex-col justify-end px-5 lg:px-0">
+        <div className="col-span-3 lg:col-span-3 flex flex-col lg:justify-end justify-center items-center lg:items-start px-5 lg:px-0 ">
           <motion.h1
-            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl text-zinc-700"
+            className="uppercase mt-5 lg:text-[60px] text-2xl leading-[40px] lg:leading-[60px]  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -29,7 +29,7 @@ const Description = () => {
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase mt-5 lg:text-[60px] text-2xl lg:leading-[70px] -mb-3  font-tan-pearl text-zinc-700"
+            className="uppercase lg:mt-5 lg:text-[60px] text-2xl leading-[40px]  lg:leading-[70px] lg:-mb-3 font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -39,7 +39,7 @@ const Description = () => {
             Fit-Outs &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px]  font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px] leading-[40px]   font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -49,7 +49,7 @@ const Description = () => {
             Project
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  leading-[40px]  font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -59,11 +59,11 @@ const Description = () => {
             Management
           </motion.h1>
         </div>
-        <div className="col-span-2 lg:col-span-2 flex flex-col justify-end items-end text-center lg:text-left px-5 lg:px-0 lg:pt-0 pt-10">
+        <div className="col-span-2 lg:col-span-2 flex flex-col lg:justify-end justify-center lg:items-end items-center text-center lg:text-left px-5 lg:px-0 lg:pt-0 -mt-4 lg:-mt-0 ">
           <div className="lg:w-xs w-40 mb-4 ">
             <DesignSVG />
           </div>
-          <p className=" text-right text-lg font-cinzel">
+          <p className=" lg:text-right text-center text-lg font-cinzel ">
             Karrar Design Projects L.L.C. offers premium interior fit-out and
             project management services across UAE, Canada, and India. With 20+
             years of expertise, we deliver luxury villas, hotels, restaurants,

@@ -43,7 +43,7 @@ export const AnimatedTestimonials = ({
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-24">
         {/* Image Container */}
         <div className="w-full flex justify-center items-center">
-          <div className="relative h-[450px] w-[450px] mx-auto">
+          <div className="relative lg:h-[450px] lg:w-[450px] size-[250px] mx-auto">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -88,8 +88,8 @@ export const AnimatedTestimonials = ({
           </div>
         </div>
         <div className="flex flex-col justify-between">
-          <div>
-            <h1 className="text-4xl font-tan-pearl leading-[50px] mt-8">
+          <div className=" -mt-10 lg:mt-0">
+            <h1 className="lg:text-4xl text-2xl font-tan-pearl leading-[50px] lg:mt-8">
               Stories of Satisfaction
             </h1>
             <p>
@@ -117,7 +117,7 @@ export const AnimatedTestimonials = ({
                 ease: "easeInOut",
               }}
             >
-              <motion.p className="text-lg text-muted-foreground mt-8">
+              <motion.p className="text-lg text-muted-foreground lg:mt-8">
                 {testimonials[active].quote.split(" ").map((word, index) => (
                   <motion.span
                     key={index}
@@ -151,7 +151,7 @@ export const AnimatedTestimonials = ({
                 </p>
               </div>
             </motion.div>
-            <div className="flex gap-4 pt-12 md:pt-0 mt-10">
+            <div className="flex gap-4 pt-12 md:pt-0 lg:mt-10">
               <button
                 onClick={handlePrev}
                 className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"

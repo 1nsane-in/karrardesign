@@ -3,7 +3,6 @@ import { ConnectSVG, ProjectSVG } from "../assets/svg";
 import Footer from "../components/common/Footer";
 import { Feature } from "../components/ui/feature-with-images";
 const Work = () => {
-
   const services = [
     {
       title: "Interior Fit-Out Works",
@@ -80,25 +79,27 @@ const Work = () => {
 
   return (
     <div>
-      <div className=" flex flex-col items-center justify-center h-screen">
-        <h1 className="text-[60px] leading-[120px] uppercase mt-10 font-tan-pearl">
+      <div className=" flex flex-col items-center justify-center lg:h-screen py-[100px]">
+        <h1 className="lg:text-[60px] text-3xl leading-[120px] uppercase mt-10 font-tan-pearl">
           Our Expertise
         </h1>
-        <p className="text-center max-w-3xl mt-1 text-3xl font-cinzel px-5 lg:px-0">
+        <p className="text-center max-w-3xl mt-1 lg:text-3xl text-xl font-cinzel px-5 lg:px-0">
           Comprehensive design and project management services, seamlessly
           delivered with precision, elegance, and uncompromising quality.
         </p>
       </div>
-      {services.map((service, index) => (
-        <Feature
-          key={index}
-          title={service.title}
-          tagline={service.tagline}
-          description={service.description}
-          icon={service.icon}
-          orientation={index % 2 === 0 ? "right" : "left"} // Alternate orientation
-        />
-      ))}
+      <div className="px-5 lg:px-0">
+        {services.map((service, index) => (
+          <Feature
+            key={index}
+            title={service.title}
+            tagline={service.tagline}
+            description={service.description}
+            icon={service.icon}
+            orientation={index % 2 === 0 ? "right" : "left"} // Alternate orientation
+          />
+        ))}
+      </div>
     </div>
   );
 };

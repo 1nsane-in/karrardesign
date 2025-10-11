@@ -13,7 +13,7 @@ export default function Example() {
         </div>
 
         {/* Галерея снизу */}
-        <div className="flex items-center gap-2 h-[400px] w-full container 2xl:px-30 mt-10 px-4">
+        <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
           {[
             "https://images.unsplash.com/photo-1719368472026-dc26f70a9b76?q=80&h=800&w=800&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1649265825072-f7dd6942baed?q=80&h=800&w=800&auto=format&fit=crop",
