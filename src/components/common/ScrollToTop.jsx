@@ -8,11 +8,13 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (lenis) {
-      // Scroll to top with Lenis smooth scrolling
-      lenis.scrollTo(0, {
-        duration: 0, // Instant scroll for route changes
-        easing: (t) => t, // Linear easing
-        immediate: true, // Skip animation
+      // Use raf to wait for DOM updates before scrolling
+      requestAnimationFrame(() => {
+        lenis.scrollTo(0, {
+          duration: 0, // No animation for route changes
+          easing: (t) => t,
+          immediate: true, // Force jump
+        });
       });
     }
   }, [pathname, lenis]);
