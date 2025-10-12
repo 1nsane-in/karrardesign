@@ -22,6 +22,7 @@ function App() {
         <Route path="/services" element={<Work />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/karrar" element={<Karrar />} />
+        <Route path="/studio/:projectId" element={<ProjectDetail />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useRevealer } from "../hooks/useRevealer";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../assets";
 
@@ -86,7 +84,7 @@ const Karrar = () => {
           >
             <div className="aspect-[4/3] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg"
                 alt="Luxury Interior Design by Karrar"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
@@ -173,7 +171,7 @@ const Karrar = () => {
           >
             <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-4 sm:mb-6 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=80&h=80&fit=crop&crop=center"
+                src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg"
                 alt="Timeless Elegance"
                 className="w-full h-full object-cover opacity-80"
               />
@@ -194,7 +192,7 @@ const Karrar = () => {
           >
             <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-6 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=80&h=80&fit=crop&crop=center"
+                src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg"
                 alt="Uncompromising Quality"
                 className="w-full h-full object-cover opacity-80"
               />
@@ -215,7 +213,7 @@ const Karrar = () => {
           >
             <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 mx-auto mb-6 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=80&h=80&fit=crop&crop=center"
+                src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg"
                 alt="Seamless Execution"
                 className="w-full h-full object-cover opacity-80"
               />
