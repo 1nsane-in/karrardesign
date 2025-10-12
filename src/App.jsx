@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
 import ProjectDetail from "./pages/ProjectDetail";
+import InsaneFooter from "./components/common/InsaneFooter";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/karrar" element={<Karrar />} />
         <Route path="/studio/:projectId" element={<ProjectDetail />} />
       </Routes>
+      <InsaneFooter />
     </BrowserRouter>
   );
 }
