@@ -100,7 +100,7 @@ const FutureProjects = () => {
       budget: "$18M",
     },
   ];
-  const projectsPerSlide = 2;
+  const projectsPerSlide = window.innerWidth <= 768 ? 1 : 2;
   const totalSlides = Math.ceil(futureProjects.length / projectsPerSlide);
 
   useEffect(() => {
@@ -341,7 +341,7 @@ const FutureProjects = () => {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="flex items-center justify-center gap-3 mt-12">
+        <div className="hidden lg:flex items-center justify-center gap-3 mt-12">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
@@ -359,12 +359,12 @@ const FutureProjects = () => {
         </div>
 
         {/* Slide Counter */}
-        <div className="text-center mt-4">
+        {/* <div className="text-center mt-4">
           <span className="text-sm text-zinc-500">
             {currentSlide + 1} of {totalSlides} • {futureProjects.length}{" "}
             Projects
           </span>
-        </div>
+        </div> */}
 
         {/* Bottom CTA */}
         {/* <motion.div

@@ -11,7 +11,7 @@ const OngoingProjects = () => {
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const projectsPerSlide = 2; // Show 2 projects per slide
+  const projectsPerSlide = window.innerWidth <= 768 ? 1 : 2; // Show 2 projects per slide
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   const ongoingProjects = [
@@ -400,7 +400,7 @@ const OngoingProjects = () => {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="flex items-center justify-center gap-3 mt-12">
+        <div className="hidden lg:flex  items-center justify-center gap-3 mt-12">
           {Array.from({ length: totalSlides }).map((_, index) => (
             <button
               key={index}
@@ -418,12 +418,12 @@ const OngoingProjects = () => {
         </div>
 
         {/* Slide Counter */}
-        <div className="text-center mt-4">
+        {/* <div className="text-center mt-4">
           <span className="text-sm text-zinc-500">
             {currentSlide + 1} of {totalSlides} • {ongoingProjects.length}{" "}
             Active Projects
           </span>
-        </div>
+        </div> */}
       </div>
 
       {/* Decorative Elements */}

@@ -73,12 +73,18 @@ const Navigation = () => {
             className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
           >
             <div
-              className={`flex items-center uppercase text-sm justify-center gap-30 h-full font-roboto ${isHomePage ? "text-zinc-800" : "text-black"}`}
+              className={`flex items-center uppercase text-sm justify-center gap-30 h-full font-roboto  ${isHomePage ? "text-[#3c3c38]" : "text-black"}`}
             >
-              <Link to="/studio" className="text-shadow-lg hidden lg:block">
+              <Link
+                to="/studio"
+                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out"
+              >
                 Studio
               </Link>
-              <Link to="/services" className="text-shadow-lg hidden lg:block">
+              <Link
+                to="/services"
+                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out"
+              >
                 Services
               </Link>
               <Link to="/" className=" flex flex-col items-center ">
@@ -107,10 +113,16 @@ const Navigation = () => {
                   Projects
                 </p>
               </div> */}
-              <Link to="/karrar" className="text-shadow-lg hidden lg:block">
+              <Link
+                to="/karrar"
+                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out "
+              >
                 Karrar
               </Link>
-              <Link to="/contact" className="text-shadow-md hidden lg:block">
+              <Link
+                to="/contact"
+                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
+              >
                 Contact
               </Link>
             </div>
