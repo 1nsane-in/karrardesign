@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $breakpoints: (
   "xs": 0,
   // extra small (mobile first)
@@ -13,8 +15,8 @@ $breakpoints: (
 );
 
 @mixin respond($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {

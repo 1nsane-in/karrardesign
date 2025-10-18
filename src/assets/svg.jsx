@@ -1549,87 +1549,71 @@ export const KarrarLogoSVG2 = (props) => (
     {...props}
   >
     <defs>
-      <clipPath id="0df7b72e9c">
+      <clipPath id="14b673599b">
         <path
           d="M 52.515625 52.394531 L 101.507812 52.394531 L 101.507812 322.605469 L 52.515625 322.605469 Z M 52.515625 52.394531 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="4dc7d7f340">
+      <clipPath id="e60d6527b8">
         <path
           d="M 0.515625 0.394531 L 49.507812 0.394531 L 49.507812 270.605469 L 0.515625 270.605469 Z M 0.515625 0.394531 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="99393916ec">
+      <clipPath id="f5e4f04750">
         <rect x={0} width={50} y={0} height={271} />
       </clipPath>
-      <clipPath id="cbbb61b2a1">
+      <clipPath id="85f9717e0d">
         <path
           d="M 52.515625 273.984375 L 322.480469 273.984375 L 322.480469 322.605469 L 52.515625 322.605469 Z M 52.515625 273.984375 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="fc2ad1e7c1">
+      <clipPath id="3c7697888f">
         <path
           d="M 0.515625 0.984375 L 270.480469 0.984375 L 270.480469 49.605469 L 0.515625 49.605469 Z M 0.515625 0.984375 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="8e0948a9ea">
+      <clipPath id="273683ac4e">
         <rect x={0} width={271} y={0} height={50} />
       </clipPath>
-      <clipPath id="428479deb5">
+      <clipPath id="44b47ae52c">
         <path
           d="M 273.859375 52.394531 L 322.484375 52.394531 L 322.484375 322.605469 L 273.859375 322.605469 Z M 273.859375 52.394531 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="70ae2b936f">
+      <clipPath id="c7c276b319">
         <path
           d="M 0.859375 0.394531 L 49.484375 0.394531 L 49.484375 270.605469 L 0.859375 270.605469 Z M 0.859375 0.394531 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="64c22a9d14">
+      <clipPath id="a1ed992175">
         <rect x={0} width={50} y={0} height={271} />
       </clipPath>
-      <clipPath id="ac4df5b73d">
+      <clipPath id="8546146a11">
         <path
           d="M 154.058594 52.390625 L 322.476562 52.390625 L 322.476562 101.011719 L 154.058594 101.011719 Z M 154.058594 52.390625 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="852862a683">
+      <clipPath id="31b9d0c58c">
         <path
           d="M 0.0585938 0.390625 L 168.476562 0.390625 L 168.476562 49.011719 L 0.0585938 49.011719 Z M 0.0585938 0.390625 "
           clipRule="nonzero"
         />
       </clipPath>
-      <clipPath id="f5f1dfa7fd">
+      <clipPath id="deb33a552f">
         <rect x={0} width={169} y={0} height={50} />
       </clipPath>
     </defs>
-    <rect
-      x={-37.5}
-      width={450}
-      fill="#ffffff"
-      y={-37.499999}
-      height={449.999989}
-      fillOpacity={1}
-    />
-    <rect
-      x={-37.5}
-      width={450}
-      fill="#ffffff"
-      y={-37.499999}
-      height={449.999989}
-      fillOpacity={1}
-    />
-    <g clipPath="url(#0df7b72e9c)">
+    <g clipPath="url(#14b673599b)">
       <g transform="matrix(1, 0, 0, 1, 52, 52)">
-        <g clipPath="url(#99393916ec)">
-          <g clipPath="url(#4dc7d7f340)">
+        <g clipPath="url(#f5e4f04750)">
+          <g clipPath="url(#e60d6527b8)">
             <path
               fill="#ffb400"
               d="M 0.515625 0.394531 L 49.507812 0.394531 L 49.507812 270.605469 L 0.515625 270.605469 Z M 0.515625 0.394531 "
@@ -1640,10 +1624,10 @@ export const KarrarLogoSVG2 = (props) => (
         </g>
       </g>
     </g>
-    <g clipPath="url(#cbbb61b2a1)">
+    <g clipPath="url(#85f9717e0d)">
       <g transform="matrix(1, 0, 0, 1, 52, 273)">
-        <g clipPath="url(#8e0948a9ea)">
-          <g clipPath="url(#fc2ad1e7c1)">
+        <g clipPath="url(#273683ac4e)">
+          <g clipPath="url(#3c7697888f)">
             <path
               fill="#ffb400"
               d="M 270.480469 0.984375 L 270.480469 49.605469 L 0.589844 49.605469 L 0.589844 0.984375 Z M 270.480469 0.984375 "
@@ -1654,10 +1638,10 @@ export const KarrarLogoSVG2 = (props) => (
         </g>
       </g>
     </g>
-    <g clipPath="url(#428479deb5)">
+    <g clipPath="url(#44b47ae52c)">
       <g transform="matrix(1, 0, 0, 1, 273, 52)">
-        <g clipPath="url(#64c22a9d14)">
-          <g clipPath="url(#70ae2b936f)">
+        <g clipPath="url(#a1ed992175)">
+          <g clipPath="url(#c7c276b319)">
             <path
               fill="#ffb400"
               d="M 0.859375 0.394531 L 49.484375 0.394531 L 49.484375 270.664062 L 0.859375 270.664062 Z M 0.859375 0.394531 "
@@ -1668,10 +1652,10 @@ export const KarrarLogoSVG2 = (props) => (
         </g>
       </g>
     </g>
-    <g clipPath="url(#ac4df5b73d)">
+    <g clipPath="url(#8546146a11)">
       <g transform="matrix(1, 0, 0, 1, 154, 52)">
-        <g clipPath="url(#f5f1dfa7fd)">
-          <g clipPath="url(#852862a683)">
+        <g clipPath="url(#deb33a552f)">
+          <g clipPath="url(#31b9d0c58c)">
             <path
               fill="#ffb400"
               d="M 168.476562 0.390625 L 168.476562 49.011719 L 0.0078125 49.011719 L 0.0078125 0.390625 Z M 168.476562 0.390625 "

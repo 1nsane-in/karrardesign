@@ -8,58 +8,25 @@ import ScrollToTop from "./components/common/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
+import ProjectDetail from "./pages/ProjectDetail";
+import InsaneFooter from "./components/common/InsaneFooter";
 
 function App() {
   return (
-    <AnimatePresence mode="wait">
-      <BrowserRouter>
-        <ScrollToTop />
+    <BrowserRouter>
+      <ScrollToTop />
 
-        <Navigation />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PageWrapper>
-                <Home />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <PageWrapper>
-                <Contact />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/services"
-            element={
-              <PageWrapper>
-                <Work />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/studio"
-            element={
-              <PageWrapper>
-                <Studio />
-              </PageWrapper>
-            }
-          />
-          <Route
-            path="/karrar"
-            element={
-              <PageWrapper>
-                <Karrar />
-              </PageWrapper>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
-    </AnimatePresence>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Work />} />
+        <Route path="/studio" element={<Studio />} />
+        <Route path="/karrar" element={<Karrar />} />
+        <Route path="/studio/:projectId" element={<ProjectDetail />} />
+      </Routes>
+      <InsaneFooter />
+    </BrowserRouter>
   );
 }
 
