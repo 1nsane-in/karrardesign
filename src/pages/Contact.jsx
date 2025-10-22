@@ -1,4 +1,4 @@
-import { ConnectSVG } from "../assets/svg-optimized.jsx";
+import { ConnectSVG } from "../assets/svg.jsx";
 import WorldMap from "../components/ui/world-map.jsx";
 import { KarrarLogo } from "../assets";
 

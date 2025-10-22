@@ -3,7 +3,7 @@ import { useRevealer } from "../hooks/useRevealer";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../assets";
 import { Link } from "react-router";
-import { ConnectSVG, ProjectSVG } from "../assets/svg-optimized";
+import { ConnectSVG, ProjectSVG } from "../assets/svg.jsx";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
