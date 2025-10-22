@@ -4,7 +4,7 @@ import styles from "../../styles/getInTouch.module.scss";
 const GetInTouch = () => {
   return (
     <div>
-      <div className="max-w-5xl mx-auto h-screen flex items-center justify-center mt-10 ">
+      <div className="max-w-5xl mx-auto lg:h-screen flex items-center justify-center mt-10 ">
         <div className="lg:mt-10 uppercase text-left mt-5 flex flex-col items-start justify-start">
           <h1 className="lg:text-[60px] text-2xl lg:leading-[70px]  font-tan-pearl">
             Let's work

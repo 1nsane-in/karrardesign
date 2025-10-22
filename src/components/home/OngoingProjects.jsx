@@ -11,7 +11,7 @@ const OngoingProjects = () => {
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const projectsPerSlide = window.innerWidth <= 768 ? 1 : 2; // Show 2 projects per slide
+  const projectsPerSlide = window.innerWidth <= 1024 ? 1 : 2; // Show 2 projects per slide
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   const ongoingProjects = [

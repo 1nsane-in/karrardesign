@@ -100,7 +100,7 @@ const FutureProjects = () => {
       budget: "$18M",
     },
   ];
-  const projectsPerSlide = window.innerWidth <= 768 ? 1 : 2;
+  const projectsPerSlide = window.innerWidth <= 1024 ? 1 : 2;
   const totalSlides = Math.ceil(futureProjects.length / projectsPerSlide);
 
   useEffect(() => {

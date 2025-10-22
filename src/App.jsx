@@ -10,6 +10,7 @@ import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
 import ProjectDetail from "./pages/ProjectDetail";
 import InsaneFooter from "./components/common/InsaneFooter";
+import ScreenSizeDisplay from "./components/common/ScreenSize";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         <Route path="/studio/:projectId" element={<ProjectDetail />} />
       </Routes>
       <InsaneFooter />
+
+      {/* Screen size */}
+      <ScreenSizeDisplay />
     </BrowserRouter>
   );
 }

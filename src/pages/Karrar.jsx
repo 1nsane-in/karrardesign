@@ -36,7 +36,7 @@ const Karrar = () => {
       {/* Hero Section */}
       <div
         style={{ perspective: 800 }}
-        className="max-w-7xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-8"
       >
         {/* Header */}
         <div className="text-center mb-12 lg:mb-20">
@@ -63,7 +63,7 @@ const Karrar = () => {
               animate={"visible"}
               viewport={{ once: true, amount: 0.8 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+              className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
             >
               Crafting Luxury, <br />
               Delivering Excellence
@@ -151,7 +151,7 @@ const Karrar = () => {
             />
             <p className="text-xs uppercase text-zinc-600">Our Foundation</p>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-zinc-700 mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-zinc-700 mb-8 sm:mb-10 lg:mb-12">
             Core Values
           </h2>
         </motion.div>
@@ -248,7 +248,7 @@ const Karrar = () => {
               Honors of Distinction
             </p>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
             Awards & Recognitions
           </h2>
         </motion.div>
@@ -349,7 +349,7 @@ const Karrar = () => {
           viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
         >
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
             Our Legacy & Commitment
           </h2>
         </motion.div>
@@ -396,13 +396,13 @@ const Karrar = () => {
             className="mt-12 sm:mt-16 mb-20 sm:mb-32"
           >
             <p
-              className="text-base sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl mb-1 sm:mb-2"
+              className="text-xl sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl mb-1 sm:mb-2"
               style={{ color: "#ffb400" }}
             >
               At Karrar Design Projects,
             </p>
             <p
-              className="text-base sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl italic"
+              className="text-xl sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl italic"
               style={{ color: "#ffb400" }}
             >
               luxury is not an option, it is our standard.

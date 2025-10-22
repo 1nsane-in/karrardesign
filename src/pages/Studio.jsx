@@ -148,7 +148,7 @@ const Studio = () => {
       {/* Hero Section */}
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-20 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
+        className="max-w-6xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
       >
         <motion.div
           variants={headingVariants}

@@ -174,7 +174,24 @@ const Services = () => {
     },
   ];
 
-  const servicesPerSlide = window.innerWidth <= 768 ? 1 : 3;
+  const [servicesPerSlide, setServicesPerSlide] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setServicesPerSlide(1); // mobile
+      } else if (window.innerWidth < 1024) {
+        setServicesPerSlide(2); // tablet
+      } else {
+        setServicesPerSlide(3); // laptop and larger
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
   const totalSlides = Math.ceil(services.length / servicesPerSlide);
 
   useEffect(() => {
@@ -206,7 +223,7 @@ const Services = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-zinc-50 overflow-hidden"
+      className="relative py-20 bg-zinc-50 overflow-hidden mt-20"
     >
       {/* Parallax Background */}
       <motion.div
@@ -240,7 +257,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+            className="text-2xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
           >
             Excellence in Every
             <br />

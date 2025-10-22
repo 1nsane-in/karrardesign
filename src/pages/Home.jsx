@@ -29,11 +29,6 @@ const Home = () => {
         />
         <Description />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-zinc-50"
-          pattern="lines"
-        />
         <Services />
 
         <SectionTransition
@@ -71,11 +66,6 @@ const Home = () => {
         />
         <Testimonial />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-zinc-50"
-          pattern="lines"
-        />
         <GetInTouch />
       </div>
     </>

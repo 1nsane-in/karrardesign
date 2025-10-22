@@ -48,25 +48,25 @@ const Contact = () => {
         </motion.div>
 
         {/* Main Heading Unit - Centered */}
-        <div className="uppercase text-left flex flex-col items-start justify-center w-fit mx-auto">
+        <div className="uppercase text-center flex flex-col items-center lg:items-start justify-center w-fit mx-auto">
           <motion.h1
             initial="hidden"
             animate="visible"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700"
           >
-            Let's work
+            Let&apos;s work
           </motion.h1>
           <motion.h1
             initial="hidden"
             animate="visible"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] lg:ml-[300px] font-tan-pearl text-zinc-700"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] lg:ml-[300px] font-tan-pearl text-zinc-700"
           >
             Together
           </motion.h1>
           <motion.div
             initial="hidden"
             animate="visible"
-            className="lg:w-md w-32 sm:w-40 md:w-48 lg:-mt-10 lg:ml-[600px] -mt-5"
+            className="lg:w-md w-32 sm:w-40 md:w-[300px] md:-mt-7  lg:ml-[600px] -mt-5"
           >
             <ConnectSVG />
           </motion.div>
