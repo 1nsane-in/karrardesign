@@ -3,6 +3,7 @@ import { KarrarLogo } from "../assets";
 import { Link } from "react-router";
 import { ConnectSVG } from "../assets/svg.jsx";
 import StackCards from "../components/work/stacking-cards.jsx";
+import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -26,56 +27,124 @@ const fadeInVariants = {
 
 const services = [
   {
-    title: "Interior Design",
+    title: "Interior Fit-Out Works",
     description:
-      "Luxury residential and commercial interior design solutions that blend functionality with timeless elegance.",
+      "Bespoke interior solutions for villas, hotels, offices, and restaurants, combining refined aesthetics with practical functionality.",
     features: [
-      "Space Planning",
-      "Material Selection",
-      "Custom Furniture",
-      "Lighting Design",
+      "Custom Interior Solutions",
+      "Luxury Finishes",
+      "Functional Space Design",
+      "Turnkey Fit-Out Execution",
     ],
-    color: "#5196fd",
-    link: "https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop",
+    link: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=500&auto=format&fit=crop",
   },
   {
     title: "Project Management",
     description:
-      "End-to-end project coordination ensuring seamless execution from concept to completion.",
+      "Comprehensive project oversight ensuring time, cost, and quality objectives are met with precision and transparency.",
     features: [
-      "Timeline Management",
-      "Budget Control",
-      "Quality Assurance",
-      "Vendor Coordination",
+      "Cost & Schedule Control",
+      "Quality Management",
+      "Risk Mitigation",
+      "Stakeholder Coordination",
     ],
-    color: "#8f89ff",
-    link: "https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60",
+    link: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=500&auto=format&fit=crop",
   },
   {
-    title: "Fit-Out Works",
+    title: "Construction Management",
     description:
-      "High-end fit-out services for residential, hospitality, and retail spaces with premium finishes.",
+      "Expert supervision of all construction trades delivering efficiency, cost savings, and superior quality across every phase.",
     features: [
-      "Complete Fit-Out",
-      "MEP Services",
-      "Custom Millwork",
-      "Premium Finishes",
+      "Trade Package Management",
+      "Cost Optimization",
+      "Quality Control",
+      "On-Site Coordination",
     ],
-    color: "#13006c",
-    link: "https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop",
+    link: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=500&auto=format&fit=crop",
   },
   {
-    title: "Consultation",
+    title: "Design Management",
     description:
-      "Expert design consultation and strategic planning for luxury development projects.",
+      "Managing the complete design lifecycle to ensure creative concepts are efficiently realized into flawless built spaces.",
     features: [
-      "Design Strategy",
-      "Feasibility Studies",
-      "Concept Development",
-      "Technical Advisory",
+      "Architect Coordination",
+      "Design Review & Validation",
+      "Construction Compatibility",
+      "Technical Documentation",
     ],
-    color: "#ed649e",
-    link: "https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60",
+    link: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Tender Management",
+    description:
+      "Structured procurement and tender evaluation ensuring the selection of trusted, high-quality partners.",
+    features: [
+      "Tender Preparation",
+      "Bid Evaluation",
+      "Vendor Shortlisting",
+      "Negotiation Support",
+    ],
+    link: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Client Representation",
+    description:
+      "Dedicated partnership guiding clients through every decision, ensuring transparency and long-term value.",
+    features: [
+      "Progress Monitoring",
+      "Decision Support",
+      "Stakeholder Communication",
+      "Quality Oversight",
+    ],
+    link: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Consultancy Services",
+    description:
+      "Specialized consultancy covering design, cost, and project performance to maximize outcomes and efficiency.",
+    features: [
+      "Design Optimization",
+      "Value Engineering",
+      "Cost Analysis",
+      "Procurement Strategy",
+    ],
+    link: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Value Engineering & Cost Analysis",
+    description:
+      "Smart design and material assessment ensuring the perfect balance of luxury, function, and cost efficiency.",
+    features: [
+      "Material Evaluation",
+      "Alternative Solutions",
+      "Budget Optimization",
+      "Design Refinement",
+    ],
+    link: "https://images.unsplash.com/photo-1603791452906-bb9f68c159d6?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Procurement",
+    description:
+      "End-to-end material sourcing and vendor negotiation delivering premium quality and value for investment.",
+    features: [
+      "Vendor Identification",
+      "RFQ & PO Management",
+      "Contract Negotiation",
+      "Supply Chain Coordination",
+    ],
+    link: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=500&auto=format&fit=crop",
+  },
+  {
+    title: "Claims Management & Troubleshooting",
+    description:
+      "Protecting client interests through strategic claim assessment and swift resolution of project challenges.",
+    features: [
+      "Claims Evaluation",
+      "Contract Advisory",
+      "Issue Resolution",
+      "Risk Management",
+    ],
+    link: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=500&auto=format&fit=crop",
   },
 ];
 
@@ -83,13 +152,7 @@ const Services = () => {
   return (
     <>
       {/* Noise Grain Overlay */}
-      <div
-        className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-20"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          mixBlendMode: "multiply",
-        }}
-      ></div>
+      <NoiseOverlay />
 
       {/* Hero Section */}
       <div
@@ -208,54 +271,6 @@ const Services = () => {
       </motion.div>
 
       <StackCards projects={services} />
-
-      {/* Services Grid */}
-      {/* <section className="services-section mt-20 sm:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate={"visible"}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={fadeInVariants}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="service-item p-6 sm:p-8 bg-gradient-to-br from-zinc-50/50 to-transparent hover:from-orange-50/30 hover:to-amber-50/20 transition-all duration-500"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={KarrarLogo}
-                  alt="Karrar Logo"
-                  className="w-4 h-4 opacity-60"
-                />
-                <h3 className="text-xl sm:text-2xl font-tan-pearl text-zinc-700">
-                  {service.title}
-                </h3>
-              </div>
-
-              <p className="text-zinc-600 leading-relaxed mb-6">
-                {service.description}
-              </p>
-
-              <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <li
-                    key={`${service.title}-${featureIndex}`}
-                    className="flex items-center gap-2 text-sm text-zinc-600"
-                  >
-                    <div className="w-1 h-1 bg-[#ffb400] rounded-full"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section> */}
 
       {/* Divider with Logos */}
       <motion.div
