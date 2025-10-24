@@ -174,27 +174,25 @@ const Services = () => {
         },
     ];
 
-    const servicesPerSlide = window.innerWidth <= 768 ? 1 : 3;
+    const [servicesPerSlide, setServicesPerSlide] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setServicesPerSlide(1);
+            } else if (window.innerWidth < 1024) {
+                setServicesPerSlide(2);
+            } else {
+                setServicesPerSlide(3);
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const totalSlides = Math.ceil(services.length / servicesPerSlide);
-  const [servicesPerSlide, setServicesPerSlide] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setServicesPerSlide(1); // mobile
-      } else if (window.innerWidth < 1024) {
-        setServicesPerSlide(2); // tablet
-      } else {
-        setServicesPerSlide(3); // laptop and larger
-      }
-    };
-
-    handleResize(); // Initial check
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  const totalSlides = Math.ceil(services.length / servicesPerSlide);
 
     useEffect(() => {
         if (!isAutoPlay) return;
@@ -242,16 +240,6 @@ const Services = () => {
                 style={{ y }}
                 className="absolute inset-0 bg-gradient-to-br from-zinc-100 via-white to-zinc-50"
             />
-  return (
-    <section
-      ref={containerRef}
-      className="relative py-20 bg-zinc-50 overflow-hidden mt-20"
-    >
-      {/* Parallax Background */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 bg-gradient-to-br from-zinc-100 via-white to-zinc-50"
-      />
 
             {/* Content */}
             <motion.div
@@ -287,18 +275,6 @@ const Services = () => {
                     </motion.h2>
 
                 </div>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
-          >
-            Excellence in Every
-            <br />
-            <span className="text-[#ffb400]">Detail</span>
-          </motion.h2>
-        </div>
 
                 {/* Services Carousel */}
                 <div className="relative">

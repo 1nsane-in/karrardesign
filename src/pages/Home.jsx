@@ -18,7 +18,6 @@ import Example from "../components/ui/image-gallery";
 const Home = () => {
   return (
     <>
-      <Navigation />
       <div className="bg-secondary min-h-screen relative">
         <Hero />
 

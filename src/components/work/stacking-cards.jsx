@@ -8,6 +8,7 @@ export const Card = ({
   description,
   url,
   color,
+  features,
   progress,
   range,
   targetScale,
@@ -28,51 +29,65 @@ export const Card = ({
     >
       <motion.div
         style={{
-          backgroundColor: color,
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className={`flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md p-10 origin-top`}
+        className="flex flex-col relative -top-[25%] h-[600px] w-[90%] max-w-6xl rounded-3xl p-8 origin-top bg-white/95 backdrop-blur-sm shadow-2xl border border-white/20"
       >
-        <h2 className="text-2xl text-center font-semibold">{title}</h2>
-        <div className={`flex h-full mt-5 gap-10`}>
-          <div className={`w-[40%] relative top-[10%]`}>
-            <p className="text-sm">{description}</p>
-            <span className="flex items-center gap-2 pt-2">
-              <a
-                href={"#"}
-                target="_blank"
-                className="underline cursor-pointer"
-              >
-                See more
-              </a>
-              <svg
-                width="22"
-                height="12"
-                viewBox="0 0 22 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
-                  fill="black"
-                />
-              </svg>
-            </span>
+        <div className="flex items-center justify-between mb-6">
+          <div className="w-12 h-1 rounded-full" style={{ backgroundColor: color }} />
+          <span className="text-sm font-medium text-zinc-400 uppercase tracking-wider">
+            0{i + 1}
+          </span>
+        </div>
+        
+        <h2 className="text-3xl lg:text-4xl font-tan-pearl text-zinc-800 mb-8 leading-tight">
+          {title}
+        </h2>
+        
+        <div className="flex h-full gap-8">
+          <div className="w-[45%] flex flex-col justify-between">
+            <div>
+              <p className="text-zinc-600 text-lg leading-relaxed mb-6">
+                {description}
+              </p>
+              
+              {features && (
+                <div className="space-y-3">
+                  {features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center gap-3 group">
+                      <div 
+                        className="w-2 h-2 rounded-full transition-all duration-300 group-hover:scale-125" 
+                        style={{ backgroundColor: color }}
+                      />
+                      <span className="text-zinc-700 font-medium">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            
+            <button className="flex items-center gap-3 text-zinc-800 font-medium hover:gap-4 transition-all duration-300 group mt-6">
+              <span>Explore Service</span>
+              <div className="w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center group-hover:bg-zinc-800 transition-colors duration-300">
+                <svg className="w-4 h-4 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </div>
+            </button>
           </div>
 
-          <div
-            className={`relative w-[60%] h-full rounded-lg overflow-hidden `}
-          >
+          <div className="relative w-[55%] h-full rounded-2xl overflow-hidden group">
             <motion.div
-              className={`w-full h-full`}
+              className="w-full h-full"
               style={{ scale: imageScale }}
             >
               <img
                 src={url}
-                alt="image"
-                className="absolute inset-0 w-full h-full object-cover"
+                alt={title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           </div>
         </div>
@@ -91,6 +106,7 @@ const StackCards = forwardRef(({ projects }, ref) => {
   return (
     <ReactLenis root>
       <main ref={container}>
+        {/* Top grid pattern */}
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
         <section className="text-white w-full">
@@ -104,6 +120,7 @@ const StackCards = forwardRef(({ projects }, ref) => {
                 title={project.title}
                 color={project.color}
                 description={project.description}
+                features={project.features}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}

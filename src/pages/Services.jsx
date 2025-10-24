@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { KarrarLogo } from "../assets";
 import { Link } from "react-router";
 import { ConnectSVG } from "../assets/svg.jsx";
+import StackCards from "../components/work/stacking-cards.jsx";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -26,24 +27,56 @@ const fadeInVariants = {
 const services = [
   {
     title: "Interior Design",
-    description: "Luxury residential and commercial interior design solutions that blend functionality with timeless elegance.",
-    features: ["Space Planning", "Material Selection", "Custom Furniture", "Lighting Design"]
+    description:
+      "Luxury residential and commercial interior design solutions that blend functionality with timeless elegance.",
+    features: [
+      "Space Planning",
+      "Material Selection",
+      "Custom Furniture",
+      "Lighting Design",
+    ],
+    color: "#5196fd",
+    link: "https://images.unsplash.com/photo-1605106702842-01a887a31122?q=80&w=500&auto=format&fit=crop",
   },
   {
     title: "Project Management",
-    description: "End-to-end project coordination ensuring seamless execution from concept to completion.",
-    features: ["Timeline Management", "Budget Control", "Quality Assurance", "Vendor Coordination"]
+    description:
+      "End-to-end project coordination ensuring seamless execution from concept to completion.",
+    features: [
+      "Timeline Management",
+      "Budget Control",
+      "Quality Assurance",
+      "Vendor Coordination",
+    ],
+    color: "#8f89ff",
+    link: "https://images.unsplash.com/photo-1605106250963-ffda6d2a4b32?w=500&auto=format&fit=crop&q=60",
   },
   {
     title: "Fit-Out Works",
-    description: "High-end fit-out services for residential, hospitality, and retail spaces with premium finishes.",
-    features: ["Complete Fit-Out", "MEP Services", "Custom Millwork", "Premium Finishes"]
+    description:
+      "High-end fit-out services for residential, hospitality, and retail spaces with premium finishes.",
+    features: [
+      "Complete Fit-Out",
+      "MEP Services",
+      "Custom Millwork",
+      "Premium Finishes",
+    ],
+    color: "#13006c",
+    link: "https://images.unsplash.com/photo-1605106901227-991bd663255c?w=500&auto=format&fit=crop",
   },
   {
     title: "Consultation",
-    description: "Expert design consultation and strategic planning for luxury development projects.",
-    features: ["Design Strategy", "Feasibility Studies", "Concept Development", "Technical Advisory"]
-  }
+    description:
+      "Expert design consultation and strategic planning for luxury development projects.",
+    features: [
+      "Design Strategy",
+      "Feasibility Studies",
+      "Concept Development",
+      "Technical Advisory",
+    ],
+    color: "#ed649e",
+    link: "https://images.unsplash.com/photo-1605106715994-18d3fecffb98?w=500&auto=format&fit=crop&q=60",
+  },
 ];
 
 const Services = () => {
@@ -90,7 +123,6 @@ const Services = () => {
           >
             Our Expertise
           </motion.h1>
-
         </div>
 
         <motion.div
@@ -168,13 +200,17 @@ const Services = () => {
         className="flex justify-center mt-12 sm:mt-16"
       >
         <div className="flex flex-col items-center gap-2 cursor-pointer group">
-          <span className="text-xs text-zinc-600 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">Explore</span>
+          <span className="text-xs text-zinc-600 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">
+            Explore
+          </span>
           <div className="w-px h-16 bg-gradient-to-b from-zinc-400 to-transparent group-hover:from-[#ffb400] transition-colors duration-300"></div>
         </div>
       </motion.div>
 
+      <StackCards projects={services} />
+
       {/* Services Grid */}
-      <section className="services-section mt-20 sm:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-8">
+      {/* <section className="services-section mt-20 sm:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -207,7 +243,10 @@ const Services = () => {
 
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={`${service.title}-${featureIndex}`} className="flex items-center gap-2 text-sm text-zinc-600">
+                  <li
+                    key={`${service.title}-${featureIndex}`}
+                    className="flex items-center gap-2 text-sm text-zinc-600"
+                  >
                     <div className="w-1 h-1 bg-[#ffb400] rounded-full"></div>
                     {feature}
                   </li>
@@ -216,7 +255,7 @@ const Services = () => {
             </motion.div>
           ))}
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Divider with Logos */}
       <motion.div
@@ -280,10 +319,26 @@ const Services = () => {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           >
             {[
-              { step: "01", title: "Consultation", desc: "Understanding your vision and requirements" },
-              { step: "02", title: "Design", desc: "Creating detailed concepts and plans" },
-              { step: "03", title: "Execution", desc: "Managing every aspect of implementation" },
-              { step: "04", title: "Delivery", desc: "Ensuring perfection in every detail" }
+              {
+                step: "01",
+                title: "Consultation",
+                desc: "Understanding your vision and requirements",
+              },
+              {
+                step: "02",
+                title: "Design",
+                desc: "Creating detailed concepts and plans",
+              },
+              {
+                step: "03",
+                title: "Execution",
+                desc: "Managing every aspect of implementation",
+              },
+              {
+                step: "04",
+                title: "Delivery",
+                desc: "Ensuring perfection in every detail",
+              },
             ].map((item) => (
               <motion.div
                 key={item.step}
@@ -297,9 +352,7 @@ const Services = () => {
                 <h3 className="text-lg sm:text-xl font-semibold text-zinc-800 mb-2">
                   {item.title}
                 </h3>
-                <p className="text-zinc-600 leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -319,7 +372,8 @@ const Services = () => {
           Ready to Transform <br /> Your Space?
         </h3>
         <p className="text-base sm:text-lg text-zinc-700 mb-8">
-          Let's discuss how we can bring your vision to life with precision and elegance.
+          Let's discuss how we can bring your vision to life with precision and
+          elegance.
         </p>
       </motion.div>
 
