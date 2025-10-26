@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-import { useLenis } from "@studio-freight/react-lenis";
+import { useLenis } from "lenis/react";
 
 export default function ScrollToTop() {
   const { pathname } = useLocation();
@@ -8,14 +8,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     if (lenis) {
-      // Use raf to wait for DOM updates before scrolling
-      requestAnimationFrame(() => {
-        lenis.scrollTo(0, {
-          duration: 0, // No animation for route changes
-          easing: (t) => t,
-          immediate: true, // Force jump
-        });
-      });
+      lenis.scrollTo(0, { immediate: true });
     }
   }, [pathname, lenis]);
 
