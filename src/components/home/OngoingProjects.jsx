@@ -191,10 +191,7 @@ const OngoingProjects = () => {
   };
 
   return (
-    <section
-      ref={containerRef}
-      className="relative py-20 bg-white overflow-hidden"
-    >
+    <section ref={containerRef} className="relative bg-white overflow-hidden">
       {/* Parallax Background */}
       <motion.div
         style={{ y }}

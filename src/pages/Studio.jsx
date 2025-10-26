@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { ConnectSVG, ProjectSVG } from "../assets/svg.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
+import SocialConnect from "../components/common/SocialConnect.jsx";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -340,6 +341,9 @@ const Studio = () => {
             <ConnectSVG />
           </div>
         </Link>
+        <div className="-mt-20">
+          <SocialConnect />
+        </div>
       </motion.div>
     </>
   );

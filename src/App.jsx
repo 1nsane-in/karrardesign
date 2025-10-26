@@ -30,7 +30,7 @@ function App() {
       <InsaneFooter />
 
       {/* Screen size */}
-      {import.meta.env.VITE_ENV === "development" && <ScreenSizeDisplay />}
+      {import.meta.env.VITE_ENV === "dev" && <ScreenSizeDisplay />}
     </BrowserRouter>
   );
 }

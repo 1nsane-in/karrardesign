@@ -6,17 +6,6 @@ import { motion } from "framer-motion";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 
-const headingVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 const Contact = () => {
   return (
     <>
@@ -93,59 +82,61 @@ const Contact = () => {
               },
             ]}
           />
-          {/* Subtle logo watermark */}
-          <img
-            src={KarrarLogo}
-            alt=""
-            className="pointer-events-none select-none absolute right-2 sm:right-8 bottom-2 sm:bottom-6 w-16 sm:w-24 md:w-32 opacity-10"
-          />
         </div>
         <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           <div>
-            <h1 className=" font-bold uppercase text-sm">Dubai</h1>
+            <h1 className=" text-center lg:text-left font-bold uppercase text-sm">
+              Dubai
+            </h1>
             <div>
-              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
                 Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh
                 Zayed Road <br />
                 PO Box: 31303, Dubai, UAE
               </p>
             </div>
             <div className="mt-8">
-              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-center lg:text-left text-zinc-600">
                 Karrar Design - Projects LLC, Dubai Commercity Building B2,
                 11-17th St, <br /> Umm Ramool, Dubai, UAE
               </p>
             </div>
           </div>
           <div>
-            <h1 className=" font-semibold uppercase text-sm">Canada</h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <h1 className=" font-semibold uppercase text-sm  text-center lg:text-left">
+              Canada
+            </h1>
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
               Karrar Design - Projects Inc. 3695 Kaneff Cresent Suite 1712,
               Mississauga. LSA 4B, Ontario, Canada
             </p>
           </div>
 
           <div>
-            <h1 className=" font-bold uppercase text-sm">India</h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
+              India
+            </h1>
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
               Karrar Design - Projects Inc.
             </p>
-            <p className="text-zinc-600">
+            <p className="text-zinc-600 text-center lg:text-left">
               205 SLT, Richmond Road, <br /> Bangalore 560025
             </p>
           </div>
 
           <div>
-            <h1 className=" font-bold uppercase text-sm">General</h1>
-            <p className="max-w-[280px] mt-4 leading-[16px] text-zinc-600">
+            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
+              General
+            </h1>
+            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600   text-center lg:text-left">
               <a
                 href="mailto:info@karrardesign-projects.com"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
+                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none "
               >
                 info@karrardesign-projects.com
               </a>
             </p>
-            <p className="text-zinc-600 mt-2">
+            <p className="text-zinc-600 mt-2 text-center lg:text-left">
               <a
                 href="tel:+971504591031"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -153,7 +144,7 @@ const Contact = () => {
                 +971-50-459-1031
               </a>
             </p>
-            <p className="text-zinc-600 mt-1">
+            <p className="text-zinc-600 mt-1 text-center lg:text-left">
               <a
                 href="tel:+971508600624"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -161,7 +152,7 @@ const Contact = () => {
                 +971-50-860-0624
               </a>
             </p>
-            <p className="text-zinc-600 mt-1">
+            <p className="text-zinc-600 mt-1 text-center lg:text-left">
               <a
                 href="tel:+16479494284"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -169,7 +160,7 @@ const Contact = () => {
                 +1-647-949-4284
               </a>
             </p>
-            <p className="text-zinc-600 mt-1 mb-10">
+            <p className="text-zinc-600 mt-1 mb-10 text-center lg:text-left">
               <a
                 href="tel:+916366443351"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -180,35 +171,6 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
-      {/* <motion.div
-        variants={headingVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
-        className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm lg:mt-10 mt-5 pb-20 flex-col lg:flex-row px-4 lg:px-0"
-      >
-        <div>
-          <h1 className=" font-bold uppercase text-sm">General</h1>
-          <p className="max-w-[280px] mt-4 leading-[16px] text-gray-600">
-            info@karrardesign-projects.com
-          </p>
-          <p className="text-gray-600">+971-50-459-1031</p>
-        </div>
-      </motion.div> */}
-
-      {/* <div className="max-w-5xl lg:mx-auto lg:mt-44 mt-32">
-        <h1>Mail Component</h1>
-      </div>
-
-      <motion.div
-        variants={headingVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-        className="mt-20"
-      >
-        <Footer />
-      </motion.div> */}
     </>
   );
 };

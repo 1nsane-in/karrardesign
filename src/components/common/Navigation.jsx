@@ -184,7 +184,7 @@ const Navigation = () => {
         animate={{ y: 0 }}
         exit={{ y: 100 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-50 flex items-center justify-center"
+        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-200 flex items-center justify-center"
       >
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -44,11 +44,6 @@ const Home = () => {
         />
         <OngoingProjects />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-white"
-          pattern="lines"
-        />
         <Example />
 
         <SectionTransition

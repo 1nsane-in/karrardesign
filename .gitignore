@@ -27,4 +27,7 @@ random.txt
 
 
 .qodo
-
+.env
+.env.*
+.env.local
+.env.*

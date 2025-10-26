@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { ConnectSVG } from "../assets/svg.jsx";
 import StackCards from "../components/work/stacking-cards.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
+import SocialConnect from "../components/common/SocialConnect.jsx";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -402,13 +403,15 @@ const Services = () => {
       >
         <Link
           to="/contact"
-          className="pt-6 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center justify-center px-4"
+          className="pt-6  flex flex-col items-center justify-center px-4"
         >
-          <div className="w-32 sm:w-40 lg:w-sm">
+          <div className="w-44 lg:w-[400px]">
             <ConnectSVG />
           </div>
         </Link>
       </motion.div>
+
+      <SocialConnect />
     </>
   );
 };

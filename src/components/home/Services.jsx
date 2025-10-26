@@ -233,7 +233,7 @@ const Services = () => {
     return (
         <section
             ref={containerRef}
-            className="relative py-20 bg-zinc-50 overflow-hidden"
+            className="relative pt-20 bg-zinc-50 overflow-hidden"
         >
             {/* Parallax Background */}
             <motion.div
