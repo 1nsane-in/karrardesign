@@ -1,12 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
-import Work from "./pages/Work";
 import Services from "./pages/Services";
 import Navigation from "./components/common/Navigation";
-import PageWrapper from "./components/common/PageWrapper";
 import ScrollToTop from "./components/common/ScrollToTop";
-import { AnimatePresence } from "framer-motion";
 import Studio from "./pages/Studio";
 import Karrar from "./pages/Karrar";
 import ProjectDetail from "./pages/ProjectDetail";
