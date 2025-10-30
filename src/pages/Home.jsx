@@ -18,7 +18,6 @@ import Example from "../components/ui/image-gallery";
 const Home = () => {
   return (
     <>
-      <Navigation />
       <div className="bg-secondary min-h-screen relative">
         <Hero />
 
@@ -29,11 +28,6 @@ const Home = () => {
         />
         <Description />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-zinc-50"
-          pattern="lines"
-        />
         <Services />
 
         <SectionTransition
@@ -50,11 +44,6 @@ const Home = () => {
         />
         <OngoingProjects />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-white"
-          pattern="lines"
-        />
         <Example />
 
         <SectionTransition
@@ -71,11 +60,6 @@ const Home = () => {
         />
         <Testimonial />
 
-        <SectionTransition
-          fromColor="bg-white"
-          toColor="bg-zinc-50"
-          pattern="lines"
-        />
         <GetInTouch />
       </div>
     </>

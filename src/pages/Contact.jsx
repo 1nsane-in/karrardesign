@@ -3,29 +3,15 @@ import WorldMap from "../components/ui/world-map.jsx";
 import { KarrarLogo } from "../assets";
 
 import { motion } from "framer-motion";
-
-const headingVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
+import TopGridPattern from "../components/common/TopGridPattern.jsx";
+import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 
 const Contact = () => {
   return (
     <>
+      <TopGridPattern />
       {/* Noise Grain Overlay */}
-      <div
-        className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-20"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          mixBlendMode: "multiply",
-        }}
-      ></div>
+      <NoiseOverlay />
 
       <div
         style={{ perspective: 800 }}
@@ -48,25 +34,25 @@ const Contact = () => {
         </motion.div>
 
         {/* Main Heading Unit - Centered */}
-        <div className="uppercase text-left flex flex-col items-start justify-center w-fit mx-auto">
+        <div className="uppercase text-center flex flex-col items-center lg:items-start justify-center w-fit mx-auto">
           <motion.h1
             initial="hidden"
             animate="visible"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700"
           >
-            Let's work
+            Let&apos;s work
           </motion.h1>
           <motion.h1
             initial="hidden"
             animate="visible"
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] lg:ml-[300px] font-tan-pearl text-zinc-700"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] lg:ml-[300px] font-tan-pearl text-zinc-700"
           >
             Together
           </motion.h1>
           <motion.div
             initial="hidden"
             animate="visible"
-            className="lg:w-md w-32 sm:w-40 md:w-48 lg:-mt-10 lg:ml-[600px] -mt-5"
+            className="lg:w-md w-32 sm:w-40 md:w-[300px] md:-mt-7  lg:ml-[600px] -mt-5"
           >
             <ConnectSVG />
           </motion.div>
@@ -96,59 +82,61 @@ const Contact = () => {
               },
             ]}
           />
-          {/* Subtle logo watermark */}
-          <img
-            src={KarrarLogo}
-            alt=""
-            className="pointer-events-none select-none absolute right-2 sm:right-8 bottom-2 sm:bottom-6 w-16 sm:w-24 md:w-32 opacity-10"
-          />
         </div>
         <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           <div>
-            <h1 className=" font-bold uppercase text-sm">Dubai</h1>
+            <h1 className=" text-center lg:text-left font-bold uppercase text-sm">
+              Dubai
+            </h1>
             <div>
-              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
                 Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh
                 Zayed Road <br />
                 PO Box: 31303, Dubai, UAE
               </p>
             </div>
             <div className="mt-8">
-              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-center lg:text-left text-zinc-600">
                 Karrar Design - Projects LLC, Dubai Commercity Building B2,
                 11-17th St, <br /> Umm Ramool, Dubai, UAE
               </p>
             </div>
           </div>
           <div>
-            <h1 className=" font-semibold uppercase text-sm">Canada</h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <h1 className=" font-semibold uppercase text-sm  text-center lg:text-left">
+              Canada
+            </h1>
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
               Karrar Design - Projects Inc. 3695 Kaneff Cresent Suite 1712,
               Mississauga. LSA 4B, Ontario, Canada
             </p>
           </div>
 
           <div>
-            <h1 className=" font-bold uppercase text-sm">India</h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600">
+            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
+              India
+            </h1>
+            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
               Karrar Design - Projects Inc.
             </p>
-            <p className="text-zinc-600">
+            <p className="text-zinc-600 text-center lg:text-left">
               205 SLT, Richmond Road, <br /> Bangalore 560025
             </p>
           </div>
 
           <div>
-            <h1 className=" font-bold uppercase text-sm">General</h1>
-            <p className="max-w-[280px] mt-4 leading-[16px] text-zinc-600">
+            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
+              General
+            </h1>
+            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600   text-center lg:text-left">
               <a
                 href="mailto:info@karrardesign-projects.com"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
+                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none "
               >
                 info@karrardesign-projects.com
               </a>
             </p>
-            <p className="text-zinc-600 mt-2">
+            <p className="text-zinc-600 mt-2 text-center lg:text-left">
               <a
                 href="tel:+971504591031"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -156,7 +144,7 @@ const Contact = () => {
                 +971-50-459-1031
               </a>
             </p>
-            <p className="text-zinc-600 mt-1">
+            <p className="text-zinc-600 mt-1 text-center lg:text-left">
               <a
                 href="tel:+971508600624"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -164,7 +152,7 @@ const Contact = () => {
                 +971-50-860-0624
               </a>
             </p>
-            <p className="text-zinc-600 mt-1">
+            <p className="text-zinc-600 mt-1 text-center lg:text-left">
               <a
                 href="tel:+16479494284"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -172,7 +160,7 @@ const Contact = () => {
                 +1-647-949-4284
               </a>
             </p>
-            <p className="text-zinc-600 mt-1 mb-10">
+            <p className="text-zinc-600 mt-1 mb-10 text-center lg:text-left">
               <a
                 href="tel:+916366443351"
                 className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
@@ -183,35 +171,6 @@ const Contact = () => {
           </div>
         </div>
       </motion.div>
-      {/* <motion.div
-        variants={headingVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
-        className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm lg:mt-10 mt-5 pb-20 flex-col lg:flex-row px-4 lg:px-0"
-      >
-        <div>
-          <h1 className=" font-bold uppercase text-sm">General</h1>
-          <p className="max-w-[280px] mt-4 leading-[16px] text-gray-600">
-            info@karrardesign-projects.com
-          </p>
-          <p className="text-gray-600">+971-50-459-1031</p>
-        </div>
-      </motion.div> */}
-
-      {/* <div className="max-w-5xl lg:mx-auto lg:mt-44 mt-32">
-        <h1>Mail Component</h1>
-      </div>
-
-      <motion.div
-        variants={headingVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-        className="mt-20"
-      >
-        <Footer />
-      </motion.div> */}
     </>
   );
 };

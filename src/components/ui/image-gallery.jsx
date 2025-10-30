@@ -40,7 +40,7 @@ export default function Example() {
 
   return (
     <>
-      <section className="w-full lg:flex flex-col items-center justify-start py-12 mt-40 hidden">
+      <section className="w-full lg:flex flex-col items-center justify-start py-12 mt-20 hidden">
         <div className="max-w-3xl text-center px-4">
           <h1 className="text-3xl font-semibold font-tan-pearl">
             Where Vision Becomes Reality
@@ -73,7 +73,7 @@ export default function Example() {
         </div>
       </section>
 
-      <section className="w-full flex flex-col items-center justify-start py-12 mt-40 lg:hidden">
+      <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
         {/* Header */}
         <div className="max-w-3xl text-center px-4">
           <h1 className="text-3xl font-semibold font-tan-pearl">

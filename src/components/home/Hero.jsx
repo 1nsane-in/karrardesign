@@ -102,7 +102,7 @@ const Hero = () => {
         <motion.div
           className="absolute inset-0"
           style={{ opacity: overlayOpacity }}
-        >
+        > 
           <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/20 to-transparent" />
         </motion.div>
       </motion.div>

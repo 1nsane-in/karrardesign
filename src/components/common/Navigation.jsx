@@ -77,13 +77,13 @@ const Navigation = () => {
             >
               <Link
                 to="/studio"
-                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out"
+                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
               >
                 Studio
               </Link>
               <Link
                 to="/services"
-                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out"
+                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
               >
                 Services
               </Link>
@@ -115,7 +115,7 @@ const Navigation = () => {
               </div> */}
               <Link
                 to="/karrar"
-                className=" hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out "
+                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
               >
                 Karrar
               </Link>
@@ -184,7 +184,7 @@ const Navigation = () => {
         animate={{ y: 0 }}
         exit={{ y: 100 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-50 flex items-center justify-center"
+        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-200 flex items-center justify-center"
       >
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}

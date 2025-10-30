@@ -36,7 +36,7 @@ export const AnimatedTestimonials = ({
   return (
     <div
       className={cn(
-        "max-w-sm md:max-w-7xl 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20 mt-20",
+        "max-w-sm md:max-w-7xl z-20 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20 mt-20",
         className
       )}
     >
@@ -93,8 +93,8 @@ export const AnimatedTestimonials = ({
               Stories of Satisfaction
             </h1>
             <p>
-              Our reputation is built on trust, detail, and the voices
-              of our clients.
+              Our reputation is built on trust, detail, and the voices of our
+              clients.
             </p>
           </div>
           <div className="flex justify-between flex-col py-4">
@@ -151,7 +151,7 @@ export const AnimatedTestimonials = ({
                 </p>
               </div>
             </motion.div>
-            <div className="flex gap-4 pt-12 md:pt-0 lg:mt-10">
+            <div className="flex gap-4 pt-12 md:pt-0 lg:mt-10 justify-center md:justify-start">
               <button
                 onClick={handlePrev}
                 className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"

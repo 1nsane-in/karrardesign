@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Marquee } from "../ui/marquee";
 
 const CompanyPartners = () => {
   const containerRef = useRef(null);
@@ -8,7 +9,7 @@ const CompanyPartners = () => {
     offset: ["start end", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  // const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   // Company partners data - you can replace with actual company logos
@@ -71,7 +72,7 @@ const CompanyPartners = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-zinc-100 overflow-hidden"
+      className="relative bg-zinc-100 overflow-hidden"
     >
       {/* Content */}
       <motion.div style={{ opacity }} className="relative z-10">
@@ -96,7 +97,7 @@ const CompanyPartners = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6"
           >
             Collaborating with
             <br />
@@ -120,9 +121,23 @@ const CompanyPartners = () => {
           {/* Gradient Overlays */}
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-zinc-100 to-transparent z-10" />
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-zinc-100 to-transparent z-10" />
-
+          <Marquee>
+            {duplicatedPartners.map((partner, index) => (
+              <div
+                key={index}
+                className="relative h-full w-fit mx-[4rem] flex items-center justify-start"
+              >
+                <h1>{partner.name}</h1>
+                <div className="text-center">
+                  <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
+                    {partner.sector}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Marquee>
           {/* Scrolling Container */}
-          <motion.div
+          {/* <motion.div
             style={{ x }}
             className="flex gap-8 py-8"
             animate={{
@@ -145,11 +160,6 @@ const CompanyPartners = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div className="w-48 h-32 bg-white rounded-lg shadow-sm border border-zinc-200 flex flex-col items-center justify-center p-6 group-hover:shadow-lg group-hover:border-[#ffb400]/30 transition-all duration-300">
-                  {/* <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="max-w-full max-h-16 object-contain mb-3 grayscale group-hover:grayscale-0 transition-all duration-300"
-                  /> */}
                   <h1>{partner.name}</h1>
                   <div className="text-center">
                     <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
@@ -160,6 +170,7 @@ const CompanyPartners = () => {
               </motion.div>
             ))}
           </motion.div>
+          */}
         </div>
 
         {/* Stats Section */}
