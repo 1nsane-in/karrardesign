@@ -125,13 +125,11 @@ const CompanyPartners = () => {
             {duplicatedPartners.map((partner, index) => (
               <div
                 key={index}
-                className="relative h-full w-fit mx-[4rem] flex items-center justify-start"
+                className="relative flex flex-col items-center justify-center w-[280px] shrink-0"
               >
-                <h1>{partner.name}</h1>
-                <div className="text-center">
-                  <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
-                    {partner.sector}
-                  </div>
+                <h1 className="text-2xl font-bold text-zinc-800 mb-3 text-center max-w-[250px]">{partner.name}</h1>
+                <div className="text-sm text-zinc-500/80 font-normal text-center max-w-[250px]">
+                  {partner.sector}
                 </div>
               </div>
             ))}

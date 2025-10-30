@@ -40,6 +40,29 @@ html {
   scrollbar-width: none;
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration, 30s) linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation-direction: reverse;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: calc(var(--duration, 30s) * 0.7);
+  }
+}
+
 .container-services {
   width: 500vw; /* Adjusted for 5 panels */
   height: 100vh;
