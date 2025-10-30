@@ -191,7 +191,7 @@ const OngoingProjects = () => {
   };
 
   return (
-    <section ref={containerRef} className="relative bg-white overflow-hidden">
+    <section ref={containerRef} className="relative py-12 bg-white overflow-hidden">
       {/* Parallax Background */}
       <motion.div
         style={{ y }}
@@ -201,7 +201,7 @@ const OngoingProjects = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

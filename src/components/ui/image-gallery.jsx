@@ -40,12 +40,14 @@ export default function Example() {
 
   return (
     <>
-      <section className="w-full lg:flex flex-col items-center justify-start py-12 mt-20 hidden">
+      <section className="w-full flex flex-col items-center justify-start py-16">
         <div className="max-w-3xl text-center px-4">
-          <h1 className="text-3xl font-semibold font-tan-pearl">
-            Where Vision Becomes Reality
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight">
+            Where <span className="text-[#ffb400]">Vision</span>
+            <br />
+            Becomes Reality
           </h1>
-          <p className="text-md text-zinc-600 mt-2 font-cinzel">
+          <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>
@@ -73,13 +75,15 @@ export default function Example() {
         </div>
       </section>
 
-      <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
+      <section className="w-full flex flex-col items-center justify-start py-16 md:hidden">
         {/* Header */}
         <div className="max-w-3xl text-center px-4">
-          <h1 className="text-3xl font-semibold font-tan-pearl">
-            Where Vision Becomes Reality
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight">
+            Where <span className="text-[#ffb400]">Vision</span>
+            <br />
+            Becomes Reality
           </h1>
-          <p className="text-md text-zinc-600 mt-2 font-cinzel">
+          <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>
@@ -110,7 +114,7 @@ export default function Example() {
           {/* Navigation Buttons */}
           <button
             onClick={goToPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition z-10"
           >
             <svg
               className="w-5 h-5 text-zinc-700"
@@ -129,7 +133,7 @@ export default function Example() {
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition z-10"
           >
             <svg
               className="w-5 h-5 text-zinc-700"

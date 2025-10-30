@@ -171,7 +171,7 @@ const Studio = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-4 sm:mb-6 px-6 sm:px-0"
           >
             Where Vision <br />
             Becomes Reality
@@ -187,7 +187,7 @@ const Studio = () => {
           className="mt-2 sm:mt-4 lg:mt-6"
         >
           <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700">
+            <p className="text-base leading-relaxed text-zinc-600 mt-4">
               Every project tells a story of precision, creativity, and
               unmatched craftsmanship.
             </p>
@@ -241,17 +241,17 @@ const Studio = () => {
                       alt="Karrar Logo"
                       className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
                     />
-                    <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
+                    <span className="block text-base font-tan-pearl mt-0">
                       {project.title}
                     </span>
                   </div>
-                  <span className="block text-xs sm:text-sm text-zinc-600">
+                  <span className="block text-sm text-zinc-600">
                     {project.location}
                   </span>
                 </div>
-                <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                  <span className="font-bold">{project.category}</span>
-                  <span className="text-xs sm:text-sm font-normal text-zinc-600">
+                <span className="text-sm text-right flex flex-col items-end">
+                  <span className="font-semibold text-zinc-800">{project.category}</span>
+                  <span className="text-sm text-zinc-600">
                     {project.service}
                   </span>
                 </span>
@@ -266,15 +266,15 @@ const Studio = () => {
         <div className="max-w-5xl mx-auto">
           {/* Philosophy Content */}
           <div className="text-center mb-16 lg:mb-20">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-tan-pearl text-zinc-700 mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6">
               Project Philosophy
             </h2>
-            <p className="text-xl sm:text-2xl lg:text-3xl italic text-zinc-600 mb-10 font-light">
+            <p className="text-lg text-zinc-600 mb-10 italic">
               Every Detail Matters
             </p>
 
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-zinc-700 font-light">
+              <p className="text-base leading-relaxed text-zinc-600">
                 We don't just design spaces, we{" "}
                 <strong className="font-semibold hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
                   curate experiences
@@ -316,7 +316,7 @@ const Studio = () => {
 
           {/* Call to Action */}
           <div className="text-center">
-            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-700 leading-tight">
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight">
               Let's Create Your Next
               <br />
               Landmark Project

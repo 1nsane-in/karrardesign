@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Work from "./pages/Work";
 import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Navigation from "./components/common/Navigation";
 import PageWrapper from "./components/common/PageWrapper";
 import ScrollToTop from "./components/common/ScrollToTop";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:serviceId" element={<ServiceDetail />} />
         <Route path="/studio" element={<Studio />} />
         <Route path="/karrar" element={<Karrar />} />
         <Route path="/studio/:projectId" element={<ProjectDetail />} />

@@ -89,10 +89,12 @@ export const AnimatedTestimonials = ({
         </div>
         <div className="flex flex-col justify-between">
           <div className=" -mt-10 lg:mt-0">
-            <h1 className="lg:text-4xl text-2xl font-tan-pearl leading-[50px] lg:mt-8">
-              Stories of Satisfaction
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight lg:mt-8">
+              Stories of
+              <br />
+              <span className="text-[#ffb400]">Satisfaction</span>
             </h1>
-            <p>
+            <p className="text-base text-zinc-600 mt-4">
               Our reputation is built on trust, detail, and the voices of our
               clients.
             </p>

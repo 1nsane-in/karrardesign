@@ -1,6 +1,7 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll, MotionValue } from "motion/react";
 import { useRef, forwardRef } from "react";
+import { Link } from "react-router";
 import TopGridPattern from "../common/TopGridPattern";
 
 export const Card = ({
@@ -13,6 +14,7 @@ export const Card = ({
   progress,
   range,
   targetScale,
+  serviceId,
 }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -72,7 +74,7 @@ export const Card = ({
               )}
             </div>
 
-            <button className="flex items-center gap-2 sm:gap-3 text-zinc-800 font-medium hover:gap-3 sm:hover:gap-4 transition-all duration-300 group mt-4 sm:mt-6 lg:mt-0">
+            <Link to={`/services/${serviceId}`} className="flex items-center gap-2 sm:gap-3 text-zinc-800 font-medium hover:gap-3 sm:hover:gap-4 transition-all duration-300 group mt-4 sm:mt-6 lg:mt-0">
               <span className="text-sm sm:text-base">Explore Service</span>
               <div className="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-zinc-100 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                 <svg
@@ -87,7 +89,7 @@ export const Card = ({
                   />
                 </svg>
               </div>
-            </button>
+            </Link>
           </div>
 
           <div className="relative w-full lg:w-[55%] h-48 sm:h-64 lg:h-full rounded-xl sm:rounded-2xl overflow-hidden group">
@@ -136,6 +138,7 @@ const StackCards = forwardRef(({ projects }, ref) => {
                 progress={scrollYProgress}
                 range={[rangeStart, rangeEnd]}
                 targetScale={targetScale}
+                serviceId={project.id}
               />
             );
           })}

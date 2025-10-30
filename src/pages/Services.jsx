@@ -28,6 +28,7 @@ const fadeInVariants = {
 
 const services = [
   {
+    id: "interior-fitout",
     title: "Interior Fit-Out Works",
     description:
       "Bespoke interior solutions for villas, hotels, offices, and restaurants, combining refined aesthetics with practical functionality.",
@@ -40,6 +41,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "project-management",
     title: "Project Management",
     description:
       "Comprehensive project oversight ensuring time, cost, and quality objectives are met with precision and transparency.",
@@ -52,6 +54,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "construction-management",
     title: "Construction Management",
     description:
       "Expert supervision of all construction trades delivering efficiency, cost savings, and superior quality across every phase.",
@@ -64,6 +67,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "design-management",
     title: "Design Management",
     description:
       "Managing the complete design lifecycle to ensure creative concepts are efficiently realized into flawless built spaces.",
@@ -76,6 +80,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "tender-management",
     title: "Tender Management",
     description:
       "Structured procurement and tender evaluation ensuring the selection of trusted, high-quality partners.",
@@ -88,6 +93,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "client-representation",
     title: "Client Representation",
     description:
       "Dedicated partnership guiding clients through every decision, ensuring transparency and long-term value.",
@@ -100,6 +106,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "consultancy",
     title: "Consultancy Services",
     description:
       "Specialized consultancy covering design, cost, and project performance to maximize outcomes and efficiency.",
@@ -112,6 +119,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "value-engineering",
     title: "Value Engineering & Cost Analysis",
     description:
       "Smart design and material assessment ensuring the perfect balance of luxury, function, and cost efficiency.",
@@ -124,6 +132,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1603791452906-bb9f68c159d6?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "procurement",
     title: "Procurement",
     description:
       "End-to-end material sourcing and vendor negotiation delivering premium quality and value for investment.",
@@ -136,6 +145,7 @@ const services = [
     link: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=500&auto=format&fit=crop",
   },
   {
+    id: "claims-management",
     title: "Claims Management & Troubleshooting",
     description:
       "Protecting client interests through strategic claim assessment and swift resolution of project challenges.",
