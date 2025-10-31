@@ -30,6 +30,7 @@ html,
   --font-roboto: "Roboto", sans-serif;
 }
 
+
 /* Hide scrollbar */
 ::-webkit-scrollbar {
   display: none;
@@ -38,12 +39,14 @@ html,
 html {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -64,11 +67,13 @@ html {
 }
 
 .container-services {
-  width: 500vw; /* Adjusted for 5 panels */
+  width: 500vw;
+  /* Adjusted for 5 panels */
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
-  position: relative; /* Added */
+  position: relative;
+  /* Added */
 }
 
 .sticky {
@@ -81,5 +86,6 @@ html {
   height: 100vh;
   flex-shrink: 0;
   position: relative;
-  overflow: hidden; /* Added */
+  overflow: hidden;
+  /* Added */
 }

@@ -10,14 +10,14 @@ const headingVariants = {
 
 const Description = () => {
   return (
-    <div className=" relative">
+    <div className="relative py-12">
       <div
         style={{ perspective: 800 }}
-        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto  2xl:px-30 lg:h-[500px]  lg:pt-0"
+        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="col-span-3 lg:col-span-3 flex flex-col lg:justify-end justify-center items-center lg:items-start px-5 lg:px-0 ">
+        <div className="col-span-3 lg:col-span-3 flex flex-col justify-center items-center lg:items-start">
           <motion.h1
-            className="uppercase mt-5 lg:text-[60px] text-2xl leading-[40px] lg:leading-[60px]  font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -27,27 +27,27 @@ const Description = () => {
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase lg:mt-5 lg:text-[60px] text-2xl leading-[40px]  lg:leading-[70px] lg:-mb-3 font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
           >
-            Fit-Outs &
+            <span className="text-[#ffb400]">Fit-Outs</span> &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[110px] leading-[40px]   font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            Project
+            <span className="text-[#ffb400]">Project</span>
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-2xl lg:leading-[60px]  leading-[40px]  font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -57,21 +57,20 @@ const Description = () => {
             Management
           </motion.h1>
         </div>
-        <div className="col-span-2 lg:col-span-2 flex flex-col lg:justify-end justify-center lg:items-end items-center text-center lg:text-left px-5 lg:px-0 lg:pt-0 -mt-4 lg:-mt-0 ">
-          <div className="lg:w-xs w-40 mb-4 ">
+        <div className="col-span-2 lg:col-span-2 flex flex-col justify-center lg:items-end items-center text-center lg:text-right mt-8 lg:mt-0">
+          <div className="lg:w-xs w-32 mb-4">
             <DesignSVG />
           </div>
-          <p className=" lg:text-right text-center text-lg font-cinzel ">
+          <p className="lg:text-right text-center text-base leading-relaxed">
             Karrar Design Projects L.L.C. offers premium interior fit-out and
-            project management services across UAE, Canada, and India. With 20+
-            years of expertise, we deliver luxury villas, hotels, restaurants,
-            offices, and retail projects on time and within budget. Discover
-            trusted solutions in construction management, design management,
-            tendering, value engineering, and client representation.
+            project management services across UAE, Canada, and India.
+            <br /><br />
+            With 20+ years of expertise, we deliver luxury villas, hotels, restaurants,
+            offices, and retail projects on time and within budget.
           </p>
         </div>
       </div>
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-12">
         <div className={`${styles["button-wrapper"]} font-roboto font-light`}>
           <Link to={"/studio"} className="text-primary">
             <button className={styles.button}>

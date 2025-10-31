@@ -42,10 +42,23 @@ export default function Example() {
     <>
       <section className="w-full lg:flex flex-col items-center justify-start py-12 mt-20 hidden">
         <div className="max-w-3xl text-center px-4">
-          <h1 className="text-3xl font-semibold font-tan-pearl">
-            Where Vision Becomes Reality
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-4 mb-6"
+          >
+            <div className="w-12 h-px bg-[#ffb400]" />
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+              Completed
+            </span>
+            <div className="w-12 h-px bg-[#ffb400]" />
+          </motion.div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
+            Delivered <span className="text-[#ffb400]">Excellence</span>
           </h1>
-          <p className="text-md text-zinc-600 mt-2 font-cinzel">
+          <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>
@@ -76,10 +89,24 @@ export default function Example() {
       <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
         {/* Header */}
         <div className="max-w-3xl text-center px-4">
-          <h1 className="text-3xl font-semibold font-tan-pearl">
-            Where Vision Becomes Reality
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-4 mb-6"
+          >
+            <div className="w-12 h-px bg-[#ffb400]" />
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+              Completed
+            </span>
+            <div className="w-12 h-px bg-[#ffb400]" />
+          </motion.div>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
+            Delivered <br className="md:hidden" />{" "}
+            <span className="text-[#ffb400]">Excellence</span>
           </h1>
-          <p className="text-md text-zinc-600 mt-2 font-cinzel">
+          <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>

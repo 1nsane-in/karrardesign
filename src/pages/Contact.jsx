@@ -1,12 +1,30 @@
 import { ConnectSVG } from "../assets/svg.jsx";
-import WorldMap from "../components/ui/world-map.jsx";
 import { KarrarLogo } from "../assets";
-
 import { motion } from "framer-motion";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
+import ContactInfo from "../components/contact/ContactInfo.jsx";
+import ContactLink from "../components/contact/ContactLink.jsx";
+import AnimatedHeading from "../components/contact/AnimatedHeading.jsx";
+import {
+  contactLocations,
+  contactDetails,
+  mapConnections,
+} from "../data/contactData.js";
+import { lazy, Suspense, useState, useEffect, useTransition } from "react";
+
+const WorldMap = lazy(() => import("../components/ui/world-map.jsx"));
 
 const Contact = () => {
+  const [isPending, startTransition] = useTransition();
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    startTransition(() => {
+      setShowMap(true);
+    });
+  }, []);
+
   return (
     <>
       <TopGridPattern />
@@ -35,20 +53,8 @@ const Contact = () => {
 
         {/* Main Heading Unit - Centered */}
         <div className="uppercase text-center flex flex-col items-center lg:items-start justify-center w-fit mx-auto">
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700"
-          >
-            Let&apos;s work
-          </motion.h1>
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] lg:ml-[300px] font-tan-pearl text-zinc-700"
-          >
-            Together
-          </motion.h1>
+          <AnimatedHeading>Let&apos;s work</AnimatedHeading>
+          <AnimatedHeading className="lg:ml-[300px]">Together</AnimatedHeading>
           <motion.div
             initial="hidden"
             animate="visible"
@@ -65,110 +71,68 @@ const Contact = () => {
       >
         {/* World map background */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <WorldMap
-            lineColor="#ffb400"
-            className="opacity-60 h-full"
-            useAspect={false}
-            dots={[
-              // Dubai to India (Bangalore)
-              {
-                start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-                end: { lat: 12.9716, lng: 77.5946, label: "Bangalore" },
-              },
-              // Dubai to Canada (Toronto/Mississauga)
-              {
-                start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-                end: { lat: 43.6532, lng: -79.3832, label: "Toronto" },
-              },
-            ]}
-          />
+          {showMap ? (
+            <Suspense
+              fallback={
+                <div className="w-full h-full bg-gradient-to-br from-[#ffb400]/5 to-transparent" />
+              }
+            >
+              <WorldMap
+                lineColor="#ffb400"
+                className="opacity-60 h-full"
+                useAspect={false}
+                showPulses={false}
+                dots={[
+                  {
+                    start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                    end: { lat: 12.9716, lng: 77.5946, label: "Bangalore" },
+                  },
+                  {
+                    start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                    end: { lat: 43.6532, lng: -79.3832, label: "Toronto" },
+                  },
+                ]}
+              />
+            </Suspense>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#ffb400]/5 to-transparent" />
+          )}
         </div>
         <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
-          <div>
-            <h1 className=" text-center lg:text-left font-bold uppercase text-sm">
-              Dubai
-            </h1>
-            <div>
-              <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
-                Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh
-                Zayed Road <br />
-                PO Box: 31303, Dubai, UAE
-              </p>
-            </div>
-            <div className="mt-8">
-              <p className="lg:max-w-[220px] mt-4 leading-[20px] text-center lg:text-left text-zinc-600">
-                Karrar Design - Projects LLC, Dubai Commercity Building B2,
-                11-17th St, <br /> Umm Ramool, Dubai, UAE
-              </p>
-            </div>
-          </div>
-          <div>
-            <h1 className=" font-semibold uppercase text-sm  text-center lg:text-left">
-              Canada
-            </h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
-              Karrar Design - Projects Inc. 3695 Kaneff Cresent Suite 1712,
-              Mississauga. LSA 4B, Ontario, Canada
-            </p>
-          </div>
+          {contactLocations.map((location) => (
+            <ContactInfo key={location.title} title={location.title}>
+              {location.addresses.map((address, index) => (
+                <div key={index} className={index > 0 ? "mt-8" : ""}>
+                  <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
+                    {address.split("\n").map((line, i) => (
+                      <span key={i}>
+                        {line}
+                        {i < address.split("\n").length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              ))}
+            </ContactInfo>
+          ))}
 
-          <div>
-            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
-              India
-            </h1>
-            <p className="lg:max-w-[220px] mt-4 leading-[20px] text-zinc-600 text-center lg:text-left">
-              Karrar Design - Projects Inc.
+          <ContactInfo title="General">
+            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600 text-center lg:text-left">
+              <ContactLink href={`mailto:${contactDetails.email}`}>
+                {contactDetails.email}
+              </ContactLink>
             </p>
-            <p className="text-zinc-600 text-center lg:text-left">
-              205 SLT, Richmond Road, <br /> Bangalore 560025
-            </p>
-          </div>
-
-          <div>
-            <h1 className=" font-bold uppercase text-sm text-center lg:text-left">
-              General
-            </h1>
-            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600   text-center lg:text-left">
-              <a
-                href="mailto:info@karrardesign-projects.com"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none "
+            {contactDetails.phones.map((phone, index) => (
+              <p
+                key={phone}
+                className={`text-zinc-600 text-center lg:text-left ${index === 0 ? "mt-2" : "mt-1"} ${index === contactDetails.phones.length - 1 ? "mb-10" : ""}`}
               >
-                info@karrardesign-projects.com
-              </a>
-            </p>
-            <p className="text-zinc-600 mt-2 text-center lg:text-left">
-              <a
-                href="tel:+971504591031"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
-              >
-                +971-50-459-1031
-              </a>
-            </p>
-            <p className="text-zinc-600 mt-1 text-center lg:text-left">
-              <a
-                href="tel:+971508600624"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
-              >
-                +971-50-860-0624
-              </a>
-            </p>
-            <p className="text-zinc-600 mt-1 text-center lg:text-left">
-              <a
-                href="tel:+16479494284"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
-              >
-                +1-647-949-4284
-              </a>
-            </p>
-            <p className="text-zinc-600 mt-1 mb-10 text-center lg:text-left">
-              <a
-                href="tel:+916366443351"
-                className="hover:text-[#ffb400] focus-visible:text-[#ffb400] transition-colors duration-200 outline-none"
-              >
-                +91-63664-43351
-              </a>
-            </p>
-          </div>
+                <ContactLink href={`tel:${phone.replace(/[^+\d]/g, "")}`}>
+                  {phone}
+                </ContactLink>
+              </p>
+            ))}
+          </ContactInfo>
         </div>
       </motion.div>
     </>
