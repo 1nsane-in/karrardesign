@@ -9,10 +9,10 @@ const GetInTouch = () => {
           <h1 className="lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-800">
             Let&apos;s <span className="text-[#ffb400]">Work</span>
           </h1>
-          <h1 className="lg:text-[60px] text-3xl lg:leading-[70px] leading-tight lg:ml-[220px] font-tan-pearl text-zinc-800">
+          <h1 className="lg:text-[60px] text-3xl lg:leading-[70px] leading-tight lg:ml-[400px] font-tan-pearl text-zinc-800">
             Together
           </h1>
-          <div className="lg:w-md w-32 lg:-mt-10 lg:ml-[390px] mt-2">
+          <div className="lg:w-md w-24 lg:-mt-10 lg:ml-[390px] mt-2">
             <ConnectSVG />
           </div>
         </div>

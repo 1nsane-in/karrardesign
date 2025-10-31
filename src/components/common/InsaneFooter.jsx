@@ -1,26 +1,57 @@
 import { Link } from "react-router";
-import { KarrarLogo } from "../../assets";
+import { KarrarLogoSVG2 } from "../../assets/svg";
 
-const InsaneFooter = () => {
+const Footer = () => {
   return (
-    <footer className="bg-black text-white py-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center mb-16">
-          <img src={KarrarLogo} alt="Logo" className="w-20 h-20 mb-6 opacity-80" />
-          <h3 className="font-tan-pearl text-4xl mb-4">Karrar Design & Projects</h3>
-          <p className="text-zinc-400 max-w-md">Crafting timeless luxury spaces across Dubai, Canada, and India</p>
+    <footer className="bg-zinc-900 text-white py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-16 h-16 opacity-80">
+                <KarrarLogoSVG2 />
+              </div>
+              <h3 className="font-cinzel text-xl text-white">Karrar Design & Projects</h3>
+            </div>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Premium interior fit-out and project management services across UAE, Canada, and India.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold mb-4 text-[#ffb400]">Quick Links</h3>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li><Link to="/studio" className="hover:text-[#ffb400] transition-colors">Studio</Link></li>
+              <li><Link to="/services" className="hover:text-[#ffb400] transition-colors">Services</Link></li>
+              <li><Link to="/work" className="hover:text-[#ffb400] transition-colors">Work</Link></li>
+              <li><Link to="/contact" className="hover:text-[#ffb400] transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold mb-4 text-[#ffb400]">Services</h3>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li>Interior Fit-Out</li>
+              <li>Project Management</li>
+              <li>Design Management</li>
+              <li>Consultancy</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold mb-4 text-[#ffb400]">Contact</h3>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li>Dubai, UAE</li>
+              <li>info@karrardesign.com</li>
+              <li>+971 XX XXX XXXX</li>
+            </ul>
+          </div>
         </div>
-
-        <div className="flex flex-wrap justify-center gap-8 mb-16 text-sm">
-          <Link to="/" className="text-zinc-400 hover:text-[#ffb400] transition-colors uppercase tracking-wider">Home</Link>
-          <Link to="/studio" className="text-zinc-400 hover:text-[#ffb400] transition-colors uppercase tracking-wider">Studio</Link>
-          <Link to="/services" className="text-zinc-400 hover:text-[#ffb400] transition-colors uppercase tracking-wider">Services</Link>
-          <Link to="/karrar" className="text-zinc-400 hover:text-[#ffb400] transition-colors uppercase tracking-wider">Karrar</Link>
-          <Link to="/contact" className="text-zinc-400 hover:text-[#ffb400] transition-colors uppercase tracking-wider">Contact</Link>
+        <div className="border-t border-zinc-800 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500">
+          <p>© 2025 Karrar Design Projects L.L.C. All rights reserved.</p>
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <span className="hover:text-[#ffb400] cursor-pointer transition-colors">Privacy Policy</span>
+            <span className="hover:text-[#ffb400] cursor-pointer transition-colors">Terms & Conditions</span>
+          </div>
         </div>
-
-        <div className="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500 gap-4">
-          <p>&copy; 2024 Karrar Design & Projects</p>
+        <div className="text-center mt-4 text-xs text-zinc-500">
           <p>
             Crafted by{" "}
             <a href="https://www.1nsane.in/" target="_blank" rel="noreferrer" className="text-[#ffb400] hover:underline">
@@ -33,4 +64,4 @@ const InsaneFooter = () => {
   );
 };
 
-export default InsaneFooter;
+export default Footer;

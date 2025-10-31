@@ -57,7 +57,7 @@ const Home = () => {
         </div>
       )}
 
-      <div className="bg-secondary min-h-screen relative">
+      <div className="bg-secondary min-h-screen relative scroll-smooth">
         <Hero />
 
         <SectionTransition
@@ -76,11 +76,6 @@ const Home = () => {
         />
         <FutureProjects />
 
-        <SectionTransition
-          fromColor="bg-zinc-900"
-          toColor="bg-white"
-          pattern="dots"
-        />
         <OngoingProjects />
 
         <Example />
