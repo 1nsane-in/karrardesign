@@ -1,12 +1,22 @@
 import { ConnectSVG } from "../assets/svg.jsx";
-import WorldMap from "../components/ui/world-map.jsx";
 import { KarrarLogo } from "../assets";
-
 import { motion } from "framer-motion";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
+import { lazy, Suspense, useState, useEffect, useTransition } from "react";
+
+const WorldMap = lazy(() => import("../components/ui/world-map.jsx"));
 
 const Contact = () => {
+  const [isPending, startTransition] = useTransition();
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    startTransition(() => {
+      setShowMap(true);
+    });
+  }, []);
+
   return (
     <>
       <TopGridPattern />
@@ -65,23 +75,28 @@ const Contact = () => {
       >
         {/* World map background */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <WorldMap
-            lineColor="#ffb400"
-            className="opacity-60 h-full"
-            useAspect={false}
-            dots={[
-              // Dubai to India (Bangalore)
-              {
-                start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-                end: { lat: 12.9716, lng: 77.5946, label: "Bangalore" },
-              },
-              // Dubai to Canada (Toronto/Mississauga)
-              {
-                start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
-                end: { lat: 43.6532, lng: -79.3832, label: "Toronto" },
-              },
-            ]}
-          />
+          {showMap ? (
+            <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-[#ffb400]/5 to-transparent" />}>
+              <WorldMap
+                lineColor="#ffb400"
+                className="opacity-60 h-full"
+                useAspect={false}
+                showPulses={false}
+                dots={[
+                  {
+                    start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                    end: { lat: 12.9716, lng: 77.5946, label: "Bangalore" },
+                  },
+                  {
+                    start: { lat: 25.2048, lng: 55.2708, label: "Dubai" },
+                    end: { lat: 43.6532, lng: -79.3832, label: "Toronto" },
+                  },
+                ]}
+              />
+            </Suspense>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-[#ffb400]/5 to-transparent" />
+          )}
         </div>
         <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           <div>

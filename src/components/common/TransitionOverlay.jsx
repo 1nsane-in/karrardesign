@@ -14,8 +14,8 @@ export default function TransitionOverlay({ show, onAnimationEnd }) {
         { clipPath: "polygon(25% 75%, 75% 75%, 75% 75%, 25% 75%)" },
         {
           clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          duration: 2,
-          ease: "power3.inOut",
+          duration: 0,
+          ease: "power2.inOut",
           // Add will-change for smoother GPU acceleration
           onStart: () => {
             overlayRef.current.style.willChange = "clip-path";
