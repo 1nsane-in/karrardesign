@@ -71,52 +71,66 @@ const ProjectDetail = () => {
   const project = projectData[projectId] || projectData["abundance"];
 
   useEffect(() => {
-    const handleWheel = (e) => {
-      if (e.deltaY > 0) {
-        setCurrentImageIndex((prev) =>
-          prev < project.images.length - 1 ? prev + 1 : 0
-        );
-      } else if (e.deltaY < 0) {
-        setCurrentImageIndex((prev) =>
-          prev > 0 ? prev - 1 : project.images.length - 1
-        );
-      }
-    };
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) =>
+        prev < project.images.length - 1 ? prev + 1 : 0
+      );
+    }, 4000); // advance every 2 seconds
 
-    window.addEventListener("wheel", handleWheel, { passive: true });
-    return () => window.removeEventListener("wheel", handleWheel);
+    return () => clearInterval(interval);
   }, [project.images.length]);
+
+  // preload images to avoid flicker when switching
+  useEffect(() => {
+    project.images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [project.images]);
 
   return (
     <>
       <NoiseOverlay />
-      
+
       <div className="min-h-screen bg-white">
         {/* Back Button */}
         <Link
           to="/studio"
           className="fixed top-8 left-8 z-50 group flex items-center gap-2 text-zinc-600 hover:text-[#ffb400] transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           <span className="text-sm uppercase tracking-wider">Back</span>
         </Link>
 
         {/* Hero Section */}
         <div className="relative h-screen">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImageIndex}
-              src={project.images[currentImageIndex]}
-              alt={project.title}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-full h-full object-cover"
-            />
-          </AnimatePresence>
+          {/* animated hero images: absolute positioned for crossfade/slide */}
+          <div className="absolute inset-0 overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                src={project.images[currentImageIndex]}
+                alt={project.title}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0 w-full h-full object-cover will-change-transform will-change-opacity"
+              />
+            </AnimatePresence>
+          </div>
 
           {/* Overlay Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -130,8 +144,14 @@ const ProjectDetail = () => {
                 transition={{ delay: 0.3 }}
                 className="flex items-center gap-3 mb-4"
               >
-                <img src={KarrarLogo} alt="Karrar Logo" className="w-4 h-4 opacity-80" />
-                <p className="text-xs uppercase text-white/80 tracking-wider">Project</p>
+                <img
+                  src={KarrarLogo}
+                  alt="Karrar Logo"
+                  className="w-4 h-4 opacity-80"
+                />
+                <p className="text-xs uppercase text-white/80 tracking-wider">
+                  Project
+                </p>
               </motion.div>
 
               <motion.h1
@@ -150,19 +170,27 @@ const ProjectDetail = () => {
                 className="flex flex-wrap gap-6 text-white/90"
               >
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Category</p>
+                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">
+                    Category
+                  </p>
                   <p className="text-sm font-semibold">{project.category}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Location</p>
+                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">
+                    Location
+                  </p>
                   <p className="text-sm font-semibold">{project.location}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Year</p>
+                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">
+                    Year
+                  </p>
                   <p className="text-sm font-semibold">{project.year}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">Area</p>
+                  <p className="text-xs uppercase tracking-wider text-white/60 mb-1">
+                    Area
+                  </p>
                   <p className="text-sm font-semibold">{project.area}</p>
                 </div>
               </motion.div>
@@ -172,7 +200,8 @@ const ProjectDetail = () => {
           {/* Image Counter */}
           <div className="absolute top-8 right-8 text-white bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
             <span className="text-sm font-semibold">
-              {String(currentImageIndex + 1).padStart(2, "0")} / {String(project.images.length).padStart(2, "0")}
+              {String(currentImageIndex + 1).padStart(2, "0")} /{" "}
+              {String(project.images.length).padStart(2, "0")}
             </span>
           </div>
 
@@ -204,18 +233,20 @@ const ProjectDetail = () => {
             >
               <div className="inline-flex items-center gap-4 mb-6">
                 <div className="w-12 h-px bg-[#ffb400]" />
-                <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">About</span>
+                <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+                  About
+                </span>
                 <div className="w-12 h-px bg-[#ffb400]" />
               </div>
-              
+
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6">
                 Project <span className="text-[#ffb400]">Overview</span>
               </h2>
-              
+
               <p className="text-lg text-zinc-600 leading-relaxed mb-6">
                 {project.description}
               </p>
-              
+
               <p className="text-base text-zinc-600 leading-relaxed">
                 {project.fullDescription}
               </p>
@@ -254,7 +285,9 @@ const ProjectDetail = () => {
             to="/studio"
             className="group inline-flex items-center gap-4 text-zinc-600 hover:text-[#ffb400] transition-colors"
           >
-            <span className="text-sm uppercase tracking-wider">View All Projects</span>
+            <span className="text-sm uppercase tracking-wider">
+              View All Projects
+            </span>
             <div className="w-12 h-px bg-zinc-300 group-hover:bg-[#ffb400] transition-colors" />
             <div className="w-2 h-2 border border-zinc-300 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all" />
           </Link>
