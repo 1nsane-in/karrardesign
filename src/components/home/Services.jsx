@@ -233,7 +233,7 @@ const Services = () => {
     return (
         <section
             ref={containerRef}
-            className="relative pt-20 bg-zinc-50 overflow-hidden"
+            className="relative py-12 bg-zinc-50 overflow-hidden"
         >
             {/* Parallax Background */}
             <motion.div
@@ -247,7 +247,7 @@ const Services = () => {
                 className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
             >
                 {/* Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -269,11 +269,10 @@ const Services = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
                     >
-                        Excellence in Every
+                        <span className="text-[#ffb400]">Excellence</span> in Every
                         <br />
-                        <span className="text-[#ffb400]">Detail</span>
+                        Detail
                     </motion.h2>
-
                 </div>
 
                 {/* Services Carousel */}
@@ -325,7 +324,7 @@ const Services = () => {
                                         ))}
                                         {service.features.length > 2 && (
                                             <div className="text-xs text-[#ffb400] font-medium">
-                                                +{service.features.length - 2} more services
+                                                +{service.features.length - 2} more
                                             </div>
                                         )}
                                     </div>
@@ -409,7 +408,7 @@ const Services = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="text-center mt-16"
+                    className="text-center mt-12"
                 >
                     <Link
                         to="/studio"

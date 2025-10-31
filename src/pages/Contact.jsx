@@ -1,5 +1,4 @@
 import { ConnectSVG } from "../assets/svg.jsx";
-import WorldMap from "../components/ui/world-map.jsx";
 import { KarrarLogo } from "../assets";
 import { motion } from "framer-motion";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
@@ -14,6 +13,15 @@ import {
 } from "../data/contactData.js";
 
 const Contact = () => {
+  const [isPending, startTransition] = useTransition();
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    startTransition(() => {
+      setShowMap(true);
+    });
+  }, []);
+
   return (
     <>
       <TopGridPattern />

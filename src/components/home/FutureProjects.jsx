@@ -143,7 +143,7 @@ const FutureProjects = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -175,7 +175,7 @@ const FutureProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-zinc-400 mt-6 max-w-2xl mx-auto"
+            className="text-base text-zinc-400 mt-4 max-w-2xl mx-auto"
           >
             Discover our upcoming projects that will redefine luxury and
             innovation in the region

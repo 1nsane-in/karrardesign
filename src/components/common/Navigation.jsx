@@ -1,11 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router";
-import { ArrowSVG, KarrarLogoSVG1, KarrarLogoSVG2 } from "../../assets/svg";
+import { KarrarLogoSVG2 } from "../../assets/svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import TransitionOverlay from "./TransitionOverlay";
-import { KarrarLogo } from "../../assets";
-import { Menu } from "lucide-react";
-import { X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -47,157 +44,67 @@ const Navigation = () => {
 
   return (
     <>
-      <AnimatePresence>
-        {scrolled && (
-          <motion.div
-            key="logo"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="size-[60px] fixed top-6 left-[10%] -translate-x-1/2 z-50"
-          >
-            <KarrarLogoSVG2 />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {/* AnimatePresence handles smooth in/out */}
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            key="topNav"
-            initial={{ y: -80, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -80, opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="h-20 fixed top-3 left-0 w-full z-50 bg-transparent"
-          >
-            <div
-              className={`flex items-center uppercase text-sm justify-center gap-30 h-full font-roboto  ${isHomePage ? "text-[#3c3c38]" : "text-black"}`}
-            >
-              <Link
-                to="/studio"
-                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
-              >
-                Studio
-              </Link>
-              <Link
-                to="/services"
-                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
-              >
-                Services
-              </Link>
-              <Link to="/" className=" flex flex-col items-center ">
-                <h1 className="font-cinzel lg:text-3xl  text-xl leading-[30px]">
-                  Karrar Design
+      {/* Main Navbar */}
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-4">
+              <div className="w-12 h-12">
+                <KarrarLogoSVG2 />
+              </div>
+              <div className={`hidden sm:block border-l-2 pl-4 transition-colors ${
+                scrolled ? "border-zinc-300" : isHomePage ? "border-white/30" : "border-zinc-300"
+              }`}>
+                <h1 className={`font-cinzel text-2xl ${
+                  scrolled ? "text-zinc-900" : isHomePage ? "text-white" : "text-zinc-900"
+                }`}>
+                  Karrar Design & Projects
                 </h1>
-                <p className="lg:text-[16px] text-[12px] font-medium tracking-widest">
-                  Projects
-                </p>
-              </Link>
-              {/* <div className=" flex flex-col items-center ">
-                <motion.div
-                    key="logo"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="size-[60px] fixed top-6 left-[10%] -translate-x-1/2 z-50"
-                >
-                  <KarrarLogoSVG2 />
-                </motion.div>
-                <h1 className="font-cinzel lg:text-3xl  text-xl leading-[30px]">
-                  Karrar Design
-                </h1>
-                <p className="lg:text-[16px] text-[12px] font-medium tracking-widest">
-                  Projects
-                </p>
-              </div> */}
-              <Link
-                to="/karrar"
-                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
-              >
-                Karrar
-              </Link>
-              <Link
-                to="/contact"
-                className="hidden lg:block hover:text-primary hover:cursor-pointer transition-all duration-300 ease-in-out bg-transparent backdrop-blur-md border border-transparent hover:border-white/20 px-6 py-3 rounded-full"
-              >
-                Contact
-              </Link>
-            </div>
-          </motion.div>
-        )}
+              </div>
+            </Link>
 
-        {scrolled && (
-          <motion.div
-            key="cornerNav"
-            initial={{ opacity: 0, scale: 0.8, x: 100, y: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, x: 100, y: 50 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="fixed z-50 bottom-10 right-16 w-[80px] hidden lg:block"
-          >
-            <ul className="text-xs 2xl:text-lg font-bold flex flex-col gap-1 text-zinc-700/70">
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <Link
-                  to={item.path}
                   key={item.name}
-                  onClick={handleNavigation(item.path)}
+                  to={item.path}
+                  className={`text-sm uppercase tracking-wider transition-colors ${
+                    pathname === item.path
+                      ? "text-[#ffb400]"
+                      : scrolled
+                      ? "text-zinc-700 hover:text-[#ffb400]"
+                      : isHomePage
+                      ? "text-white hover:text-[#ffb400]"
+                      : "text-zinc-700 hover:text-[#ffb400]"
+                  }`}
                 >
-                  <li
-                    className={`flex items-center ${
-                      pathname === item.path ? "text-primary" : ""
-                    }`}
-                  >
-                    {pathname === item.path && (
-                      <motion.span
-                        initial={{ x: -10, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 300,
-                          damping: 20,
-                        }}
-                      >
-                        <ArrowSVG className="w-3 h-3 mr-1 mt-[2px]" />
-                      </motion.span>
-                    )}
-                    <motion.span
-                      initial={{ opacity: 0, y: 5 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
-                      {item.name}
-                    </motion.span>
-                  </li>
+                  {item.name}
                 </Link>
               ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
 
-      {/* Mobile Navigation */}
-      <motion.div
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        exit={{ y: 100 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-200 flex items-center justify-center"
-      >
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="bg-white/90 backdrop-blur-md border border-gray-200 px-6 py-3 rounded-full 
-    shadow-lg hover:shadow-xl transition-all duration-300 
-    flex items-center gap-2 group"
-        >
-          <Menu className="w-5 h-5 text-zinc-700 group-hover:text-primary transition-colors" />
-          <span className="text-sm font-medium text-zinc-700 group-hover:text-primary transition-colors">
-            Menu
-          </span>
-        </button>
-      </motion.div>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`lg:hidden p-2 rounded-lg ${
+                scrolled ? "text-zinc-900" : isHomePage ? "text-white" : "text-zinc-900"
+              }`}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <>

@@ -23,11 +23,9 @@ export const AnimatedTestimonials = ({
   };
 
   useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay]);
+    const interval = setInterval(handleNext, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
@@ -36,68 +34,50 @@ export const AnimatedTestimonials = ({
   return (
     <div
       className={cn(
-        "max-w-sm md:max-w-7xl z-20 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20 mt-20",
+        "max-w-sm md:max-w-7xl z-20 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20",
         className
       )}
     >
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-24">
-        {/* Image Container */}
-        <div className="w-full flex justify-center items-center">
-          <div className="relative lg:h-[450px] lg:w-[450px] size-[250px] mx-auto">
-            <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.src}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: -100,
-                    rotate: randomRotateY(),
-                  }}
-                  animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
-                    scale: isActive(index) ? 1 : 0.95,
-                    z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 999
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: 100,
-                    rotate: randomRotateY(),
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute inset-0 origin-bottom"
-                >
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between">
-          <div className=" -mt-10 lg:mt-0">
-            <h1 className="lg:text-4xl text-2xl font-tan-pearl leading-[50px] lg:mt-8">
-              Stories of Satisfaction
-            </h1>
-            <p>
-              Our reputation is built on trust, detail, and the voices of our
-              clients.
-            </p>
-          </div>
-          <div className="flex justify-between flex-col py-4">
+      {/* Header Section */}
+      <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-4 mb-6"
+        >
+          <div className="w-12 h-px bg-[#ffb400]" />
+          <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+            Testimonials
+          </span>
+          <div className="w-12 h-px bg-[#ffb400]" />
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+        >
+          Stories of <span className="text-[#ffb400]">Satisfaction</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-base text-zinc-600 mt-4 max-w-2xl mx-auto"
+        >
+          Our reputation is built on trust, detail, and the voices of our clients.
+        </motion.p>
+      </div>
+
+      {/* Content Section */}
+      <div className="relative max-w-5xl mx-auto">
+        {/* Text Content */}
+        <div className="text-center px-4">
+          <AnimatePresence mode="wait">
             <motion.div
               key={active}
               initial={{
@@ -113,11 +93,16 @@ export const AnimatedTestimonials = ({
                 opacity: 0,
               }}
               transition={{
-                duration: 0.2,
+                duration: 0.3,
                 ease: "easeInOut",
               }}
+              className="space-y-6"
             >
-              <motion.p className="text-lg text-muted-foreground lg:mt-8">
+            <div className="relative">
+              <svg className="w-12 h-12 text-[#ffb400] mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <motion.p className="text-xl lg:text-2xl text-zinc-700 leading-relaxed italic max-w-3xl mx-auto">
                 {testimonials[active].quote.split(" ").map((word, index) => (
                   <motion.span
                     key={index}
@@ -136,35 +121,34 @@ export const AnimatedTestimonials = ({
                       ease: "easeInOut",
                       delay: 0.02 * index,
                     }}
-                    className="inline-block text-zinc-700"
+                    className="inline-block"
                   >
                     {word}&nbsp;
                   </motion.span>
                 ))}
               </motion.p>
-              <div>
-                <h3 className="text-3xl font-bold text-foreground font-cinzel mt-6">
-                  {testimonials[active].name}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {testimonials[active].designation}
-                </p>
-              </div>
-            </motion.div>
-            <div className="flex gap-4 pt-12 md:pt-0 lg:mt-10 justify-center md:justify-start">
-              <button
-                onClick={handlePrev}
-                className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
-              >
-                <IconArrowLeft className="h-5 w-5 text-foreground group-hover/button:rotate-12 transition-transform duration-300" />
-              </button>
-              <button
-                onClick={handleNext}
-                className="h-7 w-7 rounded-full bg-secondary flex items-center justify-center group/button"
-              >
-                <IconArrowRight className="h-5 w-5 text-foreground group-hover/button:-rotate-12 transition-transform duration-300" />
-              </button>
             </div>
+            <div className="pt-4">
+              <h3 className="text-2xl font-tan-pearl text-zinc-800 mb-1">
+                {testimonials[active].name}
+              </h3>
+              <p className="text-sm text-zinc-500 uppercase tracking-wider">
+                {testimonials[active].designation}
+              </p>
+            </div>
+            </motion.div>
+          </AnimatePresence>
+          
+          {/* Indicators */}
+          <div className="flex gap-2 mt-10 justify-center">
+            {testimonials.map((_, index) => (
+              <div
+                key={index}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  active === index ? "bg-[#ffb400] w-8" : "bg-zinc-300 w-2"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
