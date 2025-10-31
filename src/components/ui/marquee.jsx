@@ -1,10 +1,8 @@
-import { ComponentPropsWithoutRef } from "react";
-
+import * as React from "react";
 import { cn } from "../../lib/utils";
 
 export function Marquee({
-  className,
-  reverse = false,
+  children,
   pauseOnHover = false,
   direction = "left",
   speed = 60,

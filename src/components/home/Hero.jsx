@@ -19,10 +19,7 @@ const Hero = () => {
   return (
     <section ref={containerRef} className="relative h-screen overflow-hidden">
       {/* Background Image */}
-      <motion.div
-        className="absolute inset-0"
-        style={{ scale: imageScale }}
-      >
+      <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
         <div
           className="w-full h-full"
           style={{
@@ -37,7 +34,7 @@ const Hero = () => {
       {/* Content */}
       <motion.div
         style={{ y: textY }}
-        className="relative z-20 h-full flex items-center px-8 lg:px-20"
+        className="relative z-20 h-full flex items-center px-8 max-w-7xl mx-auto"
       >
         <div className="max-w-2xl">
           <motion.div
@@ -54,27 +51,20 @@ const Hero = () => {
               Elegance
             </h1>
             <p className="text-white/90 text-lg mb-8 max-w-lg">
-              Transform your space into a masterpiece with award-winning design excellence
+              Transform your space into a masterpiece with award-winning design
+              excellence
             </p>
             <button
               onClick={() => navigate("/studio")}
-              className="group flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
+              className="group flex cursor-pointer items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
             >
-              <span className="text-white text-sm uppercase tracking-wider">View Projects</span>
+              <span className="text-white text-sm uppercase tracking-wider">
+                View Projects
+              </span>
               <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
             </button>
           </motion.div>
         </div>
-      </motion.div>
-
-      {/* Logo Watermark */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="absolute top-1/2 right-12 -translate-y-1/2 z-20 opacity-10"
-      >
-        <img src={KarrarLogo} alt="Logo" className="w-32 h-32" />
       </motion.div>
 
       {/* Scroll Indicator */}

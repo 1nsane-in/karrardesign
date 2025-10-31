@@ -117,48 +117,15 @@ const CompanyPartners = () => {
                 key={index}
                 className="relative flex flex-col items-center justify-center w-[280px] shrink-0"
               >
-                <h1 className="text-xl font-tan-pearl text-zinc-800 mb-2 text-center max-w-[250px]">{partner.name}</h1>
+                <h1 className="text-xl font-tan-pearl text-zinc-800 mb-2 text-center max-w-[250px]">
+                  {partner.name}
+                </h1>
                 <div className="text-sm text-zinc-600 text-center max-w-[250px]">
                   {partner.sector}
                 </div>
               </div>
             ))}
           </Marquee>
-          {/* Scrolling Container */}
-          {/* <motion.div
-            style={{ x }}
-            className="flex gap-8 py-8"
-            animate={{
-              x: [0, -1800],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 30,
-                ease: "linear",
-              },
-            }}
-          >
-            {duplicatedPartners.map((partner, index) => (
-              <motion.div
-                key={`${partner.name}-${index}`}
-                className="flex-shrink-0 group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="w-48 h-32 bg-white rounded-lg shadow-sm border border-zinc-200 flex flex-col items-center justify-center p-6 group-hover:shadow-lg group-hover:border-[#ffb400]/30 transition-all duration-300">
-                  <h1>{partner.name}</h1>
-                  <div className="text-center">
-                    <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
-                      {partner.sector}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-          */}
         </div>
 
         {/* Stats Section */}
@@ -196,21 +163,7 @@ const CompanyPartners = () => {
             </div>
           </div>
         </motion.div>
-
-
       </motion.div>
-
-      {/* Full Width Marquee */}
-      <div className="relative flex w-full bg-red-500 flex-col items-center justify-center overflow-hidden">
-        <Marquee pauseOnHover className="[--duration:1.6s] w-[500px]">
-          {[Array(20)].map((review) => (
-            <h1>test</h1>
-          ))}
-        </Marquee>
-
-        <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
-        <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
-      </div>
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

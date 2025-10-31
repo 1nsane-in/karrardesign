@@ -37,7 +37,8 @@ const Home = () => {
 
   useEffect(() => {
     const handleScrollProgress = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalHeight) * 100;
       setScrollProgress(progress);
     };
@@ -95,10 +96,6 @@ const Home = () => {
         <Testimonial />
 
         <GetInTouch />
-
-        {/* Corner Logo Accents */}
-        <img src={KarrarLogo} alt="Logo" className="fixed top-4 right-4 w-8 h-8 opacity-5 pointer-events-none z-10" />
-        <img src={KarrarLogo} alt="Logo" className="fixed bottom-4 left-4 w-8 h-8 opacity-5 pointer-events-none z-10" />
       </div>
     </>
   );

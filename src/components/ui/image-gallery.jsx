@@ -1,41 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router";
 
-const projects = [
-  {
-    image: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
-    name: "Al Mandalo Restaurant",
-    location: "Dubai, UAE",
-    type: "Hospitality"
-  },
-  {
-    image: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
-    name: "Dubai Mall Outlet",
-    location: "Dubai Mall, UAE",
-    type: "Retail"
-  },
-  {
-    image: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
-    name: "Premium Retail Space",
-    location: "Dubai, UAE",
-    type: "Commercial"
-  },
-  {
-    image: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
-    name: "Fine Dining Experience",
-    location: "Dubai, UAE",
-    type: "Restaurant"
-  },
-  {
-    image: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
-    name: "Luxury Boutique",
-    location: "Dubai Mall, UAE",
-    type: "Retail"
-  },
+const imageList = [
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
 ];
-
-const imageList = projects.map(p => p.image);
 
 export default function Example() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,7 +40,7 @@ export default function Example() {
 
   return (
     <>
-      <section className="w-full flex flex-col items-center justify-start py-16">
+      <section className="w-full lg:flex flex-col items-center justify-start py-12 mt-20 hidden">
         <div className="max-w-3xl text-center px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -93,43 +65,28 @@ export default function Example() {
         </div>
 
         <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
-          {projects.map((project, idx) => (
+          {[
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
+            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
+          ].map((src, idx) => (
             <div
               key={idx}
               className="relative group flex-grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full"
             >
               <img
                 className="h-full w-full object-cover object-center"
-                src={project.image}
-                alt={project.name}
+                src={src}
+                alt={`image-${idx}`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white font-tan-pearl text-2xl mb-2">{project.name}</h3>
-                <p className="text-zinc-300 text-sm mb-1">{project.location}</p>
-                <p className="text-[#ffb400] text-xs uppercase tracking-wider">{project.type}</p>
-              </div>
             </div>
           ))}
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <Link to="/studio" className="group cursor-pointer inline-flex items-center gap-4">
-            <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-[#ffb400] transition-colors duration-300">
-              View All Projects
-            </span>
-            <div className="w-12 h-px bg-zinc-400 group-hover:bg-[#ffb400] transition-colors duration-300" />
-            <div className="w-2 h-2 border border-zinc-400 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
-          </Link>
-        </motion.div>
       </section>
 
-      <section className="w-full flex flex-col items-center justify-start py-16 md:hidden">
+      <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
         {/* Header */}
         <div className="max-w-3xl text-center px-4">
           <motion.div
@@ -145,8 +102,9 @@ export default function Example() {
             </span>
             <div className="w-12 h-px bg-[#ffb400]" />
           </motion.div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
-            Delivered <span className="text-[#ffb400]">Excellence</span>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
+            Delivered <br className="md:hidden" />{" "}
+            <span className="text-[#ffb400]">Excellence</span>
           </h1>
           <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
@@ -179,7 +137,7 @@ export default function Example() {
           {/* Navigation Buttons */}
           <button
             onClick={goToPrev}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
           >
             <svg
               className="w-5 h-5 text-zinc-700"
@@ -198,7 +156,7 @@ export default function Example() {
 
           <button
             onClick={goToNext}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
           >
             <svg
               className="w-5 h-5 text-zinc-700"

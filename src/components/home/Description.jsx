@@ -27,7 +27,7 @@ const Description = () => {
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[70px] font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -37,7 +37,7 @@ const Description = () => {
             <span className="text-[#ffb400]">Fit-Outs</span> &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[110px] leading-tight font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
@@ -47,7 +47,7 @@ const Description = () => {
             <span className="text-[#ffb400]">Project</span>
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[60px] leading-tight font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             initial="hidden"
             whileInView="visible"
