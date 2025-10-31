@@ -61,7 +61,7 @@ const Description = () => {
           <div className="lg:w-xs w-40 mb-4 ">
             <DesignSVG />
           </div>
-          <p className=" lg:text-right text-center text-lg font-cinzel ">
+          <p className=" lg:text-right text-center text-lg ">
             Karrar Design Projects L.L.C. offers premium interior fit-out and
             project management services across UAE, Canada, and India. With 20+
             years of expertise, we deliver luxury villas, hotels, restaurants,

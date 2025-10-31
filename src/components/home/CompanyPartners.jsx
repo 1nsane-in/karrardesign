@@ -117,61 +117,6 @@ const CompanyPartners = () => {
         </div>
 
         {/* Partners Carousel */}
-        <div className="relative">
-          {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-zinc-100 to-transparent z-10" />
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-zinc-100 to-transparent z-10" />
-          <Marquee>
-            {duplicatedPartners.map((partner, index) => (
-              <div
-                key={index}
-                className="relative h-full w-fit mx-[4rem] flex items-center justify-start"
-              >
-                <h1>{partner.name}</h1>
-                <div className="text-center">
-                  <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
-                    {partner.sector}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Marquee>
-          {/* Scrolling Container */}
-          {/* <motion.div
-            style={{ x }}
-            className="flex gap-8 py-8"
-            animate={{
-              x: [0, -1800],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 30,
-                ease: "linear",
-              },
-            }}
-          >
-            {duplicatedPartners.map((partner, index) => (
-              <motion.div
-                key={`${partner.name}-${index}`}
-                className="flex-shrink-0 group"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="w-48 h-32 bg-white rounded-lg shadow-sm border border-zinc-200 flex flex-col items-center justify-center p-6 group-hover:shadow-lg group-hover:border-[#ffb400]/30 transition-all duration-300">
-                  <h1>{partner.name}</h1>
-                  <div className="text-center">
-                    <div className="text-xs text-zinc-500 group-hover:text-[#ffb400] transition-colors">
-                      {partner.sector}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-          */}
-        </div>
 
         {/* Stats Section */}
         <motion.div
@@ -226,6 +171,18 @@ const CompanyPartners = () => {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Full Width Marquee */}
+      <div className="relative flex w-full bg-red-500 flex-col items-center justify-center overflow-hidden">
+        <Marquee pauseOnHover className="[--duration:1.6s] w-[500px]">
+          {[Array(20)].map((review) => (
+            <h1>test</h1>
+          ))}
+        </Marquee>
+
+        <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
+        <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
+      </div>
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">

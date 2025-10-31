@@ -1,31 +1,43 @@
-import * as React from "react";
+import { ComponentPropsWithoutRef } from "react";
+
 import { cn } from "../../lib/utils";
 
 export function Marquee({
-  children,
-  pauseOnHover = false,
-  direction = "left",
-  speed = 30,
   className,
+  reverse = false,
+  pauseOnHover = false,
+  children,
+  vertical = false,
+  repeat = 8,
   ...props
 }) {
   return (
     <div
-      className={cn("w-full overflow-hidden sm:mt-24 mt-10 z-10", className)}
       {...props}
+      className={cn(
+        "group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]",
+        {
+          "flex-row": !vertical,
+          "flex-col": vertical,
+        },
+        className
+      )}
     >
-      <div className="relative flex max-w-[90vw] overflow-hidden py-5">
-        <div
-          className={cn(
-            "flex w-max animate-marquee",
-            pauseOnHover && "hover:[animation-play-state:paused]",
-            direction === "right" && "animate-marquee-reverse"
-          )}
-          style={{ "--duration": `${speed}s` }}
-        >
-          {children}
-        </div>
-      </div>
+      {Array(repeat)
+        .fill(0)
+        .map((_, i) => (
+          <div
+            key={i}
+            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
+              "animate-marquee flex-row": !vertical,
+              "animate-marquee-vertical flex-col": vertical,
+              "group-hover:[animation-play-state:paused]": pauseOnHover,
+              "[animation-direction:reverse]": reverse,
+            })}
+          >
+            {children}
+          </div>
+        ))}
     </div>
   );
 }
