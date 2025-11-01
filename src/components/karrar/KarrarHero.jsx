@@ -2,6 +2,7 @@ import React from "react";
 
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
+import { KarrarSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -15,7 +16,7 @@ const KarrarHero = () => {
       className="max-w-7xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-8"
     >
       {/* Header */}
-      <div className="text-center mb-12 lg:mb-20">
+      <div className="text-center mb-12 lg:mb-20 flex items-center justify-center flex-col">
         <motion.div
           variants={headingVariants}
           initial="hidden"
@@ -44,6 +45,10 @@ const KarrarHero = () => {
             Crafting Luxury, <br />
             Delivering Excellence
           </motion.h1>
+        </div>
+
+        <div className="lg:w-xs w-32 -mt-10">
+          <KarrarSVG />
         </div>
       </div>
 

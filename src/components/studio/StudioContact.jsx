@@ -21,7 +21,7 @@ const StudioContact = () => {
         to="/contact"
         className="pt-6 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center justify-center px-4"
       >
-        <div className="w-32 sm:w-40 lg:w-sm">
+        <div className="w-32 sm:w-40 lg:w-sm -mt-10 -z-1">
           <ConnectSVG />
         </div>
       </Link>

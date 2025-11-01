@@ -39,7 +39,7 @@ const ServicesContact = () => {
           to="/contact"
           className="pt-6  flex flex-col items-center justify-center px-4"
         >
-          <div className="w-44 lg:w-[400px]">
+          <div className="lg:w-xs w-32">
             <ConnectSVG />
           </div>
         </Link>

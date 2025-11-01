@@ -25,7 +25,7 @@ const OngoingProjects = () => {
       progress: 75,
       phase: "Interior Installation",
       image:
-        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
       budget: "$2.5M",
       area: "8,500 sq ft",
       team: "12 specialists",
@@ -191,7 +191,10 @@ const OngoingProjects = () => {
   };
 
   return (
-    <section ref={containerRef} className="relative py-20 bg-white overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative py-20 bg-white overflow-hidden"
+    >
       {/* Parallax Background */}
       <motion.div
         style={{ y }}
@@ -264,27 +267,12 @@ const OngoingProjects = () => {
                       </div>
                     </div>
 
-                    {/* Project ID and Progress */}
+                    {/* Project ID */}
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center justify-between text-white mb-2">
                         <div className="text-2xl font-tan-pearl">
                           {project.id}
                         </div>
-                        <div className="text-sm font-semibold">
-                          {project.progress}%
-                        </div>
-                      </div>
-                      <div className="w-full bg-black/30 rounded-full h-1.5">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${project.progress}%` }}
-                          transition={{
-                            duration: 1.5,
-                            ease: "easeOut",
-                            delay: index * 0.3,
-                          }}
-                          className="bg-gradient-to-r from-[#ffb400] to-yellow-500 h-1.5 rounded-full"
-                        />
                       </div>
                     </div>
                   </div>

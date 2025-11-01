@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
-import { ConnectSVG } from "../../assets/svg";
+import { ServiceSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -72,8 +72,8 @@ const ServicesHero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
           className="flex justify-center mt-6 sm:mt-8 opacity-60"
         >
-          <div className="w-24 sm:w-32">
-            <ConnectSVG />
+          <div className="lg:w-xs w-32 -mt-8">
+            <ServiceSVG />
           </div>
         </motion.div>
       </div>

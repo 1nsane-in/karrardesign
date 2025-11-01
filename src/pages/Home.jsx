@@ -1,10 +1,6 @@
-import { AtelierSVG } from "../assets/svg";
-import Navigation from "../components/common/Navigation";
 import Description from "../components/home/Description";
 import GetInTouch from "../components/home/GetInTouch";
 import Hero from "../components/home/Hero";
-import ImageShowcase from "../components/home/ImageShowcase";
-import TopHeader from "../components/home/TopHeader";
 import Services from "../components/home/Services";
 import FutureProjects from "../components/home/FutureProjects";
 import OngoingProjects from "../components/home/OngoingProjects";
@@ -12,48 +8,14 @@ import CompanyPartners from "../components/home/CompanyPartners";
 import SectionTransition from "../components/common/SectionTransition";
 import Testimonial from "../components/home/Testimonial";
 import Example from "../components/ui/image-gallery";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { KarrarLogo } from "../assets";
 import NoiseOverlay from "../components/common/NoiseOverlay";
+import ScrollIndicator from "../components/common/ScrollIndicator";
 
 const Home = () => {
-  const [showBackToTop, setShowBackToTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 500);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScrollProgress = () => {
-      const totalHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
-    };
-    window.addEventListener("scroll", handleScrollProgress);
-    return () => window.removeEventListener("scroll", handleScrollProgress);
-  }, []);
-
   return (
     <>
+      <ScrollIndicator />
       <NoiseOverlay />
-      {/* Page Scroll Indicator */}
-      {showBackToTop && (
-        <div className="fixed top-0 left-0 right-0 h-1 bg-zinc-200 z-50">
-          <div
-            className="h-full bg-[#ffb400] transition-all duration-150"
-            style={{ width: `${scrollProgress}%` }}
-          />
-        </div>
-      )}
-
       <div className="bg-secondary min-h-screen relative scroll-smooth">
         <Hero />
 

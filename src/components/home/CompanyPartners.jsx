@@ -57,7 +57,7 @@ const CompanyPartners = () => {
   ];
 
   // Duplicate partners for seamless infinite scroll
-  const duplicatedPartners = [...partners, ...partners];
+  // const duplicatedPartners = [...partners, ...partners];
 
   return (
     <section
@@ -112,10 +112,10 @@ const CompanyPartners = () => {
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-zinc-100 to-transparent z-10" />
           <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-zinc-100 to-transparent z-10" />
           <Marquee>
-            {duplicatedPartners.map((partner, index) => (
+            {partners.map((partner, index) => (
               <div
                 key={index}
-                className="relative flex flex-col items-center justify-center w-[280px] shrink-0"
+                className={` ${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-[280px] py-4 rounded-lg shrink-0 bg-white/95 backdrop-blur-sm shadow-2xl border border-white/20`}
               >
                 <h1 className="text-xl font-tan-pearl text-zinc-800 mb-2 text-center max-w-[250px]">
                   {partner.name}

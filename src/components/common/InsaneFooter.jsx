@@ -10,20 +10,20 @@ const Footer = () => {
     <footer className="bg-zinc-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-start flex-col md:flex-row justify-between mb-8">
-          <Link to="/" className=" w-[300px]">
-            <div className="flex items-center gap-3 mb-4">
+          <div className=" w-[300px]">
+            <Link to="/" className="flex items-center gap-3 mb-4">
               <div className="w-16 h-16 opacity-80">
                 <KarrarLogoSVG2 />
               </div>
               <h3 className="font-cinzel text-xl text-white">
                 Karrar Design & Projects
               </h3>
-            </div>
+            </Link>
             <p className="text-sm text-zinc-400 leading-relaxed">
               Premium interior fit-out and project management services across
               UAE, Canada, and India.
             </p>
-          </Link>
+          </div>
           <div className="md:ml-10 ml-0 mt-6 md:mt-0">
             <h3 className="text-sm font-semibold mb-4 text-[#ffb400]">
               Quick Links
@@ -47,10 +47,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/work"
+                  to="/karrar"
                   className="hover:text-[#ffb400] transition-colors"
                 >
-                  Work
+                  Karrar
                 </Link>
               </li>
               <li>
@@ -78,7 +78,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold mb-4 text-[#ffb400]">
               Socials
             </h3>
-            <div className="grid grid-cols-4  gap-10 md:grid-cols-2 w-[100px] space-y-[10px]">
+            <div className="grid grid-cols-4  md:gap-0 gap-10 md:grid-cols-2 w-[100px] space-y-[10px]">
               <div className=" size-[35px]  border-zinc-400 rounded-xl flex items-center justify-start cursor-pointer ">
                 <FaFacebookF
                   className=" text-zinc-400 hover:text-primary transition-all ease-in-out duration-300"

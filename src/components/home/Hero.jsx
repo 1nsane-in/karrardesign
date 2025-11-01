@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HeroBG, KarrarLogo } from "../../assets";
 import { useNavigate } from "react-router";

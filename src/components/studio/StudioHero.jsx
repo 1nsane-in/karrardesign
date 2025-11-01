@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
-import { ProjectSVG } from "../../assets/svg";
+import { Project1SVG, ProjectSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -65,10 +65,10 @@ const StudioHero = () => {
         animate={"visible"}
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        className="flex justify-center -mt-2 sm:-mt-4 md:-mt-6 lg:-mt-8"
+        className=""
       >
-        <div className="scale-50 sm:scale-60 md:scale-70 lg:scale-75 xl:scale-90">
-          <ProjectSVG />
+        <div className="lg:w-xs w-32 mx-auto">
+          <Project1SVG />
         </div>
       </motion.div>
     </div>
