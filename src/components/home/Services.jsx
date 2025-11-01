@@ -270,9 +270,10 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
           >
-            <span className="text-[#ffb400]">Excellence</span> in Every
+            <span className="text-[#ffb400]">Excellence</span> in{" "}
+            <br className=" md:hidden" /> Every
             <br className="hidden md:block" /> Detail
           </motion.h2>
         </div>

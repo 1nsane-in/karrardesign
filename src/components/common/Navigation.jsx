@@ -55,16 +55,28 @@ const Navigation = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4">
+            <Link to="/" className="flex items-center gap-1">
               <div className="w-12 h-12">
                 <KarrarLogoSVG2 />
               </div>
-              <div className={`hidden sm:block border-l-2 pl-4 transition-colors ${
-                scrolled ? "border-zinc-300" : isHomePage ? "border-white/30" : "border-zinc-300"
-              }`}>
-                <h1 className={`font-cinzel text-2xl ${
-                  scrolled ? "text-zinc-900" : isHomePage ? "text-white" : "text-zinc-900"
-                }`}>
+              <div
+                className={` border-l-2 pl-2  transition-colors ${
+                  scrolled
+                    ? "border-zinc-300"
+                    : isHomePage
+                      ? "border-white/30"
+                      : "border-zinc-300"
+                }`}
+              >
+                <h1
+                  className={`font-cinzel  md:text-xl ${
+                    scrolled
+                      ? "text-zinc-900"
+                      : isHomePage
+                        ? "text-white"
+                        : "text-zinc-900"
+                  }`}
+                >
                   Karrar Design & Projects
                 </h1>
               </div>
@@ -80,10 +92,10 @@ const Navigation = () => {
                     pathname === item.path
                       ? "text-[#ffb400]"
                       : scrolled
-                      ? "text-zinc-700 hover:text-[#ffb400]"
-                      : isHomePage
-                      ? "text-white hover:text-[#ffb400]"
-                      : "text-zinc-700 hover:text-[#ffb400]"
+                        ? "text-zinc-700 hover:text-[#ffb400]"
+                        : isHomePage
+                          ? "text-white hover:text-[#ffb400]"
+                          : "text-zinc-700 hover:text-[#ffb400]"
                   }`}
                 >
                   {item.name}
@@ -92,17 +104,41 @@ const Navigation = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
+            {/* <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg ${
-                scrolled ? "text-zinc-900" : isHomePage ? "text-white" : "text-zinc-900"
+              className={`hidden p-2 rounded-lg ${
+                scrolled
+                  ? "text-zinc-900"
+                  : isHomePage
+                    ? "text-white"
+                    : "text-zinc-900"
               }`}
             >
               <Menu className="w-6 h-6" />
-            </button>
+            </button> */}
           </div>
         </div>
       </motion.nav>
+      {/* mobile menu button */}
+      <motion.div
+        initial={{ y: 100 }}
+        animate={{ y: 0 }}
+        exit={{ y: 100 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-50 flex items-center justify-center"
+      >
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="bg-white/90 backdrop-blur-md border border-gray-200 px-6 py-3 rounded-full 
+    shadow-lg hover:shadow-xl transition-all duration-300 
+    flex items-center gap-2 group"
+        >
+          <Menu className="w-5 h-5 text-zinc-700 group-hover:text-primary transition-colors" />
+          <span className="text-sm font-medium text-zinc-700 group-hover:text-primary transition-colors">
+            Menu
+          </span>
+        </button>
+      </motion.div>
 
       {/* Mobile Menu */}
       <AnimatePresence>

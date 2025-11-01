@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router";
 import { AtelierSVG } from "../assets/svg";
-import Footer from "../components/common/Footer";
 import Navigation from "../components/common/Navigation";
 import Description from "../components/home/Description";
 import GetInTouch from "../components/home/GetInTouch";
@@ -17,6 +15,7 @@ import Example from "../components/ui/image-gallery";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { KarrarLogo } from "../assets";
+import NoiseOverlay from "../components/common/NoiseOverlay";
 
 const Home = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -28,10 +27,6 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -48,6 +43,7 @@ const Home = () => {
 
   return (
     <>
+      <NoiseOverlay />
       {/* Page Scroll Indicator */}
       {showBackToTop && (
         <div className="fixed top-0 left-0 right-0 h-1 bg-zinc-200 z-50">

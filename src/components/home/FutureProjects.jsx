@@ -163,7 +163,7 @@ const FutureProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-white leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-white leading-tight"
           >
             Future
             <br />
@@ -208,7 +208,7 @@ const FutureProjects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-64 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-64 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-110 "
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
@@ -235,11 +235,11 @@ const FutureProjects = () => {
 
                   {/* Project Details */}
                   <div className="space-y-4">
-                    <h3 className="text-xl lg:text-2xl font-tan-pearl text-white group-hover:text-[#ffb400] transition-colors">
+                    <h3 className="text-xl lg:text-2xl font-tan-pearl text-zinc-300 group-hover:text-[#ffb400] transition-colors">
                       {project.title}
                     </h3>
 
-                    <p className="text-zinc-300 leading-relaxed text-sm">
+                    <p className="text-zinc-400 leading-relaxed text-sm ">
                       {project.description}
                     </p>
 

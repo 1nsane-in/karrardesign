@@ -76,7 +76,7 @@ const CompanyPartners = () => {
             className="inline-flex items-center gap-4 mb-6"
           >
             <div className="w-12 h-px bg-[#ffb400]" />
-            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-700">
               Trusted Partners
             </span>
             <div className="w-12 h-px bg-[#ffb400]" />
@@ -87,7 +87,7 @@ const CompanyPartners = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
           >
             Collaborating with
             <br />

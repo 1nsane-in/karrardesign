@@ -58,7 +58,7 @@ export const AnimatedTestimonials = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+          className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
         >
           Stories of <span className="text-[#ffb400]">Satisfaction</span>
         </motion.h1>

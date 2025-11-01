@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router";
 
 const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
@@ -7,6 +8,44 @@ const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
+];
+
+const projects = [
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
+    name: "Al Mandalo Restaurant",
+    location: "Dubai, UAE",
+    type: "Hospitality",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
+    name: "Dubai Mall Outlet",
+    location: "Dubai Mall, UAE",
+    type: "Retail",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
+    name: "Premium Retail Space",
+    location: "Dubai, UAE",
+    type: "Commercial",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
+    name: "Fine Dining Experience",
+    location: "Dubai, UAE",
+    type: "Restaurant",
+  },
+  {
+    image:
+      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
+    name: "Luxury Boutique",
+    location: "Dubai Mall, UAE",
+    type: "Retail",
+  },
 ];
 
 export default function Example() {
@@ -58,33 +97,54 @@ export default function Example() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
             Delivered <span className="text-[#ffb400]">Excellence</span>
           </h1>
-          <p className="text-base text-zinc-600 mt-4">
+          <p className="text-base text-zinc-700 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>
         </div>
 
         <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
-          {[
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
-            "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
-          ].map((src, idx) => (
+          {projects.map((project, idx) => (
             <div
               key={idx}
               className="relative group flex-grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full"
             >
               <img
                 className="h-full w-full object-cover object-center"
-                src={src}
-                alt={`image-${idx}`}
+                src={project.image}
+                alt={project.name}
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 className="text-white font-tan-pearl text-2xl mb-2">
+                  {project.name}
+                </h3>
+                <p className="text-zinc-300 text-sm mb-1">{project.location}</p>
+                <p className="text-[#ffb400] text-xs uppercase tracking-wider">
+                  {project.type}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="text-center mt-12"
+      >
+        <Link
+          to="/studio"
+          className="group cursor-pointer inline-flex items-center gap-4"
+        >
+          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-[#ffb400] transition-colors duration-300">
+            View All Projects
+          </span>
+          <div className="w-12 h-px bg-zinc-400 group-hover:bg-[#ffb400] transition-colors duration-300" />
+          <div className="w-2 h-2 border border-zinc-400 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
+        </Link>
+      </motion.div>
 
       <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
         {/* Header */}

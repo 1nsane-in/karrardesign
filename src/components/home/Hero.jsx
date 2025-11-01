@@ -36,7 +36,7 @@ const Hero = () => {
         style={{ y: textY }}
         className="relative z-20 h-full flex items-center px-8 max-w-7xl mx-auto"
       >
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,9 +46,9 @@ const Hero = () => {
               Luxury Interior Design
             </p>
             <h1 className="text-5xl lg:text-7xl font-tan-pearl text-white mb-6 leading-tight">
-              Crafting Timeless
+              Crafting Dreams
               <br />
-              Elegance
+              with Elegance
             </h1>
             <p className="text-white/90 text-lg mb-8 max-w-lg">
               Transform your space into a masterpiece with award-winning design

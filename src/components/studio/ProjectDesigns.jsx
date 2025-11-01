@@ -145,7 +145,7 @@ const ProjectDesigns = () => {
               <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
                 <div className="text-center transform -translate-y-4 sm:-translate-y-6 lg:-translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-1200 delay-300 ease-out">
                   <span className="text-sm sm:text-base lg:text-lg xl:text-xl text-zinc-800 tracking-wide font-medium">
-                    VIEW PROJECT
+                    View Project
                   </span>
                 </div>
               </div>
