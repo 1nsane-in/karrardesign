@@ -3,6 +3,7 @@ import { KarrarLogoSVG2 } from "../../assets/svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { IoChevronBackOutline } from "react-icons/io5";
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -41,6 +42,8 @@ const Navigation = () => {
     { name: "SERVICES", path: "/services" },
     { name: "CONTACT", path: "/contact" },
   ];
+
+  const isProjectDetailPage = pathname.startsWith("/studio/");
 
   return (
     <>
@@ -125,8 +128,18 @@ const Navigation = () => {
         animate={{ y: 0 }}
         exit={{ y: 100 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-50 flex items-center justify-center"
+        className="lg:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-max py-2 z-50 flex items-center justify-center space-x-1"
       >
+        {isProjectDetailPage && (
+          <Link
+            to={"/studio"}
+            className="bg-white/90 backdrop-blur-md border border-gray-200 px-3 py-3 rounded-full 
+            shadow-lg hover:shadow-xl transition-all duration-300 
+            flex items-center gap-2 group"
+          >
+            <IoChevronBackOutline className="w-5 h-5 text-zinc-700 group-hover:text-primary transition-colors" />
+          </Link>
+        )}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="bg-white/90 backdrop-blur-md border border-gray-200 px-6 py-3 rounded-full 

@@ -96,7 +96,7 @@ const ProjectDetail = () => {
         {/* Back Button */}
         <Link
           to="/studio"
-          className="fixed top-8 left-8 z-50 group flex items-center gap-2 text-zinc-600 hover:text-[#ffb400] transition-colors"
+          className=" hidden md:flex fixed top-24 lg:top-8 left-8 z-50 group  items-center gap-2 text-zinc-600 hover:text-[#ffb400] transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -198,7 +198,7 @@ const ProjectDetail = () => {
           </div>
 
           {/* Image Counter */}
-          <div className="absolute top-8 right-8 text-white bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+          <div className=" hidden md:block absolute top-8 right-8 text-white bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
             <span className="text-sm font-semibold">
               {String(currentImageIndex + 1).padStart(2, "0")} /{" "}
               {String(project.images.length).padStart(2, "0")}
