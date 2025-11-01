@@ -187,7 +187,7 @@ const Navigation = () => {
                 </button>
 
                 {/* Menu Items */}
-                <div className="mt-4 space-y-6">
+                <div className="mt-4 space-y-3">
                   {navItems.map((item, index) => (
                     <Link
                       key={item.name}
@@ -206,7 +206,7 @@ const Navigation = () => {
                           ease: "easeOut",
                           delay: 0.1 + index * 0.05,
                         }}
-                        className={`text-2xl font-cinzel ${
+                        className={`text-xl font-cinzel ${
                           pathname === item.path
                             ? "text-primary"
                             : "text-zinc-700"
