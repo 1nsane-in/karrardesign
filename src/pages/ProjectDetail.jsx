@@ -229,7 +229,7 @@ const ProjectDetail = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 flex items-center justify-center flex-col"
             >
               <div className="inline-flex items-center gap-4 mb-6">
                 <div className="w-12 h-px bg-[#ffb400]" />
@@ -239,15 +239,15 @@ const ProjectDetail = () => {
                 <div className="w-12 h-px bg-[#ffb400]" />
               </div>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6">
                 Project <span className="text-[#ffb400]">Overview</span>
               </h2>
 
-              <p className="text-lg text-zinc-600 leading-relaxed mb-6">
+              <p className="text-lg text-zinc-600 leading-relaxed mb-6 text-center md:text-start">
                 {project.description}
               </p>
 
-              <p className="text-base text-zinc-600 leading-relaxed">
+              <p className="text-base text-zinc-600 leading-relaxed text-center md:text-start">
                 {project.fullDescription}
               </p>
             </motion.div>
