@@ -56,9 +56,6 @@ const CompanyPartners = () => {
     },
   ];
 
-  // Duplicate partners for seamless infinite scroll
-  // const duplicatedPartners = [...partners, ...partners];
-
   return (
     <section
       ref={containerRef}
@@ -115,9 +112,9 @@ const CompanyPartners = () => {
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className={` ${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-[280px] py-4 rounded-xl shrink-0 bg-white/15 backdrop-blur-sm shadow-2xl border border-white/50`}
+                className={` ${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-[200px] md:w-[280px] py-4 rounded-xl shrink-0 bg-white/15 backdrop-blur-sm shadow-2xl border border-white/50`}
               >
-                <h1 className="text-xl font-tan-pearl text-zinc-800 mb-1 text-center max-w-[250px]">
+                <h1 className="md:text-xl font-tan-pearl text-zinc-800 mb-1 text-center max-w-[250px]">
                   {partner.name}
                 </h1>
                 <div className="text-sm text-zinc-600 text-center max-w-[250px]">

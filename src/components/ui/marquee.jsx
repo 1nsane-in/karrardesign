@@ -11,10 +11,7 @@ export function Marquee({
 }) {
   return (
     <div
-      className={cn(
-        "w-full overflow-hidden sm:mt-24 mt-10 z-10 relative",
-        className
-      )}
+      className={cn("w-full overflow-hidden  z-10 relative", className)}
       {...props}
     >
       {/* Added responsive padding and max-width */}

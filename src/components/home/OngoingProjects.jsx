@@ -11,7 +11,25 @@ const OngoingProjects = () => {
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const projectsPerSlide = window.innerWidth <= 1024 ? 1 : 2; // Show 2 projects per slide
+
+  const [servicesPerSlide, setServicesPerSlide] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setServicesPerSlide(1);
+      } else if (window.innerWidth < 1024) {
+        setServicesPerSlide(2);
+      } else {
+        setServicesPerSlide(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   const ongoingProjects = [
@@ -161,7 +179,7 @@ const OngoingProjects = () => {
     },
   ];
 
-  const totalSlides = Math.ceil(ongoingProjects.length / projectsPerSlide);
+  const totalSlides = Math.ceil(ongoingProjects.length / servicesPerSlide);
 
   // Auto-play functionality
   useEffect(() => {
@@ -175,8 +193,8 @@ const OngoingProjects = () => {
   }, [isAutoPlay, totalSlides]);
 
   const getCurrentProjects = () => {
-    const start = currentSlide * projectsPerSlide;
-    const end = start + projectsPerSlide;
+    const start = currentSlide * servicesPerSlide;
+    const end = start + servicesPerSlide;
     return ongoingProjects.slice(start, end);
   };
 
@@ -239,7 +257,7 @@ const OngoingProjects = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="grid lg:grid-cols-2 gap-8 mb-10"
+              className="grid lg:grid-cols-3 gap-8 mb-10"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
@@ -293,7 +311,7 @@ const OngoingProjects = () => {
 
                     {/* Project Stats Grid */}
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white rounded-lg p-3">
+                      {/* <div className="bg-white rounded-lg p-3">
                         <div className="text-xs text-zinc-400 mb-1">Budget</div>
                         <div className="text-sm font-semibold text-zinc-800">
                           {project.budget}
@@ -304,7 +322,7 @@ const OngoingProjects = () => {
                         <div className="text-sm font-semibold text-zinc-800">
                           {project.area}
                         </div>
-                      </div>
+                      </div> */}
                       {/* <div className="bg-white rounded-lg p-3">
                                                 <div className="text-xs text-zinc-400 mb-1">Timeline</div>
                                                 <div className="text-sm font-semibold text-zinc-800">{project.startDate} - {project.expectedCompletion}</div>

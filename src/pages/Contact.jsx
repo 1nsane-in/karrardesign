@@ -102,7 +102,7 @@ const Contact = () => {
           {contactLocations.map((location) => (
             <ContactInfo key={location.title} title={location.title}>
               {location.addresses.map((address, index) => (
-                <div key={index} className={index > 0 ? "mt-8" : ""}>
+                <div key={index} className={index > 0 ? "mt-3" : ""}>
                   <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
                     {address.split("\n").map((line, i) => (
                       <span key={i}>

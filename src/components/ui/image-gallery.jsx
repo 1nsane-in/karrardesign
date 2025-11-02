@@ -127,24 +127,6 @@ export default function Example() {
           ))}
         </div>
       </section>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-center mt-12"
-      >
-        <Link
-          to="/studio"
-          className="group cursor-pointer inline-flex items-center gap-4"
-        >
-          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-[#ffb400] transition-colors duration-300">
-            View All Projects
-          </span>
-          <div className="w-12 h-px bg-zinc-400 group-hover:bg-[#ffb400] transition-colors duration-300" />
-          <div className="w-2 h-2 border border-zinc-400 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
-        </Link>
-      </motion.div>
 
       <section className="w-full flex flex-col items-center justify-start mt-14 lg:hidden">
         {/* Header */}
@@ -252,6 +234,25 @@ export default function Example() {
           ))}
         </div>
       </section>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="text-center mt-20 "
+      >
+        <Link
+          to="/studio"
+          className="group cursor-pointer inline-flex items-center gap-4"
+        >
+          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-[#ffb400] transition-colors duration-300">
+            View All Projects
+          </span>
+          <div className="w-12 h-px bg-zinc-400 group-hover:bg-[#ffb400] transition-colors duration-300" />
+          <div className="w-2 h-2 border border-zinc-400 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
+        </Link>
+      </motion.div>
     </>
   );
 }

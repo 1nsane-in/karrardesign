@@ -158,7 +158,7 @@ const ProjectDesigns = () => {
                     alt="Karrar Logo"
                     className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
                   />
-                  <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0">
+                  <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0 text-zinc-700">
                     {project.title}
                   </span>
                 </div>
@@ -167,7 +167,9 @@ const ProjectDesigns = () => {
                 </span>
               </div>
               <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                <span className="font-bold">{project.category}</span>
+                <span className="font-bold text-zinc-700">
+                  {project.category}
+                </span>
                 <span className="text-xs sm:text-sm font-normal text-zinc-600">
                   {project.service}
                 </span>

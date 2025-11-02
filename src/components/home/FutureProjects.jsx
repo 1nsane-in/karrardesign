@@ -100,8 +100,25 @@ const FutureProjects = () => {
       budget: "$18M",
     },
   ];
-  const projectsPerSlide = window.innerWidth <= 1024 ? 1 : 2;
-  const totalSlides = Math.ceil(futureProjects.length / projectsPerSlide);
+  const [servicesPerSlide, setServicesPerSlide] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setServicesPerSlide(1);
+      } else if (window.innerWidth < 1024) {
+        setServicesPerSlide(2);
+      } else {
+        setServicesPerSlide(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalSlides = Math.ceil(futureProjects.length / servicesPerSlide);
 
   useEffect(() => {
     if (!isAutoPlay) return;
@@ -114,8 +131,8 @@ const FutureProjects = () => {
   }, [isAutoPlay, totalSlides]);
 
   const getCurrentProjects = () => {
-    const start = currentSlide * projectsPerSlide;
-    const end = start + projectsPerSlide;
+    const start = currentSlide * servicesPerSlide;
+    const end = start + servicesPerSlide;
     return futureProjects.slice(start, end);
   };
 
@@ -191,7 +208,7 @@ const FutureProjects = () => {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="grid lg:grid-cols-2 gap-8"
+              className="grid lg:grid-cols-3 gap-8"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
             >
@@ -220,15 +237,21 @@ const FutureProjects = () => {
                     </div>
 
                     {/* Project ID */}
-                    <div className="absolute bottom-4 left-4">
-                      <div className="text-3xl font-tan-pearl text-white mb-2">
-                        {project.id}
+                    <div className="absolute bottom-4 left-4 flex items-end justify-between w-full pr-1">
+                      <div>
+                        <div className="text-3xl font-tan-pearl text-white mb-2">
+                          {project.id}
+                        </div>
+                        <div className="flex items-center gap-2 text-[#ffb400] text-sm">
+                          <div className="w-6 h-px bg-[#ffb400]" />
+                          <span className="uppercase tracking-wider">
+                            {project.type}
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-2 text-[#ffb400] text-sm">
+                      <div className="text-sm text-zinc-400 font-medium flex items-center gap-2">
+                        <span>{project.location}</span>
                         <div className="w-6 h-px bg-[#ffb400]" />
-                        <span className="uppercase tracking-wider">
-                          {project.type}
-                        </span>
                       </div>
                     </div>
                   </div>
@@ -245,7 +268,7 @@ const FutureProjects = () => {
 
                     {/* Project Stats */}
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-zinc-800/50 rounded-lg p-3">
+                      {/* <div className="bg-zinc-800/50 rounded-lg p-3">
                         <div className="text-xs text-zinc-400 mb-1">
                           Location
                         </div>
@@ -258,7 +281,7 @@ const FutureProjects = () => {
                         <div className="text-sm text-white font-medium">
                           {project.area}
                         </div>
-                      </div>
+                      </div> */}
                       {/* <div className="bg-zinc-800/50 rounded-lg p-3">
                                                 <div className="text-xs text-zinc-400 mb-1">Timeline</div>
                                                 <div className="text-sm text-white font-medium">{project.timeline}</div>

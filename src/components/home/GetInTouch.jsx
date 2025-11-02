@@ -12,12 +12,12 @@ const GetInTouch = () => {
           <h1 className="lg:text-[60px] text-3xl lg:leading-[70px] leading-tight lg:ml-[400px] font-tan-pearl text-zinc-800">
             Together
           </h1>
-          <div className="lg:w-xs w-32 lg:-mt-10 mt-2 absolute -bottom-24 left-1/2 -translate-x-1/2">
+          <div className="lg:w-xs w-32 lg:-mt-10 -bottom-10 absolute md:-bottom-24 left-1/2 -translate-x-1/2">
             <ConnectSVG />
           </div>
         </div>
       </div>
-      <div className="mt-20">
+      <div className="md:mt-20 mt-10">
         <SocialConnect />
       </div>
     </div>
