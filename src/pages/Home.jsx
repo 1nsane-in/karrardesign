@@ -47,11 +47,11 @@ const Home = () => {
         /> */}
         <CompanyPartners />
 
-        <SectionTransition
+        {/* <SectionTransition
           fromColor="bg-zinc-100"
           toColor="bg-white"
           pattern="waves"
-        />
+        /> */}
         <Testimonial />
 
         <GetInTouch />
