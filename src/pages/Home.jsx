@@ -13,37 +13,38 @@ import ScrollIndicator from "../components/common/ScrollIndicator";
 
 const Home = () => {
   return (
-    <>
+    <div className="">
       <ScrollIndicator />
       <NoiseOverlay />
-      <div className="bg-secondary min-h-screen relative scroll-smooth">
+      <div className="bg-background-black min-h-screen relative scroll-smooth">
+        {/* <div className="bg-secondary min-h-screen relative scroll-smooth"> */}
         <Hero />
 
-        <SectionTransition
+        {/* <SectionTransition
           fromColor="bg-white"
           toColor="bg-zinc-50"
           pattern="dots"
-        />
+        /> */}
         <Description />
 
         <Services />
 
-        <SectionTransition
+        {/* <SectionTransition
           fromColor="bg-zinc-50"
           toColor="bg-zinc-900"
           pattern="waves"
-        />
+        /> */}
         <FutureProjects />
 
         <OngoingProjects />
 
         <Example />
 
-        <SectionTransition
+        {/* <SectionTransition
           fromColor="bg-white"
           toColor="bg-zinc-100"
           pattern="dots"
-        />
+        /> */}
         <CompanyPartners />
 
         <SectionTransition
@@ -55,7 +56,7 @@ const Home = () => {
 
         <GetInTouch />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -47,9 +47,9 @@ const KarrarHero = () => {
           </motion.h1>
         </div>
 
-        <div className="lg:w-xs w-32 -mt-10">
+        {/* <div className="lg:w-xs w-32 -mt-10">
           <KarrarSVG />
-        </div>
+        </div> */}
       </div>
 
       {/* Split Content */}

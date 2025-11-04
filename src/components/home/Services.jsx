@@ -236,13 +236,14 @@ const Services = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-12 bg-zinc-50 overflow-hidden"
+      className="relative py-12  overflow-hidden"
+      // className="relative py-12 bg-zinc-50 overflow-hidden"
     >
       {/* Parallax Background */}
-      <motion.div
+      {/* <motion.div
         style={{ y }}
         className="absolute inset-0 bg-gradient-to-br from-zinc-100 via-white to-zinc-50"
-      />
+      /> */}
 
       {/* Content */}
       <motion.div
@@ -258,11 +259,11 @@ const Services = () => {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-4 mb-6"
           >
-            <div className="w-12 h-px bg-[#ffb400]" />
-            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+            <div className="w-12 h-px bg-primary-dark" />
+            <span className="text-xs uppercase tracking-[0.3em] text-subheading">
               Our Services
             </span>
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary-dark" />
           </motion.div>
 
           <motion.h2
@@ -270,9 +271,9 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-white leading-tight"
           >
-            <span className="text-[#ffb400]">Excellence</span> in{" "}
+            <span className="text-primary-dark">Excellence</span> in{" "}
             <br className=" md:hidden" /> Every
             <br className="hidden md:block" /> Detail
           </motion.h2>
@@ -297,23 +298,23 @@ const Services = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group bg-white rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-200 hover:border-[#ffb400]/30"
+                  className="group bg-zinc-900 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-700 hover:border-primary-dark"
                 >
                   {/* Service Icon & Number */}
                   <div className="flex items-center justify-end mb-4">
                     {/* <div className="text-3xl">{service.icon}</div> */}
-                    <span className="text-2xl font-tan-pearl text-[#ffb400]/30 group-hover:text-[#ffb400] transition-colors">
+                    <span className="text-2xl font-tan-pearl text-primary-dark group-hover:text-primary transition-colors">
                       {service.number}
                     </span>
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-xl font-tan-pearl text-zinc-800 group-hover:text-[#ffb400] transition-colors mb-3">
+                  <h3 className="text-xl font-tan-pearl text-white group-hover:text-primary transition-colors mb-3">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-zinc-600 leading-relaxed text-sm mb-4 line-clamp-3">
+                  <p className="text-gray-500 leading-relaxed text-sm mb-4 line-clamp-3">
                     {service.description}
                   </p>
 
@@ -325,7 +326,7 @@ const Services = () => {
                         className="flex items-center gap-2"
                       >
                         <div className="w-1 h-1 bg-[#ffb400] rounded-full flex-shrink-0" />
-                        <span className="text-xs text-zinc-600">{feature}</span>
+                        <span className="text-xs text-gray-500">{feature}</span>
                       </div>
                     ))}
                     {service.features.length > 2 && (
@@ -345,7 +346,7 @@ const Services = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg border border-zinc-200 flex items-center justify-center hover:border-[#ffb400] hover:bg-[#ffb400] hover:text-white transition-all duration-300 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-zinc-900 rounded-full shadow-lg border border-zinc-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 group text-white"
             disabled={currentSlide === 0}
           >
             <svg
@@ -365,7 +366,7 @@ const Services = () => {
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-white rounded-full shadow-lg border border-zinc-200 flex items-center justify-center hover:border-[#ffb400] hover:bg-[#ffb400] hover:text-white transition-all duration-300 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-zinc-900 rounded-full shadow-lg border border-zinc-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 group text-white"
             disabled={currentSlide === totalSlides - 1}
           >
             <svg

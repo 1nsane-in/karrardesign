@@ -16,7 +16,7 @@ const buttonVariants = {
 
 const Description = () => {
   return (
-    <div className="relative py-12">
+    <div className="relative py-12  mt-40">
       <div
         style={{ perspective: 800 }}
         className="grid lg:grid-cols-5 grid-cols-1 container mx-auto px-4 sm:px-6 lg:px-8"
@@ -30,28 +30,32 @@ const Description = () => {
           transition={{ staggerChildren: 0.2 }}
         >
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-white"
+            // className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-zinc-700"
             variants={headingVariants}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
           >
             Luxury
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-white"
+            // className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-zinc-700"
             variants={headingVariants}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            <span className="text-[#ffb400]">Fit-Outs</span> &
+            <span className="text-primary-dark">Fit-Outs</span> &
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-white"
+            // className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <span className="text-[#ffb400]">Project</span>
+            <span className="text-primary-dark">Project</span>
           </motion.h1>
           <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-zinc-700"
+            className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-white"
+            // className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-zinc-700"
             variants={headingVariants}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           >
@@ -75,7 +79,7 @@ const Description = () => {
             <AboutSVG />
           </motion.div>
           <motion.p
-            className="lg:text-right text-center text-base leading-relaxed text-zinc-700"
+            className="lg:text-right text-center text-base leading-relaxed text-subheading"
             variants={buttonVariants}
             transition={{ duration: 0.8, delay: 0.4 }}
           >

@@ -24,12 +24,23 @@ html,
   /* --color-primary: #c19a5b; */
   --color-primary: #ffb400;
   --color-secondary: #fff;
+  --color-background-gold: #e0bf8b;
+
+  --color-background-black: #02020a;
+  --color-primary-dark: #ffd700;
+  --color-subheading: #f0f0f0;
+
+  /* --color-background-black: #020122; */
+  /* 
+  --color-background-black: #020122;
+  --color-background-black: #020122; */
+
+  --color-white1: #fdfdff;
 
   --font-tan-pearl: "Tan Pearl", sans-serif;
   --font-cinzel: "Cinzel", serif;
   --font-roboto: "Roboto", sans-serif;
 }
-
 
 /* Hide scrollbar */
 ::-webkit-scrollbar {

@@ -45,7 +45,7 @@ const Hero = () => {
             <p className="text-[#ffb400] text-sm uppercase tracking-[0.3em] mb-6">
               Luxury Interior Design
             </p>
-            <h1 className="text-5xl lg:text-7xl font-tan-pearl text-white mb-6 leading-tight">
+            <h1 className="text-5xl lg:text-7xl font-cinzel text-white mb-6 leading-[65px]">
               Crafting Dreams
               <br />
               with Elegance

@@ -11,12 +11,13 @@ const fadeInVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
+
 const ServicesHero = () => {
   return (
     <>
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center"
+        className="max-w-6xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center "
       >
         <motion.div
           variants={headingVariants}
@@ -41,7 +42,7 @@ const ServicesHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-cinzel text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
           >
             Our Expertise
           </motion.h1>
@@ -64,7 +65,7 @@ const ServicesHero = () => {
         </motion.div>
 
         {/* Decorative SVG */}
-        <motion.div
+        {/* <motion.div
           variants={fadeInVariants}
           initial="hidden"
           animate={"visible"}
@@ -75,7 +76,7 @@ const ServicesHero = () => {
           <div className="lg:w-xs w-32 -mt-8">
             <ServiceSVG />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
       {/* Visual Accent */}
       <div className="max-w-6xl mx-auto mt-6 sm:mt-8 px-4 sm:px-6 lg:px-0">

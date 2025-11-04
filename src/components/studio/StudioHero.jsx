@@ -59,7 +59,7 @@ const StudioHero = () => {
         </div>
       </motion.div>
       {/* Project SVG */}
-      <motion.div
+      {/* <motion.div
         variants={headingVariants}
         initial="hidden"
         animate={"visible"}
@@ -70,7 +70,7 @@ const StudioHero = () => {
         <div className="lg:w-xs w-32 mx-auto">
           <Project1SVG />
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };

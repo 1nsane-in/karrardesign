@@ -211,13 +211,14 @@ const OngoingProjects = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-white overflow-hidden"
+      className="relative py-20  overflow-hidden"
+      // className="relative py-20 bg-white overflow-hidden"
     >
       {/* Parallax Background */}
-      <motion.div
+      {/* <motion.div
         style={{ y }}
         className="absolute inset-0 bg-gradient-to-br from-zinc-50 via-white to-zinc-100"
-      />
+      /> */}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -230,11 +231,11 @@ const OngoingProjects = () => {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-4 mb-6"
           >
-            <div className="w-12 h-px bg-[#ffb400]" />
-            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+            <div className="w-12 h-px bg-primary-dark" />
+            <span className="text-xs uppercase tracking-[0.3em] text-subheading">
               In Progress
             </span>
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary-dark" />
           </motion.div>
 
           <motion.h2
@@ -242,9 +243,9 @@ const OngoingProjects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-white leading-tight"
           >
-            Current <span className="text-[#ffb400]">Projects</span>
+            Current <span className="text-primary-dark">Projects</span>
           </motion.h2>
         </div>
 
