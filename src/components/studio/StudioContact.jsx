@@ -10,25 +10,33 @@ const headingVariants = {
 
 const StudioContact = () => {
   return (
-    <motion.div
-      variants={headingVariants}
-      initial="hidden"
-      animate={"visible"}
-      viewport={{ once: true, amount: 0.8 }}
-      transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
-    >
-      <Link
-        to="/contact"
-        className="pt-6 pb-8 sm:pb-12 lg:pb-16 flex flex-col items-center justify-center px-4"
-      >
-        <div className="w-32 sm:w-40 lg:w-sm -mt-10 -z-1">
-          <ConnectSVG />
-        </div>
-      </Link>
-      <div className="-mt-20">
-        <SocialConnect />
+    <>
+      {/* Call to Action */}
+      <div className="text-center">
+        <h3 className="text-4xl sm:text-5xl lg:text-7xl font-cinzel text-white leading-tight">
+          Let&apos;s Create Your Next
+          <br />
+          Landmark Project
+        </h3>
       </div>
-    </motion.div>
+      <motion.div
+        variants={headingVariants}
+        initial="hidden"
+        animate={"visible"}
+        viewport={{ once: true, amount: 0.8 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+        className=" w-full flex items-center justify-center flex-col"
+      >
+        <Link to="/contact">
+          <div className="w-32 sm:w-40 lg:w-sm -mt-7 -z-1">
+            <ConnectSVG />
+          </div>
+        </Link>
+        <div className="mt-4">
+          <SocialConnect />
+        </div>
+      </motion.div>
+    </>
   );
 };
 

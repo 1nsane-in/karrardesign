@@ -13,7 +13,7 @@ import CompletedProjects from "../components/ui/image-gallery";
 
 const Home = () => {
   return (
-    <div className="">
+    <>
       <ScrollIndicator />
       <NoiseOverlay />
       <div className="bg-background-black min-h-screen relative scroll-smooth">
@@ -56,7 +56,7 @@ const Home = () => {
 
         <GetInTouch />
       </div>
-    </div>
+    </>
   );
 };
 
