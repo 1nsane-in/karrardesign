@@ -1,86 +1,94 @@
 import styles from "../../styles/description.module.scss";
-import { AboutSVG, DesignSVG } from "../../assets/svg.jsx";
+import { AboutSVG } from "../../assets/svg.jsx";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+import {
+  animationProps,
+  headings,
+  navButtons,
+  variants,
+} from "../../data/home/homeDescription.js";
 
-// Define variants for motion animations
-const headingVariants = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0 },
+// Reusable components
+const AnimatedHeading = ({
+  text,
+  suffix = "",
+  delay,
+  lineHeight,
+  highlight,
+}) => (
+  <motion.h1
+    className={`uppercase lg:text-[60px] text-3xl leading-tight ${lineHeight} font-cinzel text-white`}
+    variants={variants}
+    transition={{ duration: 0.8, ease: "easeOut", delay }}
+  >
+    {highlight ? <span className="text-primary-dark">{text}</span> : text}
+    {suffix}
+  </motion.h1>
+);
+
+AnimatedHeading.propTypes = {
+  text: PropTypes.string.isRequired,
+  suffix: PropTypes.string,
+  delay: PropTypes.number,
+  lineHeight: PropTypes.string,
+  highlight: PropTypes.bool,
 };
 
-const buttonVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
+const AnimatedButton = ({ to, text }) => {
+  const createSpans = (text) =>
+    text.split("").map((char, i) => <span key={i}>{char}</span>);
+
+  return (
+    <Link to={to} className="text-primary">
+      <button className={styles.button}>
+        <span className={styles["span-mother"]}>{createSpans(text)}</span>
+        <span className={styles["span-mother2"]}>{createSpans(text)}</span>
+      </button>
+    </Link>
+  );
+};
+
+AnimatedButton.propTypes = {
+  to: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 };
 
 const Description = () => {
   return (
-    <div className="relative py-12  mt-40">
+    <div className="relative py-12 mt-40">
       <div
         style={{ perspective: 800 }}
-        className="grid lg:grid-cols-5 grid-cols-1 container mx-auto px-4 sm:px-6 lg:px-8"
+        className="grid lg:grid-cols-5 grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        {/* Heading Section with Animation */}
+        {/* Heading Section */}
         <motion.div
-          className="col-span-3 lg:col-span-3 flex flex-col justify-center items-center lg:items-start"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.8 }}
+          className="col-span-3 flex flex-col justify-center items-center lg:items-start"
+          {...animationProps}
           transition={{ staggerChildren: 0.2 }}
         >
-          <motion.h1
-            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-white"
-            // className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[60px] font-tan-pearl text-zinc-700"
-            variants={headingVariants}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
-          >
-            Luxury
-          </motion.h1>
-          <motion.h1
-            className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-white"
-            // className="uppercase lg:text-[60px] text-3xl leading-tight lg:leading-[80px] font-tan-pearl text-zinc-700"
-            variants={headingVariants}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          >
-            <span className="text-primary-dark">Fit-Outs</span> &
-          </motion.h1>
-          <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-white"
-            // className="uppercase lg:text-[60px] text-3xl lg:leading-[70px] leading-tight font-tan-pearl text-zinc-700"
-            variants={headingVariants}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          >
-            <span className="text-primary-dark">Project</span>
-          </motion.h1>
-          <motion.h1
-            className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-white"
-            // className="uppercase lg:text-[60px] text-3xl lg:leading-[80px] leading-tight font-tan-pearl text-zinc-700"
-            variants={headingVariants}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          >
-            Management
-          </motion.h1>
+          {headings.map((heading, index) => (
+            <AnimatedHeading key={index} {...heading} />
+          ))}
         </motion.div>
 
-        {/* Description and SVG Section with Animation */}
+        {/* Description Section */}
         <motion.div
-          className="col-span-2 lg:col-span-2 flex flex-col justify-center lg:items-end items-center text-center lg:text-right mt-8 lg:mt-0"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.8 }}
+          className="col-span-2 flex flex-col justify-center lg:items-end items-center text-center lg:text-right mt-8 lg:mt-0"
+          {...animationProps}
           transition={{ staggerChildren: 0.2 }}
         >
           <motion.div
             className="lg:w-xs w-32 mb-4"
-            variants={buttonVariants}
+            variants={{ ...variants.button, visible: variants.visible }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AboutSVG />
           </motion.div>
           <motion.p
             className="lg:text-right text-center text-base leading-relaxed text-subheading"
-            variants={buttonVariants}
+            variants={{ ...variants.button, visible: variants.visible }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Karrar Design Projects L.L.C. offers premium interior fit-out and
@@ -93,74 +101,19 @@ const Description = () => {
         </motion.div>
       </div>
 
-      {/* Buttons Section with Animation */}
+      {/* Navigation Buttons */}
       <motion.div
         className="flex justify-center mt-12"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.8 }}
+        {...animationProps}
         transition={{ staggerChildren: 0.3 }}
       >
         <motion.div
           className={`${styles["button-wrapper"]} font-roboto font-light`}
-          variants={buttonVariants}
+          variants={{ ...variants.button, visible: variants.visible }}
         >
-          <Link to={"/studio"} className="text-primary">
-            <button className={styles.button}>
-              <span className={styles["span-mother"]}>
-                <span>S</span>
-                <span>T</span>
-                <span>U</span>
-                <span>D</span>
-                <span>I</span>
-                <span>O</span>
-              </span>
-              <span className={styles["span-mother2"]}>
-                <span>S</span>
-                <span>T</span>
-                <span>U</span>
-                <span>D</span>
-                <span>I</span>
-                <span>O</span>
-              </span>
-            </button>
-          </Link>
-          <Link to={"/karrar"} className="text-primary">
-            <button className={styles.button}>
-              <span className={styles["span-mother"]}>
-                <span>K</span>
-                <span>A</span>
-                <span>R</span>
-                <span>R</span>
-                <span>A</span>
-                <span>R</span>
-              </span>
-              <span className={styles["span-mother2"]}>
-                <span>K</span>
-                <span>A</span>
-                <span>R</span>
-                <span>R</span>
-                <span>A</span>
-                <span>R</span>
-              </span>
-            </button>
-          </Link>
-          <Link to={"/work"} className="text-primary">
-            <button className={styles.button}>
-              <span className={styles["span-mother"]}>
-                <span>W</span>
-                <span>O</span>
-                <span>R</span>
-                <span>K</span>
-              </span>
-              <span className={styles["span-mother2"]}>
-                <span>W</span>
-                <span>O</span>
-                <span>R</span>
-                <span>K</span>
-              </span>
-            </button>
-          </Link>
+          {navButtons.map((button, index) => (
+            <AnimatedButton key={index} {...button} />
+          ))}
         </motion.div>
       </motion.div>
     </div>

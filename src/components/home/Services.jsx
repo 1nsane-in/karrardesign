@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router";
+import { services } from "../../data/home/homeServices";
 
 const Services = () => {
   const containerRef = useRef(null);
@@ -9,170 +10,10 @@ const Services = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
-
-  const services = [
-    {
-      number: "01",
-      title: "Interior Design",
-      description:
-        "Luxury residential and commercial interior design solutions that blend sophistication with functionality.",
-      features: [
-        "Space Planning",
-        "3D Visualization",
-        "Custom Furniture",
-        "Material Selection",
-      ],
-      icon: "🏠",
-    },
-    {
-      number: "02",
-      title: "Project Management",
-      description:
-        "End-to-end project coordination ensuring timely delivery, quality control, and budget management.",
-      features: [
-        "Timeline Management",
-        "Quality Assurance",
-        "Vendor Coordination",
-        "Budget Control",
-      ],
-      icon: "📋",
-    },
-    {
-      number: "03",
-      title: "Luxury Fit-Out",
-      description:
-        "Premium fit-out services for villas, hotels, restaurants, offices, and retail spaces across multiple markets.",
-      features: [
-        "Construction Management",
-        "Premium Materials",
-        "Skilled Craftsmen",
-        "On-time Delivery",
-      ],
-      icon: "✨",
-    },
-    {
-      number: "04",
-      title: "Design Management",
-      description:
-        "Comprehensive design oversight from concept to completion, ensuring vision alignment throughout the project.",
-      features: [
-        "Design Development",
-        "Technical Documentation",
-        "Design Coordination",
-        "Quality Standards",
-      ],
-      icon: "🎨",
-    },
-    {
-      number: "05",
-      title: "Construction Supervision",
-      description:
-        "Professional oversight of construction activities ensuring adherence to design specifications and quality standards.",
-      features: [
-        "Quality Control",
-        "Safety Management",
-        "Progress Monitoring",
-        "Issue Resolution",
-      ],
-      icon: "🏗️",
-    },
-    {
-      number: "06",
-      title: "Value Engineering",
-      description:
-        "Cost optimization strategies that maintain design integrity while maximizing value and efficiency.",
-      features: [
-        "Cost Analysis",
-        "Alternative Solutions",
-        "Efficiency Optimization",
-        "Budget Management",
-      ],
-      icon: "💎",
-    },
-    {
-      number: "07",
-      title: "Procurement Services",
-      description:
-        "Strategic sourcing and procurement of premium materials, furniture, and fixtures for luxury projects.",
-      features: [
-        "Vendor Selection",
-        "Material Sourcing",
-        "Cost Negotiation",
-        "Quality Assurance",
-      ],
-      icon: "🛍️",
-    },
-    {
-      number: "08",
-      title: "MEP Coordination",
-      description:
-        "Mechanical, Electrical, and Plumbing systems integration for seamless infrastructure implementation.",
-      features: [
-        "System Integration",
-        "Technical Coordination",
-        "Compliance Management",
-        "Performance Optimization",
-      ],
-      icon: "⚡",
-    },
-    {
-      number: "09",
-      title: "Sustainability Consulting",
-      description:
-        "Green building practices and sustainable design solutions for environmentally conscious developments.",
-      features: [
-        "LEED Certification",
-        "Energy Efficiency",
-        "Sustainable Materials",
-        "Environmental Impact",
-      ],
-      icon: "🌱",
-    },
-    {
-      number: "10",
-      title: "Client Representation",
-      description:
-        "Professional advocacy and representation services protecting client interests throughout the project lifecycle.",
-      features: [
-        "Contract Management",
-        "Quality Advocacy",
-        "Timeline Monitoring",
-        "Cost Control",
-      ],
-      icon: "🤝",
-    },
-    {
-      number: "11",
-      title: "Post-Completion Support",
-      description:
-        "Comprehensive maintenance and support services ensuring long-term satisfaction and property value.",
-      features: [
-        "Warranty Management",
-        "Maintenance Planning",
-        "Issue Resolution",
-        "Upgrade Consultation",
-      ],
-      icon: "🔧",
-    },
-    {
-      number: "12",
-      title: "Design Consultation",
-      description:
-        "Expert advisory services for design decisions, material selection, and aesthetic coordination.",
-      features: [
-        "Design Advisory",
-        "Material Consultation",
-        "Color Coordination",
-        "Style Guidance",
-      ],
-      icon: "💡",
-    },
-  ];
 
   const [servicesPerSlide, setServicesPerSlide] = useState(3);
 
@@ -234,17 +75,7 @@ const Services = () => {
   };
 
   return (
-    <section
-      ref={containerRef}
-      className="relative py-12  overflow-hidden"
-      // className="relative py-12 bg-zinc-50 overflow-hidden"
-    >
-      {/* Parallax Background */}
-      {/* <motion.div
-        style={{ y }}
-        className="absolute inset-0 bg-gradient-to-br from-zinc-100 via-white to-zinc-50"
-      /> */}
-
+    <section ref={containerRef} className="relative py-12  overflow-hidden">
       {/* Content */}
       <motion.div
         style={{ opacity }}
@@ -271,7 +102,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-white leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight"
           >
             <span className="text-primary-dark">Excellence</span> in{" "}
             <br className=" md:hidden" /> Every
@@ -303,13 +134,13 @@ const Services = () => {
                   {/* Service Icon & Number */}
                   <div className="flex items-center justify-end mb-4">
                     {/* <div className="text-3xl">{service.icon}</div> */}
-                    <span className="text-2xl font-tan-pearl text-primary-dark group-hover:text-primary transition-colors">
+                    <span className="text-2xl font-cinzel text-primary-dark group-hover:text-primary transition-colors">
                       {service.number}
                     </span>
                   </div>
 
                   {/* Service Title */}
-                  <h3 className="text-xl font-tan-pearl text-white group-hover:text-primary transition-colors mb-3">
+                  <h3 className="text-xl font-cinzel text-white group-hover:text-primary transition-colors mb-3">
                     {service.title}
                   </h3>
 
@@ -325,19 +156,16 @@ const Services = () => {
                         key={`${service.number}-${idx}`}
                         className="flex items-center gap-2"
                       >
-                        <div className="w-1 h-1 bg-[#ffb400] rounded-full flex-shrink-0" />
+                        <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
                         <span className="text-xs text-gray-500">{feature}</span>
                       </div>
                     ))}
                     {service.features.length > 2 && (
-                      <div className="text-xs text-[#ffb400] font-medium">
+                      <div className="text-xs text-primary font-medium">
                         +{service.features.length - 2} more
                       </div>
                     )}
                   </div>
-
-                  {/* Hover Effect */}
-                  <div className="w-0 h-px bg-gradient-to-r from-[#ffb400] to-yellow-500 group-hover:w-full transition-all duration-700 mt-4" />
                 </motion.div>
               ))}
             </motion.div>
@@ -396,19 +224,12 @@ const Services = () => {
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 currentSlide === slides.indexOf(slide)
-                  ? "bg-[#ffb400] w-8"
+                  ? "bg-primary w-8"
                   : "bg-zinc-300 hover:bg-zinc-400"
               }`}
             />
           ))}
         </div>
-
-        {/* Slide Counter */}
-        {/* <div className="text-center mt-4">
-                    <span className="text-sm text-zinc-500">
-                        {currentSlide + 1} of {totalSlides}
-                    </span>
-                </div> */}
 
         {/* Bottom CTA */}
         <motion.div
@@ -425,15 +246,11 @@ const Services = () => {
             <span className="text-sm uppercase tracking-wider text-zinc-500 group-hover:text-[#ffb400] transition-colors duration-300">
               Explore Our Portfolio
             </span>
-            <div className="w-12 h-px bg-zinc-300 group-hover:bg-[#ffb400] transition-colors duration-300" />
-            <div className="w-2 h-2 border border-zinc-300 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
+            <div className="w-12 h-px bg-zinc-300 group-hover:bg-primary transition-colors duration-300" />
+            <div className="w-2 h-2 border border-zinc-300 group-hover:border-primary group-hover:bg-primary transition-all duration-300" />
           </Link>
         </motion.div>
       </motion.div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-px h-32 bg-gradient-to-b from-transparent via-[#ffb400]/30 to-transparent hidden lg:block" />
-      <div className="absolute bottom-20 left-20 w-px h-24 bg-gradient-to-t from-transparent via-zinc-400/30 to-transparent hidden lg:block" />
     </section>
   );
 };

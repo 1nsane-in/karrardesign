@@ -48,7 +48,7 @@ const projects = [
   },
 ];
 
-export default function Example() {
+export default function CompletedProjects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const timeoutRef = useRef(null);
@@ -88,14 +88,14 @@ export default function Example() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-4 mb-6"
           >
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary" />
             <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
               Completed
             </span>
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary" />
           </motion.div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
-            Delivered <span className="text-[#ffb400]">Excellence</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight whitespace-nowrap">
+            Delivered <span className="text-primary">Excellence</span>
           </h1>
           <p className="text-base text-zinc-700 mt-4">
             Every project tells a story of precision, creativity, and unmatched
@@ -115,11 +115,11 @@ export default function Example() {
                 alt={project.name}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white font-tan-pearl text-2xl mb-2">
+                <h3 className="text-white font-cinzel text-2xl mb-2">
                   {project.name}
                 </h3>
                 <p className="text-zinc-300 text-sm mb-1">{project.location}</p>
-                <p className="text-[#ffb400] text-xs uppercase tracking-wider">
+                <p className="text-primary text-xs uppercase tracking-wider">
                   {project.type}
                 </p>
               </div>
@@ -138,15 +138,15 @@ export default function Example() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center gap-4 mb-6"
           >
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary" />
             <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
               Completed
             </span>
-            <div className="w-12 h-px bg-[#ffb400]" />
+            <div className="w-12 h-px bg-primary" />
           </motion.div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight whitespace-nowrap">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-zinc-800 leading-tight whitespace-nowrap">
             Delivered <br className="md:hidden" />{" "}
-            <span className="text-[#ffb400]">Excellence</span>
+            <span className="text-primary">Excellence</span>
           </h1>
           <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
@@ -179,7 +179,7 @@ export default function Example() {
           {/* Navigation Buttons */}
           <button
             onClick={goToPrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-primary transition"
           >
             <svg
               className="w-5 h-5 text-zinc-700"
@@ -198,7 +198,7 @@ export default function Example() {
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-[#ffb400] transition"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-primary transition"
           >
             <svg
               className="w-5 h-5 text-zinc-700"
@@ -227,7 +227,7 @@ export default function Example() {
               }}
               className={`h-2 rounded-full transition-all duration-300 ${
                 currentIndex === index
-                  ? "bg-[#ffb400] w-8"
+                  ? "bg-primary w-8"
                   : "bg-zinc-300 w-2 hover:bg-zinc-400"
               }`}
             />
@@ -240,17 +240,17 @@ export default function Example() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="text-center mt-20 "
+        className="text-center mt-10"
       >
         <Link
           to="/studio"
           className="group cursor-pointer inline-flex items-center gap-4"
         >
-          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-[#ffb400] transition-colors duration-300">
+          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-primary transition-colors duration-300">
             View All Projects
           </span>
-          <div className="w-12 h-px bg-zinc-400 group-hover:bg-[#ffb400] transition-colors duration-300" />
-          <div className="w-2 h-2 border border-zinc-400 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all duration-300" />
+          <div className="w-12 h-px bg-zinc-400 group-hover:bg-primary transition-colors duration-300" />
+          <div className="w-2 h-2 border border-zinc-400 group-hover:border-primary group-hover:bg-primary transition-all duration-300" />
         </Link>
       </motion.div>
     </>

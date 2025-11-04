@@ -7,9 +7,9 @@ import OngoingProjects from "../components/home/OngoingProjects";
 import CompanyPartners from "../components/home/CompanyPartners";
 import SectionTransition from "../components/common/SectionTransition";
 import Testimonial from "../components/home/Testimonial";
-import Example from "../components/ui/image-gallery";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import ScrollIndicator from "../components/common/ScrollIndicator";
+import CompletedProjects from "../components/ui/image-gallery";
 
 const Home = () => {
   return (
@@ -38,7 +38,7 @@ const Home = () => {
 
         <OngoingProjects />
 
-        <Example />
+        <CompletedProjects />
 
         {/* <SectionTransition
           fromColor="bg-white"
