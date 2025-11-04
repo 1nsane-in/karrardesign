@@ -5,7 +5,7 @@ import Services from "../components/home/Services";
 import FutureProjects from "../components/home/FutureProjects";
 import OngoingProjects from "../components/home/OngoingProjects";
 import CompanyPartners from "../components/home/CompanyPartners";
-import SectionTransition from "../components/common/SectionTransition";
+// import SectionTransition from "../components/common/SectionTransition";
 import Testimonial from "../components/home/Testimonial";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import ScrollIndicator from "../components/common/ScrollIndicator";

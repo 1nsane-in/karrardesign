@@ -83,7 +83,7 @@ const OngoingProjects = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight"
           >
-            Current <span className="text-primary-dark">Projects</span>
+            Current <span className="text-primary">Projects</span>
           </motion.h2>
         </div>
 

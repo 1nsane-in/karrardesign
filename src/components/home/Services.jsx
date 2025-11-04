@@ -104,7 +104,7 @@ const Services = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight"
           >
-            <span className="text-primary-dark">Excellence</span> in{" "}
+            <span className="text-primary">Excellence</span> in{" "}
             <br className=" md:hidden" /> Every
             <br className="hidden md:block" /> Detail
           </motion.h2>

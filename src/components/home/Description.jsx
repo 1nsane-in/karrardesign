@@ -23,7 +23,7 @@ const AnimatedHeading = ({
     variants={variants}
     transition={{ duration: 0.8, ease: "easeOut", delay }}
   >
-    {highlight ? <span className="text-primary-dark">{text}</span> : text}
+    {highlight ? <span className="text-primary">{text}</span> : text}
     {suffix}
   </motion.h1>
 );
