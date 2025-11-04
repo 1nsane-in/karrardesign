@@ -64,14 +64,8 @@ const FutureProjects = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-20 bg-zinc-900 overflow-hidden mt-20"
+      className="relative py-20 overflow-hidden mt-20"
     >
-      {/* Parallax Background */}
-      <motion.div
-        style={{ y, scale }}
-        className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black"
-      />
-
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
