@@ -89,15 +89,15 @@ export default function CompletedProjects() {
             className="inline-flex items-center gap-4 mb-6"
           >
             <div className="w-12 h-px bg-primary" />
-            <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
               Completed
             </span>
             <div className="w-12 h-px bg-primary" />
           </motion.div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight whitespace-nowrap">
-            Delivered <span className="text-primary">Excellence</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight whitespace-nowrap">
+            Our <span className="text-primary">Projects</span>
           </h1>
-          <p className="text-base text-zinc-700 mt-4">
+          <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched
             craftsmanship.
           </p>

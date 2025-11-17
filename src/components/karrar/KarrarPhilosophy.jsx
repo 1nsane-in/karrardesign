@@ -38,9 +38,9 @@ const KarrarPhilosophy = () => {
             alt="Karrar Logo"
             className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
           />
-          <p className="text-xs uppercase text-zinc-600">Our Foundation</p>
+          <p className="text-xs uppercase text-zinc-400">Our Foundation</p>
         </div>
-        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-zinc-700 mb-8 sm:mb-10 lg:mb-12">
+        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-white mb-8 sm:mb-10 lg:mb-12">
           Core Values
         </h2>
       </motion.div>
@@ -65,10 +65,10 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold text-zinc-800 mb-2 sm:mb-3">
+          <h3 className="text-lg sm:text-xl font-semibold text-zinc-300 mb-2 sm:mb-3">
             Timeless Elegance
           </h3>
-          <p className="text-zinc-600 leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             Every design transcends trends, creating spaces that remain
             sophisticated and relevant for generations.
           </p>
@@ -86,10 +86,10 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-xl font-semibold text-zinc-800 mb-3">
+          <h3 className="text-xl font-semibold text-zinc-300 mb-3">
             Uncompromising Quality
           </h3>
-          <p className="text-zinc-600 leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             Premium materials, masterful craftsmanship, and attention to the
             finest details in every project.
           </p>
@@ -107,10 +107,10 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-xl font-semibold text-zinc-800 mb-3">
+          <h3 className="text-xl font-semibold text-zinc-300 mb-3">
             Seamless Execution
           </h3>
-          <p className="text-zinc-600 leading-relaxed">
+          <p className="text-zinc-400 leading-relaxed">
             Precision project management ensuring on-time delivery and budget
             adherence without compromising vision.
           </p>

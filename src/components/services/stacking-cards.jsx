@@ -35,7 +35,7 @@ export const Card = ({
           scale,
           top: `calc(-5vh + ${Math.min(i * 15, 150)}px)`,
         }}
-        className="flex flex-col relative -top-[25%] h-[500px] sm:h-[550px] lg:h-[600px] w-[95%] sm:w-[90%] max-w-6xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 origin-top bg-white/95 backdrop-blur-sm shadow-2xl border border-white/20"
+        className="flex flex-col relative -top-[25%] h-[500px] sm:h-[550px] lg:h-[600px] w-[95%] sm:w-[90%] max-w-6xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 origin-top bg-zinc-900 backdrop-blur-sm shadow-2xl border border-zinc-700"
       >
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div className="w-8 sm:w-12 h-1 rounded-full bg-primary" />
@@ -44,27 +44,32 @@ export const Card = ({
           </span>
         </div>
 
-        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-tan-pearl text-zinc-800 mb-4 sm:mb-6 lg:mb-8 leading-tight">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-tan-pearl text-white mb-4 sm:mb-6 lg:mb-8 leading-tight">
           {title}
         </h2>
 
         <div className="flex flex-col lg:flex-row h-full gap-4 sm:gap-6 lg:gap-8">
           <div className="w-full lg:w-[45%] flex flex-col justify-between">
             <div>
-              <p className="text-zinc-600 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6 line-clamp-3 lg:line-clamp-none">
+              <p className="text-zinc-500 text-sm sm:text-base lg:text-lg leading-relaxed mb-4 sm:mb-6 line-clamp-3 lg:line-clamp-none">
                 {description}
               </p>
 
               {features && (
                 <div className="space-y-2 sm:space-y-3">
-                  {features.slice(0, window.innerWidth < 1024 ? 2 : 4).map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 sm:gap-3 group">
-                      <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 group-hover:scale-125 bg-primary flex-shrink-0" />
-                      <span className="text-zinc-700 font-medium text-sm sm:text-base">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
+                  {features
+                    .slice(0, window.innerWidth < 1024 ? 2 : 4)
+                    .map((feature, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2 sm:gap-3 group"
+                      >
+                        <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full transition-all duration-300 group-hover:scale-125 bg-primary flex-shrink-0" />
+                        <span className="text-zinc-500 font-medium text-sm sm:text-base">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
                   {features.length > (window.innerWidth < 1024 ? 2 : 4) && (
                     <div className="text-xs sm:text-sm text-primary font-medium lg:hidden">
                       +{features.length - 2} more
@@ -74,7 +79,10 @@ export const Card = ({
               )}
             </div>
 
-            <Link to={`/services/${serviceId}`} className="flex items-center gap-2 sm:gap-3 text-zinc-800 font-medium hover:gap-3 sm:hover:gap-4 transition-all duration-300 group mt-4 sm:mt-6 lg:mt-0">
+            <Link
+              to={`/services/${serviceId}`}
+              className="flex items-center gap-2 sm:gap-3 text-zinc-500 font-medium hover:gap-3 sm:hover:gap-4 transition-all duration-300 group mt-4 sm:mt-6 lg:mt-0"
+            >
               <span className="text-sm sm:text-base">Explore Service</span>
               <div className="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-zinc-100 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                 <svg

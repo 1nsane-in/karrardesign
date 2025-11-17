@@ -56,10 +56,8 @@ const Services = () => {
   for (let i = 0; i < totalSlides; i++) {
     const start = i * servicesPerSlide;
     const end = Math.min(start + servicesPerSlide, services.length);
-    const startKey = services[start] ? services[start].number : `s${start}`;
-    const endKey = services[end - 1] ? services[end - 1].number : `s${end - 1}`;
     slides.push({
-      id: `${startKey}-${endKey}`,
+      id: `slide-${i}`,
       items: services.slice(start, end),
     });
   }
@@ -91,8 +89,8 @@ const Services = () => {
             className="inline-flex items-center gap-4 mb-6"
           >
             <div className="w-12 h-px bg-primary-dark" />
-            <span className="text-xs uppercase tracking-[0.3em] text-subheading">
-              Our Services
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
+              Our Expertise
             </span>
             <div className="w-12 h-px bg-primary-dark" />
           </motion.div>
@@ -102,11 +100,9 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
           >
-            <span className="text-primary">Excellence</span> in{" "}
-            <br className=" md:hidden" /> Every
-            <br className="hidden md:block" /> Detail
+            <span className="text-primary">Excellence</span> in Every Detail
           </motion.h2>
         </div>
 
@@ -125,7 +121,7 @@ const Services = () => {
             >
               {getCurrentServices().map((service, index) => (
                 <motion.div
-                  key={service.number}
+                  key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -133,9 +129,10 @@ const Services = () => {
                 >
                   {/* Service Icon & Number */}
                   <div className="flex items-center justify-end mb-4">
-                    {/* <div className="text-3xl">{service.icon}</div> */}
                     <span className="text-2xl font-cinzel text-primary-dark group-hover:text-primary transition-colors">
-                      {service.number}
+                      {String(
+                        index + 1 + currentSlide * servicesPerSlide
+                      ).padStart(2, "0")}
                     </span>
                   </div>
 
@@ -146,25 +143,17 @@ const Services = () => {
 
                   {/* Description */}
                   <p className="text-gray-500 leading-relaxed text-sm mb-4 line-clamp-3">
-                    {service.description}
+                    {service.shortDescription}
                   </p>
 
-                  {/* Features */}
-                  <div className="space-y-2">
-                    {service.features.slice(0, 2).map((feature, idx) => (
-                      <div
-                        key={`${service.number}-${idx}`}
-                        className="flex items-center gap-2"
-                      >
-                        <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
-                        <span className="text-xs text-gray-500">{feature}</span>
-                      </div>
-                    ))}
-                    {service.features.length > 2 && (
-                      <div className="text-xs text-primary font-medium">
-                        +{service.features.length - 2} more
-                      </div>
-                    )}
+                  {/* Tagline */}
+                  <div className="mt-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
+                      <span className="text-xs text-gray-400">
+                        {service.tagline}
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -240,11 +229,11 @@ const Services = () => {
           className="text-center mt-12"
         >
           <Link
-            to="/studio"
+            to="/services"
             className="group cursor-pointer inline-flex items-center gap-4"
           >
             <span className="text-sm uppercase tracking-wider text-zinc-500 group-hover:text-[#ffb400] transition-colors duration-300">
-              Explore Our Portfolio
+              Explore Our Services
             </span>
             <div className="w-12 h-px bg-zinc-300 group-hover:bg-primary transition-colors duration-300" />
             <div className="w-2 h-2 border border-zinc-300 group-hover:border-primary group-hover:bg-primary transition-all duration-300" />

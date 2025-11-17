@@ -37,11 +37,11 @@ const Awards = () => {
             alt="Karrar Logo"
             className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
           />
-          <p className="text-xs uppercase text-zinc-600">
+          <p className="text-xs uppercase text-zinc-300">
             Honors of Distinction
           </p>
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-white mb-8 sm:mb-12">
           Awards & Recognitions
         </h2>
       </motion.div>
@@ -52,7 +52,7 @@ const Awards = () => {
         animate="visible"
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
-        className="text-base sm:text-lg text-zinc-700 mb-8 sm:mb-12 max-w-3xl mx-auto"
+        className="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-12 max-w-3xl mx-auto"
       >
         Our commitment to excellence has been recognized by industry leaders
         with prestigious awards, reinforcing our reputation for design
@@ -72,10 +72,10 @@ const Awards = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center py-6 sm:py-8 border-r-0 md:border-r border-b md:border-b-0 border-zinc-200 md:pr-6 lg:pr-8"
         >
-          <h3 className="text-base sm:text-lg font-medium text-zinc-800 mb-1 sm:mb-2">
+          <h3 className="text-base sm:text-lg font-medium text-zinc-300 mb-1 sm:mb-2">
             Best High-End Interior Fit-Out Business 2024
           </h3>
-          <p className="text-xs sm:text-sm text-zinc-600">
+          <p className="text-xs sm:text-sm text-zinc-400">
             Industry Recognition
           </p>
         </motion.div>
@@ -85,10 +85,10 @@ const Awards = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center py-6 sm:py-8 md:pl-6 lg:pl-8"
         >
-          <h3 className="text-base sm:text-lg font-medium text-zinc-800 mb-1 sm:mb-2">
+          <h3 className="text-base sm:text-lg font-medium text-zinc-300 mb-1 sm:mb-2">
             MEA Excellence Award for MEP Services 2024
           </h3>
-          <p className="text-xs sm:text-sm text-zinc-600">
+          <p className="text-xs sm:text-sm text-zinc-400">
             Technical Excellence
           </p>
         </motion.div>
@@ -100,7 +100,7 @@ const Awards = () => {
         animate="visible"
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.6 }}
-        className="text-zinc-600 mt-8 italic"
+        className="text-zinc-400 mt-8 italic"
       >
         These honors reflect the trust our distinguished clients and industry
         partners place in our expertise.

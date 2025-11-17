@@ -30,17 +30,15 @@ const SectionHeader = () => (
   <div className="text-center mb-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <AnimatedSection className="inline-flex items-center gap-4 mb-6">
       <div className="w-12 h-px bg-primary" />
-      <span className="text-xs uppercase tracking-[0.3em] text-zinc-700">
+      <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
         Trusted Partners
       </span>
       <div className="w-12 h-px bg-primary" />
     </AnimatedSection>
 
     <AnimatedSection delay={0.2}>
-      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight">
-        Collaborating with
-        <br />
-        <span className="text-primary">Industry Leaders</span>
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight">
+        Our <span className="text-primary">Clients</span>
       </h2>
     </AnimatedSection>
 

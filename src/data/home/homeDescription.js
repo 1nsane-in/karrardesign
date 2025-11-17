@@ -1,6 +1,6 @@
 // Heading data
 export const headings = [
-  { text: "Luxury", delay: 0, lineHeight: "lg:leading-[60px]" },
+  // { text: "Luxury", delay: 0, lineHeight: "lg:leading-[60px]" },
   {
     text: "Fit-Outs",
     suffix: " &",

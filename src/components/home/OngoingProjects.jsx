@@ -70,7 +70,7 @@ const OngoingProjects = () => {
             className="inline-flex items-center gap-4 mb-6"
           >
             <div className="w-12 h-px bg-primary-dark" />
-            <span className="text-xs uppercase tracking-[0.3em] text-subheading">
+            <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
               In Progress
             </span>
             <div className="w-12 h-px bg-primary-dark" />

@@ -17,7 +17,7 @@ const ServicesHero = () => {
     <>
       <div
         style={{ perspective: 800 }}
-        className="max-w-6xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-0 text-center "
+        className="max-w-6xl mx-auto pt-36 sm:pt-24 md:pt-32 lg:pt-44 px-4 sm:px-6 lg:px-0 text-center z-10 relative"
       >
         <motion.div
           variants={headingVariants}
@@ -32,7 +32,7 @@ const ServicesHero = () => {
             alt="Karrar Logo"
             className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
           />
-          <p className="text-xs uppercase text-zinc-600">Services</p>
+          <p className="text-xs uppercase text-zinc-500">Services</p>
         </motion.div>
 
         <div className="mt-4 sm:mt-6 lg:mt-10">
@@ -42,7 +42,7 @@ const ServicesHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-cinzel text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-cinzel text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
           >
             Our Expertise
           </motion.h1>
@@ -57,26 +57,12 @@ const ServicesHero = () => {
           className="mt-2 sm:mt-4 lg:mt-6"
         >
           <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700">
+            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-500">
               Comprehensive design and project management services, seamlessly
               delivered with precision, elegance, and uncompromising quality.
             </p>
           </div>
         </motion.div>
-
-        {/* Decorative SVG */}
-        {/* <motion.div
-          variants={fadeInVariants}
-          initial="hidden"
-          animate={"visible"}
-          viewport={{ once: true, amount: 0.8 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-          className="flex justify-center mt-6 sm:mt-8 opacity-60"
-        >
-          <div className="lg:w-xs w-32 -mt-8">
-            <ServiceSVG />
-          </div>
-        </motion.div> */}
       </div>
       {/* Visual Accent */}
       <div className="max-w-6xl mx-auto mt-6 sm:mt-8 px-4 sm:px-6 lg:px-0">
@@ -122,7 +108,7 @@ const ServicesHero = () => {
         className="flex justify-center mt-12 sm:mt-16"
       >
         <div className="flex flex-col items-center gap-2 cursor-pointer group">
-          <span className="text-xs text-zinc-600 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">
+          <span className="text-xs text-zinc-500 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">
             Explore
           </span>
           <div className="w-px h-16 bg-gradient-to-b from-zinc-400 to-transparent group-hover:from-[#ffb400] transition-colors duration-300"></div>

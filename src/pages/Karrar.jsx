@@ -8,7 +8,7 @@ import KarrarLegacy from "../components/karrar/KarrarLegacy";
 
 const Karrar = () => {
   return (
-    <>
+    <div className="bg-background-black">
       {/* Top grid pattern */}
       <TopGridPattern />
       {/* Noise Grain Overlay */}
@@ -23,7 +23,7 @@ const Karrar = () => {
       <LogoDivider />
       {/* Legacy Statement */}
       <KarrarLegacy />
-    </>
+    </div>
   );
 };
 

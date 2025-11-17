@@ -140,7 +140,7 @@ const services = [
 
 const Services = () => {
   return (
-    <>
+    <div className="bg-background-black">
       {/* Noise Grain Overlay */}
       <NoiseOverlay />
       {/* Hero Section */}
@@ -153,7 +153,7 @@ const Services = () => {
       <ServicesProcess />
       {/* Contact Section */}
       <ServicesContact />
-    </>
+    </div>
   );
 };
 

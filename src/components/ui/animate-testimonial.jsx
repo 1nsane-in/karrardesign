@@ -48,7 +48,7 @@ export const AnimatedTestimonials = ({
           className="inline-flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-[#ffb400]" />
-          <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+          <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
             Testimonials
           </span>
           <div className="w-12 h-px bg-[#ffb400]" />
@@ -58,7 +58,7 @@ export const AnimatedTestimonials = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-white leading-tight"
+          className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
         >
           Stories of <span className="text-[#ffb400]">Satisfaction</span>
         </motion.h1>

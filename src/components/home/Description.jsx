@@ -9,6 +9,7 @@ import {
   navButtons,
   variants,
 } from "../../data/home/homeDescription.js";
+import { KarrarLogo } from "../../assets/index.js";
 
 // Reusable components
 const AnimatedHeading = ({
@@ -43,8 +44,9 @@ const AnimatedButton = ({ to, text }) => {
   return (
     <Link to={to} className="text-primary">
       <button className={styles.button}>
-        <span className={styles["span-mother"]}>{createSpans(text)}</span>
-        <span className={styles["span-mother2"]}>{createSpans(text)}</span>
+        <span>{createSpans(text)}</span>
+        {/* <span className={styles["span-mother"]}>{createSpans(text)}</span> */}
+        {/* <span className={styles["span-mother2"]}>{createSpans(text)}</span> */}
       </button>
     </Link>
   );
@@ -60,7 +62,8 @@ const Description = () => {
     <div className="relative py-12 mt-40">
       <div
         style={{ perspective: 800 }}
-        className="grid lg:grid-cols-5 grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        // className="grid lg:grid-cols-5 grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-4xl mx-auto "
       >
         {/* Heading Section */}
         <motion.div
@@ -68,36 +71,50 @@ const Description = () => {
           {...animationProps}
           transition={{ staggerChildren: 0.2 }}
         >
-          {headings.map((heading, index) => (
+          {/* {headings.map((heading, index) => (
             <AnimatedHeading key={index} {...heading} />
-          ))}
+          ))} */}
         </motion.div>
 
+        <div className="relative">
+          <div className=" absolute -top-5 left-1/2 h-[100px] w-[150px] -translate-x-1/2 opacity-25">
+            {/* <img src={KarrarLogo} alt="" /> */}
+            {/* <AboutSVG /> */}
+          </div>
+          {/* <div className=" text-center text-2xl mb-4 text-primary">
+            True luxury is felt, not seen.
+          </div> */}
+          <p className="text-primary text-xl font-gloock font-semibold tracking-[0.15em] mb-6 text-center">
+            Design Beyond Aesthetics
+          </p>
+          <motion.p
+            className=" text-xl leading-relaxed trac text-subheading text-center"
+            variants={{ ...variants.button, visible: variants.visible }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Karrar Design Projects is an award-winning fitout and interior
+            execution studio known for precise detailing and refined
+            craftsmanship. Headquartered in Dubai, we specialise in high-end
+            commercial spaces and premium villa interiors, delivering work that
+            is clean, disciplined, and built to exceptional standards. Our team
+            combines technical expertise with a deep respect for materials,
+            ensuring every space feels modern, elegant, and thoughtfully
+            constructed.
+          </motion.p>
+        </div>
         {/* Description Section */}
         <motion.div
           className="col-span-2 flex flex-col justify-center lg:items-end items-center text-center lg:text-right mt-8 lg:mt-0"
           {...animationProps}
           transition={{ staggerChildren: 0.2 }}
         >
-          <motion.div
-            className="lg:w-xs w-32 mb-4"
+          {/* <motion.div
+            className="lg:w-xs w-32 mb-4 text-center"
             variants={{ ...variants.button, visible: variants.visible }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <AboutSVG />
-          </motion.div>
-          <motion.p
-            className="lg:text-right text-center text-base leading-relaxed text-subheading"
-            variants={{ ...variants.button, visible: variants.visible }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Karrar Design Projects L.L.C. offers premium interior fit-out and
-            project management services across UAE, Canada, and India.
-            <br />
-            <br />
-            With 20+ years of expertise, we deliver luxury villas, hotels,
-            restaurants, offices, and retail projects on time and within budget.
-          </motion.p>
+          </motion.div> */}
         </motion.div>
       </div>
 

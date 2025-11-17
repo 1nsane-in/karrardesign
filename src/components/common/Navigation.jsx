@@ -83,7 +83,7 @@ const Navigation = () => {
                         : "text-white" // "text-zinc-900"
                   }`}
                 >
-                  Karrar Design & Projects
+                  Karrar Design Projects
                 </h1>
               </div>
             </Link>
@@ -98,10 +98,10 @@ const Navigation = () => {
                     pathname === item.path
                       ? "text-[#ffb400]"
                       : scrolled
-                        ? "text-zinc-700 hover:text-[#ffb400]"
+                        ? "text-zinc-400 hover:text-[#ffb400]"
                         : isHomePage
                           ? "text-white hover:text-[#ffb400]"
-                          : "text-zinc-700 hover:text-[#ffb400]"
+                          : "text-zinc-400 hover:text-[#ffb400]"
                   }`}
                 >
                   {item.name}
