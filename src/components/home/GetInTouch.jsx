@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { ConnectSVG } from "../../assets/svg";
 import SocialConnect from "../common/SocialConnect";
 
-const GetInTouch = () => {
+const GetInTouch = memo(() => {
   return (
     <div className="md:py-12 mt-14 pb-10">
       <div className="max-w-5xl relative mx-auto flex items-center justify-center lg:items-center lg:justify-center px-4 sm:px-6 lg:px-8">
@@ -22,6 +23,8 @@ const GetInTouch = () => {
       </div>
     </div>
   );
-};
+});
+
+GetInTouch.displayName = 'GetInTouch';
 
 export default GetInTouch;

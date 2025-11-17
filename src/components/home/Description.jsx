@@ -1,3 +1,4 @@
+import { memo } from "react";
 import styles from "../../styles/description.module.scss";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
@@ -7,7 +8,6 @@ import {
   navButtons,
   variants,
 } from "../../data/home/homeDescription.js";
-import { KarrarLogo } from "../../assets/index.js";
 
 // Reusable components
 const AnimatedHeading = ({
@@ -55,7 +55,7 @@ AnimatedButton.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-const Description = () => {
+const Description = memo(() => {
   return (
     <div className="relative py-12 mt-40">
       <div
@@ -133,6 +133,8 @@ const Description = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+Description.displayName = 'Description';
 
 export default Description;

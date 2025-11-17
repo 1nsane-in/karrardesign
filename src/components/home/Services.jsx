@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, memo } from "react";
 import { Link } from "react-router";
 import { services } from "../../data/home/homeServices";
 import {
@@ -10,9 +10,7 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 
-import { Card, CardContent } from "../ui/card";
-
-const Services = () => {
+const Services = memo(() => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -20,37 +18,6 @@ const Services = () => {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-
-  const [servicesPerSlide, setServicesPerSlide] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setServicesPerSlide(1);
-      } else if (window.innerWidth < 1024) {
-        setServicesPerSlide(2);
-      } else {
-        setServicesPerSlide(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const totalSlides = Math.ceil(services.length / servicesPerSlide);
-
-  // Build deterministic slides array so we don't rely on array indexes for keys
-  const slides = [];
-  for (let i = 0; i < totalSlides; i++) {
-    const start = i * servicesPerSlide;
-    const end = Math.min(start + servicesPerSlide, services.length);
-    slides.push({
-      id: `slide-${i}`,
-      items: services.slice(start, end),
-    });
-  }
 
   return (
     <section ref={containerRef} className="relative py-12  overflow-hidden">
@@ -158,6 +125,8 @@ const Services = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+Services.displayName = 'Services';
 
 export default Services;

@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import PropTypes from "prop-types";
 import { Marquee } from "../ui/marquee";
 import {
@@ -110,7 +110,7 @@ const StatsSection = () => (
   </AnimatedSection>
 );
 
-const CompanyPartners = () => {
+const CompanyPartners = memo(() => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -131,6 +131,8 @@ const CompanyPartners = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+CompanyPartners.displayName = 'CompanyPartners';
 
 export default CompanyPartners;

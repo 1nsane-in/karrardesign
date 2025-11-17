@@ -1,14 +1,22 @@
-import Description from "../components/home/Description";
-import GetInTouch from "../components/home/GetInTouch";
+import { lazy, Suspense } from "react";
 import Hero from "../components/home/Hero";
-import Services from "../components/home/Services";
-import FutureProjects from "../components/home/FutureProjects";
-import OngoingProjects from "../components/home/OngoingProjects";
-import CompanyPartners from "../components/home/CompanyPartners";
-import Testimonial from "../components/home/Testimonial";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import ScrollIndicator from "../components/common/ScrollIndicator";
-import CompletedProjects from "../components/ui/image-gallery";
+
+// Lazy load components that are below the fold
+const Description = lazy(() => import("../components/home/Description"));
+const Services = lazy(() => import("../components/home/Services"));
+const CompletedProjects = lazy(() => import("../components/ui/image-gallery"));
+const CompanyPartners = lazy(() => import("../components/home/CompanyPartners"));
+const Testimonial = lazy(() => import("../components/home/Testimonial"));
+const GetInTouch = lazy(() => import("../components/home/GetInTouch"));
+
+// Loading component
+const SectionLoader = () => (
+  <div className="flex justify-center items-center py-12">
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const Home = () => {
   return (
@@ -17,14 +25,24 @@ const Home = () => {
       <NoiseOverlay />
       <div className="bg-background-black min-h-screen relative scroll-smooth">
         <Hero />
-        <Description />
-        <Services />
-        {/* <FutureProjects /> */}
-        {/* <OngoingProjects /> */}
-        <CompletedProjects />
-        <CompanyPartners />
-        <Testimonial />
-        <GetInTouch />
+        <Suspense fallback={<SectionLoader />}>
+          <Description />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <CompletedProjects />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <CompanyPartners />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <Testimonial />
+        </Suspense>
+        <Suspense fallback={<SectionLoader />}>
+          <GetInTouch />
+        </Suspense>
       </div>
     </>
   );

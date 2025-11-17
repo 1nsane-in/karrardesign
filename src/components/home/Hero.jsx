@@ -1,10 +1,10 @@
-import { useRef } from "react";
+import { useRef, memo, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BgHero1, HeroBG, KarrarLogo } from "../../assets";
+import { BgHero1 } from "../../assets";
 import { useNavigate } from "react-router";
 import { ArrowRight } from "lucide-react";
 
-const Hero = () => {
+const Hero = memo(() => {
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
@@ -15,6 +15,10 @@ const Hero = () => {
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+
+  const handleViewProjects = useCallback(() => {
+    navigate("/studio");
+  }, [navigate]);
 
   return (
     <section ref={containerRef} className="relative h-screen overflow-hidden">
@@ -67,7 +71,7 @@ const Hero = () => {
               Crafting with award-winning precision and quiet luxury.
             </p>
             <button
-              onClick={() => navigate("/studio")}
+              onClick={handleViewProjects}
               className="group flex cursor-pointer items-center  gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
             >
               <span className="text-white text-sm uppercase tracking-wider">
@@ -130,6 +134,8 @@ const Hero = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+Hero.displayName = 'Hero';
 
 export default Hero;
