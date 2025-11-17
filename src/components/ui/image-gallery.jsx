@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router";
+import { projects } from "../../data/studio/projectsList";
+import { Carousel, CarouselContent, CarouselItem } from "./carousel";
 
 const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
@@ -8,44 +10,6 @@ const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
-];
-
-const projects = [
-  {
-    image:
-      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
-    name: "Al Mandalo Restaurant",
-    location: "Dubai, UAE",
-    type: "Hospitality",
-  },
-  {
-    image:
-      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
-    name: "Dubai Mall Outlet",
-    location: "Dubai Mall, UAE",
-    type: "Retail",
-  },
-  {
-    image:
-      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
-    name: "Premium Retail Space",
-    location: "Dubai, UAE",
-    type: "Commercial",
-  },
-  {
-    image:
-      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
-    name: "Fine Dining Experience",
-    location: "Dubai, UAE",
-    type: "Restaurant",
-  },
-  {
-    image:
-      "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
-    name: "Luxury Boutique",
-    location: "Dubai Mall, UAE",
-    type: "Retail",
-  },
 ];
 
 export default function CompletedProjects() {
@@ -104,7 +68,7 @@ export default function CompletedProjects() {
         </div>
 
         <div className="flex items-center gap-2 lg:h-[400px] w-full container 2xl:px-30 mt-10 px-4">
-          {projects.map((project, idx) => (
+          {projects.slice(0, 5).map((project, idx) => (
             <div
               key={idx}
               className="relative group flex-grow transition-all w-56 rounded-lg overflow-hidden h-[400px] duration-500 hover:w-full"
@@ -112,16 +76,41 @@ export default function CompletedProjects() {
               <img
                 className="h-full w-full object-cover object-center"
                 src={project.image}
-                alt={project.name}
+                alt={project.title}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white font-cinzel text-2xl mb-2">
-                  {project.name}
-                </h3>
-                <p className="text-zinc-300 text-sm mb-1">{project.location}</p>
-                <p className="text-primary text-xs uppercase tracking-wider">
-                  {project.type}
-                </p>
+              <div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <h3 className="text-white font-cinzel text-2xl mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-zinc-300 text-sm mb-1">
+                    {project.location}
+                  </p>
+                  <p className="text-primary text-xs uppercase tracking-wider">
+                    {project?.category}
+                  </p>
+                </div>
+                <div className="absolute right-0 bottom-0 text-zinc-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <Link
+                    to={`/studio/${project?.slug}`}
+                    className="flex items-center gap-2 sm:gap-3 text-zinc-400 font-medium hover:gap-3 sm:hover:gap-4 transition-all duration-300 group mt-4 sm:mt-6 lg:mt-0"
+                  >
+                    <span className="text-sm sm:text-base">View Project</span>
+                    <div className="w-6 sm:w-8 h-6 sm:h-8 rounded-full bg-zinc-100 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                      <svg
+                        className="w-3 sm:w-4 h-3 sm:h-4 group-hover:text-white transition-colors duration-300"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -246,7 +235,7 @@ export default function CompletedProjects() {
           to="/studio"
           className="group cursor-pointer inline-flex items-center gap-4"
         >
-          <span className="text-sm uppercase tracking-wider text-zinc-600 group-hover:text-primary transition-colors duration-300">
+          <span className="text-sm uppercase tracking-wider text-zinc-400 group-hover:text-primary transition-colors duration-300">
             View All Projects
           </span>
           <div className="w-12 h-px bg-zinc-400 group-hover:bg-primary transition-colors duration-300" />

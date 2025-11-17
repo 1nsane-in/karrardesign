@@ -2,6 +2,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router";
 import { services } from "../../data/home/homeServices";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
+
+import { Card, CardContent } from "../ui/card";
 
 const Services = () => {
   const containerRef = useRef(null);
@@ -11,9 +20,6 @@ const Services = () => {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
 
   const [servicesPerSlide, setServicesPerSlide] = useState(3);
 
@@ -35,22 +41,6 @@ const Services = () => {
 
   const totalSlides = Math.ceil(services.length / servicesPerSlide);
 
-  useEffect(() => {
-    if (!isAutoPlay) return;
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isAutoPlay, totalSlides]);
-
-  const getCurrentServices = () => {
-    const start = currentSlide * servicesPerSlide;
-    const end = start + servicesPerSlide;
-    return services.slice(start, end);
-  };
-
   // Build deterministic slides array so we don't rely on array indexes for keys
   const slides = [];
   for (let i = 0; i < totalSlides; i++) {
@@ -61,16 +51,6 @@ const Services = () => {
       items: services.slice(start, end),
     });
   }
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    setIsAutoPlay(false);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-    setIsAutoPlay(false);
-  };
 
   return (
     <section ref={containerRef} className="relative py-12  overflow-hidden">
@@ -106,119 +86,55 @@ const Services = () => {
           </motion.h2>
         </div>
 
-        {/* Services Carousel */}
-        <div className="relative">
-          {/* Carousel Container */}
-          <div className="overflow-hidden rounded-xl pb-10">
-            <motion.div
-              key={currentSlide}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="lg:grid lg:grid-cols-3 flex flex-row gap-6"
-              onMouseEnter={() => setIsAutoPlay(false)}
-              onMouseLeave={() => setIsAutoPlay(true)}
-            >
-              {getCurrentServices().map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group bg-zinc-900 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-700 hover:border-primary-dark"
-                >
-                  {/* Service Icon & Number */}
-                  <div className="flex items-center justify-end mb-4">
-                    <span className="text-2xl font-cinzel text-primary-dark group-hover:text-primary transition-colors">
-                      {String(
-                        index + 1 + currentSlide * servicesPerSlide
-                      ).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* Service Title */}
-                  <h3 className="text-xl font-cinzel text-white group-hover:text-primary transition-colors mb-3">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-500 leading-relaxed text-sm mb-4 line-clamp-3">
-                    {service.shortDescription}
-                  </p>
-
-                  {/* Tagline */}
-                  <div className="mt-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
-                      <span className="text-xs text-gray-400">
-                        {service.tagline}
+        <Carousel className="w-full">
+          <CarouselContent className="-ml-1">
+            {services.map((service, index) => (
+              <CarouselItem
+                key={index}
+                className="pl-1 md:basis-1/2 lg:basis-1/3"
+              >
+                <div className="p-1">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="group bg-zinc-900 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-700 hover:border-primary-dark h-64 flex flex-col"
+                  >
+                    {/* Service Icon & Number */}
+                    <div className="flex items-center justify-end mb-4">
+                      <span className="text-2xl font-cinzel text-primary-dark group-hover:text-primary transition-colors">
+                        {index + 1}
                       </span>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-zinc-900 rounded-full shadow-lg border border-zinc-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 group text-white"
-            disabled={currentSlide === 0}
-          >
-            <svg
-              className="w-5 h-5 group-hover:scale-110 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
+                    {/* Service Title */}
+                    <h3 className="text-xl font-cinzel text-white group-hover:text-primary transition-colors mb-3">
+                      {service.title}
+                    </h3>
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 bg-zinc-900 rounded-full shadow-lg border border-zinc-700 flex items-center justify-center hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 group text-white"
-            disabled={currentSlide === totalSlides - 1}
-          >
-            <svg
-              className="w-5 h-5 group-hover:scale-110 transition-transform"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
+                    {/* Description */}
+                    <p className="text-gray-500 leading-relaxed text-sm mb-4 line-clamp-3">
+                      {service.shortDescription}
+                    </p>
 
-        {/* Carousel Indicators */}
-        <div className="items-center justify-center gap-3 mt-8 hidden md:flex">
-          {slides.map((slide) => (
-            <button
-              key={slide.id}
-              onClick={() => {
-                setCurrentSlide(slides.indexOf(slide));
-                setIsAutoPlay(false);
-              }}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentSlide === slides.indexOf(slide)
-                  ? "bg-primary w-8"
-                  : "bg-zinc-300 hover:bg-zinc-400"
-              }`}
-            />
-          ))}
-        </div>
+                    {/* Tagline */}
+                    <div className="mt-4">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0" />
+                        <span className="text-xs text-gray-400">
+                          {service.tagline}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className={"bg-zinc-500"} />
+          <CarouselNext className={"bg-zinc-500"} />
+        </Carousel>
 
         {/* Bottom CTA */}
         <motion.div
