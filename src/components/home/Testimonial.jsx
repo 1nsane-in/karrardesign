@@ -39,7 +39,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="py-12 flex flex-col justify-center items-center">
+    <div className="md:py-12 flex flex-col justify-center items-center">
       <AnimatedTestimonials testimonials={testimonials} />
     </div>
   );

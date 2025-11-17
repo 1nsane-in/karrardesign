@@ -133,9 +133,8 @@ export default function CompletedProjects() {
             </span>
             <div className="w-12 h-px bg-primary" />
           </motion.div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-cinzel text-zinc-800 leading-tight whitespace-nowrap">
-            Delivered <br className="md:hidden" />{" "}
-            <span className="text-primary">Excellence</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight whitespace-nowrap">
+            Our <span className="text-primary">Projects</span>
           </h1>
           <p className="text-base text-zinc-600 mt-4">
             Every project tells a story of precision, creativity, and unmatched

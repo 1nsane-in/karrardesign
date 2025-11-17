@@ -29,7 +29,7 @@ $breakpoints: (
   display: flex;
   gap: 10px;
   @include respond(xs) {
-    margin-top: 20px;
+    margin-top: 10px;
   }
   button {
     cursor: pointer;

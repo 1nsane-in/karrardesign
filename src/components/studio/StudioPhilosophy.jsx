@@ -11,12 +11,12 @@ const StudioPhilosophy = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-[80px] font-gloock text-white mb-6">
             Project Philosophy
           </h2>
-          <p className="text-xl sm:text-2xl lg:text-3xl italic text-zinc-400 mb-10 font-light">
+          <p className="text-xl sm:text-2xl  text-zinc-400 mb-10 font-light">
             Every Detail Matters
           </p>
 
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-zinc-400 font-light">
+            <p className="text-lg sm:text-xl  leading-relaxed text-zinc-400 font-light">
               We don't just design spaces, we{" "}
               <strong className="font-semibold hover:text-primary transition-colors  duration-300 cursor-pointer">
                 curate experiences

@@ -88,7 +88,7 @@ const Description = () => {
             Design Beyond Aesthetics
           </p>
           <motion.p
-            className=" text-xl leading-relaxed trac text-subheading text-center"
+            className=" md:text-xl leading-relaxed trac text-subheading md:text-center px-5 text-justify"
             variants={{ ...variants.button, visible: variants.visible }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
@@ -120,7 +120,7 @@ const Description = () => {
 
       {/* Navigation Buttons */}
       <motion.div
-        className="flex justify-center mt-12"
+        className="flex justify-center md:mt-12 "
         {...animationProps}
         transition={{ staggerChildren: 0.3 }}
       >

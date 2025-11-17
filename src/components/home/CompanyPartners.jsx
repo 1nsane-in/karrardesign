@@ -122,7 +122,7 @@ const CompanyPartners = () => {
   return (
     <section
       ref={containerRef}
-      className="relative py-12 overflow-hidden mt-20"
+      className="relative py-12 overflow-hidden md:mt-20 mt-14"
     >
       <motion.div style={{ opacity }} className="relative z-10">
         <SectionHeader />

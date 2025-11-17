@@ -52,7 +52,7 @@ const Awards = () => {
         animate="visible"
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
-        className="text-base sm:text-lg text-zinc-400 mb-8 sm:mb-12 max-w-3xl mx-auto"
+        className="text-base sm:text-xl text-zinc-400 mb-8 sm:mb-12 max-w-3xl mx-auto"
       >
         Our commitment to excellence has been recognized by industry leaders
         with prestigious awards, reinforcing our reputation for design
@@ -100,7 +100,7 @@ const Awards = () => {
         animate="visible"
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.6 }}
-        className="text-zinc-400 mt-8 italic"
+        className="text-zinc-400 mt-8 italic text-lg"
       >
         These honors reflect the trust our distinguished clients and industry
         partners place in our expertise.

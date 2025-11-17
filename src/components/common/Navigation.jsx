@@ -37,11 +37,11 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "HOME", path: "/" },
-    { name: "STUDIO", path: "/studio" },
-    { name: "KARRAR", path: "/karrar" },
-    { name: "SERVICES", path: "/services" },
-    { name: "CONTACT", path: "/contact" },
+    { name: "Home", path: "/" },
+    { name: "Studio", path: "/studio" },
+    { name: "Karrar", path: "/karrar" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isProjectDetailPage = pathname.startsWith("/studio/");
@@ -167,7 +167,7 @@ const Navigation = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               onClick={() => setIsMenuOpen(false)}
-              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              className="lg:hidden fixed inset-0 -bottom-2 bg-black/20 backdrop-blur-sm z-40"
             />
             <motion.div
               initial={{ y: "100%" }}
@@ -179,7 +179,7 @@ const Navigation = () => {
                 damping: 25,
                 mass: 0.5,
               }}
-              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white rounded-t-3xl shadow-2xl"
+              className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-900 rounded-t-3xl shadow-2xl"
             >
               <div className="relative p-6">
                 {/* Close Button */}
@@ -187,7 +187,7 @@ const Navigation = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className="absolute right-6 top-6 p-2 hover:bg-gray-100 rounded-full transition-colors"
                 >
-                  <X className="w-6 h-6 text-zinc-700" />
+                  <X className="w-6 h-6 text-zinc-400" />
                 </button>
 
                 {/* Menu Items */}
@@ -210,10 +210,10 @@ const Navigation = () => {
                           ease: "easeOut",
                           delay: 0.1 + index * 0.05,
                         }}
-                        className={`text-xl font-cinzel ${
+                        className={`text-xl font-gloock ${
                           pathname === item.path
                             ? "text-primary"
-                            : "text-zinc-700"
+                            : "text-zinc-400"
                         }`}
                       >
                         {item.name}

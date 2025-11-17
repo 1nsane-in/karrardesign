@@ -57,7 +57,7 @@ const ServicesHero = () => {
           className="mt-2 sm:mt-4 lg:mt-6"
         >
           <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-600">
+            <p className="text-base sm:text-lg  leading-relaxed text-zinc-600">
               Comprehensive design and project management services, seamlessly
               delivered with precision, elegance, and uncompromising quality.
             </p>
