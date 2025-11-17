@@ -4,7 +4,9 @@ import NoiseOverlay from "../components/common/NoiseOverlay";
 import KarrarHero from "../components/karrar/KarrarHero";
 
 // Lazy load below-the-fold components
-const KarrarPhilosophy = lazy(() => import("../components/karrar/KarrarPhilosophy"));
+const KarrarPhilosophy = lazy(
+  () => import("../components/karrar/KarrarPhilosophy")
+);
 const Awards = lazy(() => import("../components/karrar/Awards"));
 const LogoDivider = lazy(() => import("../components/common/LogoDivider"));
 const KarrarLegacy = lazy(() => import("../components/karrar/KarrarLegacy"));
@@ -22,19 +24,19 @@ const Karrar = memo(() => {
       <TopGridPattern />
       <NoiseOverlay />
       <KarrarHero />
-      
+
       <Suspense fallback={<SectionLoader />}>
         <KarrarPhilosophy />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <Awards />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <LogoDivider />
       </Suspense>
-      
+
       <Suspense fallback={<SectionLoader />}>
         <KarrarLegacy />
       </Suspense>
@@ -42,6 +44,6 @@ const Karrar = memo(() => {
   );
 });
 
-Karrar.displayName = 'Karrar';
+Karrar.displayName = "Karrar";
 
 export default Karrar;

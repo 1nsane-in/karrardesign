@@ -15,7 +15,7 @@ const StudioPhilosophy = memo(() => {
           </p>
 
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl  leading-relaxed text-zinc-400 font-light">
+            <p className="text-base text-justify  sm:text-xl  leading-relaxed text-zinc-400 font-light">
               We don't just design spaces, we{" "}
               <strong className="font-semibold hover:text-primary transition-colors  duration-300 cursor-pointer">
                 curate experiences

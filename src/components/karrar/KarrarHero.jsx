@@ -38,7 +38,7 @@ const KarrarHero = memo(() => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-[90px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0"
+            className="text-4xl sm:text-3xl md:text-4xl lg:text-[90px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 sm:px-0"
           >
             Crafting Luxury, <br />
             Delivering Excellence
@@ -78,7 +78,7 @@ const KarrarHero = memo(() => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           className="lg:col-span-3 text-center lg:text-left"
         >
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6 text-justify">
             Karrar Design Projects is a premier interior design and project
             management firm with operations across the{" "}
             <strong className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer text-zinc-300 ">
@@ -88,7 +88,7 @@ const KarrarHero = memo(() => {
             interiors, high-end fit-out works, and comprehensive project
             management solutions.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6 text-justify">
             Our philosophy is simple yet profound: every project must embody{" "}
             <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
               timeless elegance, uncompromising quality, and seamless execution
@@ -97,7 +97,7 @@ const KarrarHero = memo(() => {
             we deliver environments that not only inspire but also elevate the
             lifestyle of our clients.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-400">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 text-justify">
             We operate as an{" "}
             <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
               extension of our clients&apos; vision

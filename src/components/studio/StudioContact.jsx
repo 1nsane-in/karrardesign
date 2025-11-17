@@ -14,7 +14,7 @@ const StudioContact = memo(() => {
     <>
       {/* Call to Action */}
       <div className="text-center">
-        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-gloock text-white leading-[75px]">
+        <h3 className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white lg:leading-[75px]">
           Let&apos;s Create Your Next
           <br />
           Landmark Project
@@ -29,7 +29,7 @@ const StudioContact = memo(() => {
         className=" w-full flex items-center justify-center flex-col"
       >
         <Link to="/contact">
-          <div className="w-32 sm:w-40 lg:w-sm -mt-7 -z-1">
+          <div className="w-32 sm:w-40 lg:w-sm md:-mt-7 -z-1">
             <ConnectSVG />
           </div>
         </Link>

@@ -30,7 +30,7 @@ const ContactHero = memo(() => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:w-xs w-32 -mt-4"
+          className="lg:w-xs w-32 md:-mt-4 -mt-2"
         >
           <ConnectSVG />
         </motion.div>
@@ -39,6 +39,6 @@ const ContactHero = memo(() => {
   );
 });
 
-ContactHero.displayName = 'ContactHero';
+ContactHero.displayName = "ContactHero";
 
 export default ContactHero;

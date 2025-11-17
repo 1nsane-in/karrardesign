@@ -54,14 +54,6 @@ const ProjectDesigns = memo(() => {
                   {project.location}
                 </span>
               </div>
-              {/* <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                <span className="font-bold text-subheading">
-                  {project.category}
-                </span>
-                <span className="text-xs sm:text-sm font-normal text-zinc-600">
-                  {project.service}
-                </span>
-              </span> */}
             </div>
           </Link>
         ))}
