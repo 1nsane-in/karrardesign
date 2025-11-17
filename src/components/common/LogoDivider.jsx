@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -5,7 +6,7 @@ const fadeInVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
-const LogoDivider = () => {
+const LogoDivider = memo(() => {
   return (
     <div>
       <motion.div
@@ -38,6 +39,8 @@ const LogoDivider = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+LogoDivider.displayName = 'LogoDivider';
 
 export default LogoDivider;

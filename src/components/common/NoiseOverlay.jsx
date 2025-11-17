@@ -1,5 +1,6 @@
+import { memo } from "react";
 
-const NoiseOverlay = () => {
+const NoiseOverlay = memo(() => {
   return (
     <div
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 opacity-15"
@@ -9,6 +10,8 @@ const NoiseOverlay = () => {
       }}
     ></div>
   );
-};
+});
+
+NoiseOverlay.displayName = 'NoiseOverlay';
 
 export default NoiseOverlay;

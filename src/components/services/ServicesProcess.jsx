@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -20,7 +21,7 @@ const staggerContainer = {
   },
 };
 
-const ServicesProcess = () => {
+const ServicesProcess = memo(() => {
   return (
     <section className="process-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center">
@@ -39,7 +40,7 @@ const ServicesProcess = () => {
             />
             <p className="text-xs uppercase text-zinc-400">Our Process</p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[80px] leading-tight lg:leading-[55px] font-gloock text-white mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl leading-tight lg:leading-[55px] font-gloock text-white mb-12">
             How We Work
           </h2>
         </motion.div>
@@ -83,7 +84,7 @@ const ServicesProcess = () => {
               <div className="text-3xl sm:text-4xl font-gloock text-[#ffb400] mb-3">
                 {item.step}
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-400 mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold font-gloock tracking-wider text-zinc-400 mb-2">
                 {item.title}
               </h3>
               <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
@@ -93,6 +94,8 @@ const ServicesProcess = () => {
       </div>
     </section>
   );
-};
+});
+
+ServicesProcess.displayName = "ServicesProcess";
 
 export default ServicesProcess;

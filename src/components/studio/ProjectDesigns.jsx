@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, memo, useCallback } from "react";
 import { KarrarLogo } from "../../assets";
 import { Link } from "react-router";
 import { projects } from "../../data/studio/projectsList";
 
-const ProjectDesigns = () => {
+const ProjectDesigns = memo(() => {
   const [showAll, setShowAll] = useState(false);
   const displayedProjects = showAll ? projects : projects.slice(0, 6);
+
+  const toggleShowAll = useCallback(() => {
+    setShowAll((prev) => !prev);
+  }, []);
 
   return (
     <section className="projects-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
@@ -22,6 +26,8 @@ const ProjectDesigns = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               {/* Hover Curtain Overlay */}
               <div className="absolute top-3 left-3 right-3 bottom-3 sm:top-4 sm:left-4 sm:right-4 sm:bottom-4 lg:top-6 lg:left-6 lg:right-6 lg:bottom-6 bg-gradient-to-br from-orange-50/95 to-amber-50/95 transform -translate-y-[calc(100%+1rem)] sm:-translate-y-[calc(100%+1.5rem)] lg:-translate-y-[calc(100%+2rem)] group-hover:translate-y-0 transition-transform duration-1000 ease-in-out flex items-center justify-center">
@@ -40,7 +46,7 @@ const ProjectDesigns = () => {
                     alt="Karrar Logo"
                     className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
                   />
-                  <span className="block text-sm sm:text-base font-gloock lg:text-lg font-bold mt-0 text-white">
+                  <span className="block text-sm tracking-[1px] sm:text-base font-gloock lg:text-lg font-bold mt-0 text-white">
                     {project.title}
                   </span>
                 </div>
@@ -48,14 +54,6 @@ const ProjectDesigns = () => {
                   {project.location}
                 </span>
               </div>
-              {/* <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
-                <span className="font-bold text-subheading">
-                  {project.category}
-                </span>
-                <span className="text-xs sm:text-sm font-normal text-zinc-600">
-                  {project.service}
-                </span>
-              </span> */}
             </div>
           </Link>
         ))}
@@ -63,7 +61,7 @@ const ProjectDesigns = () => {
       {projects.length > 6 && (
         <div className="text-center mt-8">
           <button
-            onClick={() => setShowAll(!showAll)}
+            onClick={toggleShowAll}
             className="px-6 py-2 text-white rounded-lg cursor-pointer transition-colors"
           >
             {showAll ? "Show Less" : "Show More"}
@@ -72,6 +70,8 @@ const ProjectDesigns = () => {
       )}
     </section>
   );
-};
+});
+
+ProjectDesigns.displayName = "ProjectDesigns";
 
 export default ProjectDesigns;

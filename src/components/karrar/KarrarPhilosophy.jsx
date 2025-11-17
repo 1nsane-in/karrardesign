@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -22,7 +22,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const KarrarPhilosophy = () => {
+const KarrarPhilosophy = memo(() => {
   return (
     <div className="max-w-6xl mx-auto mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-0 text-center">
       <motion.div
@@ -40,7 +40,7 @@ const KarrarPhilosophy = () => {
           />
           <p className="text-xs uppercase text-zinc-400">Our Foundation</p>
         </div>
-        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-gloock text-white mb-8 sm:mb-10 lg:mb-12">
+        <h2 className="text-3xl  lg:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-gloock text-white mb-8 sm:mb-10 lg:mb-12">
           Core Values
         </h2>
       </motion.div>
@@ -63,9 +63,11 @@ const KarrarPhilosophy = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg"
               alt="Timeless Elegance"
               className="w-full h-full object-cover opacity-80"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <h3 className="text-2xl sm:text-2xl font-semibold text-zinc-300 mb-2 sm:mb-3 font-gloock">
+          <h3 className="text-xl sm:text-2xl font-semibold text-zinc-300 mb-2 sm:mb-3 font-gloock tracking-wider">
             Timeless Elegance
           </h3>
           <p className="text-zinc-400 leading-relaxed">
@@ -84,9 +86,11 @@ const KarrarPhilosophy = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg"
               alt="Uncompromising Quality"
               className="w-full h-full object-cover opacity-80"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <h3 className="text-2xl font-semibold text-zinc-300 mb-3 font-gloock">
+          <h3 className="text-xl font-semibold text-zinc-300 mb-3 font-gloock tracking-wider">
             Uncompromising Quality
           </h3>
           <p className="text-zinc-400 leading-relaxed">
@@ -105,9 +109,11 @@ const KarrarPhilosophy = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg"
               alt="Seamless Execution"
               className="w-full h-full object-cover opacity-80"
+              loading="lazy"
+              decoding="async"
             />
           </div>
-          <h3 className="text-2xl font-semibold text-zinc-300 mb-3 font-gloock">
+          <h3 className="text-xl font-semibold text-zinc-300 mb-3 font-gloock tracking-wider">
             Seamless Execution
           </h3>
           <p className="text-zinc-400 leading-relaxed">
@@ -118,6 +124,8 @@ const KarrarPhilosophy = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+KarrarPhilosophy.displayName = "KarrarPhilosophy";
 
 export default KarrarPhilosophy;

@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, memo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router";
 import { projects } from "../../data/studio/projectsList";
-import { Carousel, CarouselContent, CarouselItem } from "./carousel";
 
 const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
@@ -12,7 +11,7 @@ const imageList = [
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/10.jpg",
 ];
 
-export default function CompletedProjects() {
+const CompletedProjects = memo(() => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const timeoutRef = useRef(null);
@@ -31,15 +30,15 @@ export default function CompletedProjects() {
     };
   }, [isAutoPlay, totalSlides]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
     setIsAutoPlay(false);
-  };
+  }, [totalSlides]);
 
-  const goToPrev = () => {
+  const goToPrev = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
     setIsAutoPlay(false);
-  };
+  }, [totalSlides]);
 
   return (
     <>
@@ -77,6 +76,8 @@ export default function CompletedProjects() {
                 className="h-full w-full object-cover object-center"
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
               />
               <div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -243,4 +244,8 @@ export default function CompletedProjects() {
       </motion.div>
     </>
   );
-}
+});
+
+CompletedProjects.displayName = 'CompletedProjects';
+
+export default CompletedProjects;

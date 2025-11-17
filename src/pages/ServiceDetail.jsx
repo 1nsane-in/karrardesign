@@ -44,11 +44,11 @@ const ServiceDetail = () => {
             <p className="text-xs uppercase text-zinc-600">{service.title}</p>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-[100px] leading-tight lg:leading-[75px] font-gloock text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-tight lg:leading-[75px] font-gloock text-white mb-6">
             {service.title}
           </h1>
 
-          <p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mb-12">
+          <p className="text-lg  text-zinc-400 max-w-3xl mb-12">
             {service.description}
           </p>
 
@@ -62,8 +62,8 @@ const ServiceDetail = () => {
 
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-2xl sm:text-5xl font-gloock text-zinc-400 mb-6">
-                Key Features
+              <h2 className="text-2xl sm:text-5xl font-gloock text-white mb-6">
+                Key features
               </h2>
               <ul className="space-y-4">
                 {service.features.map((feature, index) => (
@@ -82,8 +82,8 @@ const ServiceDetail = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl sm:text-5xl font-gloock text-zinc-400 mb-6">
-                Why Choose Us
+              <h2 className="text-2xl sm:text-5xl font-gloock text-white mb-6">
+                Why choose us
               </h2>
               <p className="text-zinc-400 leading-relaxed mb-4">
                 Our team brings decades of combined experience in delivering
@@ -104,7 +104,7 @@ const ServiceDetail = () => {
 
           <div className="text-center mb-16">
             <h3 className="text-3xl sm:text-5xl font-gloock text-zinc-400 mb-6">
-              Ready to Get Started?
+              Ready to get started?
             </h3>
             <Link
               to="/contact"

@@ -98,7 +98,7 @@ const ProjectDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-4xl sm:text-5xl lg:text-[80px] font-gloock text-white mb-4"
+                className="text-4xl sm:text-5xl lg:text-6xl font-gloock text-white mb-4"
               >
                 {project.title}
               </motion.h1>
@@ -179,7 +179,7 @@ const ProjectDetail = () => {
                 <div className="w-12 h-px bg-primary" />
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-tight mb-6">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight mb-6">
                 Project <span className="text-primary">Overview</span>
               </h2>
 
@@ -187,7 +187,7 @@ const ProjectDetail = () => {
                 {project.description}
               </p>
 
-              <p className="text-base text-zinc-400 leading-relaxed text-center">
+              <p className="text-lg text-zinc-400 leading-relaxed text-center">
                 {project.fullDescription}
               </p>
             </motion.div>

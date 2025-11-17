@@ -1,10 +1,10 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "motion/react";
-import { useRef, forwardRef } from "react";
+import { useRef, forwardRef, memo, useCallback } from "react";
 import { Link } from "react-router";
 import TopGridPattern from "../common/TopGridPattern";
 
-export const Card = ({
+export const Card = memo(({
   i,
   title,
   description,
@@ -106,6 +106,8 @@ export const Card = ({
                 src={url}
                 alt={title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
@@ -114,9 +116,11 @@ export const Card = ({
       </motion.div>
     </div>
   );
-};
+});
 
-const StackCards = forwardRef(({ projects }, ref) => {
+Card.displayName = 'Card';
+
+const StackCards = memo(forwardRef(({ projects }, ref) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -154,7 +158,7 @@ const StackCards = forwardRef(({ projects }, ref) => {
       </main>
     </ReactLenis>
   );
-});
+}));
 
 StackCards.displayName = "StackCards";
 

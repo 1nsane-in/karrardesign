@@ -1,10 +1,10 @@
-import { useRef } from "react";
+import { useRef, memo, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BgHero1, HeroBG, KarrarLogo } from "../../assets";
+import { BgHero1 } from "../../assets";
 import { useNavigate } from "react-router";
 import { ArrowRight } from "lucide-react";
 
-const Hero = () => {
+const Hero = memo(() => {
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
@@ -16,18 +16,14 @@ const Hero = () => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
 
+  const handleViewProjects = useCallback(() => {
+    navigate("/studio");
+  }, [navigate]);
+
   return (
     <section ref={containerRef} className="relative h-screen overflow-hidden">
       {/* Background Image */}
       <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
-        {/* <div
-          className="w-full h-full "
-          style={{
-            backgroundImage: `url(https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/1.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        /> */}
         <div
           className="w-full h-full "
           style={{
@@ -36,7 +32,7 @@ const Hero = () => {
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l  from-black/70 via-black/70  to-black/70" />
       </motion.div>
 
       {/* Content */}
@@ -55,19 +51,26 @@ const Hero = () => {
               Luxury Interior Design
             </p>
             <h1 className="text-5xl lg:text-6xl font-semibold font-cinzel text-white mb-6 leading-[65px] text-center flex items-center justify-center flex-wrap">
-              <span>Design</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block mt-8 mr-2"></span>
-              <span>Distinction</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8  mr-2"></span>
-              <span>Detail</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8 ml-1"></span>
+              <div>
+                <span>Design</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block mt-8 mr-2"></span>
+              </div>
+
+              <div className="flex">
+                <span>Distinction</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-10  mr-2"></span>
+              </div>
+              <div>
+                <span>Detail</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8 ml-1"></span>
+              </div>
             </h1>
 
             <p className="text-white/90 text-lg mb-8 max-w-lg text-center">
               Crafting with award-winning precision and quiet luxury.
             </p>
             <button
-              onClick={() => navigate("/studio")}
+              onClick={handleViewProjects}
               className="group flex cursor-pointer items-center  gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
             >
               <span className="text-white text-sm uppercase tracking-wider">
@@ -130,6 +133,8 @@ const Hero = () => {
       </motion.div>
     </section>
   );
-};
+});
+
+Hero.displayName = "Hero";
 
 export default Hero;

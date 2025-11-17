@@ -1,28 +1,46 @@
-import StackCards from "../components/services/stacking-cards.jsx";
+import { lazy, Suspense, memo } from "react";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 import ServicesHero from "../components/services/ServicesHero.jsx";
-import LogoDivider from "../components/common/LogoDivider.jsx";
-import ServicesProcess from "../components/services/ServicesProcess.jsx";
-import ServicesContact from "../components/services/ServicesContact.jsx";
 import { services } from "../data/home/homeServices.js";
 
-const Services = () => {
+// Lazy load below-the-fold components
+const StackCards = lazy(() => import("../components/services/stacking-cards.jsx"));
+const LogoDivider = lazy(() => import("../components/common/LogoDivider.jsx"));
+const ServicesProcess = lazy(() => import("../components/services/ServicesProcess.jsx"));
+const ServicesContact = lazy(() => import("../components/services/ServicesContact.jsx"));
+
+// Loading component
+const SectionLoader = () => (
+  <div className="flex justify-center items-center py-12">
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
+const Services = memo(() => {
   return (
     <div className="bg-background-black">
-      {/* Noise Grain Overlay */}
       <NoiseOverlay />
-      {/* Hero Section */}
       <ServicesHero />
-      {/* Stack Cards */}
-      <StackCards projects={services} />
-      {/* Divider with Logos */}
-      <LogoDivider />
-      {/* Process Section */}
-      <ServicesProcess />
-      {/* Contact Section */}
-      <ServicesContact />
+      
+      <Suspense fallback={<SectionLoader />}>
+        <StackCards projects={services} />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <LogoDivider />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <ServicesProcess />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <ServicesContact />
+      </Suspense>
     </div>
   );
-};
+});
+
+Services.displayName = 'Services';
 
 export default Services;

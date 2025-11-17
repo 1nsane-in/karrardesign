@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { AnimatedTestimonials } from "../ui/animate-testimonial";
 
-const Testimonial = () => {
+const Testimonial = memo(() => {
   const testimonials = [
     {
       quote:
@@ -43,6 +44,8 @@ const Testimonial = () => {
       <AnimatedTestimonials testimonials={testimonials} />
     </div>
   );
-};
+});
+
+Testimonial.displayName = 'Testimonial';
 
 export default Testimonial;

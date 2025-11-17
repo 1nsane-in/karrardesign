@@ -1,21 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-
-@font-face {
-  font-family: "GT America";
-  src: url("./fonts/GT-America-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Tan Pearl";
-  src: url("./fonts/tan-pearl.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
+/* Fonts are now loaded via HTML preload for better performance */
 
 body,
 html,
@@ -40,10 +24,8 @@ html,
 
   --color-white1: #fdfdff;
 
-  --font-tan-pearl: "Tan Pearl", sans-serif;
   --font-cinzel: "Cinzel", serif;
   --font-roboto: "Roboto", sans-serif;
-  --font-gt-america: "GT America", sans-serif;
   --font-gloock: "Gloock", serif;
   --font-geist: "Geist", sans-serif;
   --font-oswald: "Oswald", sans-serif;
@@ -108,5 +90,4 @@ html {
   flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  /* Added */
 }

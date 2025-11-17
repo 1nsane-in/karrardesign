@@ -1,6 +1,6 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
-import { ServiceSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -12,7 +12,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const ServicesHero = () => {
+const ServicesHero = memo(() => {
   return (
     <>
       <div
@@ -42,7 +42,7 @@ const ServicesHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[100px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
+            className="text-4xl lg:text-[90px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
           >
             Our Expertise
           </motion.h1>
@@ -79,6 +79,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/14.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
@@ -86,6 +88,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/12.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
@@ -93,6 +97,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/8.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </motion.div>
@@ -116,6 +122,8 @@ const ServicesHero = () => {
       </motion.div>
     </>
   );
-};
+});
+
+ServicesHero.displayName = "ServicesHero";
 
 export default ServicesHero;

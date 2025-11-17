@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 
 const headingVariants = {
@@ -20,7 +21,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const KarrarLegacy = () => {
+const KarrarLegacy = memo(() => {
   return (
     <div className="max-w-6xl mx-auto mt-12 sm:mt-16 lg:mt-24 px-4 sm:px-6 lg:px-0 text-center">
       <motion.div
@@ -30,7 +31,7 @@ const KarrarLegacy = () => {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
       >
-        <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-gloock text-white mb-12 sm:mb-16 lg:mb-20">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-gloock text-white mb-12 sm:mb-16 lg:mb-20">
           Our Legacy & Commitment
         </h2>
       </motion.div>
@@ -89,6 +90,8 @@ const KarrarLegacy = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+KarrarLegacy.displayName = "KarrarLegacy";
 
 export default KarrarLegacy;
