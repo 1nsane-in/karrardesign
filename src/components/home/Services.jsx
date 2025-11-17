@@ -91,7 +91,7 @@ const Services = () => {
             {services.map((service, index) => (
               <CarouselItem
                 key={index}
-                className="pl-1 md:basis-1/2 lg:basis-1/3"
+                className="pl-3 md:basis-1/2 lg:basis-1/3"
               >
                 <div className="p-1">
                   <motion.div
@@ -109,7 +109,7 @@ const Services = () => {
                     </div>
 
                     {/* Service Title */}
-                    <h3 className="text-xl font-cinzel text-white group-hover:text-primary transition-colors mb-3">
+                    <h3 className="text-2xl font-gloock text-white group-hover:text-primary transition-colors mb-3">
                       {service.title}
                     </h3>
 
@@ -142,7 +142,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
+          className="text-center mt-10"
         >
           <Link
             to="/services"

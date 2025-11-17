@@ -46,7 +46,7 @@ const KarrarLegacy = () => {
         <motion.p
           variants={fadeInVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-400 mb-4 sm:mb-6"
+          className="text-base sm:text-lg lg:text-lg leading-relaxed text-zinc-400 mb-4 sm:mb-6"
         >
           We are more than a design and fit-out company, we are{" "}
           <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
@@ -60,7 +60,7 @@ const KarrarLegacy = () => {
         <motion.p
           variants={fadeInVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-400 mb-6 sm:mb-8"
+          className="text-base sm:text-lg lg:text-lg leading-relaxed text-zinc-400 mb-6 sm:mb-8"
         >
           With projects spanning{" "}
           <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">

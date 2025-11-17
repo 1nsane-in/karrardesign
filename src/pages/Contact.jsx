@@ -22,11 +22,11 @@ const Contact = () => {
       <motion.div
         initial="hidden"
         animate="visible"
-        className="relative -mt-2 sm:-mt-3 md:-mt-4 mb-12 md:mb-0 flex items-center min-h-[360px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[520px]"
+        className="relative mb-12 pb-[100px] md:mb-0 flex items-center min-h-[360px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[420px]"
       >
         {/* World map background */}
         <ContactWorldmap />
-        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm mt-10 flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
+        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm  flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           {contactLocations.map((location) => (
             <ContactInfo key={location.title} title={location.title}>
               {location.addresses.map((address, index) => (

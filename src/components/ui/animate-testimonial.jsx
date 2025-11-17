@@ -34,7 +34,7 @@ export const AnimatedTestimonials = ({
   return (
     <div
       className={cn(
-        "max-w-sm md:max-w-7xl z-20 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 py-20",
+        "max-w-sm md:max-w-7xl z-20 2xl:container 2xl:px-30 mx-auto px-4 md:px-8 md:py-20 mt-14",
         className
       )}
     >
@@ -58,7 +58,7 @@ export const AnimatedTestimonials = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
+          className="text-3xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-tight"
         >
           Stories of <span className="text-[#ffb400]">Satisfaction</span>
         </motion.h1>

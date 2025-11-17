@@ -26,16 +26,24 @@ const ContactHero = () => {
       </motion.div>
 
       {/* Main Heading Unit - Centered */}
-      <div className="uppercase text-center flex flex-col items-center lg:items-start justify-center w-fit mx-auto">
-        <AnimatedHeading>Let&apos;s work</AnimatedHeading>
-        <AnimatedHeading className="lg:ml-[300px]">Together</AnimatedHeading>
+      <div className="font-gloock text-center flex flex-col items-center lg:items-center justify-center w-fit mx-auto">
+        {/* <AnimatedHeading className="ml-20">Let&apos;s work</AnimatedHeading>
+        <AnimatedHeading className="lg:ml-[30px]">Together</AnimatedHeading> */}
+        <AnimatedHeading className="">Let&apos;s work Together</AnimatedHeading>{" "}
         <motion.div
+          initial="hidden"
+          animate="visible"
+          className="lg:w-xs w-32 -mt-4"
+        >
+          <ConnectSVG />
+        </motion.div>
+        {/* <motion.div
           initial="hidden"
           animate="visible"
           className="lg:w-md w-32 sm:w-40 md:w-[300px] md:-mt-7  lg:ml-[600px] -mt-5"
         >
           <ConnectSVG />
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
