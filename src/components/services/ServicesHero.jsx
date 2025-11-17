@@ -42,7 +42,7 @@ const ServicesHero = memo(() => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[100px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[90px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
           >
             Our Expertise
           </motion.h1>
@@ -124,6 +124,6 @@ const ServicesHero = memo(() => {
   );
 });
 
-ServicesHero.displayName = 'ServicesHero';
+ServicesHero.displayName = "ServicesHero";
 
 export default ServicesHero;

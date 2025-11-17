@@ -24,14 +24,6 @@ const Hero = memo(() => {
     <section ref={containerRef} className="relative h-screen overflow-hidden">
       {/* Background Image */}
       <motion.div className="absolute inset-0" style={{ scale: imageScale }}>
-        {/* <div
-          className="w-full h-full "
-          style={{
-            backgroundImage: `url(https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/1.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        /> */}
         <div
           className="w-full h-full "
           style={{
@@ -40,7 +32,7 @@ const Hero = memo(() => {
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/50 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-l  from-black/70 via-black/70  to-black/70" />
       </motion.div>
 
       {/* Content */}

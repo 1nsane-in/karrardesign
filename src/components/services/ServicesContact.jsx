@@ -19,10 +19,10 @@ const ServicesContact = memo(() => {
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.6 }}
         className="max-w-4xl mx-auto text-center mt-20 sm:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-8"
       >
-        <h3 className="text-3xl sm:text-4xl lg:text-[80px] leading-tight lg:leading-[65px] font-gloock text-white mb-8">
+        <h3 className="text-3xl sm:text-4xl lg:text-6xl leading-tight lg:leading-[65px] font-gloock text-white mb-5">
           Ready to Transform <br /> Your Space?
         </h3>
-        <p className="text-base sm:text-lg text-zinc-400 mb-8">
+        <p className="text-base sm:text-lg text-zinc-400 mb-5">
           Let&apos;s discuss how we can bring your vision to life with precision
           and elegance.
         </p>
@@ -51,6 +51,6 @@ const ServicesContact = memo(() => {
   );
 });
 
-ServicesContact.displayName = 'ServicesContact';
+ServicesContact.displayName = "ServicesContact";
 
 export default ServicesContact;

@@ -42,7 +42,7 @@ const Awards = memo(() => {
             Honors of Distinction
           </p>
         </div>
-        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-gloock text-white mb-8 sm:mb-12">
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-gloock text-white mb-8 sm:mb-12">
           Awards & Recognitions
         </h2>
       </motion.div>
@@ -110,6 +110,6 @@ const Awards = memo(() => {
   );
 });
 
-Awards.displayName = 'Awards';
+Awards.displayName = "Awards";
 
 export default Awards;

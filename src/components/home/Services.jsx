@@ -66,7 +66,7 @@ const Services = memo(() => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group bg-zinc-900 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-700 hover:border-primary-dark h-64 flex flex-col"
+                    className="group bg-zinc-900 rounded-xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-zinc-700 hover:border-primary-dark h-[265px] flex flex-col"
                   >
                     {/* Service Icon & Number */}
                     <div className="flex items-center justify-end mb-4">
@@ -127,6 +127,6 @@ const Services = memo(() => {
   );
 });
 
-Services.displayName = 'Services';
+Services.displayName = "Services";
 
 export default Services;
