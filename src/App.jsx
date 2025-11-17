@@ -1,35 +1,65 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import Services from "./pages/Services";
-import ServiceDetail from "./pages/ServiceDetail";
+import { lazy, Suspense } from "react";
 import Navigation from "./components/common/Navigation";
 import ScrollToTop from "./components/common/ScrollToTop";
-import Studio from "./pages/Studio";
-import Karrar from "./pages/Karrar";
-import ProjectDetail from "./pages/ProjectDetail";
-import InsaneFooter from "./components/common/InsaneFooter";
-import ScreenSizeDisplay from "./components/common/ScreenSize";
+import { KarrarLogoSVG2 } from "./assets/svg";
+
+// Lazy load all pages
+const Home = lazy(() => import("./pages/Home"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Services = lazy(() => import("./pages/Services"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const Studio = lazy(() => import("./pages/Studio"));
+const Karrar = lazy(() => import("./pages/Karrar"));
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const InsaneFooter = lazy(() => import("./components/common/InsaneFooter"));
+const ScreenSizeDisplay = lazy(() => import("./components/common/ScreenSize"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="flex justify-center flex-col items-center min-h-screen bg-background-black">
+    <div className="flex items-center gap-1">
+      <div className="w-12 h-12">
+        <KarrarLogoSVG2 />
+      </div>
+      <div className={` border-l-2 pl-2  transition-colors `}>
+        <h1 className={`font-cinzel  md:text-xl text-white `}>
+          Karrar Design Projects
+        </h1>
+      </div>
+    </div>
+    <div className="h-[1px] w-[25%] my-2 bg-gradient-to-l from-transparent  via-zinc-400 to-transparent"></div>
+    <div className="w-12 h-12 border-3 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/:serviceId" element={<ServiceDetail />} />
-        <Route path="/studio" element={<Studio />} />
-        <Route path="/karrar" element={<Karrar />} />
-        <Route path="/studio/:projectId" element={<ProjectDetail />} />
-      </Routes>
-      <InsaneFooter />
 
-      {/* Screen size */}
-      {import.meta.env.VITE_ENV === "dev" && <ScreenSizeDisplay />}
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/karrar" element={<Karrar />} />
+          <Route path="/studio/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <InsaneFooter />
+      </Suspense>
+
+      {import.meta.env.VITE_ENV === "dev" && (
+        <Suspense fallback={null}>
+          <ScreenSizeDisplay />
+        </Suspense>
+      )}
     </BrowserRouter>
   );
 }
