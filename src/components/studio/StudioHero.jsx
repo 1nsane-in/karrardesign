@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -6,7 +7,7 @@ const headingVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const StudioHero = () => {
+const StudioHero = memo(() => {
   return (
     <div
       style={{ perspective: 800 }}
@@ -59,6 +60,8 @@ const StudioHero = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+StudioHero.displayName = 'StudioHero';
 
 export default StudioHero;

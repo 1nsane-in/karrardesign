@@ -1,8 +1,7 @@
-import React from "react";
-import { KarrarLogo } from "../../assets";
+import { memo } from "react";
 import LogoDivider from "../common/LogoDivider";
 
-const StudioPhilosophy = () => {
+const StudioPhilosophy = memo(() => {
   return (
     <section className="philosophy-section mt-20 sm:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
@@ -38,6 +37,8 @@ const StudioPhilosophy = () => {
       </div>
     </section>
   );
-};
+});
+
+StudioPhilosophy.displayName = 'StudioPhilosophy';
 
 export default StudioPhilosophy;

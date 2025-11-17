@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 import { ConnectSVG } from "../../assets/svg";
@@ -8,7 +9,7 @@ const headingVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const StudioContact = () => {
+const StudioContact = memo(() => {
   return (
     <>
       {/* Call to Action */}
@@ -38,6 +39,8 @@ const StudioContact = () => {
       </motion.div>
     </>
   );
-};
+});
+
+StudioContact.displayName = 'StudioContact';
 
 export default StudioContact;
