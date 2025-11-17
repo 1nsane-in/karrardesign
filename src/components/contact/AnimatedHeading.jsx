@@ -1,7 +1,8 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 
 // Single Responsibility: Handle animated headings
-const AnimatedHeading = ({ children, className = "", delay = 0 }) => (
+const AnimatedHeading = memo(({ children, className = "", delay = 0 }) => (
   <motion.h1
     initial="hidden"
     animate="visible"
@@ -10,6 +11,8 @@ const AnimatedHeading = ({ children, className = "", delay = 0 }) => (
   >
     {children}
   </motion.h1>
-);
+));
+
+AnimatedHeading.displayName = 'AnimatedHeading';
 
 export default AnimatedHeading;

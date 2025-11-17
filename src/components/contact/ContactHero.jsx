@@ -1,9 +1,10 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 import AnimatedHeading from "./AnimatedHeading";
 import { ConnectSVG } from "../../assets/svg";
 
-const ContactHero = () => {
+const ContactHero = memo(() => {
   return (
     <div
       style={{ perspective: 800 }}
@@ -47,6 +48,8 @@ const ContactHero = () => {
       </div>
     </div>
   );
-};
+});
+
+ContactHero.displayName = 'ContactHero';
 
 export default ContactHero;
