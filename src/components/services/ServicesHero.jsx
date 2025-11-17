@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
-import { ServiceSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },

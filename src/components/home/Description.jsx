@@ -1,11 +1,9 @@
 import styles from "../../styles/description.module.scss";
-import { AboutSVG } from "../../assets/svg.jsx";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import {
   animationProps,
-  headings,
   navButtons,
   variants,
 } from "../../data/home/homeDescription.js";
