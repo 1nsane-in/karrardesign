@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, memo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import DottedMap from "dotted-map";
 
@@ -18,7 +18,7 @@ function SvgImage({ svg, className, alt }) {
  * - lineColor: string (brand color for arcs and points)
  * - className: string (extra classes for container)
  */
-export function WorldMap({
+export const WorldMap = memo(({
   dots = [],
   lineColor = "#fff",
   className = "",
@@ -27,19 +27,24 @@ export function WorldMap({
   showPulses = true,
   fadeEdges = true,
   decorative = true,
-}) {
+}) => {
   const svgRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();
 
-  // Generate dotted background map once
+  // Generate dotted background map once with reduced complexity
   const svgMap = useMemo(() => {
-    const map = new DottedMap({ height: 100, grid: "diagonal" });
-    return map.getSVG({
-      radius: 0.22,
-      color: "#fff",
-      shape: "circle",
-      backgroundColor: "transparent",
-    });
+    try {
+      const map = new DottedMap({ height: 60, grid: "diagonal" }); // Reduced height for performance
+      return map.getSVG({
+        radius: 0.18, // Smaller radius for better performance
+        color: "#fff",
+        shape: "circle",
+        backgroundColor: "transparent",
+      });
+    } catch (error) {
+      console.warn('Failed to generate world map:', error);
+      return '<svg></svg>'; // Fallback empty SVG
+    }
   }, []);
 
   // equirectangular-ish projection matching the original registry sample
@@ -62,11 +67,13 @@ export function WorldMap({
 
   return (
     <div className={containerClasses}>
-      <SvgImage
-        svg={svgMap}
-        alt=""
-        className={`h-full w-full ${maskClass} pointer-events-none select-none opacity-70`}
-      />
+      {svgMap && (
+        <SvgImage
+          svg={svgMap}
+          alt=""
+          className={`h-full w-full ${maskClass} pointer-events-none select-none opacity-70`}
+        />
+      )}
       <svg
         ref={svgRef}
         viewBox="0 0 800 400"
@@ -74,7 +81,7 @@ export function WorldMap({
         aria-hidden={decorative}
       >
         {showRoutes &&
-          dots.map((dot, i) => {
+          dots.slice(0, 3).map((dot, i) => { // Limit to 3 dots for performance
             const startPoint = projectPoint(dot.start.lat, dot.start.lng);
             const endPoint = projectPoint(dot.end.lat, dot.end.lng);
             const initial = prefersReducedMotion
@@ -110,7 +117,7 @@ export function WorldMap({
           </linearGradient>
         </defs>
 
-        {dots.map((dot, i) => (
+        {dots.slice(0, 3).map((dot, i) => ( // Limit to 3 dots for performance
           <g key={`points-group-${i}`}>
             <g key={`start-${i}`}>
               <circle
@@ -131,7 +138,7 @@ export function WorldMap({
                     attributeName="r"
                     from="2"
                     to="8"
-                    dur="1.5s"
+                    dur="2s"
                     begin="0s"
                     repeatCount="indefinite"
                   />
@@ -139,7 +146,7 @@ export function WorldMap({
                     attributeName="opacity"
                     from="0.5"
                     to="0"
-                    dur="1.5s"
+                    dur="2s"
                     begin="0s"
                     repeatCount="indefinite"
                   />
@@ -165,7 +172,7 @@ export function WorldMap({
                     attributeName="r"
                     from="2"
                     to="8"
-                    dur="1.5s"
+                    dur="2s"
                     begin="0s"
                     repeatCount="indefinite"
                   />
@@ -173,7 +180,7 @@ export function WorldMap({
                     attributeName="opacity"
                     from="0.5"
                     to="0"
-                    dur="1.5s"
+                    dur="2s"
                     begin="0s"
                     repeatCount="indefinite"
                   />
@@ -185,6 +192,8 @@ export function WorldMap({
       </svg>
     </div>
   );
-}
+});
+
+WorldMap.displayName = 'WorldMap';
 
 export default WorldMap;
