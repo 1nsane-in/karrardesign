@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -20,7 +21,7 @@ const staggerContainer = {
   },
 };
 
-const ServicesProcess = () => {
+const ServicesProcess = memo(() => {
   return (
     <section className="process-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto text-center">
@@ -93,6 +94,8 @@ const ServicesProcess = () => {
       </div>
     </section>
   );
-};
+});
+
+ServicesProcess.displayName = 'ServicesProcess';
 
 export default ServicesProcess;

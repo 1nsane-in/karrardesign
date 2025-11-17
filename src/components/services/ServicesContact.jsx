@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router";
 import { ConnectSVG } from "../../assets/svg";
 import SocialConnect from "../common/SocialConnect";
@@ -7,7 +8,7 @@ const headingVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const ServicesContact = () => {
+const ServicesContact = memo(() => {
   return (
     <>
       <motion.div
@@ -48,6 +49,8 @@ const ServicesContact = () => {
       <SocialConnect />
     </>
   );
-};
+});
+
+ServicesContact.displayName = 'ServicesContact';
 
 export default ServicesContact;

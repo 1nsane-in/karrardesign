@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -11,7 +12,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const ServicesHero = () => {
+const ServicesHero = memo(() => {
   return (
     <>
       <div
@@ -78,6 +79,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/14.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
@@ -85,6 +88,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/12.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
@@ -92,6 +97,8 @@ const ServicesHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/8.jpg"
               alt=""
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </motion.div>
@@ -115,6 +122,8 @@ const ServicesHero = () => {
       </motion.div>
     </>
   );
-};
+});
+
+ServicesHero.displayName = 'ServicesHero';
 
 export default ServicesHero;
