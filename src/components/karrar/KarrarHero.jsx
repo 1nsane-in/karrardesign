@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -6,7 +7,7 @@ const headingVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const KarrarHero = () => {
+const KarrarHero = memo(() => {
   return (
     <div
       style={{ perspective: 800 }}
@@ -61,6 +62,8 @@ const KarrarHero = () => {
               src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg"
               alt="Luxury Interior Design by Karrar"
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60"></div>
@@ -107,6 +110,8 @@ const KarrarHero = () => {
       </div>
     </div>
   );
-};
+});
+
+KarrarHero.displayName = 'KarrarHero';
 
 export default KarrarHero;

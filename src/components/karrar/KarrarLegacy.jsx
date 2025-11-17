@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 
 const headingVariants = {
@@ -20,7 +21,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const KarrarLegacy = () => {
+const KarrarLegacy = memo(() => {
   return (
     <div className="max-w-6xl mx-auto mt-12 sm:mt-16 lg:mt-24 px-4 sm:px-6 lg:px-0 text-center">
       <motion.div
@@ -89,6 +90,8 @@ const KarrarLegacy = () => {
       </motion.div>
     </div>
   );
-};
+});
+
+KarrarLegacy.displayName = 'KarrarLegacy';
 
 export default KarrarLegacy;

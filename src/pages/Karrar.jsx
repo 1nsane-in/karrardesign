@@ -1,30 +1,47 @@
+import { lazy, Suspense, memo } from "react";
 import TopGridPattern from "../components/common/TopGridPattern";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import KarrarHero from "../components/karrar/KarrarHero";
-import KarrarPhilosophy from "../components/karrar/KarrarPhilosophy";
-import Awards from "../components/karrar/Awards";
-import LogoDivider from "../components/common/LogoDivider";
-import KarrarLegacy from "../components/karrar/KarrarLegacy";
 
-const Karrar = () => {
+// Lazy load below-the-fold components
+const KarrarPhilosophy = lazy(() => import("../components/karrar/KarrarPhilosophy"));
+const Awards = lazy(() => import("../components/karrar/Awards"));
+const LogoDivider = lazy(() => import("../components/common/LogoDivider"));
+const KarrarLegacy = lazy(() => import("../components/karrar/KarrarLegacy"));
+
+// Loading component
+const SectionLoader = () => (
+  <div className="flex justify-center items-center py-12">
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
+
+const Karrar = memo(() => {
   return (
     <div className="bg-background-black">
-      {/* Top grid pattern */}
       <TopGridPattern />
-      {/* Noise Grain Overlay */}
       <NoiseOverlay />
-      {/* Hero Section */}
       <KarrarHero />
-      {/* Our Philosophy Section */}
-      <KarrarPhilosophy />
-      {/* Awards Section */}
-      <Awards />
-      {/* Logo Divider */}
-      <LogoDivider />
-      {/* Legacy Statement */}
-      <KarrarLegacy />
+      
+      <Suspense fallback={<SectionLoader />}>
+        <KarrarPhilosophy />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <Awards />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <LogoDivider />
+      </Suspense>
+      
+      <Suspense fallback={<SectionLoader />}>
+        <KarrarLegacy />
+      </Suspense>
     </div>
   );
-};
+});
+
+Karrar.displayName = 'Karrar';
 
 export default Karrar;

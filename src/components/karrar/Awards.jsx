@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
 
@@ -21,7 +22,7 @@ const fadeInVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const Awards = () => {
+const Awards = memo(() => {
   return (
     <div className="max-w-6xl mx-auto mt-16 sm:mt-20 md:mt-24 lg:mt-32 px-4 sm:px-6 lg:px-0 text-center">
       <motion.div
@@ -107,6 +108,8 @@ const Awards = () => {
       </motion.p>
     </div>
   );
-};
+});
+
+Awards.displayName = 'Awards';
 
 export default Awards;
