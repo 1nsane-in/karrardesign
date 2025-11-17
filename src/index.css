@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
 @font-face {
   font-family: "GT America";
@@ -24,12 +27,30 @@ html,
   /* --color-primary: #c19a5b; */
   --color-primary: #ffb400;
   --color-secondary: #fff;
+  --color-background-gold: #e0bf8b;
+
+  --color-background-black: #02020a;
+  --color-primary-dark: #a38800;
+  --color-subheading: #f0f0f0;
+
+  /* --color-background-black: #020122; */
+  /* 
+  --color-background-black: #020122;
+  --color-background-black: #020122; */
+
+  --color-white1: #fdfdff;
 
   --font-tan-pearl: "Tan Pearl", sans-serif;
   --font-cinzel: "Cinzel", serif;
   --font-roboto: "Roboto", sans-serif;
-}
+  --font-gt-america: "GT America", sans-serif;
+  --font-gloock: "Gloock", serif;
+  --font-geist: "Geist", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
 
+  /* font size */
+  --text-heading-xl: 100px;
+}
 
 /* Hide scrollbar */
 ::-webkit-scrollbar {

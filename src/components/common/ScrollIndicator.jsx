@@ -84,7 +84,7 @@ const ScrollIndicator = () => {
           ref={barRef}
           className="h-full"
           style={{
-            background: "#ffb400",
+            background: "#e8c300",
             transformOrigin: "left center",
             transform: "scaleX(0)",
             transition: "transform 120ms linear",

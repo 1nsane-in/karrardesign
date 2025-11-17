@@ -13,7 +13,7 @@ const KarrarHero = () => {
   return (
     <div
       style={{ perspective: 800 }}
-      className="max-w-7xl mx-auto mt-36 sm:mt-24 md:mt-32 lg:mt-44 px-4 sm:px-6 lg:px-8"
+      className="max-w-6xl mx-auto pt-36 sm:pt-24 md:pt-32 lg:pt-44 px-4 sm:px-6 lg:px-0 text-center"
     >
       {/* Header */}
       <div className="text-center mb-12 lg:mb-20 flex items-center justify-center flex-col">
@@ -30,7 +30,7 @@ const KarrarHero = () => {
             alt="Karrar Logo"
             className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
           />
-          <p className="text-xs uppercase text-zinc-600">About Us</p>
+          <p className="text-xs uppercase text-zinc-400">About Us</p>
         </motion.div>
 
         <div className="mt-4 sm:mt-6 lg:mt-10">
@@ -40,16 +40,16 @@ const KarrarHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-zinc-700 mb-4 sm:mb-6 px-6 sm:px-0"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-white mb-4 sm:mb-6 px-6 sm:px-0"
           >
             Crafting Luxury, <br />
             Delivering Excellence
           </motion.h1>
         </div>
 
-        <div className="lg:w-xs w-32 -mt-10">
+        {/* <div className="lg:w-xs w-32 -mt-10">
           <KarrarSVG />
-        </div>
+        </div> */}
       </div>
 
       {/* Split Content */}
@@ -82,28 +82,28 @@ const KarrarHero = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           className="lg:col-span-3 text-center lg:text-left"
         >
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-700 mb-6">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6">
             Karrar Design Projects is a premier interior design and project
             management firm with operations across the{" "}
-            <strong className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+            <strong className="hover:text-[#ffb400] transition-colors duration-300 cursor-pointer text-zinc-300 ">
               UAE, India, and Canada
             </strong>
             . With over two decades of experience, we specialize in luxury
             interiors, high-end fit-out works, and comprehensive project
             management solutions.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-700 mb-6">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400 mb-6">
             Our philosophy is simple yet profound: every project must embody{" "}
-            <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+            <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
               timeless elegance, uncompromising quality, and seamless execution
             </strong>
             . From iconic hospitality destinations to private luxury residences,
             we deliver environments that not only inspire but also elevate the
             lifestyle of our clients.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed text-zinc-700">
+          <p className="text-base sm:text-lg leading-relaxed text-zinc-400">
             We operate as an{" "}
-            <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+            <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
               extension of our clients&apos; vision
             </strong>
             , orchestrating every detail with precision, managing cost and time

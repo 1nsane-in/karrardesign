@@ -7,7 +7,7 @@ import StudioContact from "../components/studio/StudioContact.jsx";
 
 const Studio = () => {
   return (
-    <>
+    <div className="bg-background-black">
       <TopGridPattern />
       {/* Noise Grain Overlay */}
       <NoiseOverlay />
@@ -19,7 +19,7 @@ const Studio = () => {
       <StudioPhilosophy />
       {/* Contact Section */}
       <StudioContact />
-    </>
+    </div>
   );
 };
 

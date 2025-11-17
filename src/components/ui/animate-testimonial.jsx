@@ -48,7 +48,7 @@ export const AnimatedTestimonials = ({
           className="inline-flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-[#ffb400]" />
-          <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+          <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
             Testimonials
           </span>
           <div className="w-12 h-px bg-[#ffb400]" />
@@ -58,7 +58,7 @@ export const AnimatedTestimonials = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight"
+          className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
         >
           Stories of <span className="text-[#ffb400]">Satisfaction</span>
         </motion.h1>
@@ -69,7 +69,8 @@ export const AnimatedTestimonials = ({
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-base text-zinc-600 mt-4 max-w-2xl mx-auto"
         >
-          Our reputation is built on trust, detail, and the voices of our clients.
+          Our reputation is built on trust, detail, and the voices of our
+          clients.
         </motion.p>
       </div>
 
@@ -98,47 +99,51 @@ export const AnimatedTestimonials = ({
               }}
               className="space-y-6"
             >
-            <div className="relative">
-              <svg className="w-12 h-12 text-[#ffb400] mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
-              <motion.p className="text-xl lg:text-2xl text-zinc-700 leading-relaxed italic max-w-3xl mx-auto">
-                {testimonials[active].quote.split(" ").map((word, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{
-                      filter: "blur(10px)",
-                      opacity: 0,
-                      y: 5,
-                    }}
-                    animate={{
-                      filter: "blur(0px)",
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      duration: 0.2,
-                      ease: "easeInOut",
-                      delay: 0.02 * index,
-                    }}
-                    className="inline-block"
-                  >
-                    {word}&nbsp;
-                  </motion.span>
-                ))}
-              </motion.p>
-            </div>
-            <div className="pt-4">
-              <h3 className="text-2xl font-tan-pearl text-zinc-800 mb-1">
-                {testimonials[active].name}
-              </h3>
-              <p className="text-sm text-zinc-500 uppercase tracking-wider">
-                {testimonials[active].designation}
-              </p>
-            </div>
+              <div className="relative">
+                <svg
+                  className="w-12 h-12 text-[#ffb400] mx-auto mb-4 opacity-50"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <motion.p className="text-xl lg:text-2xl text-white leading-relaxed italic max-w-3xl mx-auto">
+                  {testimonials[active].quote.split(" ").map((word, index) => (
+                    <motion.span
+                      key={index}
+                      initial={{
+                        filter: "blur(10px)",
+                        opacity: 0,
+                        y: 5,
+                      }}
+                      animate={{
+                        filter: "blur(0px)",
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeInOut",
+                        delay: 0.02 * index,
+                      }}
+                      className="inline-block"
+                    >
+                      {word}&nbsp;
+                    </motion.span>
+                  ))}
+                </motion.p>
+              </div>
+              <div className="pt-4">
+                <h3 className="text-3xl font-cinzel text-zinc-400 mb-1">
+                  {testimonials[active].name}
+                </h3>
+                <p className="text-sm text-zinc-500 uppercase tracking-wider">
+                  {testimonials[active].designation}
+                </p>
+              </div>
             </motion.div>
           </AnimatePresence>
-          
+
           {/* Indicators */}
           <div className="flex gap-2 mt-10 justify-center">
             {testimonials.map((_, index) => (

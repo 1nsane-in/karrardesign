@@ -30,7 +30,7 @@ const KarrarLegacy = () => {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
       >
-        <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-zinc-700 mb-12 sm:mb-16 lg:mb-20">
+        <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-white mb-12 sm:mb-16 lg:mb-20">
           Our Legacy & Commitment
         </h2>
       </motion.div>
@@ -46,10 +46,10 @@ const KarrarLegacy = () => {
         <motion.p
           variants={fadeInVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700 mb-4 sm:mb-6"
+          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-400 mb-4 sm:mb-6"
         >
           We are more than a design and fit-out company, we are{" "}
-          <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+          <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
             partners in creating legacies
           </strong>
           . Each space we design and manage is a reflection of our client&apos;s
@@ -60,10 +60,10 @@ const KarrarLegacy = () => {
         <motion.p
           variants={fadeInVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-700 mb-6 sm:mb-8"
+          className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-400 mb-6 sm:mb-8"
         >
           With projects spanning{" "}
-          <strong className="text-zinc-800 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+          <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
             luxurious mansions, high-rise residences, five-star hotels, and
             global retail spaces
           </strong>
@@ -74,19 +74,16 @@ const KarrarLegacy = () => {
         <motion.div
           variants={fadeInVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mt-12 sm:mt-16 mb-20 sm:mb-32"
+          className="mt-12 sm:mt-16 pb-20 sm:pb-32"
         >
-          <p
+          {/* <p
             className="text-xl sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl mb-1 sm:mb-2"
             style={{ color: "#ffb400" }}
           >
             At Karrar Design Projects,
-          </p>
-          <p
-            className="text-xl sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-tan-pearl italic"
-            style={{ color: "#ffb400" }}
-          >
-            luxury is not an option, it is our standard.
+          </p> */}
+          <p className="text-xl sm:text-lg md:text-xl lg:text-[28px] leading-tight sm:leading-tight md:leading-tight lg:leading-[32px] font-gloock text-primary">
+            We design beauty that feels alive.
           </p>
         </motion.div>
       </motion.div>
