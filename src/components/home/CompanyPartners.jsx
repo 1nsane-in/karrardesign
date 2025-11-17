@@ -56,10 +56,10 @@ const PartnerCard = ({ partner, index }) => (
   <div
     className={`${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-[200px] md:w-[280px] py-4 rounded-xl shrink-0 bg-zinc-900 backdrop-blur-sm shadow-2xl border border-white/15`}
   >
-    <h1 className="md:text-xl font-cinzel text-white mb-1 text-center max-w-[250px]">
+    <h1 className="md:text-2xl font-gloock text-white mb-1 text-center max-w-[250px]">
       {partner.name}
     </h1>
-    <div className="text-sm text-zinc-600 text-center max-w-[250px]">
+    <div className="text-sm text-zinc-400 text-center max-w-[250px]">
       {partner.sector}
     </div>
   </div>
@@ -87,7 +87,7 @@ const PartnersCarousel = () => (
 
 const StatItem = ({ value, label }) => (
   <div className="text-center">
-    <div className="text-3xl font-cinzel text-primary mb-2">{value}</div>
+    <div className="text-3xl font-gloock text-primary mb-2">{value}</div>
     <div className="text-sm text-zinc-600">{label}</div>
   </div>
 );

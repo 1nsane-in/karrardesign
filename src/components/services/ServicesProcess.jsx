@@ -37,9 +37,9 @@ const ServicesProcess = () => {
               alt="Karrar Logo"
               className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
             />
-            <p className="text-xs uppercase text-zinc-500">Our Process</p>
+            <p className="text-xs uppercase text-zinc-400">Our Process</p>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[50px] leading-tight lg:leading-[55px] font-tan-pearl text-white mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-[80px] leading-tight lg:leading-[55px] font-gloock text-white mb-12">
             How We Work
           </h2>
         </motion.div>
@@ -80,10 +80,10 @@ const ServicesProcess = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-center p-4"
             >
-              <div className="text-3xl sm:text-4xl font-tan-pearl text-[#ffb400] mb-3">
+              <div className="text-3xl sm:text-4xl font-gloock text-[#ffb400] mb-3">
                 {item.step}
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-zinc-500 mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-zinc-400 mb-2">
                 {item.title}
               </h3>
               <p className="text-zinc-600 leading-relaxed">{item.desc}</p>

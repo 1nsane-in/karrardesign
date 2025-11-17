@@ -12,6 +12,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isHomePage = pathname === "/";
+  const isStudioDetailsPage = pathname.startsWith("/studio/");
 
   // Detect scroll
   useEffect(() => {

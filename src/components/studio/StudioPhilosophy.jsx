@@ -8,22 +8,22 @@ const StudioPhilosophy = () => {
       <div className="max-w-5xl mx-auto">
         {/* Philosophy Content */}
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-cinzel text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-[80px] font-gloock text-white mb-6">
             Project Philosophy
           </h2>
-          <p className="text-xl sm:text-2xl lg:text-3xl italic text-zinc-600 mb-10 font-light">
+          <p className="text-xl sm:text-2xl lg:text-3xl italic text-zinc-400 mb-10 font-light">
             Every Detail Matters
           </p>
 
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-zinc-700 font-light">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-zinc-400 font-light">
               We don't just design spaces, we{" "}
               <strong className="font-semibold hover:text-primary transition-colors  duration-300 cursor-pointer">
                 curate experiences
               </strong>
               . From consultation to completion, our process ensures that each
               project embodies{" "}
-              <strong className="font-semibold hover:text-primary transition-colors text-zinc-500 duration-300 cursor-pointer">
+              <strong className="font-semibold hover:text-primary transition-colors text-zinc-300 ease-in-out duration-300 cursor-pointer">
                 function, form, and timeless elegance
               </strong>
               . Whether a private residence, a five-star hotel, or a high-end

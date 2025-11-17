@@ -40,7 +40,7 @@ const KarrarPhilosophy = () => {
           />
           <p className="text-xs uppercase text-zinc-400">Our Foundation</p>
         </div>
-        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[50px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-tan-pearl text-white mb-8 sm:mb-10 lg:mb-12">
+        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[55px] font-gloock text-white mb-8 sm:mb-10 lg:mb-12">
           Core Values
         </h2>
       </motion.div>
@@ -65,7 +65,7 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-semibold text-zinc-300 mb-2 sm:mb-3">
+          <h3 className="text-2xl sm:text-2xl font-semibold text-zinc-300 mb-2 sm:mb-3 font-gloock">
             Timeless Elegance
           </h3>
           <p className="text-zinc-400 leading-relaxed">
@@ -86,7 +86,7 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-xl font-semibold text-zinc-300 mb-3">
+          <h3 className="text-2xl font-semibold text-zinc-300 mb-3 font-gloock">
             Uncompromising Quality
           </h3>
           <p className="text-zinc-400 leading-relaxed">
@@ -107,7 +107,7 @@ const KarrarPhilosophy = () => {
               className="w-full h-full object-cover opacity-80"
             />
           </div>
-          <h3 className="text-xl font-semibold text-zinc-300 mb-3">
+          <h3 className="text-2xl font-semibold text-zinc-300 mb-3 font-gloock">
             Seamless Execution
           </h3>
           <p className="text-zinc-400 leading-relaxed">

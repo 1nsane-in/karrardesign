@@ -22,7 +22,7 @@ const ContactHero = () => {
           alt="Karrar Logo"
           className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
         />
-        <p className="text-xs uppercase text-zinc-500">Contact</p>
+        <p className="text-xs uppercase text-zinc-400">Contact</p>
       </motion.div>
 
       {/* Main Heading Unit - Centered */}
