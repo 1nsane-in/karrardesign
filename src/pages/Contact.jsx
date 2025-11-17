@@ -1,4 +1,4 @@
-import { lazy, Suspense, memo } from "react";
+import { lazy, Suspense, memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
@@ -13,17 +13,19 @@ import {
 // Lazy load the world map to prevent page freezing
 const ContactWorldmap = lazy(() => import("../components/contact/ContactWorldmap.jsx"));
 
-// Loading component for world map
-const MapLoader = () => (
+// Optimized loading component for world map
+const MapLoader = memo(() => (
   <div className="absolute inset-0 flex items-center justify-center">
-    <div className="flex flex-col items-center gap-4">
-      <div className="w-12 h-12 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-      <span className="text-zinc-400 text-sm">Loading world map...</span>
-    </div>
+    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
   </div>
-);
+));
+MapLoader.displayName = 'MapLoader';
 
 const Contact = memo(() => {
+  // Memoize contact locations to prevent re-renders
+  const memoizedLocations = useMemo(() => contactLocations, []);
+  const memoizedContactDetails = useMemo(() => contactDetails, []);
+
   return (
     <div className="bg-background-black">
       <TopGridPattern />
@@ -31,8 +33,9 @@ const Contact = memo(() => {
       <ContactHero />
 
       <motion.div
-        initial="hidden"
-        animate="visible"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative mb-12 pb-[100px] md:mb-0 flex items-center min-h-[360px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[420px]"
       >
         {/* Lazy load world map to prevent freezing */}
@@ -40,8 +43,8 @@ const Contact = memo(() => {
           <ContactWorldmap />
         </Suspense>
         
-        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm  flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
-          {contactLocations.map((location) => (
+        <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
+          {memoizedLocations.map((location) => (
             <ContactInfo key={location.title} title={location.title}>
               {location.addresses.map((address, index) => (
                 <div key={index} className={index > 0 ? "mt-3" : ""}>
@@ -60,14 +63,14 @@ const Contact = memo(() => {
 
           <ContactInfo title="General">
             <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600 text-center lg:text-left">
-              <ContactLink href={`mailto:${contactDetails.email}`}>
-                {contactDetails.email}
+              <ContactLink href={`mailto:${memoizedContactDetails.email}`}>
+                {memoizedContactDetails.email}
               </ContactLink>
             </p>
-            {contactDetails.phones.map((phone, index) => (
+            {memoizedContactDetails.phones.map((phone, index) => (
               <p
                 key={phone}
-                className={`text-zinc-600 text-center lg:text-left ${index === 0 ? "mt-2" : "mt-1"} ${index === contactDetails.phones.length - 1 ? "mb-10" : ""}`}
+                className={`text-zinc-600 text-center lg:text-left ${index === 0 ? "mt-2" : "mt-1"} ${index === memoizedContactDetails.phones.length - 1 ? "mb-10" : ""}`}
               >
                 <ContactLink href={`tel:${phone.replace(/[^+\d]/g, "")}`}>
                   {phone}

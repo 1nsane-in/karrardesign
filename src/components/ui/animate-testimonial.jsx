@@ -58,7 +58,7 @@ export const AnimatedTestimonials = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-tight"
+          className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
         >
           Stories of <span className="text-[#ffb400]">Satisfaction</span>
         </motion.h1>
@@ -107,7 +107,7 @@ export const AnimatedTestimonials = ({
                 >
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <motion.p className="text-xl lg:text-3xl text-white font-gloock leading-relaxed italic max-w-3xl mx-auto">
+                <motion.p className="text-xl lg:text-xl text-white font-gloock leading-relaxed italic max-w-3xl mx-auto">
                   {testimonials[active].quote.split(" ").map((word, index) => (
                     <motion.span
                       key={index}
@@ -134,7 +134,7 @@ export const AnimatedTestimonials = ({
                 </motion.p>
               </div>
               <div className="pt-4">
-                <h3 className="text-3xl font-gloock text-zinc-400 mb-1">
+                <h3 className="text-2xl font-gloock text-zinc-400 mb-1">
                   {testimonials[active].name}
                 </h3>
                 <p className="text-sm text-zinc-500 capitalize tracking-wider">

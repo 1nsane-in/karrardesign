@@ -59,12 +59,19 @@ const Hero = memo(() => {
               Luxury Interior Design
             </p>
             <h1 className="text-5xl lg:text-6xl font-semibold font-cinzel text-white mb-6 leading-[65px] text-center flex items-center justify-center flex-wrap">
-              <span>Design</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block mt-8 mr-2"></span>
-              <span>Distinction</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8  mr-2"></span>
-              <span>Detail</span>
-              <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8 ml-1"></span>
+              <div>
+                <span>Design</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block mt-8 mr-2"></span>
+              </div>
+
+              <div className="flex">
+                <span>Distinction</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-10  mr-2"></span>
+              </div>
+              <div>
+                <span>Detail</span>
+                <span className="w-[10px] h-[10px] rounded-full bg-primary inline-block  mt-8 ml-1"></span>
+              </div>
             </h1>
 
             <p className="text-white/90 text-lg mb-8 max-w-lg text-center">
@@ -136,6 +143,6 @@ const Hero = memo(() => {
   );
 });
 
-Hero.displayName = 'Hero';
+Hero.displayName = "Hero";
 
 export default Hero;

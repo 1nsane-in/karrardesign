@@ -7,7 +7,7 @@ const StudioPhilosophy = memo(() => {
       <div className="max-w-5xl mx-auto">
         {/* Philosophy Content */}
         <div className="text-center mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-[80px] font-gloock text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-gloock text-white mb-6">
             Project Philosophy
           </h2>
           <p className="text-xl sm:text-2xl  text-zinc-400 mb-10 font-light">
@@ -39,6 +39,6 @@ const StudioPhilosophy = memo(() => {
   );
 });
 
-StudioPhilosophy.displayName = 'StudioPhilosophy';
+StudioPhilosophy.displayName = "StudioPhilosophy";
 
 export default StudioPhilosophy;

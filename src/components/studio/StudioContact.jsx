@@ -14,7 +14,7 @@ const StudioContact = memo(() => {
     <>
       {/* Call to Action */}
       <div className="text-center">
-        <h3 className="text-4xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-[75px]">
+        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-gloock text-white leading-[75px]">
           Let&apos;s Create Your Next
           <br />
           Landmark Project
@@ -41,6 +41,6 @@ const StudioContact = memo(() => {
   );
 });
 
-StudioContact.displayName = 'StudioContact';
+StudioContact.displayName = "StudioContact";
 
 export default StudioContact;

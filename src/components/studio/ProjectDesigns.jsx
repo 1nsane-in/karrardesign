@@ -8,7 +8,7 @@ const ProjectDesigns = memo(() => {
   const displayedProjects = showAll ? projects : projects.slice(0, 6);
 
   const toggleShowAll = useCallback(() => {
-    setShowAll(prev => !prev);
+    setShowAll((prev) => !prev);
   }, []);
 
   return (
@@ -46,7 +46,7 @@ const ProjectDesigns = memo(() => {
                     alt="Karrar Logo"
                     className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
                   />
-                  <span className="block text-sm sm:text-base font-gloock lg:text-lg font-bold mt-0 text-white">
+                  <span className="block text-sm tracking-[1px] sm:text-base font-gloock lg:text-lg font-bold mt-0 text-white">
                     {project.title}
                   </span>
                 </div>
@@ -80,6 +80,6 @@ const ProjectDesigns = memo(() => {
   );
 });
 
-ProjectDesigns.displayName = 'ProjectDesigns';
+ProjectDesigns.displayName = "ProjectDesigns";
 
 export default ProjectDesigns;
