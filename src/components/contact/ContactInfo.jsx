@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const ContactInfo = ({ title, children, className = "" }) => (
   <div className={className}>
-    <h1 className="font-bold uppercase text-sm text-center lg:text-left text-zinc-500">
+    <h1 className="font-bold uppercase text-sm text-center lg:text-left text-zinc-400">
       {title}
     </h1>
     {children}

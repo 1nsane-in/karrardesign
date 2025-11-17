@@ -30,7 +30,7 @@ const KarrarLegacy = () => {
         viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 1.8 }}
       >
-        <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[60px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-tan-pearl text-white mb-12 sm:mb-16 lg:mb-20">
+        <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[65px] font-gloock text-white mb-12 sm:mb-16 lg:mb-20">
           Our Legacy & Commitment
         </h2>
       </motion.div>

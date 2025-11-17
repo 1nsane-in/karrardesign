@@ -1,8 +1,5 @@
-import React from "react";
-
 import { motion } from "framer-motion";
 import { KarrarLogo } from "../../assets";
-import { KarrarSVG } from "../../assets/svg";
 
 const headingVariants = {
   hidden: { opacity: 0, y: 60 },
@@ -40,16 +37,12 @@ const KarrarHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-3xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-tan-pearl text-white mb-4 sm:mb-6 px-6 sm:px-0"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-[100px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0"
           >
             Crafting Luxury, <br />
             Delivering Excellence
           </motion.h1>
         </div>
-
-        {/* <div className="lg:w-xs w-32 -mt-10">
-          <KarrarSVG />
-        </div> */}
       </div>
 
       {/* Split Content */}

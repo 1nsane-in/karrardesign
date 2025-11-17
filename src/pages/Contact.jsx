@@ -31,7 +31,7 @@ const Contact = () => {
             <ContactInfo key={location.title} title={location.title}>
               {location.addresses.map((address, index) => (
                 <div key={index} className={index > 0 ? "mt-3" : ""}>
-                  <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-500">
+                  <p className="lg:max-w-[220px] text-center lg:text-left mt-4 leading-[20px] text-zinc-600">
                     {address.split("\n").map((line, i) => (
                       <span key={i}>
                         {line}
@@ -45,7 +45,7 @@ const Contact = () => {
           ))}
 
           <ContactInfo title="General">
-            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-500 text-center lg:text-left">
+            <p className="lg:max-w-[280px] mt-4 leading-[16px] text-zinc-600 text-center lg:text-left">
               <ContactLink href={`mailto:${contactDetails.email}`}>
                 {contactDetails.email}
               </ContactLink>
@@ -53,7 +53,7 @@ const Contact = () => {
             {contactDetails.phones.map((phone, index) => (
               <p
                 key={phone}
-                className={`text-zinc-500 text-center lg:text-left ${index === 0 ? "mt-2" : "mt-1"} ${index === contactDetails.phones.length - 1 ? "mb-10" : ""}`}
+                className={`text-zinc-600 text-center lg:text-left ${index === 0 ? "mt-2" : "mt-1"} ${index === contactDetails.phones.length - 1 ? "mb-10" : ""}`}
               >
                 <ContactLink href={`tel:${phone.replace(/[^+\d]/g, "")}`}>
                   {phone}

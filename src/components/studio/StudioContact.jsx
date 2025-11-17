@@ -13,7 +13,7 @@ const StudioContact = () => {
     <>
       {/* Call to Action */}
       <div className="text-center">
-        <h3 className="text-4xl sm:text-5xl lg:text-7xl font-cinzel text-white leading-tight">
+        <h3 className="text-4xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-[75px]">
           Let&apos;s Create Your Next
           <br />
           Landmark Project

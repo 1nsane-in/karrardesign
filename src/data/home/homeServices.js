@@ -1,5 +1,6 @@
 export const services = [
   {
+    id: "interior-fit-out-works",
     title: "Interior Fit-Out Works",
     tagline: "Tailored interiors crafted with precision and elegance.",
     shortDescription:
@@ -12,9 +13,10 @@ export const services = [
       "Turnkey execution for residential and commercial spaces",
       "Function-driven layouts with luxury detailing",
     ],
-    icon: "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=800&auto=format&fit=crop",
+    icon: "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/6.jpg",
   },
   {
+    id: "project-management",
     title: "Project Management",
     tagline: "Complete control from concept to handover.",
     shortDescription:
@@ -30,6 +32,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "construction-management",
     title: "Construction Management",
     tagline: "Smart execution with maximum efficiency.",
     shortDescription:
@@ -45,6 +48,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "design-management",
     title: "Design Management",
     tagline: "Ensuring creativity translates into buildable excellence.",
     shortDescription:
@@ -60,6 +64,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "tender-management",
     title: "Tender Management",
     tagline: "Structured vendor selection for optimal results.",
     shortDescription:
@@ -75,6 +80,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "client-representation",
     title: "Client Representation",
     tagline: "Protecting your interests at every step.",
     shortDescription:
@@ -90,6 +96,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "consultancy-services",
     title: "Consultancy Services",
     tagline: "Expert insights for better-built outcomes.",
     shortDescription:
@@ -105,6 +112,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "value-engineering-cost-analysis",
     title: "Value Engineering & Cost Analysis",
     tagline: "Enhanced value through smart design and material choices.",
     shortDescription:
@@ -120,6 +128,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1603791452906-bb9f68c159d6?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "procurement",
     title: "Procurement",
     tagline: "Quality materials and services, sourced with precision.",
     shortDescription:
@@ -135,6 +144,7 @@ export const services = [
     icon: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=800&auto=format&fit=crop",
   },
   {
+    id: "claims-management-troubleshooting",
     title: "Claims Management & Troubleshooting",
     tagline: "Resolving challenges with expertise and clarity.",
     shortDescription:

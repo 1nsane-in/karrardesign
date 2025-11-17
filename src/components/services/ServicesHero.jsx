@@ -32,7 +32,7 @@ const ServicesHero = () => {
             alt="Karrar Logo"
             className="w-3 h-3 sm:w-4 sm:h-4 opacity-60"
           />
-          <p className="text-xs uppercase text-zinc-500">Services</p>
+          <p className="text-xs uppercase text-zinc-400">Services</p>
         </motion.div>
 
         <div className="mt-4 sm:mt-6 lg:mt-10">
@@ -42,7 +42,7 @@ const ServicesHero = () => {
             animate={"visible"}
             viewport={{ once: true, amount: 0.8 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-cinzel text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-[100px] leading-tight sm:leading-tight md:leading-tight lg:leading-[85px] font-gloock text-white mb-4 sm:mb-6 px-6 sm:px-0 font-medium"
           >
             Our Expertise
           </motion.h1>
@@ -57,7 +57,7 @@ const ServicesHero = () => {
           className="mt-2 sm:mt-4 lg:mt-6"
         >
           <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-500">
+            <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-zinc-600">
               Comprehensive design and project management services, seamlessly
               delivered with precision, elegance, and uncompromising quality.
             </p>
@@ -76,21 +76,21 @@ const ServicesHero = () => {
         >
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
             <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80"
+              src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/14.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
             <img
-              src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=200&q=80"
+              src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/12.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
           </div>
           <div className="w-20 h-20 rounded-full overflow-hidden hover:opacity-100 transition-opacity duration-500">
             <img
-              src="https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=200&q=80"
+              src="https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/8.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
@@ -108,7 +108,7 @@ const ServicesHero = () => {
         className="flex justify-center mt-12 sm:mt-16"
       >
         <div className="flex flex-col items-center gap-2 cursor-pointer group">
-          <span className="text-xs text-zinc-500 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">
+          <span className="text-xs text-zinc-600 uppercase tracking-wider group-hover:text-[#ffb400] transition-colors duration-300">
             Explore
           </span>
           <div className="w-px h-16 bg-gradient-to-b from-zinc-400 to-transparent group-hover:from-[#ffb400] transition-colors duration-300"></div>

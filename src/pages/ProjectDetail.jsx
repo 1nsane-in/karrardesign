@@ -3,67 +3,7 @@ import { useParams, Link } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { KarrarLogo } from "../assets";
 import NoiseOverlay from "../components/common/NoiseOverlay";
-
-const projectData = {
-  abundance: {
-    title: "Abundance",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Chiswick, London",
-    year: "2023",
-    area: "3,500 sq ft",
-    description:
-      "A stunning residential project that embodies luxury and comfort. This project showcases our ability to create spaces that are both functional and aesthetically pleasing.",
-    fullDescription:
-      "Abundance represents the perfect harmony between modern living and timeless elegance. Located in the heart of Chiswick, this residential project transforms a traditional London home into a contemporary sanctuary. Our design philosophy centered around creating flowing spaces that maximize natural light while maintaining intimate, cozy areas for family life.",
-    images: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  "a-mews": {
-    title: "A Mews",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Regent's Park, London",
-    year: "2023",
-    area: "2,800 sq ft",
-    description:
-      "An elegant mews house transformation in one of London's most prestigious areas. This project demonstrates our expertise in working with heritage buildings.",
-    fullDescription:
-      "Nestled in the prestigious Regent's Park area, A Mews represents a masterful blend of historical charm and contemporary sophistication. This heritage mews house required delicate restoration work while introducing modern amenities and design sensibilities.",
-    images: [
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-  "satin-house": {
-    title: "Satin House",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Aldgate, London",
-    year: "2024",
-    area: "4,200 sq ft",
-    description:
-      "A contemporary residential project that showcases innovative design solutions in an urban setting. The project emphasizes clean lines and natural materials.",
-    fullDescription:
-      "Satin House stands as a testament to modern urban living, where every square meter has been optimized for both functionality and beauty. Located in the dynamic Aldgate district, this project challenged us to create a serene retreat amidst the bustling city environment.",
-    images: [
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
-    ],
-  },
-};
+import { projectData } from "../data/studio/projectsList";
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -92,11 +32,11 @@ const ProjectDetail = () => {
     <>
       <NoiseOverlay />
 
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-background-black">
         {/* Back Button */}
         <Link
           to="/studio"
-          className=" hidden md:flex fixed top-24 lg:top-8 left-8 z-50 group  items-center gap-2 text-zinc-600 hover:text-[#ffb400] transition-colors"
+          className=" hidden md:flex fixed top-24 lg:top-8 left-8 z-50 group  items-center gap-2 text-zinc-600 hover:text-primary transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -158,7 +98,7 @@ const ProjectDetail = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-4xl sm:text-5xl lg:text-7xl font-tan-pearl text-white mb-4"
+                className="text-4xl sm:text-5xl lg:text-[80px] font-gloock text-white mb-4"
               >
                 {project.title}
               </motion.h1>
@@ -232,22 +172,22 @@ const ProjectDetail = () => {
               className="mb-12 flex items-center justify-center flex-col"
             >
               <div className="inline-flex items-center gap-4 mb-6">
-                <div className="w-12 h-px bg-[#ffb400]" />
-                <span className="text-xs uppercase tracking-[0.3em] text-zinc-600">
+                <div className="w-12 h-px bg-primary" />
+                <span className="text-xs uppercase tracking-[0.3em] text-zinc-400">
                   About
                 </span>
-                <div className="w-12 h-px bg-[#ffb400]" />
+                <div className="w-12 h-px bg-primary" />
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-tan-pearl text-zinc-800 leading-tight mb-6">
-                Project <span className="text-[#ffb400]">Overview</span>
+              <h2 className="text-3xl sm:text-5xl lg:text-[80px] font-gloock text-white leading-tight mb-6">
+                Project <span className="text-primary">Overview</span>
               </h2>
 
-              <p className="text-lg text-zinc-600 leading-relaxed mb-6 text-center md:text-start">
+              <p className="text-lg text-zinc-400 leading-relaxed mb-6 text-center">
                 {project.description}
               </p>
 
-              <p className="text-base text-zinc-600 leading-relaxed text-center md:text-start">
+              <p className="text-base text-zinc-400 leading-relaxed text-center">
                 {project.fullDescription}
               </p>
             </motion.div>
@@ -255,7 +195,7 @@ const ProjectDetail = () => {
         </section>
 
         {/* Image Gallery Grid */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-zinc-50">
+        <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {project.images.map((image, index) => (
@@ -283,13 +223,13 @@ const ProjectDetail = () => {
         <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
           <Link
             to="/studio"
-            className="group inline-flex items-center gap-4 text-zinc-600 hover:text-[#ffb400] transition-colors"
+            className="group inline-flex items-center gap-4 text-zinc-400 hover:text-primary transition-colors"
           >
             <span className="text-sm uppercase tracking-wider">
               View All Projects
             </span>
-            <div className="w-12 h-px bg-zinc-300 group-hover:bg-[#ffb400] transition-colors" />
-            <div className="w-2 h-2 border border-zinc-300 group-hover:border-[#ffb400] group-hover:bg-[#ffb400] transition-all" />
+            <div className="w-12 h-px bg-zinc-300 group-hover:bg-primary transition-colors" />
+            <div className="w-2 h-2 border border-zinc-300 group-hover:border-primary group-hover:bg-primary transition-all" />
           </Link>
         </section>
       </div>

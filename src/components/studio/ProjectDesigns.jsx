@@ -1,134 +1,17 @@
+import { useState } from "react";
 import { KarrarLogo } from "../../assets";
 import { Link } from "react-router";
-const projects = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    title: "Abundance",
-    slug: "abundance",
-    number: "34",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Chiswick, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-    title: "A Mews",
-    slug: "a-mews",
-    number: "33",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Regent's Park, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=800&q=80",
-    title: "Satin House",
-    slug: "satin-house",
-    number: "32",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Aldgate, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    title: "Abundance",
-    slug: "abundance",
-    number: "34",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Chiswick, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-    title: "A Mews",
-    slug: "a-mews",
-    number: "33",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Regent's Park, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=800&q=80",
-    title: "Satin House",
-    slug: "satin-house",
-    number: "32",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Aldgate, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    title: "Abundance",
-    slug: "abundance",
-    number: "34",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Chiswick, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-    title: "A Mews",
-    slug: "a-mews",
-    number: "33",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Regent's Park, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=800&q=80",
-    title: "Satin House",
-    slug: "satin-house",
-    number: "32",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Aldgate, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    title: "Abundance",
-    slug: "abundance",
-    number: "34",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Chiswick, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
-    title: "A Mews",
-    slug: "a-mews",
-    number: "33",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Regent's Park, London",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=800&q=80",
-    title: "Satin House",
-    slug: "satin-house",
-    number: "32",
-    category: "Residential",
-    service: "Interior Design",
-    location: "Aldgate, London",
-  },
-];
+import { projects } from "../../data/studio/projectsList";
 
 const ProjectDesigns = () => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
+
   return (
     <section className="projects-section mt-12 sm:mt-16 lg:mt-20 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-[1200px] mx-auto">
         {/* Project Items */}
-        {projects.map((project, index) => (
+        {displayedProjects.map((project, index) => (
           <Link
             key={index}
             to={`/studio/${project.slug}`}
@@ -157,7 +40,7 @@ const ProjectDesigns = () => {
                     alt="Karrar Logo"
                     className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 opacity-60"
                   />
-                  <span className="block text-sm sm:text-base lg:text-lg font-bold mt-0 text-white">
+                  <span className="block text-sm sm:text-base font-gloock lg:text-lg font-bold mt-0 text-white">
                     {project.title}
                   </span>
                 </div>
@@ -165,18 +48,28 @@ const ProjectDesigns = () => {
                   {project.location}
                 </span>
               </div>
-              <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
+              {/* <span className="text-xs sm:text-sm lg:text-base font-semibold text-right flex flex-col items-end">
                 <span className="font-bold text-subheading">
                   {project.category}
                 </span>
                 <span className="text-xs sm:text-sm font-normal text-zinc-600">
                   {project.service}
                 </span>
-              </span>
+              </span> */}
             </div>
           </Link>
         ))}
       </div>
+      {projects.length > 6 && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-2 text-white rounded-lg cursor-pointer transition-colors"
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
     </section>
   );
 };
