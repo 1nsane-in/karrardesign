@@ -2,6 +2,7 @@ import { lazy, Suspense, memo } from "react";
 import TopGridPattern from "../components/common/TopGridPattern";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import KarrarHero from "../components/karrar/KarrarHero";
+import SectionLoader from "../components/common/SectionLoader";
 
 // Lazy load below-the-fold components
 const KarrarPhilosophy = lazy(
@@ -10,13 +11,6 @@ const KarrarPhilosophy = lazy(
 const Awards = lazy(() => import("../components/karrar/Awards"));
 const LogoDivider = lazy(() => import("../components/common/LogoDivider"));
 const KarrarLegacy = lazy(() => import("../components/karrar/KarrarLegacy"));
-
-// Loading component
-const SectionLoader = () => (
-  <div className="flex justify-center items-center py-12">
-    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
-);
 
 const Karrar = memo(() => {
   return (

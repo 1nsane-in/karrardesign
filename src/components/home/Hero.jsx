@@ -32,7 +32,7 @@ const Hero = memo(() => {
             backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-l  from-black/70 via-black/70  to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-l  from-black/70 via-black/70  to-black/70 md:from-black/40 md:via-black/40 md:to-black/40" />
       </motion.div>
 
       {/* Content */}
@@ -45,10 +45,10 @@ const Hero = memo(() => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className=" flex items-center justify-center flex-col"
+            className="flex items-center justify-center flex-col"
           >
             <p className="text-[#ffb400] text-sm uppercase tracking-[0.3em] mb-6 text-center">
-              Luxury Interior Design
+              Luxury Interior & Bespoke Fitouts
             </p>
             <h1 className="text-5xl lg:text-6xl font-semibold font-cinzel text-white mb-6 leading-[65px] text-center flex items-center justify-center flex-wrap">
               <div>
@@ -69,52 +69,18 @@ const Hero = memo(() => {
             <p className="text-white/90 text-lg mb-8 max-w-lg text-center">
               Crafting with award-winning precision and quiet luxury.
             </p>
-            <button
-              onClick={handleViewProjects}
-              className="group flex cursor-pointer items-center  gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
-            >
-              <span className="text-white text-sm uppercase tracking-wider">
-                View Projects
-              </span>
-              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-            </button>
           </motion.div>
         </div>
+        <button
+          onClick={handleViewProjects}
+          className="group flex cursor-pointer items-center  gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300 absolute bottom-15"
+        >
+          <span className="text-white text-sm uppercase tracking-wider">
+            View Projects
+          </span>
+          <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+        </button>
       </motion.div>
-      {/* <motion.div
-        style={{ y: textY }}
-        className="relative z-20 h-full flex items-center px-8 max-w-7xl mx-auto"
-      >
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <p className="text-[#ffb400] text-sm uppercase tracking-[0.3em] mb-6">
-              Luxury Interior Design
-            </p>
-            <h1 className="text-5xl lg:text-7xl font-oswald text-white mb-6 leading-[65px]">
-              <span className="capitalize">Crafting </span> dreams
-              <br />
-              with elegance
-            </h1>
-            <p className="text-white/90 text-lg mb-8 max-w-lg">
-              Transform your space into a masterpiece with award-winning design
-              excellence
-            </p>
-            <button
-              onClick={() => navigate("/studio")}
-              className="group flex cursor-pointer items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-8 py-4 rounded-full hover:bg-[#ffb400] hover:border-[#ffb400] transition-all duration-300"
-            >
-              <span className="text-white text-sm uppercase tracking-wider">
-                View Projects
-              </span>
-              <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-            </button>
-          </motion.div>
-        </div>
-      </motion.div> */}
 
       {/* Scroll Indicator */}
       <motion.div

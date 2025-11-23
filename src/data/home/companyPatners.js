@@ -1,45 +1,53 @@
 export const partners = [
   {
-    name: "Emaar Properties",
+    name: "White & Co Real Estate",
+    sector: "Real Estate Brokerage",
+  },
+  {
+    name: "Hafez Mustafa 1864",
+    sector: "Confectionery Chain",
+  },
+  {
+    name: "Bur Juman",
+    sector: "Retail & Shopping Malls",
+  },
+  {
+    name: "Al Habtoor Group",
+    sector: "Hospitality & Real Estate",
+  },
+  {
+    name: "Technomak Group",
+    sector: "Engineering & Construction",
+  },
+  {
+    name: "G-Hospitality",
+    sector: "Hospitality Management",
+  },
+  {
+    name: "Entrecôte Café de Paris",
+    sector: "Fine Dining",
+  },
+  {
+    name: "La Vista Hospitality",
+    sector: "Hospitality & Interiors",
+  },
+  {
+    name: "FOMO Dubai",
+    sector: "Dining & Shisha Lounge",
+  },
+  {
+    name: "NOVA",
+    sector: "Project Mgmt & Manufacturing",
+  },
+  {
+    name: "Emaar Real Estate",
     sector: "Real Estate Development",
   },
   {
-    name: "Majid Al Futtaim",
-    sector: "Retail & Hospitality",
+    name: "Dubai Holding Real Estate",
+    sector: "Real Estate & Asset Mgmt",
   },
-  {
-    name: "Dubai Properties",
-    sector: "Property Development",
-  },
-  {
-    name: "Marriott Hotels",
-    sector: "Hospitality",
-  },
-  {
-    name: "Nakheel",
-    sector: "Master Developer",
-  },
-  {
-    name: "Jumeirah Group",
-    sector: "Luxury Hospitality",
-  },
-  {
-    name: "DAMAC Properties",
-    sector: "Real Estate",
-  },
-  {
-    name: "Four Seasons",
-    sector: "Luxury Hotels",
-  },
-  {
-    name: "Sobha Realty",
-    sector: "Premium Developer",
-  },
-  {
-    name: "Hilton Hotels",
-    sector: "Global Hospitality",
-  },
-];
+];  
 
 export const STATS_DATA = [
   { value: "50+", label: "Trusted Partners" },

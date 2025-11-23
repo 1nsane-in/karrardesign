@@ -3,7 +3,7 @@ export const contactLocations = [
   {
     title: "Dubai",
     addresses: [
-      "Karrar Design - Projects LLC Level 41, Emirates Towers Sheikh Zayed Road\nPO Box: 31303, Dubai, UAE",
+      "Karrar Design - Projects LLC, Level 41, Emirates Towers Sheikh Zayed Road\nPO Box: 31303, Dubai, UAE",
       "Karrar Design - Projects LLC, Dubai Commercity Building B2, 11-17th St,\nUmm Ramool, Dubai, UAE",
     ],
   },

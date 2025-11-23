@@ -2,6 +2,7 @@ import { lazy, Suspense, memo } from "react";
 import NoiseOverlay from "../components/common/NoiseOverlay.jsx";
 import TopGridPattern from "../components/common/TopGridPattern.jsx";
 import StudioHero from "../components/studio/StudioHero.jsx";
+import SectionLoader from "../components/common/SectionLoader.jsx";
 
 // Lazy load below-the-fold components
 const ProjectDesigns = lazy(
@@ -12,13 +13,6 @@ const StudioPhilosophy = lazy(
 );
 const StudioContact = lazy(
   () => import("../components/studio/StudioContact.jsx")
-);
-
-// Loading component
-const SectionLoader = () => (
-  <div className="flex justify-center items-center py-12">
-    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
 );
 
 const Studio = memo(() => {

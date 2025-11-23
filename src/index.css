@@ -91,3 +91,30 @@ html {
   position: relative;
   overflow: hidden;
 }
+
+.svg-loader path {
+  fill: none !important;
+  stroke: #ffb400;
+  stroke-width: 50;
+  stroke-linecap: round;
+
+  /* Use a dash array that is a small part of the total path length 
+               to create a "moving gap/light" effect. 
+               E.g., 200 unit dash, 800 unit gap (total cycle 1000) */
+  stroke-dasharray: 200 800;
+
+  /* Apply the new single-direction animation */
+  animation: flowing-right 4s linear infinite;
+}
+
+/* Define the new keyframes for left-to-right movement */
+@keyframes flowing-right {
+  /* Start with the dash fully off-screen to the left (negative offset) */
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  /* End with the dash fully off-screen to the right (positive offset) */
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
