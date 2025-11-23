@@ -99,8 +99,10 @@ const Services = memo(() => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className={"bg-zinc-500"} />
-          <CarouselNext className={"bg-zinc-500"} />
+          <CarouselPrevious
+            className={"bg-zinc-500 ml-7 size-[50px] md:-ml-5"}
+          />
+          <CarouselNext className={"bg-zinc-500 mr-7 size-[50px] md:-mr-7"} />
         </Carousel>
 
         {/* Bottom CTA */}

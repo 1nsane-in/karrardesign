@@ -3,7 +3,7 @@ import Hero from "../components/home/Hero";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import ScrollIndicator from "../components/common/ScrollIndicator";
 import SectionLoader from "../components/common/SectionLoader";
-import SplashLogo from "../components/common/SplashLogo";
+// import SplashLogo from "../components/common/SplashLogo";
 
 // Lazy load components that are below the fold
 const Description = lazy(() => import("../components/home/Description"));
