@@ -1,5 +1,3 @@
-import React from "react";
-
 const SplashLogo = () => {
   return (
     <div className="svg-loader">
@@ -72,6 +70,7 @@ const SplashLogo = () => {
             <rect x={0} width={169} y={0} height={50} />
           </clipPath>
         </defs>
+
         <g clipPath="url(#14b673599b)">
           <g transform="matrix(1, 0, 0, 1, 52, 52)">
             <g clipPath="url(#f5e4f04750)">
@@ -86,6 +85,7 @@ const SplashLogo = () => {
             </g>
           </g>
         </g>
+
         <g clipPath="url(#85f9717e0d)">
           <g transform="matrix(1, 0, 0, 1, 52, 273)">
             <g clipPath="url(#273683ac4e)">
@@ -100,6 +100,7 @@ const SplashLogo = () => {
             </g>
           </g>
         </g>
+
         <g clipPath="url(#44b47ae52c)">
           <g transform="matrix(1, 0, 0, 1, 273, 52)">
             <g clipPath="url(#a1ed992175)">
@@ -114,6 +115,7 @@ const SplashLogo = () => {
             </g>
           </g>
         </g>
+
         <g clipPath="url(#8546146a11)">
           <g transform="matrix(1, 0, 0, 1, 154, 52)">
             <g clipPath="url(#deb33a552f)">

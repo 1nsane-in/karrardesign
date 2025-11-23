@@ -92,29 +92,160 @@ html {
   overflow: hidden;
 }
 
+/* ------------------------------------- */
+/* BASE STYLES & ANIMATION SETUP */
+/* ------------------------------------- */
+
 .svg-loader path {
   fill: none !important;
   stroke: #ffb400;
   stroke-width: 50;
-  stroke-linecap: round;
+  stroke-linecap: butt; /* Use 'butt' for clean, sharp edges at the corners */
 
-  /* Use a dash array that is a small part of the total path length 
-               to create a "moving gap/light" effect. 
-               E.g., 200 unit dash, 800 unit gap (total cycle 1000) */
-  stroke-dasharray: 200 800;
+  /* A large length placeholder (1000) is used for the entire drawing action */
+  stroke-dasharray: 1000;
+  /* All paths start fully hidden */
+  stroke-dashoffset: 1000;
 
-  /* Apply the new single-direction animation */
-  animation: flowing-right 4s linear infinite;
+  /* The overall animation sequence runs for 10 seconds */
+  animation: draw-sequence 10s linear infinite;
 }
 
-/* Define the new keyframes for left-to-right movement */
-@keyframes flowing-right {
-  /* Start with the dash fully off-screen to the left (negative offset) */
+/* ------------------------------------- */
+/* PATH-SPECIFIC ANIMATION OVERRIDES */
+/* ------------------------------------- */
+
+/* NOTE: The paths are numbered based on their order in the SVG (top-down in the code) */
+
+/* 1. Left Vertical Path (Path 1 in SVG) - Top to Down */
+.svg-loader g:nth-child(1) path {
+  /* No offset needed, default stroke direction is usually top to down. */
+}
+
+/* 2. Bottom Horizontal Path (Path 2 in SVG) - Left to Right */
+.svg-loader g:nth-child(2) path {
+  /* Reverse the default stroke direction to ensure Left to Right draw.
+               Setting the offset to 2000 makes the dash start at the right end. 
+               Animating offset from 2000 down to 1000 will reveal it Left to Right. */
+  stroke-dashoffset: 2000;
+}
+
+/* 3. Right Vertical Path (Path 3 in SVG) - Bottom to Top */
+.svg-loader g:nth-child(3) path {
+  /* Set the dash offset to 2000 to flip the vertical stroke.
+               Animating offset from 2000 down to 1000 will reveal it Bottom to Top. */
+  stroke-dashoffset: 2000;
+}
+
+/* 4. Top Horizontal Path (Path 4 in SVG) - Right to Left */
+.svg-loader g:nth-child(4) path {
+  /* No offset needed for the Right to Left direction, as the path definition 
+               in the SVG is likely right-to-left. */
+}
+
+/* ------------------------------------- */
+/* THE MAIN SEQUENTIAL KEYFRAMES */
+/* Total animation time: 10 seconds */
+/* Drawing time per segment: ~1.5 seconds */
+/* Pause between drawings: ~1 second */
+/* ------------------------------------- */
+
+@keyframes draw-sequence {
+  /* Initial State: All segments hidden */
   0% {
+    /* Path 1: Left Vertical */
+    clip-path: none;
+    transform: none;
     stroke-dashoffset: 1000;
   }
-  /* End with the dash fully off-screen to the right (positive offset) */
+
+  /* --- STAGE 1: Left Vertical (Top to Down) --- */
+  /* Start drawing Path 1 */
+  5% {
+    .svg-loader g:nth-child(1) path {
+      stroke-dashoffset: 1000;
+    }
+  }
+  /* End drawing Path 1 (fully revealed) */
+  20% {
+    .svg-loader g:nth-child(1) path {
+      stroke-dashoffset: 0;
+    }
+  }
+  /* Hold Path 1 steady */
+  25% {
+    .svg-loader g:nth-child(1) path {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* --- STAGE 2: Bottom Horizontal (Left to Right) --- */
+  /* Start drawing Path 2 */
+  30% {
+    .svg-loader g:nth-child(2) path {
+      stroke-dashoffset: 2000;
+    }
+  }
+  /* End drawing Path 2 (fully revealed) */
+  45% {
+    .svg-loader g:nth-child(2) path {
+      stroke-dashoffset: 1000;
+    } /* Reveals left-to-right */
+  }
+  /* Hold Paths 1 & 2 steady */
+  50% {
+    .svg-loader g:nth-child(2) path {
+      stroke-dashoffset: 1000;
+    }
+  }
+
+  /* --- STAGE 3: Right Vertical (Bottom to Top) --- */
+  /* Start drawing Path 3 */
+  55% {
+    .svg-loader g:nth-child(3) path {
+      stroke-dashoffset: 2000;
+    }
+  }
+  /* End drawing Path 3 (fully revealed) */
+  70% {
+    .svg-loader g:nth-child(3) path {
+      stroke-dashoffset: 1000;
+    } /* Reveals bottom-to-top */
+  }
+  /* Hold Paths 1, 2, & 3 steady */
+  75% {
+    .svg-loader g:nth-child(3) path {
+      stroke-dashoffset: 1000;
+    }
+  }
+
+  /* --- STAGE 4: Top Horizontal (Right to Left) --- */
+  /* Start drawing Path 4 */
+  80% {
+    .svg-loader g:nth-child(4) path {
+      stroke-dashoffset: 1000;
+    }
+  }
+  /* End drawing Path 4 (fully revealed) */
+  95% {
+    .svg-loader g:nth-child(4) path {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Reset/Final State: Jump back to 0% to restart the animation */
   100% {
-    stroke-dashoffset: -1000;
+    .svg-loader g:nth-child(1) path {
+      stroke-dashoffset: 1000;
+    }
+    .svg-loader g:nth-child(2) path {
+      stroke-dashoffset: 2000;
+    }
+    .svg-loader g:nth-child(3) path {
+      stroke-dashoffset: 2000;
+    }
+    .svg-loader g:nth-child(4) path {
+      stroke-dashoffset: 1000;
+    }
   }
 }
