@@ -68,8 +68,12 @@ const KarrarLegacy = memo(() => {
             luxurious mansions, high-rise residences, five-star hotels, and
             global retail spaces
           </strong>
-          , our legacy is built on trust, expertise, and results that exceed
-          expectations.
+          , our legacy is built on{" "}
+          <strong className="text-zinc-300 hover:text-[#ffb400] transition-colors duration-300 cursor-pointer">
+            20 years
+          </strong>{" "}
+          of industry experience, trust, expertise, and results that exceed
+          expectations
         </motion.p>
 
         <motion.div
