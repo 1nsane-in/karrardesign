@@ -54,9 +54,9 @@ const SectionHeader = () => (
 
 const PartnerCard = ({ partner, index }) => (
   <div
-    className={`${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-[200px] md:w-[280px] py-4 rounded-xl shrink-0 bg-zinc-900 backdrop-blur-sm shadow-2xl border border-white/15`}
+    className={`${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-max px-10 py-4 rounded-xl shrink-0 bg-zinc-900 backdrop-blur-sm shadow-2xl border border-white/15`}
   >
-    <h1 className="md:text-2xl font-gloock text-white mb-1 text-center max-w-[250px]">
+    <h1 className="md:text-xl font-gloock text-white mb-1 text-center w-max">
       {partner.name}
     </h1>
     <div className="text-sm text-zinc-400 text-center max-w-[250px]">
@@ -133,6 +133,6 @@ const CompanyPartners = memo(() => {
   );
 });
 
-CompanyPartners.displayName = 'CompanyPartners';
+CompanyPartners.displayName = "CompanyPartners";
 
 export default CompanyPartners;

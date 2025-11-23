@@ -9,19 +9,12 @@ import {
   contactDetails,
   contactLocations,
 } from "../data/contact/contactData.js";
+import SectionLoader from "../components/common/SectionLoader.jsx";
 
 // Lazy load the world map to prevent page freezing
 const ContactWorldmap = lazy(
   () => import("../components/contact/ContactWorldmap.jsx")
 );
-
-// Optimized loading component for world map
-const MapLoader = memo(() => (
-  <div className="absolute inset-0 flex items-center justify-center">
-    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
-));
-MapLoader.displayName = "MapLoader";
 
 const Contact = memo(() => {
   // Memoize contact locations to prevent re-renders
@@ -41,9 +34,9 @@ const Contact = memo(() => {
         className="relative md:pb-[100px] md:mb-0 flex items-center sm:min-h-[420px] md:min-h-[460px] lg:min-h-[420px] mt-20 md:mt-0"
       >
         {/* Lazy load world map to prevent freezing */}
-        <Suspense fallback={<MapLoader />}>
+        {/* <Suspense fallback={<SectionLoader />}>
           <ContactWorldmap />
-        </Suspense>
+        </Suspense> */}
 
         <div className="flex lg:gap-12 gap-5 lg:max-w-5xl mx-auto text-sm flex-col lg:flex-row px-4 lg:px-0 relative justify-center w-full">
           {memoizedLocations.map((location) => (

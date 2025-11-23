@@ -60,7 +60,7 @@ export const AnimatedTestimonials = ({
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-3xl sm:text-5xl lg:text-6xl font-gloock text-white leading-tight"
         >
-          Stories of <span className="text-[#ffb400]">Satisfaction</span>
+          Stories of <span className="text-[#ffb400] ml-2"> Satisfaction</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}

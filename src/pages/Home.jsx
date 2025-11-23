@@ -2,21 +2,18 @@ import { lazy, Suspense } from "react";
 import Hero from "../components/home/Hero";
 import NoiseOverlay from "../components/common/NoiseOverlay";
 import ScrollIndicator from "../components/common/ScrollIndicator";
+import SectionLoader from "../components/common/SectionLoader";
+import SplashLogo from "../components/common/SplashLogo";
 
 // Lazy load components that are below the fold
 const Description = lazy(() => import("../components/home/Description"));
 const Services = lazy(() => import("../components/home/Services"));
 const CompletedProjects = lazy(() => import("../components/ui/image-gallery"));
-const CompanyPartners = lazy(() => import("../components/home/CompanyPartners"));
+const CompanyPartners = lazy(
+  () => import("../components/home/CompanyPartners")
+);
 const Testimonial = lazy(() => import("../components/home/Testimonial"));
 const GetInTouch = lazy(() => import("../components/home/GetInTouch"));
-
-// Loading component
-const SectionLoader = () => (
-  <div className="flex justify-center items-center py-12">
-    <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-  </div>
-);
 
 const Home = () => {
   return (
@@ -43,6 +40,9 @@ const Home = () => {
         <Suspense fallback={<SectionLoader />}>
           <GetInTouch />
         </Suspense>
+        {/* <div className="w-[200px]">
+          <SplashLogo />
+        </div> */}
       </div>
     </>
   );

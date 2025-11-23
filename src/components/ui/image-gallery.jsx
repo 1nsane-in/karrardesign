@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { projects } from "../../data/studio/projectsList";
 
 const imageList = [
-  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/7.jpg",
+  "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/sota-salon/sota-01.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/4.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/dubai-mall/15.jpg",
   "https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/al-mandalo/6.jpg",
@@ -246,6 +246,6 @@ const CompletedProjects = memo(() => {
   );
 });
 
-CompletedProjects.displayName = 'CompletedProjects';
+CompletedProjects.displayName = "CompletedProjects";
 
 export default CompletedProjects;

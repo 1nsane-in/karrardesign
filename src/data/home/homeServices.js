@@ -125,7 +125,7 @@ export const services = [
       "Detailed cost-benefit evaluations",
       "Budget refinement and alternatives",
     ],
-    icon: "https://images.unsplash.com/photo-1603791452906-bb9f68c159d6?q=80&w=800&auto=format&fit=crop",
+    icon: "https://www.gordian.com/uploads/2019/05/ValueEngineering_BlogCard.jpg",
   },
   {
     id: "procurement",

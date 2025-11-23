@@ -43,8 +43,6 @@ const AnimatedButton = ({ to, text }) => {
     <Link to={to} className="text-primary">
       <button className={styles.button}>
         <span>{createSpans(text)}</span>
-        {/* <span className={styles["span-mother"]}>{createSpans(text)}</span> */}
-        {/* <span className={styles["span-mother2"]}>{createSpans(text)}</span> */}
       </button>
     </Link>
   );
@@ -58,30 +56,10 @@ AnimatedButton.propTypes = {
 const Description = memo(() => {
   return (
     <div className="relative py-12 mt-40">
-      <div
-        style={{ perspective: 800 }}
-        // className="grid lg:grid-cols-5 grid-cols-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        className="max-w-4xl mx-auto "
-      >
-        {/* Heading Section */}
-        <motion.div
-          className="col-span-3 flex flex-col justify-center items-center lg:items-start"
-          {...animationProps}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          {/* {headings.map((heading, index) => (
-            <AnimatedHeading key={index} {...heading} />
-          ))} */}
-        </motion.div>
-
+      <div style={{ perspective: 800 }} className="max-w-4xl mx-auto ">
         <div className="relative">
-          <div className=" absolute -top-5 left-1/2 h-[100px] w-[150px] -translate-x-1/2 opacity-25">
-            {/* <img src={KarrarLogo} alt="" /> */}
-            {/* <AboutSVG /> */}
-          </div>
-          {/* <div className=" text-center text-2xl mb-4 text-primary">
-            True luxury is felt, not seen.
-          </div> */}
+          <div className=" absolute -top-5 left-1/2 h-[100px] w-[150px] -translate-x-1/2 opacity-25"></div>
+
           <p className="text-primary text-xl font-gloock font-semibold tracking-[0.15em] mb-6 text-center">
             Design Beyond Aesthetics
           </p>
@@ -100,20 +78,6 @@ const Description = memo(() => {
             constructed.
           </motion.p>
         </div>
-        {/* Description Section */}
-        <motion.div
-          className="col-span-2 flex flex-col justify-center lg:items-end items-center text-center lg:text-right mt-8 lg:mt-0"
-          {...animationProps}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          {/* <motion.div
-            className="lg:w-xs w-32 mb-4 text-center"
-            variants={{ ...variants.button, visible: variants.visible }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <AboutSVG />
-          </motion.div> */}
-        </motion.div>
       </div>
 
       {/* Navigation Buttons */}
@@ -135,6 +99,6 @@ const Description = memo(() => {
   );
 });
 
-Description.displayName = 'Description';
+Description.displayName = "Description";
 
 export default Description;

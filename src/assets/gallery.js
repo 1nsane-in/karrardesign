@@ -11,4 +11,8 @@ export const GALLERY_IMAGES = {
     main: `https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/hafiz-mustafa/${i + 1}.jpg`,
     fallback: `https://tussxar.github.io/karrar-images/images/hafiz-mustafa/${i + 1}.jpg`,
   })),
+  "sota-salon": Array.from({ length: 2 }, (_, i) => ({
+    main: `https://cdn.jsdelivr.net/gh/tussxar/karrar-images/images/sota-salon/sota-0${i + 1}.jpg`,
+    fallback: `https://tussxar.github.io/karrar-images/images/sota-salon/sota-0${i + 1}.jpg`,
+  })),
 };
