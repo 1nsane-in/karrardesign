@@ -57,7 +57,7 @@ const Awards = memo(() => {
       >
         Our commitment to excellence has been recognized by industry leaders
         with prestigious awards, reinforcing our reputation for design
-        innovation and flawless project delivery:
+        innovation and flawless project delivery.
       </motion.p>
 
       <motion.div

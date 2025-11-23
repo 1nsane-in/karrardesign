@@ -92,9 +92,9 @@ const Hero = memo(() => {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-[#ffb400] rounded-full flex justify-center pt-2"
+          className="w-6 h-10 border-2 border-primary rounded-full flex justify-center pt-2"
         >
-          <div className="w-1 h-2 bg-[#ffb400] rounded-full" />
+          <div className="w-1 h-2 bg-primary rounded-full" />
         </motion.div>
       </motion.div>
     </section>

@@ -146,12 +146,12 @@ const Navigation = () => {
         )}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="bg-white/90 backdrop-blur-md border border-gray-200 px-6 py-3 rounded-full 
+          className="bg-zinc-800  backdrop-blur-md border border-gray-800 px-6 py-3 rounded-full 
     shadow-lg hover:shadow-xl transition-all duration-300 
     flex items-center gap-2 group"
         >
-          <Menu className="w-5 h-5 text-zinc-700 group-hover:text-primary transition-colors" />
-          <span className="text-sm font-medium text-zinc-700 group-hover:text-primary transition-colors">
+          <Menu className="w-5 h-5 text-zinc-300 group-hover:text-primary transition-colors" />
+          <span className="text-sm font-medium text-zinc-300 group-hover:text-primary transition-colors">
             Menu
           </span>
         </button>

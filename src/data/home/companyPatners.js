@@ -47,7 +47,11 @@ export const partners = [
     name: "Dubai Holding Real Estate",
     sector: "Real Estate & Asset Mgmt",
   },
-];  
+  {
+    name: "Al-Futtaim Real Estate",
+    sector: "Real Estate",
+  },
+];
 
 export const STATS_DATA = [
   { value: "50+", label: "Trusted Partners" },
