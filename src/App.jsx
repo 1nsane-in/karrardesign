@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import Navigation from "./components/common/Navigation";
 import ScrollToTop from "./components/common/ScrollToTop";
 import KarrarSplashScreen from "./components/common/KarrarSplashScreen";
+import Test from "./components/Test";
 
 // Lazy load all pages
 const Home = lazy(() => import("./pages/Home"));
@@ -33,6 +34,7 @@ function App() {
           <Route path="/studio" element={<Studio />} />
           <Route path="/karrar" element={<Karrar />} />
           <Route path="/studio/:projectId" element={<ProjectDetail />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </Suspense>
 

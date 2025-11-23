@@ -1,6 +1,5 @@
 import { useRef, memo, useCallback } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BgHero1 } from "../../assets";
 import { useNavigate } from "react-router";
 import { ArrowRight } from "lucide-react";
 
@@ -27,7 +26,7 @@ const Hero = memo(() => {
         <div
           className="w-full h-full "
           style={{
-            backgroundImage: `url(${BgHero1})`,
+            backgroundImage: `url(https://res.cloudinary.com/dhctsorc0/image/upload/v1763911080/bg-home_cnek6o.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
