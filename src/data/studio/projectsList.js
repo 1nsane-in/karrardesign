@@ -157,13 +157,13 @@ export const projectData = {
     title: "Entrecote Cafe de Paris",
     category: "Commercial",
     service: "Interior Design",
-    location: "Dubai",
+    location: "Dubai Mall",
     year: "2024",
     area: "3,200 sq ft",
     description:
       "A contemporary commercial space that blends traditional Middle Eastern elements with modern design principles.",
     fullDescription:
-      "Al Mandalo represents a harmonious fusion of cultural heritage and contemporary design. This commercial project in Dubai showcases our ability to honor traditional aesthetics while creating functional, modern spaces that serve today's business needs.",
+      "Karrar Design Projects was appointed by our client, G-Hospitality to deliver project management and operational coordination for the new Entrecôte Café de Paris outlet at Dubai Mall designed by MCC, an Italy based design company. Our scope focused exclusively on ensuring smooth execution, stakeholder alignment, timeline management, and on-site supervision in line with the restaurant's pre-established design direction. The interior design concept and creative vision were developed by MCC. Our role supported the successful translation of that vision into a well-executed, operationally efficient hospitality space.",
     images: [
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910655/15_dwhnoa.jpg",
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910669/18_zayzvf.jpg",
