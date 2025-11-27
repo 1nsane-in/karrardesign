@@ -108,7 +108,7 @@ export const projectData = {
     description:
       "An authentic Lebanese restaurant design that captures the essence of Middle Eastern hospitality while incorporating modern dining concepts.",
     fullDescription:
-      "Mandaloun Lebanese restaurant brings the warmth and authenticity of Lebanese culture to Dubai's prestigious DIFC district. This project challenged us to create an atmosphere that honors traditional Lebanese design elements while meeting the sophisticated expectations of the financial district's clientele.",
+      "Al Mandaloun Lebanese Restaurant brings the warmth and authenticity of Lebanese culture to Dubai's prestigious DIFC district. Appointed by G-Hospitality, Karrar Design Projects provided comprehensive project management and execution coordination for the restaurant. The design vision and creative concept were developed by KII Designs; our role centered on guiding the operational delivery on-site - from contractor alignment to progress monitoring and quality control. Through disciplined project management, we supported the successful realization of the designer’s vision into a refined hospitality environment.",
     images: [
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909434/38_bq0id7.jpg",
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909400/27_v7gxsn.jpg",
@@ -143,7 +143,7 @@ export const projectData = {
     description:
       "A contemporary commercial space that blends traditional Middle Eastern elements with modern design principles.",
     fullDescription:
-      "Al Mandalo represents a harmonious fusion of cultural heritage and contemporary design. This commercial project in Dubai showcases our ability to honor traditional aesthetics while creating functional, modern spaces that serve today's business needs.",
+      "Al Mandaloun Lebanese Restaurant brings the warmth and authenticity of Lebanese culture to Dubai's prestigious DIFC district. Appointed by G-Hospitality, Karrar Design Projects provided comprehensive project management and execution coordination for the restaurant. The design vision and creative concept were developed by KII Designs; our role centered on guiding the operational delivery on-site - from contractor alignment to progress monitoring and quality control. Through disciplined project management, we supported the successful realization of the designer's vision into a refined hospitality environment.",
     images: [
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909819/29_nmicse.jpg",
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909400/27_v7gxsn.jpg",
