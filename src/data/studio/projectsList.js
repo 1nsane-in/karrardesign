@@ -193,7 +193,7 @@ export const projectData = {
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/6_f9webl.jpg",
       "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910406/35_bkm9gz.jpg",
     ],
-  },
+  }, //done
   "hafez-mustafa-store-jbr": {
     title: "Hafez Mustafa Store",
     category: "Commercial",
@@ -208,13 +208,13 @@ export const projectData = {
     description2:
       "The challenge here we faced to provided 100% closure of mezzanine floor to accommodate VVIP office for client, As per the rule only 2/3rd slab can be covered however we took the challenge and convinced the authority by means of providing very highly technical drawings showing the possibility of approvals, The approval received and we have managed to provided 100% closure of mezzanine floor for VVIP office and adding beautiful PVD coated handrail",
     images: [
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909819/29_nmicse.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910355/3_izoklv.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/40_ul3dog.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/6_f9webl.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910406/35_bkm9gz.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764322820/5_tikdvw.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764322819/2_ymwl1r.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764322819/13_lrz5eo.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764322820/25_lth1ds.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764322819/4_paqonl.jpg",
     ],
-  },
+  }, //done
   "hafez-mustafa-store-moe": {
     title: "Hafez Mustafa Store",
     category: "Commercial",
@@ -227,13 +227,13 @@ export const projectData = {
     fullDescription:
       "Situated in the prestigious Mall of Emirates, this flagship Hafez Mustafa store represents the brand's commitment to excellence. The design creates an immersive experience that transports visitors to the historic streets of Istanbul while maintaining the luxury shopping environment expected in this premier mall.",
     images: [
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763909819/29_nmicse.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910355/3_izoklv.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/40_ul3dog.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/6_f9webl.jpg",
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910406/35_bkm9gz.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323734/10_ysiufb.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323736/41_zftv20.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323735/16_rxr92n.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323736/18_apnuje.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323735/33_xtyezr.jpg",
     ],
-  },
+  }, //done
   "hafez-mustafa-store-dhm": {
     title: "Hafez Mustafa Store",
     category: "Commercial",
