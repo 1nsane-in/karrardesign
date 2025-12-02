@@ -61,7 +61,7 @@ export const projects = [
   },
   {
     image:
-      "https://res.cloudinary.com/dhctsorc0/image/upload/v1763910408/40_ul3dog.jpg",
+      "https://res.cloudinary.com/dhctsorc0/image/upload/v1764323736/41_zftv20.jpg",
     title: "Hafez Mustafa Store",
     slug: "hafez-mustafa-store-moe",
     number: "32",
