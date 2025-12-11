@@ -7,6 +7,7 @@ export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
   className,
+  loading,
 }) => {
   const [active, setActive] = useState(0);
 
@@ -14,22 +15,10 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev + 1) % testimonials.length);
   };
 
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const isActive = (index) => {
-    return index === active;
-  };
-
   useEffect(() => {
     const interval = setInterval(handleNext, 5000);
     return () => clearInterval(interval);
-  }, []);
-
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  }, [testimonials.length]);
 
   return (
     <div
@@ -108,7 +97,7 @@ export const AnimatedTestimonials = ({
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <motion.p className="text-md lg:text-xl text-white font-gloock leading-relaxed italic max-w-3xl mx-auto">
-                  {testimonials[active].quote.split(" ").map((word, index) => (
+                  {testimonials[active]?.quote.split(" ").map((word, index) => (
                     <motion.span
                       key={index}
                       initial={{
@@ -135,10 +124,10 @@ export const AnimatedTestimonials = ({
               </div>
               <div className="pt-4">
                 <h3 className="text-lg font-gloock text-zinc-400 mb-1">
-                  {testimonials[active].name}
+                  {testimonials[active]?.name}
                 </h3>
                 <p className="text-xs text-zinc-500 capitalize tracking-wider">
-                  {testimonials[active].designation}
+                  {testimonials[active]?.description}
                 </p>
               </div>
             </motion.div>

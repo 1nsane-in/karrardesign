@@ -4,9 +4,10 @@ import PropTypes from "prop-types";
 import { Marquee } from "../ui/marquee";
 import {
   ANIMATION_CONFIG,
-  partners,
+  // partners,
   STATS_DATA,
 } from "../../data/home/companyPatners";
+import { useClients } from "../../hooks/useClients";
 
 const AnimatedSection = ({ children, delay = 0, className = "" }) => (
   <motion.div
@@ -52,16 +53,25 @@ const SectionHeader = () => (
   </div>
 );
 
-const PartnerCard = ({ partner, index }) => (
+const PartnerCard = ({ partner, index, loading }) => (
   <div
     className={`${index === 0 ? "ml-13" : ""} relative flex flex-col items-center justify-center w-max px-10 py-4 rounded-xl shrink-0 bg-zinc-900 backdrop-blur-sm shadow-2xl border border-white/15`}
   >
-    <h1 className="md:text-xl font-gloock text-white mb-1 text-center w-max">
-      {partner.name}
-    </h1>
-    <div className="text-sm text-zinc-400 text-center max-w-[250px]">
-      {partner.sector}
-    </div>
+    {loading ? (
+      <div className="w-full mb-2 h-2 bg-gray-300/20 rounded-lg animate-pulse"></div>
+    ) : (
+      <h1 className="md:text-xl font-gloock text-white mb-1 text-center w-max">
+        {partner.name}
+      </h1>
+    )}
+
+    {loading ? (
+      <div className="w-full mb-2 h-2 bg-gray-300/20 rounded-lg animate-pulse"></div>
+    ) : (
+      <div className="text-sm text-zinc-400 text-center max-w-[250px]">
+        {partner.sector}
+      </div>
+    )}
   </div>
 );
 
@@ -71,19 +81,35 @@ PartnerCard.propTypes = {
     sector: PropTypes.string.isRequired,
   }).isRequired,
   index: PropTypes.number.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
-const PartnersCarousel = () => (
+const PartnersCarousel = ({ partners, loading }) => (
   <div className="relative">
     <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-background-black to-transparent z-50" />
     <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-background-black to-transparent z-50" />
     <Marquee>
       {partners.map((partner, index) => (
-        <PartnerCard key={index} partner={partner} index={index} />
+        <PartnerCard
+          key={index}
+          partner={partner}
+          index={index}
+          loading={loading}
+        />
       ))}
     </Marquee>
   </div>
 );
+
+PartnersCarousel.propTypes = {
+  partners: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      sector: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
 const StatItem = ({ value, label }) => (
   <div className="text-center">
@@ -119,6 +145,8 @@ const CompanyPartners = memo(() => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
+  const { clients, loading } = useClients();
+
   return (
     <section
       ref={containerRef}
@@ -126,7 +154,7 @@ const CompanyPartners = memo(() => {
     >
       <motion.div style={{ opacity }} className="relative z-10">
         <SectionHeader />
-        <PartnersCarousel />
+        <PartnersCarousel partners={clients} loading={loading} />
         <StatsSection />
       </motion.div>
     </section>

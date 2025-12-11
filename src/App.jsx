@@ -42,11 +42,11 @@ function App() {
         <InsaneFooter />
       </Suspense>
 
-      {import.meta.env.VITE_ENV === "dev" && (
+      {/* {import.meta.env.VITE_ENV === "dev" && (
         <Suspense fallback={null}>
           <ScreenSizeDisplay />
         </Suspense>
-      )}
+      )} */}
     </BrowserRouter>
   );
 }
